@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: 2025-07-15 10:05:09*
+*Generiert am: 2025-07-15 10:15:13*
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -1155,4 +1155,4 @@
 ---
 Fehler-Notifications: christian.baumann@bd.so.ch 
 
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 10:05:09*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 10:15:13*
