@@ -1,8 +1,7 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: Tue Jul 15 08:25:44 UTC 2025*
+*Generiert am: Tue Jul 15 08:30:14 UTC 2025*
 *Repository: gretljobs*
-*Jenkins-Instanz: [Jenkins-URL]*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
 
@@ -609,4 +608,4 @@
 | 20 | erhebungsgebiet_mapped | erhebungsgebiet_mapped |
 
 ---
-*Diese Dokumentation wurde automatisch generiert am Tue Jul 15 08:25:51 UTC 2025*
+*Diese Dokumentation wurde automatisch generiert am Tue Jul 15 08:30:21 UTC 2025*
