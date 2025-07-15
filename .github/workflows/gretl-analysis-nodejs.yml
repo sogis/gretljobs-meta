@@ -53,7 +53,7 @@ jobs:
       run: |
         cd gretljobs-meta
         npm test
-      continue-on-error: true
+      continue-on-error: false
 
     - name: Validate generated documentation
       run: |

@@ -7,15 +7,20 @@
     "start": "node src/analyzer.js",
     "dev": "nodemon src/analyzer.js",
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "analyze": "node src/analyzer.js",
-    "watch": "nodemon --watch ../gretljobs src/analyzer.js"
+    "watch": "nodemon --watch ../gretljobs src/analyzer.js",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix"
   },
   "dependencies": {
     "glob": "^10.3.10"
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "eslint": "^8.55.0"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -25,8 +30,18 @@
     "jenkins",
     "documentation",
     "cron",
-    "jobs"
+    "jobs",
+    "analysis",
+    "markdown"
   ],
-  "author": "Your Name",
-  "license": "MIT"
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/gretljobs-meta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/gretljobs-meta/issues"
+  },
+  "homepage": "https://github.com/your-org/gretljobs-meta#readme"
 }

@@ -61,6 +61,7 @@ class GretlJobsAnalyzer {
     const parts = cronExpression.split(' ');
     if (parts.length < 5) return cronExpression;
 
+    // eslint-disable-next-line no-unused-vars
     const [minute, hour, day, month, dow] = parts;
 
     // Handle Jenkins H syntax
@@ -244,7 +245,7 @@ class GretlJobsAnalyzer {
     });
 
     // Generate detailed job analysis
-    markdown += `\n## Tabellenzugriffe pro Job\n\n`;
+    markdown += '\n## Tabellenzugriffe pro Job\n\n';
 
     jobs.forEach(job => {
       markdown += `### ${job.name}\n`;
@@ -258,20 +259,20 @@ class GretlJobsAnalyzer {
       }
 
       if (job.sourceTables.length > 0) {
-        markdown += `- **Quell-Tabellen**: \n`;
+        markdown += '- **Quell-Tabellen**: \n';
         job.sourceTables.forEach(table => {
           markdown += `  - \`${table}\` (READ)\n`;
         });
       }
 
       if (job.targetTables.length > 0) {
-        markdown += `- **Ziel-Tabellen**: \n`;
+        markdown += '- **Ziel-Tabellen**: \n';
         job.targetTables.forEach(table => {
           markdown += `  - \`${table}\` (INSERT/UPDATE)\n`;
         });
       }
 
-      markdown += `\n`;
+      markdown += '\n';
     });
 
     // Generate table frequency analysis
@@ -287,9 +288,9 @@ class GretlJobsAnalyzer {
       .slice(0, 10);
 
     if (sortedTables.length > 0) {
-      markdown += `## Häufig verwendete Tabellen\n\n`;
-      markdown += `| Anzahl | Tabellenname | Schema |\n`;
-      markdown += `|--------|-------------|--------|\n`;
+      markdown += '## Häufig verwendete Tabellen\n\n';
+      markdown += '| Anzahl | Tabellenname | Schema |\n';
+      markdown += '|--------|-------------|--------|\n';
 
       sortedTables.forEach(([table, count]) => {
         const parts = table.split('.');
@@ -300,8 +301,8 @@ class GretlJobsAnalyzer {
     }
 
     // Footer
-    markdown += `---\n`;
-    markdown += `Fehler-Notifications: christian.baumann@bd.so.ch \n\n`;
+    markdown += '---\n';
+    markdown += 'Fehler-Notifications: christian.baumann@bd.so.ch \n\n';
     markdown += `*Diese Dokumentation wurde automatisch generiert am ${timestamp}*\n`;
 
     return markdown;
@@ -336,7 +337,7 @@ class GretlJobsAnalyzer {
 
       console.log(`✅ Documentation created: ${this.outputFile}`);
       console.log(`📊 Analyzed ${jobs.length} jobs`);
-      console.log(`📄 Script completed successfully!`);
+      console.log('📄 Script completed successfully!');
 
     } catch (error) {
       this.error(`Analysis failed: ${error.message}`);
