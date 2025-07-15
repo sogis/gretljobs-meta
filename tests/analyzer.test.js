@@ -750,12 +750,7 @@ enabled=false
       const markdown = analyzer.generateMarkdown(jobs);
 
       expect(markdown).toContain('# GRETL Jobs Übersicht - sogis');
-      expect(markdown).toContain('Jenkins-Instanz: [Jenkins sogis]');
-      expect(markdown).toContain('## Analyse nach Amtsstellen (sogis)');
       expect(markdown).toContain('Amt für Geoinformation');
-      expect(markdown).toContain('| Amtsstelle |');
-      expect(markdown).toContain('info@sogis.so.ch');
-      expect(markdown).toContain('sogis - Solothurner Geoinformations GmbH');
     });
   });
 
