@@ -374,7 +374,6 @@ class GretlJobsAnalyzer {
 
     markdown += `---\n`;
     markdown += `*Diese Dokumentation wurde automatisch generiert am ${timestamp}*\n`;
-    markdown += `*Entwickelt für sogis - Solothurner Geoinformations GmbH*`;
 
     return markdown;
   }
