@@ -1,8 +1,7 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: 2025-07-15 09:59:43*
+*Generiert am: 2025-07-15 10:05:09*
 *Repository: gretljobs*
-*Jenkins-Instanz: [Jenkins-URL]*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
 
@@ -637,12 +636,12 @@
   - `rrb_num_join` (READ)
   - `ada_archaeologie_v1.geo_flaeche` (READ)
   - `fst_num_join` (READ)
+  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
+  - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ)
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (READ)
   - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (READ)
   - `ada_archaeologie_pub_v1.restricted_flaechenfundstelle` (READ)
   - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ)
-  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
-  - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ)
   - `rep_view_rrb` (READ)
   - `public.rep_view_fundstellen` (READ)
   - `ada_archaeologie_pub_v1.public_qualitaet_lokalisierung_typ` (READ)
@@ -1153,13 +1152,7 @@
 | 3 | liegenschaften_projgrundstueck | agi_dm01avso24 |
 | 3 | grundbuchkreise_grundbuchkreis | agi_av_gb_administrative_einteilungen_v2 |
 | 3 | hoheitsgrenzen_kantonsgrenze | agi_hoheitsgrenzen_pub |
-
-## Monitoring & Alerts
-
-### Jenkins-Integration
-- Build-Status: [Jenkins Dashboard Link]
-- Log-Dateien: `./logs/`
-- Fehler-Notifications: [Team-Email]
-
 ---
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 09:59:43*
+Fehler-Notifications: christian.baumann@bd.so.ch 
+
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 10:05:09*
