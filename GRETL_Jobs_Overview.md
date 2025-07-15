@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: 2025-07-15 10:15:13*
+*Generiert am: 2025-07-15 11:11:02*
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -107,6 +107,9 @@
   - `afu_grundlagendaten_ews_v1.vorkommnis` (READ)
   - `vorkommnis` (READ)
   - `afu_grundlagendaten_ews_v1.bohrung` (READ)
+  - `afu_grundlagendaten_ews_v1.bohrprofil` (READ)
+  - `afu_grundlagendaten_ews_v1.standort` (READ)
+  - `bohrung_vorkommnisse` (READ)
   - `afu_altlasten_pub_v2.belasteter_standort` (READ)
   - `afu_ewsabfrage_2d_v1.abklaerung` (READ)
 
@@ -116,9 +119,18 @@
 - **Quell-Tabellen**: 
   - `agi_dm01avso24.t_ili2db_import` (READ)
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsname` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_lokalisationsnamepos` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_lokalisation` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_gebnachfuehrung` (READ)
+  - `agi_dm01avso24.t_ili2db_basket` (READ)
+  - `aimport` (READ)
   - `agi_dm01avso24.gebaeudeadressen_strassenstueck` (READ)
   - `agi_dm01avso24.rohrleitungen_linienelement` (READ)
+  - `agi_dm01avso24.rohrleitungen_leitungsobjekt` (READ)
+  - `agi_dm01avso24.rohrleitungen_rlnachfuehrung` (READ)
   - `agi_dm01avso24.nomenklatur_ortsname` (READ)
+  - `agi_dm01avso24.nomenklatur_ortsnamepos` (READ)
+  - `agi_dm01avso24.nomenklatur_nknachfuehrung` (READ)
   - `agi_dm01avso24.einzelobjekte_objektname` (READ)
   - `agi_dm01avso24.einzelobjekte_flaechenelement` (READ)
   - `einzelobjekt_flaeche_base` (READ)
@@ -134,24 +146,56 @@
   - `boden_obj` (READ)
   - `boden_proj_obj` (READ)
   - `obj_union_all` (READ)
+  - `agi_dm01avso24.einzelobjekte_objektnamepos` (READ)
+  - `agi_dm01avso24.einzelobjekte_einzelobjekt` (READ)
+  - `agi_dm01avso24.einzelobjekte_eonachfuehrung` (READ)
+  - `einzelobjekt_position` (READ)
+  - `agi_dm01avso24.bodenbedeckung_objektname` (READ)
+  - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
+  - `agi_dm01avso24.bodenbedeckung_bbnachfuehrung` (READ)
+  - `agi_dm01avso24.bodenbedeckung_projobjektname` (READ)
+  - `agi_dm01avso24.bodenbedeckung_projboflaeche` (READ)
   - `agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunktpos` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunktsymbol` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemnachfuehrung` (READ)
   - `agi_dm01avso24.liegenschaften_projgrundstueckpos` (READ)
-  - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
   - `agi_dm01avso24.liegenschaften_projgrundstueck` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
   - `agi_av_gb_administrative_einteilungen_v2.grundbuchkreise_grundbuchkreis` (READ)
   - `agi_dm01avso24.nummerierngsbrche_nbgeometrie` (READ)
   - `grundstueck` (READ)
+  - `agi_dm01avso24.liegenschaften_projliegenschaft` (READ)
+  - `pos` (READ)
+  - `agi_dm01avso24.liegenschaften_lsnachfuehrung` (READ)
+  - `agi_dm01avso24.liegenschaften_projselbstrecht` (READ)
+  - `agi_av_gb_administrative_einteilungen_v2.grundbuchkreise_grundbuchamt` (READ)
+  - `agi_dm01avso24.nummerierngsbrche_nummerierungsbereich` (READ)
+  - `gemeinde` (READ)
+  - `grundbuchkreis` (READ)
   - `agi_dm01avso24.liegenschaften_grundstueckpos` (READ)
   - `agi_dm01avso24.liegenschaften_grundstueck` (READ)
+  - `agi_dm01avso24.liegenschaften_liegenschaft` (READ)
+  - `agi_dm01avso24.liegenschaften_selbstrecht` (READ)
   - `agi_dm01avso24.liegenschaften_grenzpunkt` (READ)
+  - `agi_dm01avso24.liegenschaften_grenzpunktpos` (READ)
+  - `agi_dm01avso24.liegenschaften_grenzpunktsymbol` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_projgemeindegrenze` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeindegrenze` (READ)
   - `agi_dm01avso24.nomenklatur_gelaendename` (READ)
-  - `agi_dm01avso24.gebaeudeadressen_lokalisation` (READ)
+  - `agi_dm01avso24.nomenklatur_gelaendenamepos` (READ)
   - `agi_dm01avso24.gebaeudeadressen_gebaeudeeingang` (READ)
   - `strassenname` (READ)
   - `gebaeudeeingang_strassenname` (READ)
   - `gebaeudeeingang_strassenname_plz_ortschaft` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_hausnummerpos` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_gebaeudename` (READ)
+  - `gebaeudeeingang` (READ)
+  - `agi_plz_ortschaften.plzortschaft_plz6` (READ)
+  - `agi_plz_ortschaften.plzortschaft_ortschaft` (READ)
+  - `agi_plz_ortschaften.plzortschaft_ortschaftsname` (READ)
   - `agi_dm01avso24.nomenklatur_flurnamepos` (READ)
-  - `pos` (READ)
+  - `agi_dm01avso24.nomenklatur_flurname` (READ)
   - `agi_dm01avso24.fixpunktekatgrie1_lfp1` (READ)
   - `agi_dm01avso24.fixpunktekatgrie2_lfp2` (READ)
   - `agi_dm01avso24.fixpunktekatgrie3_lfp3` (READ)
@@ -165,12 +209,27 @@
   - `hfp2` (READ)
   - `hfp3` (READ)
   - `fp_union_all` (READ)
-  - `agi_dm01avso24.bodenbedeckung_projboflaeche` (READ)
-  - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie1_lfp1pos` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie1_lfp1nachfuehrung` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie2_lfp2pos` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie2_lfp2nachfuehrung` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie3_lfp3pos` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie3_lfp3nachfuehrung` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie1_hfp1pos` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie1_hfp1nachfuehrung` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie2_hfp2pos` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie2_hfp2nachfuehrung` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie3_hfp3pos` (READ)
+  - `agi_dm01avso24.fixpunktekatgrie3_hfp3nachfuehrung` (READ)
+  - `agi_dm01avso24.einzelobjekte_objektnummer` (READ)
+  - `agi_dm01avso24.bodenbedeckung_projgebaeudenummer` (READ)
+  - `agi_dm01avso24.bodenbedeckung_gebaeudenummer` (READ)
   - `t_ili2db_basket` (READ)
   - `t_ili2db_dataset` (READ)
   - `mopublic_gemeindegrenze` (READ)
   - `bfs_nr` (READ)
+  - `dataset` (READ)
+  - `topic` (READ)
 - **Ziel-Tabellen**: 
   - `mopublic_bodenbedeckung` (INSERT/UPDATE)
   - `mopublic_bodenbedeckung_proj` (INSERT/UPDATE)
@@ -206,6 +265,9 @@
   - `agi_av_kaso_abgleich_v1.uebersicht_des_vergleichs_staging` (READ)
   - `agi_dm01avso24.gemeindegrenzen_gemeindegrenze` (READ)
   - `gemeinde` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
+  - `diff_av` (READ)
+  - `diff_kaso` (READ)
   - `sogis_av_kaso_abgleich` (READ)
   - `agi_av_gb_administrative_einteilungen_v2.grundbuchkreise_grundbuchkreis` (READ)
   - `agi_dm01avso24.liegenschaften_projliegenschaft` (READ)
@@ -213,6 +275,16 @@
   - `agi_dm01avso24.liegenschaften_grundstueck` (READ)
   - `agi_dm01avso24.t_ili2db_import` (READ)
   - `av_grundstuecke` (READ)
+  - `agi_dm01avso24.liegenschaften_projgrundstueck` (READ)
+  - `agi_dm01avso24.liegenschaften_lsnachfuehrung` (READ)
+  - `agi_dm01avso24.t_ili2db_basket` (READ)
+  - `agi_dm01avso24.liegenschaften_grundstuecksart` (READ)
+  - `agi_dm01avso24.liegenschaften_liegenschaft` (READ)
+  - `av_projektierte_grundstuecke` (READ)
+  - `agi_dm01avso24.liegenschaften_selbstrecht` (READ)
+  - `av_projektiertes_selbstrecht` (READ)
+  - `grundbuchkreise` (READ)
+  - `kaso` (READ)
 - **Ziel-Tabellen**: 
   - `agi_av_kaso_abgleich_v1.uebersicht_des_vergleichs_staging` (INSERT/UPDATE)
   - `agi_av_kaso_abgleich_v1.differenzen_staging` (INSERT/UPDATE)
@@ -248,6 +320,7 @@
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 - **Quell-Tabellen**: 
   - `afu_erdwaermesonden_v2.erdwaermesonden_anlage` (READ)
+  - `afu_erdwaermesonden_v2.erdwaermesonden_bohrung` (READ)
 
 ### afu_grundlagendaten_ews_import
 - **Pfad**: `../gretljobs/afu_grundlagendaten_ews_import/`
@@ -261,12 +334,18 @@
 - **Quell-Tabellen**: 
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_sammelereignis` (READ)
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_w` (READ)
-  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_s` (READ)
-  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_r` (READ)
-  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_a` (READ)
-  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_l` (READ)
-  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_ea` (READ)
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_basisinformation` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_detailinformation_w_um` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_s` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_detailinformation_s` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_r` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_detailinformation_r` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_a` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_detailinformation_a` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_l` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_detailinformation_l` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_ea` (READ)
+  - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_detailinformation_ea_e` (READ)
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_schaden` (READ)
 
 ### agem_finanz_und_lastenausgleich
@@ -274,6 +353,7 @@
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 - **Quell-Tabellen**: 
   - `agem_fila.strassen_strassenachse` (READ)
+  - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ)
 
 ### agi_adressen_pub
 - **Pfad**: `../gretljobs/agi_adressen_pub/`
@@ -283,8 +363,13 @@
   - `agi_dm01avso24.gebaeudeadressen_hausnummerpos` (READ)
   - `hausnummern` (READ)
   - `strasse_hausnummer` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_gebaeudeeingang` (READ)
+  - `strassen` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_lokalisationsname` (READ)
   - `agi_dm01avso24.gebaeudeadressen_benanntesgebiet` (READ)
   - `agi_dm01avso24.t_ili2db_import` (READ)
+  - `agi_dm01avso24.gebaeudeadressen_lokalisation` (READ)
+  - `agi_dm01avso24.t_ili2db_basket` (READ)
 
 ### agi_av_export_ai
 - **Pfad**: `../gretljobs/agi_av_export_ai/`
@@ -299,12 +384,23 @@
   - `agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging` (READ)
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ)
   - `gemeinde` (READ)
+  - `diff_av` (READ)
+  - `diff_gb` (READ)
   - `capi_p.V_AIO_GrundstueckeMitFlaeche` (READ)
   - `agi_av_gb_administrative_einteilungen_v2.grundbuchkreise_grundbuchkreis` (READ)
   - `agi_dm01avso24.liegenschaften_projgrundstueck` (READ)
   - `agi_dm01avso24.liegenschaften_grundstueck` (READ)
   - `agi_dm01avso24.t_ili2db_import` (READ)
   - `av_grundstuecke` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
+  - `agi_dm01avso24.liegenschaften_lsnachfuehrung` (READ)
+  - `agi_dm01avso24.t_ili2db_basket` (READ)
+  - `agi_dm01avso24.liegenschaften_grundstuecksart` (READ)
+  - `agi_dm01avso24.liegenschaften_liegenschaft` (READ)
+  - `projektierte_liegenschaften_selbstrecht` (READ)
+  - `grundbuchkreise` (READ)
+  - `agi_dm01avso24.liegenschaften_selbstrecht` (READ)
+  - `gb_grundstuecke` (READ)
 - **Ziel-Tabellen**: 
   - `agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging` (INSERT/UPDATE)
   - `agi_av_gb_abgleich_import.differenzen_staging` (INSERT/UPDATE)
@@ -354,10 +450,19 @@
   - `controlling` (READ)
   - `agi_dm01avso24.liegenschaften_lsnachfuehrung` (READ)
   - `subquery` (READ)
+  - `agi_dm01avso24.liegenschaften_projliegenschaft` (READ)
+  - `agi_dm01avso24.liegenschaften_projselbstrecht` (READ)
+  - `agi_dm01avso24.liegenschaften_projbergwerk` (READ)
+  - `agi_av_gb_administrative_einteilungen_v2.nachfuehrngskrise_standort` (READ)
+  - `agi_gb2av.mutationsnummer` (READ)
+  - `geometer` (READ)
+  - `geometrie` (READ)
   - `agi_gb2av_controlling.controlling_gb2av_vollzugsmeldung_delta` (READ)
   - `agi_gb2av_controlling.controlling_av2gb_mutationen` (READ)
   - `agi_gb2av.mutationstabelle_avmutation` (READ)
   - `meldungen` (READ)
+  - `mutationen` (READ)
+  - `mit` (READ)
 - **Ziel-Tabellen**: 
   - `agi_gb2av_controlling.controlling_gb2av_vollzugsmeldung_delta` (INSERT/UPDATE)
   - `SET` (INSERT/UPDATE)
@@ -380,7 +485,10 @@
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze_generalisiert` (READ)
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze` (READ)
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_kantonsname_pos` (READ)
+  - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_kanton` (READ)
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_gemeindename_pos` (READ)
+  - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_gemeinde` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
   - `polygons` (READ)
   - `rings` (READ)
   - `simplerings` (READ)
@@ -394,6 +502,7 @@
   - `zugehoerigkeit` (READ)
   - `gaps_multipolygon` (READ)
   - `corrected_polygons` (READ)
+  - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirk` (READ)
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirksname_pos` (READ)
 - **Ziel-Tabellen**: 
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (INSERT/UPDATE)
@@ -410,6 +519,18 @@
   - `simi.simiproduct_data_product` (READ)
   - `simi.simiproduct_layer_group` (READ)
   - `parents` (READ)
+  - `simi.simiproduct_data_product_pub_scope` (READ)
+  - `simi.simidata_data_set_view` (READ)
+  - `simi.simiproduct_single_actor` (READ)
+  - `simi.simiiam_permission` (READ)
+  - `simi.simiiam_role` (READ)
+  - `simi.simitheme_theme_publication` (READ)
+  - `simi.simitheme_theme` (READ)
+  - `simi.simitheme_org_unit` (READ)
+  - `simi.simidata_table_view` (READ)
+  - `simi.simidata_postgres_table` (READ)
+  - `simi.simiproduct_properties_in_list` (READ)
+  - `children` (READ)
 
 ### alw_tiergesundheit_pflanzengesundheit_massnahmen_pub
 - **Pfad**: `../gretljobs/alw_tiergesundheit_pflanzengesundheit_massnahmen_pub/`
@@ -430,6 +551,11 @@
   - `relevante_grundstuecke_bauzonenstatistik` (READ)
   - `arp_arbeitszonenbewirtschaftung_pub_v1.region_region` (READ)
   - `relevante_grundstueck_reglement` (READ)
+  - `agi_mopublic_pub.mopublic_grundstueck` (READ)
+  - `baureglement` (READ)
+  - `zonenreglement` (READ)
+  - `gestaltungsplaene` (READ)
+  - `region` (READ)
   - `arp_arbeitszonenbewirtschaftung_v1.regionen_region` (READ)
   - `arp_arbeitszonenbewirtschaftung_staging_v1.inventar_flaeche_v` (READ)
 - **Ziel-Tabellen**: 
@@ -462,6 +588,7 @@
 - **Quell-Tabellen**: 
   - `arp_mjpnl_gelan_v1.mehrjahresprgramm_vereinbarungensflaechen` (READ)
   - `arp_mjpnl_v2.mjpnl_vereinbarung` (READ)
+  - `arp_mjpnl_v2.mjpnl_beurteilung_hostet` (READ)
 - **Ziel-Tabellen**: 
   - `arp_mjpnl_gelan_v1.mehrjahresprgramm_vereinbarungensflaechen` (INSERT/UPDATE)
 
@@ -482,6 +609,9 @@
   - `arp_mjpnl_v2.mjpnl_vereinbarung` (READ)
   - `beurteilungs_metainfo_wiesen` (READ)
   - `beurteilungen_datum` (READ)
+  - `monate` (READ)
+  - `arp_mjpnl_v2.betrbsdttrktrdten_gelan_person` (READ)
+  - `laufmeter` (READ)
 
 ### arp_mjpnl_v2_gelan_update
 - **Pfad**: `../gretljobs/arp_mjpnl_v2_gelan_update/`
@@ -495,6 +625,7 @@
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 - **Quell-Tabellen**: 
   - `alle_beurteilungen` (READ)
+  - `relevante_vereinbarungen` (READ)
   - `beurteilungs_metainfo_wiesen` (READ)
   - `beurteilungs_metainfo_baeume` (READ)
   - `beurteilungs_metainfo_hecke` (READ)
@@ -524,6 +655,9 @@
   - `beurteilungs_metainfo_weide` (READ)
   - `beurteilungs_metainfo_wbl_wiese` (READ)
   - `beurteilungs_metainfo_wbl_weide` (READ)
+  - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_gemeinde` (READ)
+  - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirk` (READ)
+  - `leistungen_per_vereinbarung` (READ)
 - **Ziel-Tabellen**: 
   - `abrechnung_per_leistung` (INSERT/UPDATE)
   - `der` (INSERT/UPDATE)
@@ -540,12 +674,18 @@
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ)
   - `agi_dm01avso24.nomenklatur_flurname` (READ)
   - `grundstueck` (READ)
+  - `arp_nutzungsvereinbarung.nutzungsvrnbrngen_projekte` (READ)
+  - `arp_mehrjahresprogramm.mehrjahresprgramm_person` (READ)
+  - `agi_dm01avso24.liegenschaften_grundstueck` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
 
 ### awjf_forstreviere_pub
 - **Pfad**: `../gretljobs/awjf_forstreviere_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 - **Quell-Tabellen**: 
   - `awjf_forstreviere.forstreviere_forstreviergeometrie` (READ)
+  - `awjf_forstreviere.forstreviere_forstrevier` (READ)
+  - `awjf_forstreviere.forstreviere_forstkreis` (READ)
 
 ### awjf_programm_biodiversitaet_wald_pub
 - **Pfad**: `../gretljobs/awjf_programm_biodiversitaet_wald_pub/`
@@ -553,9 +693,20 @@
 - **Quell-Tabellen**: 
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_biotop_zielgruppe` (READ)
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_waldbiodiversitaetsflaeche` (READ)
+  - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_zielgruppe` (READ)
+  - `zielgruppe` (READ)
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_biotopbaum` (READ)
   - `string_agg` (READ)
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_foto` (READ)
+  - `awjf_forstreviere.forstreviere_forstreviergeometrie` (READ)
+  - `awjf_forstreviere.forstreviere_forstrevier` (READ)
+  - `awjf_forstreviere.forstreviere_forstkreis` (READ)
+  - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze` (READ)
+  - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ)
+  - `agi_swissboundaries3d_pub.swissboundaries3d_hoheitsgebiet` (READ)
+  - `agi_dm01avso24.nomenklatur_flurname` (READ)
+  - `awjf.wap_bst` (READ)
+  - `awjf_waldstandorte_v1.waldstandort` (READ)
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_baumartenvielfalt` (READ)
 
 ### awjf_schutzwald_pub
@@ -584,6 +735,7 @@
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 - **Quell-Tabellen**: 
   - `awjf_waldpflege_erfassung.waldpflege_waldpflege` (READ)
+  - `awjf_gesuchsteller.gesuchsteller_gesuchsteller` (READ)
 
 ### awjf_waldportal
 - **Pfad**: `../gretljobs/awjf_waldportal/`
@@ -619,12 +771,41 @@
   - `alw_strukturverbesserungen.raeumlicheelemnte_wegebau_linie` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_wege_bruecke_lehnenviadukt` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_wiederherstellung_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_dokument` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_dokument` (READ)
+  - `alw_strukturverbesserungen.astatus` (READ)
+  - `alw_strukturverbesserungen.bewaesserung_flaechen` (READ)
+  - `alw_strukturverbesserungen.bautyp` (READ)
+  - `alw_strukturverbesserungen.projekt` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_werkeigentum` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_element` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft` (READ)
+  - `alw_strukturverbesserungen.genossenschaften` (READ)
+  - `alw_strukturverbesserungen.bewaesserung_linien` (READ)
+  - `alw_strukturverbesserungen.bewaesserung_punkte` (READ)
+  - `alw_strukturverbesserungen.entw_bodenstruktur_flaechen` (READ)
+  - `alw_strukturverbesserungen.entw_bodenstruktur_linien` (READ)
+  - `alw_strukturverbesserungen.elektrizitaet_linien` (READ)
+  - `alw_strukturverbesserungen.elektrizitaet_punkte` (READ)
+  - `alw_strukturverbesserungen.wasserversorgung_punkte` (READ)
+  - `alw_strukturverbesserungen.oekologische_flaechen` (READ)
+  - `alw_strukturverbesserungen.oekologie_linien` (READ)
+  - `alw_strukturverbesserungen.oekologie_punkte` (READ)
+  - `alw_strukturverbesserungen.oekologie_trockenmauern` (READ)
+  - `alw_strukturverbesserungen.wege` (READ)
+  - `alw_strukturverbesserungen.funktionstyp` (READ)
+  - `alw_strukturverbesserungen.raeumlichelmnte_wege_bruecke_lehnenviadukt_material` (READ)
+  - `alw_strukturverbesserungen.wiederherstellung_punkte` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_dokument` (READ)
   - `gen` (READ)
+  - `projekte` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_gemeinde_flurreglement_dokument` (READ)
   - `alw_strukturverbesserungen.stand_gutrrglrung_stand_gueterregulierung` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_gemeinde_flurreglement` (READ)
+  - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ)
+  - `alw_strukturverbesserungen.stand` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet` (READ)
+  - `alw_strukturverbesserungen.beizugsgebiete` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet_projekt` (READ)
 
 ### ada_archaeologie_pub
 - **Pfad**: `../gretljobs/ada_archaeologie_pub/`
@@ -633,14 +814,20 @@
   - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ)
   - `orphan_rrb` (READ)
   - `ada_archaeologie_v1.fachapplikation_fundstelle` (READ)
-  - `rrb_num_join` (READ)
   - `ada_archaeologie_v1.geo_flaeche` (READ)
+  - `rrb_with_oerebgeom` (READ)
+  - `rrb_num_join` (READ)
+  - `AS` (READ)
+  - `j` (READ)
   - `fst_num_join` (READ)
   - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
   - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ)
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (READ)
+  - `arp_bauzonengrenzen_pub.bauzonengrenzen_bauzonengrenze` (READ)
+  - `punkt_in_siedlung` (READ)
   - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (READ)
   - `ada_archaeologie_pub_v1.restricted_flaechenfundstelle` (READ)
+  - `flaeche_beruert_siedlung` (READ)
   - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ)
   - `rep_view_rrb` (READ)
   - `public.rep_view_fundstellen` (READ)
@@ -661,6 +848,7 @@
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (READ)
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
   - `new_av_gewaesser` (READ)
+  - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ)
 - **Ziel-Tabellen**: 
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (INSERT/UPDATE)
 
@@ -681,9 +869,24 @@
   - `sammelbrunnstube` (READ)
   - `kontrollschacht` (READ)
   - `quellwasserbehaelter` (READ)
+  - `afu_wasserversorg_obj_v1.filterbrunnen__dokument` (READ)
+  - `afu_wasserversorg_obj_v1.kontrollschacht__dokument` (READ)
+  - `afu_wasserversorg_obj_v1.pumpwerk__dokument` (READ)
+  - `afu_wasserversorg_obj_v1.quelle_gefasst__dokument` (READ)
+  - `afu_wasserversorg_obj_v1.quellwasserbehaelter__dokument` (READ)
+  - `afu_wasserversorg_obj_v1.reservoir__dokument` (READ)
+  - `afu_wasserversorg_obj_v1.sammelbrunnstube__dokument` (READ)
+  - `dokumente_pumpwerk` (READ)
+  - `dokumente_reservoir` (READ)
+  - `dokumente_sammelbrunnstube` (READ)
+  - `dokumente_kontrollschacht` (READ)
+  - `dokumente_quellwasserbehaelter` (READ)
   - `afu_wasserversorg_obj_v1.quelle_gefasst` (READ)
+  - `dokumente_quelle_gefasst` (READ)
   - `afu_grundwasserschutz_obj_v1.dokument` (READ)
   - `afu_grundwasserschutz_obj_v1.grundwasserwaermepumpe` (READ)
+  - `afu_grundwasserschutz_obj_v1.grundwasserwaermepumpe__dokument` (READ)
+  - `dokumente_grundwasserwaermepumpe` (READ)
   - `afu_grundwasserschutz_obj_v1.baggerschlitz` (READ)
   - `afu_grundwasserschutz_obj_v1.bohrung` (READ)
   - `afu_grundwasserschutz_obj_v1.einbaute` (READ)
@@ -694,11 +897,22 @@
   - `einbaute` (READ)
   - `versickerungsschacht` (READ)
   - `piezometer_gerammt` (READ)
+  - `afu_grundwasserschutz_obj_v1.baggerschlitz__dokument` (READ)
+  - `afu_grundwasserschutz_obj_v1.bohrung__dokument` (READ)
+  - `afu_grundwasserschutz_obj_v1.einbaute__dokument` (READ)
+  - `afu_grundwasserschutz_obj_v1.piezometer__dokument` (READ)
+  - `dokumente_baggerschlitz` (READ)
+  - `dokumente_bohrung` (READ)
+  - `dokumente_einbaute` (READ)
+  - `dokumente_piezometer` (READ)
   - `afu_grundwasserschutz_obj_v1.sodbrunnen` (READ)
   - `afu_wasserversorg_obj_v1.filterbrunnen` (READ)
   - `sodbrunnen` (READ)
   - `horizontalfilterbrunnen` (READ)
   - `vertikalfilterbrunnen` (READ)
+  - `afu_grundwasserschutz_obj_v1.sodbrunnen__dokument` (READ)
+  - `dokumente_sodbrunnen` (READ)
+  - `dokumente_filterbrunnen` (READ)
 - **Ziel-Tabellen**: 
   - `afu_wasserbewirtschaftung_pub_v2.wassrbwrtschftung_quelle` (INSERT/UPDATE)
 
@@ -712,6 +926,13 @@
   - `adressenZusammenfuehren` (READ)
   - `agi_mopublic_pub.mopublic_grundstueck` (READ)
   - `adressen` (READ)
+  - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ)
+  - `agi_mopublic_pub.mopublic_gemeindegrenze` (READ)
+  - `agi_mopublic_pub.mopublic_bodenbedeckung_proj` (READ)
+  - `agi_mopublic_pub.mopublic_einzelobjekt_flaeche` (READ)
+  - `agi_av_gb_admin_einteilung_pub.grundbuchkreise_grundbuchkreis` (READ)
+  - `agi_mopublic_pub.mopublic_objektname_pos` (READ)
+  - `geb_objektnamen` (READ)
 - **Ziel-Tabellen**: 
   - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (INSERT/UPDATE)
 
@@ -739,6 +960,8 @@
   - `agi_swissboundaries3d_pub.swissboundaries3d_bezirk` (READ)
   - `agi_swissboundaries3d_v2.multisurface3d` (READ)
   - `agi_swissboundaries3d_v2.tlm_grenzen_tlm_landesgebiet` (READ)
+  - `agi_swissboundaries3d_v2.surface3d` (READ)
+  - `mutltisurface_surface` (READ)
   - `agi_swissboundaries3d_v2.tlm_grenzen_tlm_kantonsgebiet` (READ)
   - `agi_swissboundaries3d_v2.tlm_grenzen_tlm_hoheitsgebiet` (READ)
   - `agi_swissboundaries3d_v2.tlm_grenzen_tlm_bezirksgebiet` (READ)
@@ -760,6 +983,11 @@
   - `awjf_rodung_rodungsersatz_v1.dokument` (READ)
   - `rodung` (READ)
   - `rodungsbewilligung` (READ)
+  - `awjf_rodung_rodungsersatz_v1.rodung_dokument` (READ)
+  - `ausgleichsabgabe` (READ)
+  - `dokumente` (READ)
+  - `groesste_flaeche` (READ)
+  - `fristen` (READ)
   - `objekt` (READ)
   - `massnahmenltyp` (READ)
   - `ersatzverzicht` (READ)
@@ -780,6 +1008,8 @@
 - **Schedule**: `H H(1-3) 2 * *` (2. ~1-3h)
 - **Quell-Tabellen**: 
   - `agi_swisstopo_gebaeudeadressen_v1.officlndxfddrsses_address` (READ)
+  - `agi_swisstopo_gebaeudeadressen_v1.officlndxfddrsses_stn` (READ)
+  - `agi_swisstopo_gebaeudeadressen_v1.officlndxfddrsses_zip` (READ)
 
 ### arp_auswertung_nutzungsplanung_pub
 - **Pfad**: `../gretljobs/arp_auswertung_nutzungsplanung_pub/`
@@ -792,17 +1022,24 @@
   - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_gines` (READ)
   - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_pro_gemeinde` (READ)
   - `nutzzon_ausw` (READ)
+  - `bebau_mit_zonen_ohne_lsgrenzen` (READ)
+  - `bebau_mit_zonen_und_lsgrenzen` (READ)
+  - `lie_nach_bebauung` (READ)
+  - `gines` (READ)
+  - `gem_zz` (READ)
   - `bfsnr` (READ)
   - `gr_tmp` (READ)
   - `gr_tmp2` (READ)
   - `gr` (READ)
+  - `nutzzon` (READ)
+  - `unbeb_fl` (READ)
+  - `bebaut_fl` (READ)
   - `gg` (READ)
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ)
   - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ)
   - `agi_mopublic_pub.mopublic_bodenbedeckung_proj` (READ)
   - `agi_mopublic_pub.mopublic_einzelobjekt_flaeche` (READ)
   - `agi_mopublic_pub.mopublic_grundstueck` (READ)
-  - `nutzzon` (READ)
   - `nutzzon_dissolved_tmp` (READ)
   - `nutzzon_rings_tmp` (READ)
   - `nutzzon_rings_tmp2` (READ)
@@ -818,6 +1055,8 @@
   - `bebaut_final` (READ)
   - `unbebaut_dissolved` (READ)
   - `gesamt_final` (READ)
+  - `gem` (READ)
+  - `original` (READ)
 
 ### afu_onlinerisk_transfer
 - **Pfad**: `../gretljobs/afu_onlinerisk_transfer/`
@@ -827,11 +1066,15 @@
   - `gebaeude` (READ)
   - `bereich` (READ)
   - `afu_online_risk.untersuchungseinheit` (READ)
+  - `afu_online_risk.konstruktion` (READ)
+  - `afu_online_risk.betrieb` (READ)
+  - `afu_online_risk.verordnung` (READ)
+  - `afu_online_risk.verordnungsrelevanz` (READ)
+  - `afu_online_risk.stammdaten` (READ)
   - `afu_online_risk.bereichstoff` (READ)
   - `afu_online_risk.stoff` (READ)
-  - `afu_online_risk.gebaeude` (READ)
-  - `afu_online_risk.betrieb` (READ)
   - `afu_online_risk.bereich` (READ)
+  - `afu_online_risk.gebaeude` (READ)
 - **Ziel-Tabellen**: 
   - `with` (INSERT/UPDATE)
 
@@ -840,11 +1083,14 @@
 - **Schedule**: `H H(2-4) * * *` (~2-4h)
 - **Quell-Tabellen**: 
   - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_standorte` (READ)
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_betrieb` (READ)
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_summe_tiere_flaechen` (READ)
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_gelan_person` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_kultur_punktelemente` (READ)
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_bewirtschaftungseinheit` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_kultur_flaechen` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.t_ili2db_dataset` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.bff_qualitaet_bff_qualitaet` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_bewirtschaftungseinheit` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.t_ili2db_basket` (READ)
 
 ### avt_bodenfaktor_pub
@@ -852,6 +1098,9 @@
 - **Schedule**: `H H(2-5) * * 0` (So ~2-5h)
 - **Quell-Tabellen**: 
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
+  - `bodenfaktorg_lookup` (READ)
+  - `avt_bodenfaktor.t_ili2db_dataset` (READ)
+  - `avt_bodenfaktor.t_ili2db_basket` (READ)
   - `avt_bodenfaktor.bodenfaktor` (READ)
 - **Ziel-Tabellen**: 
   - `avt_bodenfaktor.bodenfaktor` (INSERT/UPDATE)
@@ -868,6 +1117,9 @@
   - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ)
   - `meldungen_grundstuecke` (READ)
   - `gemeinden_grundstueck` (READ)
+  - `grundstuecke` (READ)
+  - `agi_dm01avso24.gemeindegrenzen_gemeindegrenze` (READ)
+  - `gemeinden` (READ)
   - `meldungen` (READ)
   - `agi_av_meldewesen_import_v1.meldungen_meldung` (READ)
 - **Ziel-Tabellen**: 
@@ -879,6 +1131,8 @@
 - **Quell-Tabellen**: 
   - `agi_gwr_v1.gwr_wohnung` (READ)
   - `agi_gwr_v1.gwr_gebaeude` (READ)
+  - `agi_gwr_v1.gwr_codes` (READ)
+  - `wohnungen` (READ)
   - `dwelling` (READ)
   - `codes` (READ)
   - `building` (READ)
@@ -894,6 +1148,8 @@
   - `dsbjd_ebauso_rahmenmodell_stage_v1.fachthemen_fachthema_linie` (READ)
   - `dsbjd_ebauso_rahmenmodell_stage_v1.fachthemen_fachthema_punkt` (READ)
   - `live.oerbkrmfr_v2_0transferstruktur_eigentumsbeschraenkung` (READ)
+  - `live.oerbkrmfr_v2_0transferstruktur_legendeeintrag` (READ)
+  - `live.oerbkrmfr_v2_0transferstruktur_geometrie` (READ)
   - `arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung` (READ)
   - `arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_flaeche` (READ)
   - `arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_linie` (READ)
@@ -904,6 +1160,7 @@
   - `afu_naturgefahren_pub_v2.synoptisches_gefahrengebiet` (READ)
   - `dsbjd_ebauso_rahmenmodell_pub_v1.lokalisation_grundstueck` (READ)
   - `agi_mopublic_pub.mopublic_grundstueck` (READ)
+  - `agi_av_gb_admin_einteilung_pub.grundbuchkreise_grundbuchkreis` (READ)
   - `dsbjd_ebauso_rahmenmodell_pub_v1.lokalisation_gebaeudeeingang` (READ)
   - `agi_mopublic_pub.mopublic_gebaeudeadresse` (READ)
   - `alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche` (READ)
@@ -933,7 +1190,14 @@
   - `abwasser_code_value` (READ)
   - `afu_igel.igel_stall` (READ)
   - `stall_ids_raw` (READ)
+  - `LATERAL` (READ)
+  - `abwasser_lookup` (READ)
+  - `abwasser_values` (READ)
+  - `betrieb_lookup` (READ)
+  - `stall_ids` (READ)
+  - `pid_stao_count` (READ)
   - `mapped_records` (READ)
+  - `stao_bewirtschafter` (READ)
 
 ### alw_landwirtschaft_tierhaltung_import_bodenbedeckung
 - **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_import_bodenbedeckung/`
@@ -948,6 +1212,7 @@
 - **Schedule**: `H H(4-5) * * *` (~4-5h)
 - **Quell-Tabellen**: 
   - `awjf_efj_v1.efj_abgaenge` (READ)
+  - `LATERAL` (READ)
 
 ### agi_stac
 - **Pfad**: `../gretljobs/agi_stac/`
@@ -960,6 +1225,9 @@
   - `ada_denkmalschutz_v1.gis_geometrie` (READ)
   - `ada_denkmalschutz_v1.oereb_doclink_v` (READ)
   - `ada_denkmalschutz_v1.fachapplikation_denkmal` (READ)
+  - `mpoint` (READ)
+  - `rechtsvorschriften` (READ)
+  - `mpoly` (READ)
 
 ### afu_bodendaten_nabodat_abfrage_pub
 - **Pfad**: `../gretljobs/afu_bodendaten_nabodat_abfrage_pub/`
@@ -973,6 +1241,28 @@
   - `horizont` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_profil` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_messung` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_projektstandort` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_projekt` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_erhebung` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_erhebungsart` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_horizont` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_horizontbezeichnung` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_kalkreaktionhcl` (READ)
+  - `mit` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_gefuege` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_form` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_groesse` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_bodenfarbe` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_farbtonzahl` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_farbtontext` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_helligkeit` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_intensitaet` (READ)
+  - `afu_bodendaten_nabodat_v1.erhebung_probe_profil_v` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_probe` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnnlysdten_analyseparameter` (READ)
+  - `gefuege` (READ)
+  - `farbe` (READ)
+  - `messungen` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_standorteigenschaften` (READ)
   - `standorteigenschaften` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_wald` (READ)
@@ -981,12 +1271,54 @@
   - `afu_bodendaten_nabodat_v1.codlstnpktstndort_nutzungsbeschraenkung` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_standortbeurteilung` (READ)
   - `afu_bodendaten_nabodat_v1.codlstnpktstndort_limitierendeeigenschaft` (READ)
-  - `afu_bodendaten_nabodat_v1.punktdaten_erhebung` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_untertyp` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_profilbeurteilung` (READ)
   - `profildaten` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_profildokument` (READ)
   - `afu_bodendaten_nabodat_v1.punktdaten_dokument` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_gelaendeform` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_landschaftselement` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_exposition` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_klimaeignungszone` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_vegetation` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_kleinrelief` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_ausgangsmaterial` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_ausgangsmaterial` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_eiszeit` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_produktionsfaehigkstufewald` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_humusform` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_meliorationempf_ref` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_meliorationfest_ref` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_nutzungsbeschraenkung_ref` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_krumenzustand` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_einsatzduengerfest` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_risikoduengerfluess` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_limitierendeeigenschaft_ref` (READ)
+  - `erhebungsdaten` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_bichqualitaet` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_klassifikationssystem` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_bodentyp` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_bodenskelettfeldbereich` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_skelettgehalt` (READ)
+  - `afu_bodendaten_nabodat_v1.punktdaten_koernungsbereich` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_feinerdekoernung` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_wasserspeichervermoegen` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_bodenwasserhaushaltsgruppe` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_pflanzennutzbaregruendigkeit` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_untertyp` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_fruchtbarkeitsstufe` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_nutzungseignung` (READ)
+  - `afu_bodendaten_nabodat_v1.codelistnprfldten_eignungsklasse` (READ)
+  - `afu_bodendaten_nabodat_v1.codlstnpktstndort_dokumenttyp` (READ)
+  - `ausgangsmaterial` (READ)
+  - `wald` (READ)
+  - `melioration_empfohlen` (READ)
+  - `melioration_festgestellt` (READ)
+  - `nutzungsbeschraenkung` (READ)
+  - `standortbeurteilung` (READ)
+  - `limitierungen` (READ)
+  - `profilbeurteilung` (READ)
+  - `dokumente` (READ)
 - **Ziel-Tabellen**: 
   - `afu_bodendaten_nabodat_abfrage_pub_v1.horizont` (INSERT/UPDATE)
   - `afu_bodendaten_nabodat_abfrage_pub_v1.bodenprofil` (INSERT/UPDATE)
@@ -1004,6 +1336,16 @@
   - `arp_naturreservate.reservate_teilgebiet` (READ)
   - `arp_richtplan_v2.richtplankarte_ueberlagernde_flaeche` (READ)
   - `afu_geotope.geotope_quelle` (READ)
+  - `afu_geotope.geotope_fachbereich` (READ)
+  - `afu_geotope.geotope_dokument` (READ)
+  - `agi_plz_ortschaften.plzortschaft_ortschaft` (READ)
+  - `schutz` (READ)
+  - `afu_geotope.geotope_zustaendige_stelle` (READ)
+  - `fachbereich` (READ)
+  - `dokumente_json` (READ)
+  - `gemeinden` (READ)
+  - `ortschaften` (READ)
+  - `zusammengefasster_schutz` (READ)
   - `afu_geotope.geotope_landform_fachbereich` (READ)
   - `afu_geotope.geotope_landform_dokument` (READ)
   - `afu_geotope.geotope_landschaftsform` (READ)
@@ -1013,6 +1355,10 @@
   - `afu_geotope.geotope_fundstelle_grabung_fachbereich` (READ)
   - `afu_geotope.geotope_fundstelle_grabung_dokument` (READ)
   - `afu_geotope.geotope_fundstelle_grabung` (READ)
+  - `afu_geotope.lithostratigrphie_geologische_schicht` (READ)
+  - `afu_geotope.lithostratigrphie_geologische_serie` (READ)
+  - `afu_geotope.lithostratigrphie_geologische_stufe` (READ)
+  - `afu_geotope.lithostratigrphie_geologisches_system` (READ)
   - `afu_geotope.geotope_erratiker_fachbereich` (READ)
   - `afu_geotope.geotope_erratiker_dokument` (READ)
   - `afu_geotope.geotope_erratiker` (READ)
@@ -1025,6 +1371,7 @@
 - **Upstream-Trigger**: afu_stehende_gewaesser_abgleich
 - **Quell-Tabellen**: 
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (READ)
+  - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
 
 ### agi_gebaeudeinformationen_pub
 - **Pfad**: `../gretljobs/agi_gebaeudeinformationen_pub/`
@@ -1033,20 +1380,31 @@
   - `agi_mopublic_pub.mopublic_objektname_pos` (READ)
   - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ)
   - `agi_mopublic_pub.mopublic_bodenbedeckung_proj` (READ)
+  - `agi_mopublic_pub.mopublic_gebaeudeadresse` (READ)
+  - `gebaeudename` (READ)
+  - `agi_gwr_pub_v1.gwr_gebaeude` (READ)
 
 ### agi_grundbuchplan_pub
 - **Pfad**: `../gretljobs/agi_grundbuchplan_pub/`
 - **Upstream-Trigger**: agi_av_dm01_mopublic_pub
 - **Quell-Tabellen**: 
   - `agi_grundbuchplan_pub.grundbuchplan_liegenschaft` (READ)
+  - `agi_grundbuchplan_pub.grundbuchplan_grundstueckpos` (READ)
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ)
   - `agi_dm01avso24.liegenschaften_grundstueckpos` (READ)
+  - `agi_dm01avso24.liegenschaften_grundstueck` (READ)
   - `agi_av_gb_admin_einteilung_pub.nachfuehrngskrise_gemeinde` (READ)
   - `firma_zusatz` (READ)
   - `agi_av_gb_admin_einteilung_pub.grundbuchkreise_grundbuchkreis` (READ)
   - `agi_mopublic_pub.mopublic_gemeindegrenze` (READ)
+  - `grundbuchkreise_anzahl` (READ)
+  - `gemeinde` (READ)
+  - `firma` (READ)
   - `agi_dm01avso24.liegenschaften_grenzpunkt` (READ)
+  - `agi_dm01avso24.liegenschaften_lsnachfuehrung` (READ)
+  - `agi_dm01avso24.liegenschaften_projliegenschaft` (READ)
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
+  - `agi_dm01avso24.bodenbedeckung_boflaechesymbol` (READ)
 - **Ziel-Tabellen**: 
   - `agi_grundbuchplan_pub.grundbuchplan_grundstueckpos` (INSERT/UPDATE)
 
@@ -1131,6 +1489,8 @@
   - `awjf_statische_waldgrenze.dokumente_dokument` (READ)
   - `awjf_statische_waldgrenze_mgdm_v1.rechtsstatus` (READ)
   - `localiseduri` (READ)
+  - `awjf_statische_waldgrenze.geobasisdaten_typ` (READ)
+  - `multilingualuri` (READ)
 - **Ziel-Tabellen**: 
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_typ` (INSERT/UPDATE)
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_waldgrenze_linie` (INSERT/UPDATE)
@@ -1142,17 +1502,17 @@
 
 | Anzahl | Tabellenname | Schema |
 |--------|-------------|--------|
+| 9 | hoheitsgrenzen_gemeindegrenze | agi_hoheitsgrenzen_pub |
+| 6 | gemeindegrenzen_gemeinde | agi_dm01avso24 |
+| 6 | liegenschaften_grundstueck | agi_dm01avso24 |
+| 6 | liegenschaften_liegenschaft | agi_dm01avso24 |
 | 6 | richtplankarte_ueberlagernde_flaeche | arp_richtplan_pub_v2 |
-| 5 | hoheitsgrenzen_gemeindegrenze | agi_hoheitsgrenzen_pub |
-| 4 | mopublic_grundstueck | agi_mopublic_pub |
+| 5 | mopublic_grundstueck | agi_mopublic_pub |
+| 5 | bodenbedeckung_boflaeche | agi_dm01avso24 |
+| 5 | liegenschaften_lsnachfuehrung | agi_dm01avso24 |
 | 4 | t_ili2db_import | agi_dm01avso24 |
-| 4 | liegenschaften_grundstueck | agi_dm01avso24 |
-| 4 | bodenbedeckung_boflaeche | agi_dm01avso24 |
-| 4 | nutzungsplanung_grundnutzung | arp_nutzungsplanung_pub_v1 |
-| 3 | liegenschaften_projgrundstueck | agi_dm01avso24 |
-| 3 | grundbuchkreise_grundbuchkreis | agi_av_gb_administrative_einteilungen_v2 |
-| 3 | hoheitsgrenzen_kantonsgrenze | agi_hoheitsgrenzen_pub |
+| 4 | t_ili2db_basket | agi_dm01avso24 |
 ---
 Fehler-Notifications: christian.baumann@bd.so.ch 
 
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 10:15:13*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 11:11:02*
