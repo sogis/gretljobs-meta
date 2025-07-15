@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht - sogis
 
-*Generiert am: 2025-07-15 12:10:18*
+*Generiert am: 2025-07-15 12:18:24*
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -90,7 +90,7 @@
 ### afu_ewsabfrage_2d
 - **Pfad**: `../gretljobs/afu_ewsabfrage_2d/`
 - **Schedule**: `0 4 * * 0` (So 04:00)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_ewsabfrage_2d_staging_v1.tiefenbeschraenkung` (READ) - Amt für Umwelt
   - `afu_ewsabfrage_2d_staging_v1.hinweis` (READ) - Amt für Umwelt
   - `afu_ewsabfrage_2d_staging_v1.grundstueck` (READ) - Amt für Umwelt
@@ -114,10 +114,7 @@
 ### agi_av_dm01_mopublic_pub
 - **Pfad**: `../gretljobs/agi_av_dm01_mopublic_pub/`
 - **Schedule**: `00 21 * * *` (21:00)
-- **Quell-Tabellen**:
-  - `t_ili2db_basket` (READ)
-  - `t_ili2db_dataset` (READ)
-  - `mopublic_gemeindegrenze` (READ)
+- **Quell-Tabellen**: 
   - `agi_dm01avso24.t_ili2db_import` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsname` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsnamepos` (READ) - Amt für Geoinformation
@@ -199,7 +196,10 @@
   - `agi_dm01avso24.einzelobjekte_objektnummer` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_projgebaeudenummer` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_gebaeudenummer` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+  - `t_ili2db_basket` (READ)
+  - `t_ili2db_dataset` (READ)
+  - `mopublic_gemeindegrenze` (READ)
+- **Ziel-Tabellen**: 
   - `mopublic_bodenbedeckung` (INSERT/UPDATE)
   - `mopublic_bodenbedeckung_proj` (INSERT/UPDATE)
   - `mopublic_einzelobjekt_flaeche` (INSERT/UPDATE)
@@ -228,7 +228,7 @@
 ### agi_av_kaso_abgleich_pub
 - **Pfad**: `../gretljobs/agi_av_kaso_abgleich_pub/`
 - **Schedule**: `H 3 * * *` (~3:xx)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_av_kaso_abgleich_v1.kaso_daten` (READ) - Amt für Geoinformation
   - `agi_av_kaso_abgleich_v1.differenzen_staging` (READ) - Amt für Geoinformation
   - `agi_av_kaso_abgleich_v1.uebersicht_des_vergleichs_staging` (READ) - Amt für Geoinformation
@@ -246,7 +246,7 @@
   - `agi_dm01avso24.liegenschaften_grundstuecksart` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_selbstrecht` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_av_kaso_abgleich_v1.uebersicht_des_vergleichs_staging` (INSERT/UPDATE) - Amt für Geoinformation
   - `agi_av_kaso_abgleich_v1.differenzen_staging` (INSERT/UPDATE) - Amt für Geoinformation
 
@@ -257,7 +257,7 @@
 ### afu_neophyten_pub
 - **Pfad**: `../gretljobs/afu_neophyten_pub/`
 - **Schedule**: `H 6 * * *` (~6:xx)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `neophyten` (READ)
 
 ### afu_altlasten_import_pub
@@ -267,32 +267,32 @@
 ### afu_asiatische_hornisse_pub
 - **Pfad**: `../gretljobs/afu_asiatische_hornisse_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_asiatische_hornisse_v1.asia_hornisse_ash` (READ) - Amt für Umwelt
 
 ### afu_erdwaermesonden_private_quellen_pub
 - **Pfad**: `../gretljobs/afu_erdwaermesonden_private_quellen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_erdwaermesonden_private_quellen_v1.private_quelle` (READ) - Amt für Umwelt
 
 ### afu_erdwaermesonden_pub
 - **Pfad**: `../gretljobs/afu_erdwaermesonden_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_erdwaermesonden_v2.erdwaermesonden_anlage` (READ) - Amt für Umwelt
   - `afu_erdwaermesonden_v2.erdwaermesonden_bohrung` (READ) - Amt für Umwelt
 
 ### afu_grundlagendaten_ews_import
 - **Pfad**: `../gretljobs/afu_grundlagendaten_ews_import/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `bohrung.` (READ)
 
 ### afu_naturereigniskataster_mgdm_import
 - **Pfad**: `../gretljobs/afu_naturereigniskataster_mgdm_import/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_sammelereignis` (READ) - Amt für Umwelt
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_prozessraum_w` (READ) - Amt für Umwelt
   - `afu_naturereigniskataster_mgdm_v1.storme_mgdm_basisinformation` (READ) - Amt für Umwelt
@@ -312,14 +312,14 @@
 ### agem_finanz_und_lastenausgleich
 - **Pfad**: `../gretljobs/agem_finanz_und_lastenausgleich/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agem_fila.strassen_strassenachse` (READ)
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ) - Amt für Geoinformation
 
 ### agi_adressen_pub
 - **Pfad**: `../gretljobs/agi_adressen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_dm01avso24.gebaeudeadressen_strassenstueck` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_hausnummerpos` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_gebaeudeeingang` (READ) - Amt für Geoinformation
@@ -336,7 +336,7 @@
 ### agi_av_gb_abgleich_pub
 - **Pfad**: `../gretljobs/agi_av_gb_abgleich_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_av_gb_abgleich_import.gb_daten` (READ) - Amt für Geoinformation
   - `agi_av_gb_abgleich_import.differenzen_staging` (READ) - Amt für Geoinformation
   - `agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging` (READ) - Amt für Geoinformation
@@ -352,23 +352,23 @@
   - `agi_dm01avso24.liegenschaften_grundstuecksart` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_selbstrecht` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging` (INSERT/UPDATE) - Amt für Geoinformation
   - `agi_av_gb_abgleich_import.differenzen_staging` (INSERT/UPDATE) - Amt für Geoinformation
 
 ### agi_av_gwr_abgleich_pub
 - **Pfad**: `../gretljobs/agi_av_gwr_abgleich_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_av_gwr_abgleich_import_v1.av_gwr_differnzen_av_gwr_differenzen` (READ) - Amt für Geoinformation
   - `agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen` (INSERT/UPDATE) - Amt für Geoinformation
 
 ### agi_av_mocheckso
 - **Pfad**: `../gretljobs/agi_av_mocheckso/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_av_mocheckso.mocheckso_errors_mocheckso_error` (READ) - Amt für Geoinformation
 
 ### agi_dmav_fixpunkte2_import
@@ -394,7 +394,7 @@
 ### agi_gb2av_controlling
 - **Pfad**: `../gretljobs/agi_gb2av_controlling/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_dm01avso24.liegenschaften_projgrundstueck` (READ) - Amt für Geoinformation
   - `agi_av_gb_administrative_einteilungen_v2.nachfuehrngskrise_gemeinde` (READ) - Amt für Geoinformation
   - `agi_gb2av.vollzugsgegnstnde_vollzugsgegenstand` (READ) - Amt für Geoinformation
@@ -408,7 +408,7 @@
   - `agi_gb2av_controlling.controlling_av2gb_mutationen` (READ) - Amt für Geoinformation
   - `agi_gb2av.mutationstabelle_avmutation` (READ) - Amt für Geoinformation
   - `mit` (READ)
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_gb2av_controlling.controlling_gb2av_vollzugsmeldung_delta` (INSERT/UPDATE) - Amt für Geoinformation
   - `SET` (INSERT/UPDATE)
   - `agi_gb2av_controlling.controlling_av2gb_mutationen` (INSERT/UPDATE) - Amt für Geoinformation
@@ -416,7 +416,7 @@
 ### agi_hoheitsgrenzen_pub
 - **Pfad**: `../gretljobs/agi_hoheitsgrenzen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsname_a4` (READ) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsname_a3` (READ) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze_generalisiert` (READ) - Amt für Geoinformation
@@ -437,7 +437,7 @@
   - `agi_dm01avso24.gemeindegrenzen_gemeindegrenze` (READ) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirk` (READ) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirksname_pos` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (INSERT/UPDATE) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze_generalisiert` (INSERT/UPDATE) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze` (INSERT/UPDATE) - Amt für Geoinformation
@@ -448,7 +448,7 @@
 ### agi_kartenkatalog_pub
 - **Pfad**: `../gretljobs/agi_kartenkatalog_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `simi.simiproduct_data_product` (READ)
   - `simi.simiproduct_layer_group` (READ)
   - `simi.simiproduct_data_product_pub_scope` (READ)
@@ -466,7 +466,7 @@
 ### alw_tiergesundheit_pflanzengesundheit_massnahmen_pub
 - **Pfad**: `../gretljobs/alw_tiergesundheit_pflanzengesundheit_massnahmen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_tiergesundheit_massnahmengebiet` (READ)
   - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_pflanzengesundheit_schadorganismen` (READ)
   - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_bienensperrgebiet` (READ)
@@ -474,7 +474,7 @@
 ### arp_arbeitszonenbewirtschaftung_inventar_pub
 - **Pfad**: `../gretljobs/arp_arbeitszonenbewirtschaftung_inventar_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_arbeitszonenbewirtschaftung_staging_v1.arbtszng_nvntar_arbeitszonenbewirtschaftung_inventar_bebtand` (READ) - Amt für Raumplanung
   - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand` (READ) - Amt für Raumplanung
   - `arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung` (READ) - Amt für Raumplanung
@@ -483,39 +483,39 @@
   - `agi_mopublic_pub.mopublic_grundstueck` (READ) - Amt für Geoinformation
   - `arp_arbeitszonenbewirtschaftung_v1.regionen_region` (READ) - Amt für Raumplanung
   - `arp_arbeitszonenbewirtschaftung_staging_v1.inventar_flaeche_v` (READ) - Amt für Raumplanung
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_arbeitszonenbewirtschaftung_staging_v1.arbtsznnng_nvntar_arbeitszonenbewirtschaftung_inventar` (INSERT/UPDATE) - Amt für Raumplanung
   - `arp_arbeitszonenbewirtschaftung_v1.bewertung_bewertung` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_bauzonengrenzen_pub
 - **Pfad**: `../gretljobs/arp_bauzonengrenzen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_bauzonengrenzen_pub.bauzonengrenzen_bauzonengrenze` (READ) - Amt für Raumplanung
   - `arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung` (READ) - Amt für Raumplanung
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_bauzonengrenzen_pub.bauzonengrenzen_bauzonengrenze` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_fledermaus
 - **Pfad**: `../gretljobs/arp_fledermaus/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_fledermaus_v1.fledermausfundrte_fledermausfundort` (READ) - Amt für Raumplanung
 
 ### arp_mjpnatur_gelan_export
 - **Pfad**: `../gretljobs/arp_mjpnatur_gelan_export/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_mjpnl_gelan_v1.mehrjahresprgramm_vereinbarungensflaechen` (READ) - Amt für Raumplanung
   - `arp_mjpnl_v2.mjpnl_vereinbarung` (READ) - Amt für Raumplanung
   - `arp_mjpnl_v2.mjpnl_beurteilung_hostet` (READ) - Amt für Raumplanung
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_mjpnl_gelan_v1.mehrjahresprgramm_vereinbarungensflaechen` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_mjpnatur_pub
 - **Pfad**: `../gretljobs/arp_mjpnatur_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_mjpnl_v2.mjpnl_beurteilung_wiese` (READ) - Amt für Raumplanung
   - `arp_mjpnl_v2.mjpnl_beurteilung_wbl_wiese` (READ) - Amt für Raumplanung
   - `arp_mjpnl_v2.mjpnl_beurteilung_alr_buntbrache` (READ) - Amt für Raumplanung
@@ -536,10 +536,10 @@
 ### arp_mjpnl_v2_zahlungslauf
 - **Pfad**: `../gretljobs/arp_mjpnl_v2_zahlungslauf/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_gemeinde` (READ) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirk` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `abrechnung_per_leistung` (INSERT/UPDATE)
   - `der` (INSERT/UPDATE)
 
@@ -550,7 +550,7 @@
 ### arp_nutzungsvereinbarung_pub
 - **Pfad**: `../gretljobs/arp_nutzungsvereinbarung_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_nutzungsvereinbarung.nutzungsvrnbrngen_nutzungsvereinbarungen` (READ) - Amt für Raumplanung
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.nomenklatur_flurname` (READ) - Amt für Geoinformation
@@ -562,7 +562,7 @@
 ### awjf_forstreviere_pub
 - **Pfad**: `../gretljobs/awjf_forstreviere_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_forstreviere.forstreviere_forstreviergeometrie` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_forstreviere.forstreviere_forstrevier` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_forstreviere.forstreviere_forstkreis` (READ) - Amt für Wald, Jagd und Fischerei
@@ -570,7 +570,7 @@
 ### awjf_programm_biodiversitaet_wald_pub
 - **Pfad**: `../gretljobs/awjf_programm_biodiversitaet_wald_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_biotop_zielgruppe` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_waldbiodiversitaetsflaeche` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_programm_biodiversitaet_wald_v1.biodiversitt_wald_zielgruppe` (READ) - Amt für Wald, Jagd und Fischerei
@@ -591,7 +591,7 @@
 ### awjf_schutzwald_pub
 - **Pfad**: `../gretljobs/awjf_schutzwald_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_schutzwald_pub_v1.behandelte_flaeche_massnahme` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_schutzwald_pub_v1.behandelte_flaeche_status` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_schutzwald_pub_v1.nais_code` (READ) - Amt für Wald, Jagd und Fischerei
@@ -603,7 +603,7 @@
   - `awjf_schutzwald_v1.schutzwald_info` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_schutzwald_v1.dokument` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_schutzwald_v1.behandelte_flaeche` (READ) - Amt für Wald, Jagd und Fischerei
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `awjf_schutzwald_pub_v1.behandelte_flaeche` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_schutzwald_pub_v1.dokument` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_schutzwald_pub_v1.schutzwald` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
@@ -612,7 +612,7 @@
 ### awjf_waldpflege_kontrolle
 - **Pfad**: `../gretljobs/awjf_waldpflege_kontrolle/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_waldpflege_erfassung.waldpflege_waldpflege` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_gesuchsteller.gesuchsteller_gesuchsteller` (READ) - Amt für Wald, Jagd und Fischerei
 
@@ -623,13 +623,13 @@
 ### awjf_wegsanierungen_pub
 - **Pfad**: `../gretljobs/awjf_wegsanierungen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_wegsanierungen_v1.wegsanierungen_wegsanierung` (READ) - Amt für Wald, Jagd und Fischerei
 
 ### alw_strukturverbesserungen_pub
 - **Pfad**: `../gretljobs/alw_strukturverbesserungen_pub/`
 - **Schedule**: `H H(1-3) * * 6` (Sa ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `alw_strukturverbesserungen.raeumlicheelemnte_projekt` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_raeumliches_element_dokument` (READ)
   - `alw_strukturverbesserungen.raeumlicheelemnte_bew_flaechen_bewaesserung` (READ)
@@ -686,14 +686,14 @@
 ### ada_archaeologie_pub
 - **Pfad**: `../gretljobs/ada_archaeologie_pub/`
 - **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
-- **Quell-Tabellen**:
-  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ) - Amt für Denkmalpflege und Archäologie
+- **Quell-Tabellen**: 
+  - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_archaeologie_v1.fachapplikation_fundstelle` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_archaeologie_v1.geo_flaeche` (READ) - Amt für Denkmalpflege und Archäologie
-  - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ) - Amt für Denkmalpflege und Archäologie
-  - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ) - Amt für Denkmalpflege und Archäologie
   - `AS` (READ)
   - `j` (READ)
+  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ) - Amt für Denkmalpflege und Archäologie
+  - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (READ) - Amt für Denkmalpflege und Archäologie
   - `arp_bauzonengrenzen_pub.bauzonengrenzen_bauzonengrenze` (READ) - Amt für Raumplanung
   - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (READ) - Amt für Denkmalpflege und Archäologie
@@ -702,7 +702,7 @@
   - `rep_view_rrb` (READ)
   - `public.rep_view_fundstellen` (READ)
   - `ada_archaeologie_pub_v1.public_qualitaet_lokalisierung_typ` (READ) - Amt für Denkmalpflege und Archäologie
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `ada_archaeologie_v1.fachapplikation_fundstelle` (INSERT/UPDATE) - Amt für Denkmalpflege und Archäologie
   - `ada_archaeologie_v1.geo_flaeche` (INSERT/UPDATE) - Amt für Denkmalpflege und Archäologie
   - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (INSERT/UPDATE) - Amt für Denkmalpflege und Archäologie
@@ -713,17 +713,17 @@
 ### afu_stehende_gewaesser_abgleich
 - **Pfad**: `../gretljobs/afu_stehende_gewaesser_abgleich/`
 - **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (READ) - Amt für Umwelt
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ) - Amt für Geoinformation
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (INSERT/UPDATE) - Amt für Umwelt
 
 ### afu_wasserbewirtschaftung_pub
 - **Pfad**: `../gretljobs/afu_wasserbewirtschaftung_pub/`
 - **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_wasserbewirtschaftung_pub_v2.wassrbwschftung_quelle_zustand` (READ) - Amt für Umwelt
   - `afu_wasserversorg_obj_v1.dokument` (READ) - Amt für Umwelt
   - `afu_wasserversorg_obj_v1.pumpwerk` (READ) - Amt für Umwelt
@@ -753,13 +753,13 @@
   - `afu_grundwasserschutz_obj_v1.sodbrunnen` (READ) - Amt für Umwelt
   - `afu_wasserversorg_obj_v1.filterbrunnen` (READ) - Amt für Umwelt
   - `afu_grundwasserschutz_obj_v1.sodbrunnen__dokument` (READ) - Amt für Umwelt
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `afu_wasserbewirtschaftung_pub_v2.wassrbwrtschftung_quelle` (INSERT/UPDATE) - Amt für Umwelt
 
 ### amb_zivilschutz_adressen_export
 - **Pfad**: `../gretljobs/amb_zivilschutz_adressen_export/`
 - **Schedule**: `H H(1-3) 1 * *` (1. ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (READ)
   - `agi_swisstopo_gebaeudeadressen_pub_v1.gebaeudeadressen_adresse` (READ) - Amt für Geoinformation
   - `agi_mopublic_pub.mopublic_gebaeudeadresse` (READ) - Amt für Geoinformation
@@ -770,22 +770,22 @@
   - `agi_mopublic_pub.mopublic_einzelobjekt_flaeche` (READ) - Amt für Geoinformation
   - `agi_av_gb_admin_einteilung_pub.grundbuchkreise_grundbuchkreis` (READ) - Amt für Geoinformation
   - `agi_mopublic_pub.mopublic_objektname_pos` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (INSERT/UPDATE)
 
 ### arp_richtplan_grundnutzung_pub
 - **Pfad**: `../gretljobs/arp_richtplan_grundnutzung_pub/`
 - **Schedule**: `H H(1-3) 1 * *` (1. ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_grundnutzung` (READ) - Amt für Raumplanung
   - `arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung` (READ) - Amt für Raumplanung
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_grundnutzung` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### agi_ch_gemeinden
 - **Pfad**: `../gretljobs/agi_ch_gemeinden/`
 - **Schedule**: `H H(1-3) 1 2 *` (1. ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_swissboundaries3d_v1.tlm_grenzen_tlm_landesgebiet` (READ) - Amt für Geoinformation
   - `agi_swissboundaries3d_v1.tlm_grenzen_tlm_kantonsgebiet` (READ) - Amt für Geoinformation
   - `agi_swissboundaries3d_v1.tlm_grenzen_tlm_hoheitsgebiet` (READ) - Amt für Geoinformation
@@ -804,7 +804,7 @@
 ### awjf_rodung_rodungsersatz_mgdm
 - **Pfad**: `../gretljobs/awjf_rodung_rodungsersatz_mgdm/`
 - **Schedule**: `H H(1-3) 1 3 *` (1. ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_rodung_rodungsersatz_mgdm_v1.ersatzmassnahmennl_` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_rodung_rodungsersatz_mgdm_v1.massnahmenltyp_` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_rodung_rodungsersatz_mgdm_v1.ersatzverzicht_` (READ) - Amt für Wald, Jagd und Fischerei
@@ -816,7 +816,7 @@
   - `awjf_rodung_rodungsersatz_v1.ausgleichsabgabe` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_rodung_rodungsersatz_v1.dokument` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_rodung_rodungsersatz_v1.rodung_dokument` (READ) - Amt für Wald, Jagd und Fischerei
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `awjf_rodung_rodungsersatz_mgdm_v1.rodungsbewilligung` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_rodung_rodungsersatz_mgdm_v1.objekt` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_rodung_rodungsersatz_mgdm_v1.massnahmenltyp_` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
@@ -830,7 +830,7 @@
 ### agi_swisstopo_gebaeudeadressen
 - **Pfad**: `../gretljobs/agi_swisstopo_gebaeudeadressen/`
 - **Schedule**: `H H(1-3) 2 * *` (2. ~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_swisstopo_gebaeudeadressen_v1.officlndxfddrsses_address` (READ) - Amt für Geoinformation
   - `agi_swisstopo_gebaeudeadressen_v1.officlndxfddrsses_stn` (READ) - Amt für Geoinformation
   - `agi_swisstopo_gebaeudeadressen_v1.officlndxfddrsses_zip` (READ) - Amt für Geoinformation
@@ -838,7 +838,7 @@
 ### arp_auswertung_nutzungsplanung_pub
 - **Pfad**: `../gretljobs/arp_auswertung_nutzungsplanung_pub/`
 - **Schedule**: `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` (~1-3h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_auswertung_nutzungsplanung_pub_v1.auswrtngtzngsznen_grundnutzungszone_aggregiert_pro_gemeinde` (READ) - Amt für Raumplanung
   - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_ohne_lsgrenzen` (READ) - Amt für Raumplanung
   - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_und_lsgrenzen` (READ) - Amt für Raumplanung
@@ -855,7 +855,7 @@
 ### afu_onlinerisk_transfer
 - **Pfad**: `../gretljobs/afu_onlinerisk_transfer/`
 - **Schedule**: `H H(18-19) * * 1-5` (Mo ~18-19h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `untersuchungseinheit` (READ)
   - `gebaeude` (READ)
   - `bereich` (READ)
@@ -869,13 +869,13 @@
   - `afu_online_risk.stoff` (READ) - Amt für Umwelt
   - `afu_online_risk.bereich` (READ) - Amt für Umwelt
   - `afu_online_risk.gebaeude` (READ) - Amt für Umwelt
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `with` (INSERT/UPDATE)
 
 ### alw_landwirtschaft_tierhaltung_pub
 - **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_pub/`
 - **Schedule**: `H H(2-4) * * *` (~2-4h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_standorte` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_betrieb` (READ)
   - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_summe_tiere_flaechen` (READ)
@@ -890,18 +890,18 @@
 ### avt_bodenfaktor_pub
 - **Pfad**: `../gretljobs/avt_bodenfaktor_pub/`
 - **Schedule**: `H H(2-5) * * 0` (So ~2-5h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ) - Amt für Geoinformation
   - `avt_bodenfaktor.t_ili2db_dataset` (READ) - Amt für Verkehr und Tiefbau
   - `avt_bodenfaktor.t_ili2db_basket` (READ) - Amt für Verkehr und Tiefbau
   - `avt_bodenfaktor.bodenfaktor` (READ) - Amt für Verkehr und Tiefbau
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `avt_bodenfaktor.bodenfaktor` (INSERT/UPDATE) - Amt für Verkehr und Tiefbau
 
 ### agi_av_meldewesen
 - **Pfad**: `../gretljobs/agi_av_meldewesen/`
 - **Schedule**: `H H(3-4) * * *` (~3-4h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_dm01avso24.liegenschaften_grundstueck` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_selbstrecht` (READ) - Amt für Geoinformation
@@ -910,13 +910,13 @@
   - `agi_dm01avso24.gemeindegrenzen_gemeinde` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gemeindegrenzen_gemeindegrenze` (READ) - Amt für Geoinformation
   - `agi_av_meldewesen_import_v1.meldungen_meldung` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_av_meldewesen_work_v1.meldungen_meldung` (INSERT/UPDATE) - Amt für Geoinformation
 
 ### agi_gwr_pub
 - **Pfad**: `../gretljobs/agi_gwr_pub/`
 - **Schedule**: `H H(3-4) * * *` (~3-4h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_gwr_v1.gwr_wohnung` (READ) - Amt für Geoinformation
   - `agi_gwr_v1.gwr_gebaeude` (READ) - Amt für Geoinformation
   - `agi_gwr_v1.gwr_codes` (READ) - Amt für Geoinformation
@@ -927,7 +927,7 @@
 ### dsbjd_ebauso_rahmenmodell_pub
 - **Pfad**: `../gretljobs/dsbjd_ebauso_rahmenmodell_pub/`
 - **Schedule**: `H H(3-4) * * *` (~3-4h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `dsbjd_ebauso_rahmenmodell_pub_v1.fachthemen_fachthema_polygon` (READ)
   - `dsbjd_ebauso_rahmenmodell_pub_v1.fachthemen_fachthema_linie` (READ)
   - `dsbjd_ebauso_rahmenmodell_pub_v1.fachthemen_fachthema_punkt` (READ)
@@ -956,7 +956,7 @@
   - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ) - Amt für Geoinformation
   - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (READ) - Amt für Denkmalpflege und Archäologie
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `dsbjd_ebauso_rahmenmodell_pub_v1.fachthemen_fachthema_polygon` (INSERT/UPDATE)
   - `dsbjd_ebauso_rahmenmodell_pub_v1.fachthemen_fachthema_linie` (INSERT/UPDATE)
   - `dsbjd_ebauso_rahmenmodell_pub_v1.fachthemen_fachthema_punkt` (INSERT/UPDATE)
@@ -969,7 +969,7 @@
 ### afu_igel
 - **Pfad**: `../gretljobs/afu_igel/`
 - **Schedule**: `H H(3-4) * * 0` (So ~3-4h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_igel.igel_standort` (READ) - Amt für Umwelt
   - `afu_igel.igel_stall` (READ) - Amt für Umwelt
   - `LATERAL` (READ)
@@ -985,7 +985,7 @@
 ### awjf_efj
 - **Pfad**: `../gretljobs/awjf_efj/`
 - **Schedule**: `H H(4-5) * * *` (~4-5h)
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_efj_v1.efj_abgaenge` (READ) - Amt für Wald, Jagd und Fischerei
   - `LATERAL` (READ)
 
@@ -996,7 +996,7 @@
 ### ada_denkmalschutz_pub
 - **Pfad**: `../gretljobs/ada_denkmalschutz_pub/`
 - **Upstream-Trigger**: oerebv2_einzelschutz_denkmal
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `ada_denkmalschutz_v1.gis_geometrie` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_denkmalschutz_v1.oereb_doclink_v` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_denkmalschutz_v1.fachapplikation_denkmal` (READ) - Amt für Denkmalpflege und Archäologie
@@ -1004,7 +1004,7 @@
 ### afu_bodendaten_nabodat_abfrage_pub
 - **Pfad**: `../gretljobs/afu_bodendaten_nabodat_abfrage_pub/`
 - **Upstream-Trigger**: afu_bodenprofilstandorte_nabodat_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_bodendaten_nabodat_abfrage_pub_v1.bodenprofil` (READ) - Amt für Umwelt
   - `afu_bodendaten_nabodat_pub.bodenproflstndrte_bodenprofilstandort` (READ) - Amt für Umwelt
   - `afu_bodendaten_nabodat_v1.punktdaten_standort` (READ) - Amt für Umwelt
@@ -1073,14 +1073,14 @@
   - `afu_bodendaten_nabodat_v1.codelistnprfldten_nutzungseignung` (READ) - Amt für Umwelt
   - `afu_bodendaten_nabodat_v1.codelistnprfldten_eignungsklasse` (READ) - Amt für Umwelt
   - `afu_bodendaten_nabodat_v1.codlstnpktstndort_dokumenttyp` (READ) - Amt für Umwelt
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `afu_bodendaten_nabodat_abfrage_pub_v1.horizont` (INSERT/UPDATE) - Amt für Umwelt
   - `afu_bodendaten_nabodat_abfrage_pub_v1.bodenprofil` (INSERT/UPDATE) - Amt für Umwelt
 
 ### afu_geotope_pub
 - **Pfad**: `../gretljobs/afu_geotope_pub/`
 - **Upstream-Trigger**: oereb_einzelschutz_geotop
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_geotope.geotope_quelle_fachbereich` (READ) - Amt für Umwelt
   - `afu_geotope.geotope_quelle_dokument` (READ) - Amt für Umwelt
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ) - Amt für Geoinformation
@@ -1115,14 +1115,14 @@
 ### afu_stehende_gewaesser_pub
 - **Pfad**: `../gretljobs/afu_stehende_gewaesser_pub/`
 - **Upstream-Trigger**: afu_stehende_gewaesser_abgleich
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (READ) - Amt für Umwelt
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ) - Amt für Geoinformation
 
 ### agi_gebaeudeinformationen_pub
 - **Pfad**: `../gretljobs/agi_gebaeudeinformationen_pub/`
 - **Upstream-Trigger**: agi_av_dm01_mopublic_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_mopublic_pub.mopublic_objektname_pos` (READ) - Amt für Geoinformation
   - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ) - Amt für Geoinformation
   - `agi_mopublic_pub.mopublic_bodenbedeckung_proj` (READ) - Amt für Geoinformation
@@ -1132,7 +1132,7 @@
 ### agi_grundbuchplan_pub
 - **Pfad**: `../gretljobs/agi_grundbuchplan_pub/`
 - **Upstream-Trigger**: agi_av_dm01_mopublic_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `agi_grundbuchplan_pub.grundbuchplan_liegenschaft` (READ) - Amt für Geoinformation
   - `agi_grundbuchplan_pub.grundbuchplan_grundstueckpos` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.liegenschaften_liegenschaft` (READ) - Amt für Geoinformation
@@ -1146,53 +1146,53 @@
   - `agi_dm01avso24.liegenschaften_projliegenschaft` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_boflaechesymbol` (READ) - Amt für Geoinformation
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `agi_grundbuchplan_pub.grundbuchplan_grundstueckpos` (INSERT/UPDATE) - Amt für Geoinformation
 
 ### arp_richtplan_abbaustellen_pub
 - **Pfad**: `../gretljobs/arp_richtplan_abbaustellen_pub/`
 - **Upstream-Trigger**: afu_abbaustellen_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.detailkarten_flaeche` (READ) - Amt für Raumplanung
   - `afu_abbaustellen_pub_v2.abbaustelle` (READ) - Amt für Umwelt
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.detailkarten_flaeche` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_richtplan_fruchtfolgeflaechen_pub
 - **Pfad**: `../gretljobs/arp_richtplan_fruchtfolgeflaechen_pub/`
 - **Upstream-Trigger**: alw_fruchtfolgeflaechen_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (READ) - Amt für Raumplanung
   - `alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche` (READ)
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_richtplan_gewaesserschutz_pub
 - **Pfad**: `../gretljobs/arp_richtplan_gewaesserschutz_pub/`
 - **Upstream-Trigger**: afu_gewaesserschutz_zonen_areale_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (READ) - Amt für Raumplanung
   - `afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzareal` (READ) - Amt für Umwelt
   - `afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzzone` (READ) - Amt für Umwelt
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_richtplan_naturreservate_pub
 - **Pfad**: `../gretljobs/arp_richtplan_naturreservate_pub/`
 - **Upstream-Trigger**: arp_naturreservate_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (READ) - Amt für Raumplanung
   - `arp_naturreservate_pub.naturreservate_reservat` (READ) - Amt für Raumplanung
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_richtplan_oeffentlicher_verkehr_pub
 - **Pfad**: `../gretljobs/arp_richtplan_oeffentlicher_verkehr_pub/`
 - **Upstream-Trigger**: avt_oeffentlicher_verkehr_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie` (READ) - Amt für Raumplanung
   - `avt_oeffentlicher_verkehr_pub.oeffntlchr_vrkehr_netz` (READ) - Amt für Verkehr und Tiefbau
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie` (INSERT/UPDATE) - Amt für Raumplanung
 
 ### arp_sein_strukturdaten_pub
@@ -1202,19 +1202,19 @@
 ### awjf_efj_geodaten_upload
 - **Pfad**: `../gretljobs/awjf_efj_geodaten_upload/`
 - **Upstream-Trigger**: awjf_jagdreviere_jagdbanngebiete_pub, awjf_gewaesser_fischerei_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_efj_geodaten_upload_v1.gebiete_gebiet` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_jagdreviere_jagdbanngebiete_v1.jagdreviere_jagdreviere` (READ) - Amt für Wald, Jagd und Fischerei
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze` (READ) - Amt für Geoinformation
   - `afu_gewaesser_v1.fischrevierabschnitt_v` (READ) - Amt für Umwelt
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `awjf_efj_geodaten_upload_v1.gebiete_gebiet` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_efj_geodaten_upload_v1.transfermetadaten_datenbestand` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
 
 ### awjf_statische_waldgrenzen_export_ai
 - **Pfad**: `../gretljobs/awjf_statische_waldgrenzen_export_ai/`
 - **Upstream-Trigger**: awjf_statische_waldgrenze_pub
-- **Quell-Tabellen**:
+- **Quell-Tabellen**: 
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_typ_dokument` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_waldgrenze_linie` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_typ` (READ) - Amt für Wald, Jagd und Fischerei
@@ -1227,7 +1227,7 @@
   - `awjf_statische_waldgrenze.dokumente_dokument` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_statische_waldgrenze_mgdm_v1.rechtsstatus` (READ) - Amt für Wald, Jagd und Fischerei
   - `awjf_statische_waldgrenze.geobasisdaten_typ` (READ) - Amt für Wald, Jagd und Fischerei
-- **Ziel-Tabellen**:
+- **Ziel-Tabellen**: 
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_typ` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_statische_waldgrenze_mgdm_v1.geobasisdaten_waldgrenze_linie` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
   - `awjf_statische_waldgrenze_mgdm_v1.rechtsvorschrften_dokument` (INSERT/UPDATE) - Amt für Wald, Jagd und Fischerei
@@ -1756,5 +1756,5 @@
 - **Support**: christian.baumann@bd.so.ch
 
 ---
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:10:18*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:18:24*
 *Entwickelt für sogis - Solothurner Geoinformations GmbH*
