@@ -1,14 +1,13 @@
+[![GRETL Jobs Analysis (Node.js)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml/badge.svg)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml)
+
 > [!TIP]
 > Siehe [Zusammenfassung](./GRETL_Jobs_Overview.md), täglich um 4:00 UTC automatisch aktualisiert
 
-
-
 # GRETL Jobs Analyzer - sogis
-[![GRETL Jobs Analysis (Node.js)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml/badge.svg)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml)
 
 Ein Node.js-basierter Analyzer für GRETL Jenkins Jobs der **sogis** (Solothurn), der automatisch Dokumentation aus `job.properties` Dateien generiert.
 
-Dieser Analyzer analysiert zeitgesteuerte und upstream-gestartete GRETL-Jobs aus dem [sogis/gretljobs](https://github.com/sogis/gretljobs) Repository.
+Dieser Analyzer analysiert zur Zeit zeitgesteuerte und upstream-gestartete GRETL-Jobs aus dem [sogis/gretljobs](https://github.com/sogis/gretljobs) Repository.
 
 ## 🚀 Features
 
