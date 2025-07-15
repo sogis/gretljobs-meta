@@ -95,7 +95,6 @@ EOF
 
 echo "*Generiert am: $(date)*" >> "$OUTPUT_FILE"
 echo "*Repository: $(basename "$GRETL_JOBS_DIR")*" >> "$OUTPUT_FILE"
-echo "*Jenkins-Instanz: [Jenkins-URL]*" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
 # Job-Informationen sammeln
