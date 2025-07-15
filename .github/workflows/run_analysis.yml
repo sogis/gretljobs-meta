@@ -1,0 +1,94 @@
+# .github/workflows/gretl-analysis.yml
+name: GRETL Jobs Analysis
+
+on:
+  # Manuell auslösbar
+  workflow_dispatch:
+  
+  # Täglich um 6:00 UTC
+  schedule:
+    - cron: '0 6 * * *'
+  
+  # Bei Push in main branch
+  push:
+    branches: [ main ]
+  
+  # Webhook vom gretljobs Repository (optional)
+  # repository_dispatch:
+  #  types: [gretl-jobs-updated]
+
+jobs:
+  analyze-gretl-jobs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Meta Repository (dieses Repo)
+      uses: actions/checkout@v4
+      with:
+        path: gretljobs-meta
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout GRETL Jobs Repository
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.repository_owner }}/gretljobs  # Anpassen falls andere Organisation
+        path: gretljobs
+        token: ${{ secrets.GRETL_JOBS_TOKEN || secrets.GITHUB_TOKEN }}
+
+    - name: Set up environment
+      run: |
+        echo "Repository Owner: ${{ github.repository_owner }}"
+        echo "Current Repository: ${{ github.repository }}"
+        ls -la
+        ls -la gretljobs/ || echo "gretljobs directory not found"
+        ls -la gretljobs-meta/ || echo "gretljobs-meta directory not found"
+
+    - name: Make analysis script executable
+      run: chmod +x gretljobs-meta/gretl_analysis.sh
+
+    - name: Run GRETL Jobs Analysis
+      run: |
+        cd gretljobs-meta
+        # Script anpassen für GitHub Actions
+        export GRETL_JOBS_DIR="../gretljobs"
+        ./gretl_analysis.sh
+
+    - name: Check generated files
+      run: |
+        cd gretljobs-meta
+        ls -la *.md || echo "No markdown files found"
+        echo "=== Generated Documentation Preview ==="
+        head -20 GRETL_Jobs_Overview.md || echo "Documentation file not found"
+
+    - name: Commit and push documentation
+      run: |
+        cd gretljobs-meta
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Add generated files
+        git add GRETL_Jobs_Overview.md || true
+        
+        # Check if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "docs: update GRETL jobs analysis ($(date +%Y-%m-%d))" || true
+          git push || echo "Push failed, possibly no changes"
+        fi
+
+    - name: Upload documentation as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: gretl-jobs-documentation
+        path: |
+          gretljobs-meta/GRETL_Jobs_Overview.md
+        retention-days: 30
+
+#    - name: Create GitHub Pages deployment (optional)
+#      if: github.ref == 'refs/heads/main'
+#      uses: actions/deploy-pages@v3
+#      with:
+#       artifact_path: gretljobs-meta/
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
