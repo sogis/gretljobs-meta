@@ -80,7 +80,8 @@ class GretlJobsAnalyzer {
       } else {
         timeStr = `${hour}:xx`;
       }
-    } else if (hour.includes('/')) {
+    } else if (hour.match(/^\*\/\d+$/)) {
+      // Only handle standard interval syntax */N, not H/N
       const interval = hour.split('/')[1];
       timeStr = `alle ${interval}h`;
     } else {
@@ -93,6 +94,8 @@ class GretlJobsAnalyzer {
       const dayNum = parseInt(dow);
       if (dayNum >= 0 && dayNum <= 6) {
         return `${dayNames[dayNum]} ${timeStr}`;
+      } else if (dayNum === 7) {
+        return `${dayNames[0]} ${timeStr}`; // 7 is also Sunday
       }
     } else if (day.match(/^\d+$/)) {
       return `${day}. ${timeStr}`;
@@ -301,6 +304,7 @@ class GretlJobsAnalyzer {
     }
 
     // Footer
+
     markdown += '---\n';
     markdown += 'Fehler-Notifications: christian.baumann@bd.so.ch \n\n';
     markdown += `*Diese Dokumentation wurde automatisch generiert am ${timestamp}*\n`;
