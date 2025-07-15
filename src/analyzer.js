@@ -130,11 +130,20 @@ class GretlJobsAnalyzer {
         try {
           const content = await fs.readFile(sqlFile, 'utf8');
 
-          // Find FROM tables (source)
+          // Find FROM tables (source) - improved regex
           const fromMatches = content.match(/FROM\s+([a-zA-Z_][a-zA-Z0-9_.]*)/gi);
           if (fromMatches) {
             fromMatches.forEach(match => {
               const table = match.replace(/FROM\s+/i, '').trim();
+              sourceTables.add(table);
+            });
+          }
+
+          // Find JOIN tables (also source) - new addition
+          const joinMatches = content.match(/JOIN\s+([a-zA-Z_][a-zA-Z0-9_.]*)/gi);
+          if (joinMatches) {
+            joinMatches.forEach(match => {
+              const table = match.replace(/JOIN\s+/i, '').trim();
               sourceTables.add(table);
             });
           }
