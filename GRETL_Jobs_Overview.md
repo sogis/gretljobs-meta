@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: 2025-07-15 11:12:57*
+*Generiert am: 2025-07-15 11:54:21*
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -49,9 +49,9 @@
 | awjf_waldportal | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/awjf_waldportal/` | Aktiv |
 | awjf_wegsanierungen_pub | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/awjf_wegsanierungen_pub/` | Aktiv |
 | alw_strukturverbesserungen_pub | Cron | `H H(1-3) * * 6` | Sa ~1-3h | `../gretljobs/alw_strukturverbesserungen_pub/` | Aktiv |
-| ada_archaeologie_pub | Cron | `H H(1-3) * * 7` | ~1-3h | `../gretljobs/ada_archaeologie_pub/` | Aktiv |
-| afu_stehende_gewaesser_abgleich | Cron | `H H(1-3) * * 7` | ~1-3h | `../gretljobs/afu_stehende_gewaesser_abgleich/` | Aktiv |
-| afu_wasserbewirtschaftung_pub | Cron | `H H(1-3) * * 7` | ~1-3h | `../gretljobs/afu_wasserbewirtschaftung_pub/` | Aktiv |
+| ada_archaeologie_pub | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/ada_archaeologie_pub/` | Aktiv |
+| afu_stehende_gewaesser_abgleich | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/afu_stehende_gewaesser_abgleich/` | Aktiv |
+| afu_wasserbewirtschaftung_pub | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/afu_wasserbewirtschaftung_pub/` | Aktiv |
 | amb_zivilschutz_adressen_export | Cron | `H H(1-3) 1 * *` | 1. ~1-3h | `../gretljobs/amb_zivilschutz_adressen_export/` | Aktiv |
 | arp_richtplan_grundnutzung_pub | Cron | `H H(1-3) 1 * *` | 1. ~1-3h | `../gretljobs/arp_richtplan_grundnutzung_pub/` | Aktiv |
 | agi_ch_gemeinden | Cron | `H H(1-3) 1 2 *` | 1. ~1-3h | `../gretljobs/agi_ch_gemeinden/` | Aktiv |
@@ -809,11 +809,18 @@
 
 ### ada_archaeologie_pub
 - **Pfad**: `../gretljobs/ada_archaeologie_pub/`
-- **Schedule**: `H H(1-3) * * 7` (~1-3h)
+- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
 - **Quell-Tabellen**: 
-  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
+  - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ)
+  - `orphan_rrb` (READ)
   - `ada_archaeologie_v1.fachapplikation_fundstelle` (READ)
   - `ada_archaeologie_v1.geo_flaeche` (READ)
+  - `rrb_with_oerebgeom` (READ)
+  - `rrb_num_join` (READ)
+  - `AS` (READ)
+  - `j` (READ)
+  - `fst_num_join` (READ)
+  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
   - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ)
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (READ)
   - `arp_bauzonengrenzen_pub.bauzonengrenzen_bauzonengrenze` (READ)
@@ -822,28 +829,21 @@
   - `ada_archaeologie_pub_v1.restricted_flaechenfundstelle` (READ)
   - `flaeche_beruert_siedlung` (READ)
   - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ)
-  - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ)
-  - `orphan_rrb` (READ)
-  - `rrb_with_oerebgeom` (READ)
-  - `rrb_num_join` (READ)
-  - `AS` (READ)
-  - `j` (READ)
-  - `fst_num_join` (READ)
   - `rep_view_rrb` (READ)
   - `public.rep_view_fundstellen` (READ)
   - `ada_archaeologie_pub_v1.public_qualitaet_lokalisierung_typ` (READ)
   - `enum_map` (READ)
 - **Ziel-Tabellen**: 
-  - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (INSERT/UPDATE)
-  - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (INSERT/UPDATE)
   - `ada_archaeologie_v1.fachapplikation_fundstelle` (INSERT/UPDATE)
   - `ada_archaeologie_v1.geo_flaeche` (INSERT/UPDATE)
+  - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (INSERT/UPDATE)
+  - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (INSERT/UPDATE)
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (INSERT/UPDATE)
   - `ada_archaeologie_pub_v1.restricted_flaechenfundstelle` (INSERT/UPDATE)
 
 ### afu_stehende_gewaesser_abgleich
 - **Pfad**: `../gretljobs/afu_stehende_gewaesser_abgleich/`
-- **Schedule**: `H H(1-3) * * 7` (~1-3h)
+- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
 - **Quell-Tabellen**: 
   - `afu_stehende_gewaesser_v1.stehendes_gewaesser` (READ)
   - `agi_dm01avso24.bodenbedeckung_boflaeche` (READ)
@@ -854,7 +854,7 @@
 
 ### afu_wasserbewirtschaftung_pub
 - **Pfad**: `../gretljobs/afu_wasserbewirtschaftung_pub/`
-- **Schedule**: `H H(1-3) * * 7` (~1-3h)
+- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
 - **Quell-Tabellen**: 
   - `afu_wasserbewirtschaftung_pub_v2.wassrbwschftung_quelle_zustand` (READ)
   - `afu_wasserversorg_obj_v1.dokument` (READ)
@@ -1515,4 +1515,4 @@
 ---
 Fehler-Notifications: christian.baumann@bd.so.ch 
 
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 11:12:57*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 11:54:21*
