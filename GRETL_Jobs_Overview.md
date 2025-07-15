@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht - sogis
 
-*Generiert am: 2025-07-15 12:55:17*
+*Generiert am: 2025-07-15 12:58:14 UTC, *
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -1756,4 +1756,4 @@
 - **Support**: christian.baumann@bd.so.ch
 
 ---
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:55:17*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:58:14*
