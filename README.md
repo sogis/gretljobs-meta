@@ -98,16 +98,14 @@ npm run test:watch
 Die Node.js-Version bietet erweiterte GitHub Actions Features:
 
 ### Automatische Triggers
-- **Täglich um 6:00 UTC**
+- **Täglich um 4:00 UTC**
 - **Bei Push in main branch**
 - **Manuell über GitHub UI**
-- **Webhook von gretljobs Repository**
 
 ### Erweiterte Features
 - **Dependency Caching**: Schnellere Builds
 - **Test Execution**: Automatische Tests vor Deployment
 - **Validation**: Prüfung der generierten Dokumentation
-- **Slack Integration**: Benachrichtigungen bei Fehlern
 - **Release Automation**: Automatische Releases bei Version-Tags
 
 ## ⚙️ Konfiguration
