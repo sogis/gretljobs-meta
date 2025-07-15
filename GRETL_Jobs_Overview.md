@@ -1,7 +1,6 @@
 # GRETL Jobs Übersicht - sogis
 
-*Generiert am: 2025-07-15 12:58:14 UTC, *
-*Repository: gretljobs*
+*Generiert am: 2025-07-15 13:01:36 UTC, Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
 
@@ -115,9 +114,6 @@
 - **Pfad**: `../gretljobs/agi_av_dm01_mopublic_pub/`
 - **Schedule**: `00 21 * * *` (21:00)
 - **Quell-Tabellen**: 
-  - `t_ili2db_basket` (READ)
-  - `t_ili2db_dataset` (READ)
-  - `mopublic_gemeindegrenze` (READ)
   - `agi_dm01avso24.t_ili2db_import` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsname` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsnamepos` (READ) - Amt für Geoinformation
@@ -199,6 +195,9 @@
   - `agi_dm01avso24.einzelobjekte_objektnummer` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_projgebaeudenummer` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_gebaeudenummer` (READ) - Amt für Geoinformation
+  - `t_ili2db_basket` (READ)
+  - `t_ili2db_dataset` (READ)
+  - `mopublic_gemeindegrenze` (READ)
 - **Ziel-Tabellen**: 
   - `mopublic_bodenbedeckung` (INSERT/UPDATE)
   - `mopublic_bodenbedeckung_proj` (INSERT/UPDATE)
@@ -1756,4 +1755,4 @@
 - **Support**: christian.baumann@bd.so.ch
 
 ---
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:58:14*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 13:01:36*
