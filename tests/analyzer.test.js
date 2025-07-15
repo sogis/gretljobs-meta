@@ -256,6 +256,89 @@ triggers.upstream=other_job
       expect(result.targetTables).toContain('target_table3');
     });
 
+    it('should ignore CTE names in SQL analysis', async () => {
+      const jobDir = path.join(testDir, 'test-job-with-cte');
+      await fs.mkdir(jobDir, { recursive: true });
+
+      const sqlContent = `
+        WITH filtered_data AS (
+          SELECT * FROM real_source_table
+          WHERE status = 'active'
+        ),
+        aggregated_data AS (
+          SELECT category, COUNT(*) as count
+          FROM filtered_data
+          GROUP BY category
+        )
+        SELECT
+          ad.category,
+          ad.count,
+          rst.details
+        FROM aggregated_data ad
+        JOIN real_source_table rst ON ad.category = rst.category
+        LEFT JOIN another_real_table art ON rst.id = art.ref_id;
+
+        INSERT INTO target_table (category, count, details)
+        SELECT category, count, details FROM aggregated_data;
+      `;
+
+      await fs.writeFile(path.join(jobDir, 'cte_query.sql'), sqlContent);
+
+      const result = await analyzer.analyzeSqlFiles(jobDir);
+
+      // Should include real tables
+      expect(result.sourceTables).toContain('real_source_table');
+      expect(result.sourceTables).toContain('another_real_table');
+      expect(result.targetTables).toContain('target_table');
+
+      // Should NOT include CTE names
+      expect(result.sourceTables).not.toContain('filtered_data');
+      expect(result.sourceTables).not.toContain('aggregated_data');
+    });
+
+    it('should handle complex CTEs with comments', async () => {
+      const jobDir = path.join(testDir, 'test-job-complex-cte');
+      await fs.mkdir(jobDir, { recursive: true });
+
+      const sqlContent = `
+        -- This is a complex query with CTEs
+        WITH
+        /* Multi-line comment
+           with CTE description */
+        sales_data AS (
+          SELECT * FROM sales_table -- Real table
+          WHERE year = 2024
+        ),
+        -- Another CTE
+        monthly_summary AS (
+          SELECT
+            month,
+            SUM(amount) as total
+          FROM sales_data
+          GROUP BY month
+        )
+        /* Final query */
+        SELECT
+          ms.month,
+          ms.total,
+          pt.product_name
+        FROM monthly_summary ms
+        JOIN product_table pt ON ms.product_id = pt.id;
+      `;
+
+      await fs.writeFile(path.join(jobDir, 'complex_cte.sql'), sqlContent);
+
+      const result = await analyzer.analyzeSqlFiles(jobDir);
+
+      // Should include real tables
+      expect(result.sourceTables).toContain('sales_table');
+      expect(result.sourceTables).toContain('product_table');
+
+      // Should NOT include CTE names
+      expect(result.sourceTables).not.toContain('sales_data');
+      expect(result.sourceTables).not.toContain('monthly_summary');
+    });
+
     it('should ignore searchindex SQL files', async () => {
       const jobDir = path.join(testDir, 'test-job');
       await fs.mkdir(jobDir, { recursive: true });
@@ -313,6 +396,58 @@ triggers.upstream=other_job
       expect(result.targetTables).toHaveLength(0);
 
       console.error = originalError;
+    });
+  });
+
+  describe('extractCteNames', () => {
+    it('should extract CTE names correctly', () => {
+      const sqlContent = `
+        WITH filtered_data AS (
+          SELECT * FROM source_table
+        ),
+        summary_data AS (
+          SELECT category, COUNT(*) FROM filtered_data GROUP BY category
+        )
+        SELECT * FROM summary_data;
+      `;
+
+      const cteNames = analyzer.extractCteNames(sqlContent);
+
+      expect(cteNames.has('filtered_data')).toBe(true);
+      expect(cteNames.has('summary_data')).toBe(true);
+      expect(cteNames.size).toBe(2);
+    });
+
+    it('should handle CTEs with comments and strings', () => {
+      const sqlContent = `
+        -- Comment with 'fake_cte' in string
+        WITH /* comment */ real_cte AS (
+          SELECT 'WITH fake_string AS' FROM table1
+        ),
+        another_cte AS ( -- another comment
+          SELECT "WITH quoted_fake" FROM table2
+        )
+        SELECT * FROM real_cte JOIN another_cte;
+      `;
+
+      const cteNames = analyzer.extractCteNames(sqlContent);
+
+      expect(cteNames.has('real_cte')).toBe(true);
+      expect(cteNames.has('another_cte')).toBe(true);
+      expect(cteNames.has('fake_string')).toBe(false);
+      expect(cteNames.has('quoted_fake')).toBe(false);
+      expect(cteNames.size).toBe(2);
+    });
+
+    it('should handle empty or no CTEs', () => {
+      const sqlContent = `
+        SELECT * FROM regular_table
+        WHERE column = 'value';
+      `;
+
+      const cteNames = analyzer.extractCteNames(sqlContent);
+
+      expect(cteNames.size).toBe(0);
     });
   });
 
@@ -553,63 +688,158 @@ enabled=false
     });
   });
 
+  describe('sogis-specific features', () => {
+    it('should recognize sogis schema patterns', () => {
+      expect(analyzer.getAmtsstelleFromSchema('agi_av')).toBe('Amt für Geoinformation');
+      expect(analyzer.getAmtsstelleFromSchema('afu_gewaesser')).toBe('Amt für Umwelt');
+      expect(analyzer.getAmtsstelleFromSchema('arp_npl')).toBe('Amt für Raumplanung');
+      expect(analyzer.getAmtsstelleFromSchema('ada_archaeologie')).toBe('Amt für Denkmalpflege und Archäologie');
+      expect(analyzer.getAmtsstelleFromSchema('avt_verkehr')).toBe('Amt für Verkehr und Tiefbau');
+    });
+
+    it('should handle unknown schemas', () => {
+      expect(analyzer.getAmtsstelleFromSchema('unknown_schema')).toBe('');
+      expect(analyzer.getAmtsstelleFromSchema('xyz')).toBe('');
+    });
+
+    it('should add schema info to table names', () => {
+      expect(analyzer.getSchemaInfo('agi_av.liegenschaften')).toBe(' - Amt für Geoinformation');
+      expect(analyzer.getSchemaInfo('afu_gewaesser.fliessgewaesser')).toBe(' - Amt für Umwelt');
+      expect(analyzer.getSchemaInfo('simple_table')).toBe('');
+    });
+
+    it('should analyze schemas correctly', () => {
+      const jobs = [
+        {
+          name: 'agi_job',
+          sourceTables: ['agi_av.liegenschaften', 'agi_gb.grundstuecke'],
+          targetTables: ['agi_export.data']
+        },
+        {
+          name: 'afu_job',
+          sourceTables: ['afu_gewaesser.fliessgewaesser'],
+          targetTables: ['afu_export.summary']
+        }
+      ];
+
+      const schemas = analyzer.analyzeSchemas(jobs);
+
+      expect(schemas['agi_av']).toBeDefined();
+      expect(schemas['agi_av'].description).toBe('Amt für Geoinformation');
+      expect(schemas['agi_av'].jobs).toContain('agi_job');
+
+      expect(schemas['afu_gewaesser']).toBeDefined();
+      expect(schemas['afu_gewaesser'].description).toBe('Amt für Umwelt');
+      expect(schemas['afu_gewaesser'].jobs).toContain('afu_job');
+    });
+
+    it('should generate sogis-specific markdown', () => {
+      const jobs = [
+        {
+          name: 'agi_av_gb_abgleich',
+          path: './agi_av_gb_abgleich',
+          triggerType: 'cron',
+          cronSchedule: 'H H(1-3) * * *',
+          status: 'Aktiv',
+          sourceTables: ['agi_av.liegenschaften', 'agi_gb.grundstuecke'],
+          targetTables: ['agi_av_gb_abgleich.differenzen'],
+          sortKey: '1'
+        }
+      ];
+
+      const markdown = analyzer.generateMarkdown(jobs);
+
+      expect(markdown).toContain('# GRETL Jobs Übersicht - sogis');
+      expect(markdown).toContain('Jenkins-Instanz: [Jenkins sogis]');
+      expect(markdown).toContain('## Analyse nach Amtsstellen (sogis)');
+      expect(markdown).toContain('Amt für Geoinformation');
+      expect(markdown).toContain('| Amtsstelle |');
+      expect(markdown).toContain('info@sogis.so.ch');
+      expect(markdown).toContain('sogis - Solothurner Geoinformations GmbH');
+    });
+  });
+
   describe('integration test', () => {
     it('should run complete analysis', async () => {
-      // Create realistic test structure
-      const job1Dir = path.join(testDir, 'daily_import');
-      const job2Dir = path.join(testDir, 'weekly_report');
+      // Create realistic sogis test structure
+      const agiJobDir = path.join(testDir, 'agi_av_gb_abgleich');
+      const afuJobDir = path.join(testDir, 'afu_gewaesser_import');
 
-      await fs.mkdir(job1Dir, { recursive: true });
-      await fs.mkdir(job2Dir, { recursive: true });
+      await fs.mkdir(agiJobDir, { recursive: true });
+      await fs.mkdir(afuJobDir, { recursive: true });
 
-      // Daily import job
-      await fs.writeFile(path.join(job1Dir, 'job.properties'), `
+      // AGI job with typical sogis structure
+      await fs.writeFile(path.join(agiJobDir, 'job.properties'), `
 triggers.cron=H H(1-3) * * *
-description=Daily data import
+description=AV-GB Abgleich für sogis
       `.trim());
 
-      await fs.writeFile(path.join(job1Dir, 'import.sql'), `
-        SELECT * FROM source_system.raw_data
-        WHERE updated_date >= CURRENT_DATE - 1;
+      await fs.writeFile(path.join(agiJobDir, 'av_gb_abgleich.sql'), `
+        WITH filtered_av AS (
+          SELECT * FROM agi_av.liegenschaften
+          WHERE status = 'rechtskraeftig'
+        )
+        SELECT
+          av.egrid,
+          gb.nummer,
+          CASE
+            WHEN av.flaeche != gb.flaeche THEN 'Flächendifferenz'
+            ELSE 'OK'
+          END as status
+        FROM filtered_av av
+        JOIN agi_gb.grundstuecke gb ON av.egrid = gb.egrid
+        WHERE av.flaeche != gb.flaeche;
 
-        INSERT INTO staging.daily_import (data, import_date)
-        SELECT processed_data, CURRENT_DATE
-        FROM source_system.raw_data;
+        INSERT INTO agi_av_gb_abgleich.differenzen (egrid, typ, beschreibung)
+        SELECT egrid, 'Fläche', 'Differenz zwischen AV und GB'
+        FROM agi_av.liegenschaften av
+        JOIN agi_gb.grundstuecke gb ON av.egrid = gb.egrid
+        WHERE av.flaeche != gb.flaeche;
       `);
 
-      // Weekly report job
-      await fs.writeFile(path.join(job2Dir, 'job.properties'), `
-triggers.upstream=daily_import
-description=Weekly aggregation report
+      // AFU job depending on AGI job
+      await fs.writeFile(path.join(afuJobDir, 'job.properties'), `
+triggers.upstream=agi_av_gb_abgleich
+description=Gewässer Import nach AV-GB Abgleich
       `.trim());
 
-      await fs.writeFile(path.join(job2Dir, 'report.sql'), `
+      await fs.writeFile(path.join(afuJobDir, 'gewaesser_import.sql'), `
         SELECT
-          DATE_TRUNC('week', import_date) as week,
-          COUNT(*) as record_count
-        FROM staging.daily_import
-        GROUP BY week;
+          g.objectid,
+          g.gewaessername,
+          ST_Intersects(g.geometrie, l.geometrie) as schneidet_liegenschaft
+        FROM afu_gewaesser.fliessgewaesser g
+        JOIN agi_av.liegenschaften l ON ST_Intersects(g.geometrie, l.geometrie)
+        WHERE g.typ = 'Bach';
 
-        CREATE TABLE reports.weekly_summary AS
-        SELECT * FROM staging.aggregated_data;
+        CREATE TABLE afu_gewaesser_av.schnittpunkte AS
+        SELECT * FROM afu_gewaesser.analysierte_daten;
       `);
 
       // Run analysis
       const jobs = await analyzer.analyzeJobs();
       const markdown = analyzer.generateMarkdown(jobs);
 
-      // Verify results
+      // Verify sogis-specific results
       expect(jobs).toHaveLength(2);
-      expect(jobs[0].name).toBe('daily_import');
+      expect(jobs[0].name).toBe('agi_av_gb_abgleich');
       expect(jobs[0].triggerType).toBe('cron');
-      expect(jobs[1].name).toBe('weekly_report');
+      expect(jobs[1].name).toBe('afu_gewaesser_import');
       expect(jobs[1].triggerType).toBe('upstream');
 
-      expect(markdown).toContain('daily_import');
-      expect(markdown).toContain('weekly_report');
+      // Verify sogis-specific content
+      expect(markdown).toContain('sogis');
       expect(markdown).toContain('~1-3h');
-      expect(markdown).toContain('source_system.raw_data');
-      expect(markdown).toContain('staging.daily_import');
+      expect(markdown).toContain('agi_av.liegenschaften');
+      expect(markdown).toContain('afu_gewaesser.fliessgewaesser');
+      expect(markdown).toContain('Amt für Geoinformation');
+      expect(markdown).toContain('Amt für Umwelt');
+
+      // Verify CTE filtering worked
+      expect(markdown).not.toContain('filtered_av');
+
+      // Verify schema analysis
+      expect(markdown).toContain('## Analyse nach Amtsstellen (sogis)');
     });
   });
 });

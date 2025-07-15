@@ -134,12 +134,17 @@ class GretlJobsAnalyzer {
         try {
           const content = await fs.readFile(sqlFile, 'utf8');
 
+          // Extract CTE names to ignore them later
+          const cteNames = this.extractCteNames(content);
+
           // Find FROM tables (source) - improved regex
           const fromMatches = content.match(/FROM\s+([a-zA-Z_][a-zA-Z0-9_.]*)/gi);
           if (fromMatches) {
             fromMatches.forEach(match => {
               const table = match.replace(/FROM\s+/i, '').trim();
-              sourceTables.add(table);
+              if (!cteNames.has(table.toLowerCase())) {
+                sourceTables.add(table);
+              }
             });
           }
 
@@ -148,7 +153,9 @@ class GretlJobsAnalyzer {
           if (joinMatches) {
             joinMatches.forEach(match => {
               const table = match.replace(/JOIN\s+/i, '').trim();
-              sourceTables.add(table);
+              if (!cteNames.has(table.toLowerCase())) {
+                sourceTables.add(table);
+              }
             });
           }
 
@@ -157,6 +164,7 @@ class GretlJobsAnalyzer {
           if (targetMatches) {
             targetMatches.forEach(match => {
               const table = match.replace(/(INSERT\s+INTO|UPDATE|CREATE\s+TABLE)\s+/i, '').trim();
+              // CTEs are never targets, so no need to check
               targetTables.add(table);
             });
           }
@@ -173,6 +181,44 @@ class GretlJobsAnalyzer {
       this.error(`Error analyzing SQL files in ${jobDir}: ${error.message}`);
       return { sourceTables: [], targetTables: [] };
     }
+  }
+
+  // Extract CTE (Common Table Expression) names from SQL content
+  extractCteNames(sqlContent) {
+    const cteNames = new Set();
+
+    // Remove comments and strings to avoid false matches
+    const cleanSql = sqlContent
+      .replace(/--[^\n]*/g, '') // Remove single-line comments
+      .replace(/\/\*[\s\S]*?\*\//g, '') // Remove multi-line comments
+      .replace(/'[^']*'/g, "''") // Remove string literals
+      .replace(/"[^"]*"/g, '""'); // Remove quoted identifiers
+
+    // Match WITH clauses: WITH cte_name AS (...), another_cte AS (...)
+    const withMatches = cleanSql.match(/WITH\s+([^()]+?)(?:\s+AS\s*\()/gi);
+    if (withMatches) {
+      withMatches.forEach(match => {
+        // Extract CTE name from "WITH cte_name AS ("
+        const cteMatch = match.match(/WITH\s+([a-zA-Z_][a-zA-Z0-9_]*)/i);
+        if (cteMatch) {
+          cteNames.add(cteMatch[1].toLowerCase());
+        }
+      });
+    }
+
+    // Match additional CTEs in the same WITH clause: , cte_name AS (...)
+    const additionalCteMatches = cleanSql.match(/,\s*([a-zA-Z_][a-zA-Z0-9_]*)\s+AS\s*\(/gi);
+    if (additionalCteMatches) {
+      additionalCteMatches.forEach(match => {
+        const cteMatch = match.match(/,\s*([a-zA-Z_][a-zA-Z0-9_]*)\s+AS/i);
+        if (cteMatch) {
+          cteNames.add(cteMatch[1].toLowerCase());
+        }
+      });
+    }
+
+    this.log(`Found CTEs: ${Array.from(cteNames).join(', ')}`);
+    return cteNames;
   }
 
   // Analyze all jobs
@@ -226,7 +272,7 @@ class GretlJobsAnalyzer {
     const timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const repoName = path.basename(path.resolve(this.gretlJobsDir));
 
-    let markdown = `# GRETL Jobs Übersicht
+    let markdown = `# GRETL Jobs Übersicht - sogis
 
 *Generiert am: ${timestamp}*
 *Repository: ${repoName}*
@@ -248,7 +294,7 @@ class GretlJobsAnalyzer {
     });
 
     // Generate detailed job analysis
-    markdown += '\n## Tabellenzugriffe pro Job\n\n';
+    markdown += `\n## Tabellenzugriffe pro Job\n\n`;
 
     jobs.forEach(job => {
       markdown += `### ${job.name}\n`;
@@ -262,21 +308,36 @@ class GretlJobsAnalyzer {
       }
 
       if (job.sourceTables.length > 0) {
-        markdown += '- **Quell-Tabellen**: \n';
+        markdown += `- **Quell-Tabellen**: \n`;
         job.sourceTables.forEach(table => {
-          markdown += `  - \`${table}\` (READ)\n`;
+          const schemaInfo = this.getSchemaInfo(table);
+          markdown += `  - \`${table}\` (READ)${schemaInfo}\n`;
         });
       }
 
       if (job.targetTables.length > 0) {
-        markdown += '- **Ziel-Tabellen**: \n';
+        markdown += `- **Ziel-Tabellen**: \n`;
         job.targetTables.forEach(table => {
-          markdown += `  - \`${table}\` (INSERT/UPDATE)\n`;
+          const schemaInfo = this.getSchemaInfo(table);
+          markdown += `  - \`${table}\` (INSERT/UPDATE)${schemaInfo}\n`;
         });
       }
 
-      markdown += '\n';
+      markdown += `\n`;
     });
+
+    // Generate schema-specific analysis
+    const schemaAnalysis = this.analyzeSchemas(jobs);
+    if (Object.keys(schemaAnalysis).length > 0) {
+      markdown += `## Analyse nach Amtsstellen (sogis)\n\n`;
+
+      Object.entries(schemaAnalysis).forEach(([schema, info]) => {
+        markdown += `### ${info.description} (${schema})\n`;
+        markdown += `- **Jobs**: ${info.jobs.length}\n`;
+        markdown += `- **Tabellen**: ${info.tables.length}\n`;
+        markdown += `- **Job-Namen**: ${info.jobs.join(', ')}\n\n`;
+      });
+    }
 
     // Generate table frequency analysis
     const tableFrequency = new Map();
@@ -288,28 +349,97 @@ class GretlJobsAnalyzer {
 
     const sortedTables = Array.from(tableFrequency.entries())
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 10);
+      .slice(0, 15); // Show top 15 for sogis
 
     if (sortedTables.length > 0) {
-      markdown += '## Häufig verwendete Tabellen\n\n';
-      markdown += '| Anzahl | Tabellenname | Schema |\n';
-      markdown += '|--------|-------------|--------|\n';
+      markdown += `## Häufig verwendete Tabellen\n\n`;
+      markdown += `| Anzahl | Tabellenname | Schema | Amtsstelle |\n`;
+      markdown += `|--------|-------------|--------|------------|\n`;
 
       sortedTables.forEach(([table, count]) => {
         const parts = table.split('.');
         const schema = parts.length > 1 ? parts[0] : '';
         const tableName = parts.length > 1 ? parts[1] : table;
-        markdown += `| ${count} | ${tableName} | ${schema} |\n`;
+        const amtsstelle = this.getAmtsstelleFromSchema(schema);
+        markdown += `| ${count} | ${tableName} | ${schema} | ${amtsstelle} |\n`;
       });
     }
 
     // Footer
 
-    markdown += '---\n';
-    markdown += 'Fehler-Notifications: christian.baumann@bd.so.ch \n\n';
+    markdown += `### Kontakt\n`;
+    markdown += `- **Repository**: https://github.com/sogis/gretljobs-meta\n`;
+    markdown += `- **GRETL Jobs**: https://github.com/sogis/gretljobs\n`;
+    markdown += `- **Support**: christian.baumann@bd.so.ch\n\n`;
+
+    markdown += `---\n`;
     markdown += `*Diese Dokumentation wurde automatisch generiert am ${timestamp}*\n`;
+    markdown += `*Entwickelt für sogis - Solothurner Geoinformations GmbH*`;
 
     return markdown;
+  }
+
+  // Get schema information for sogis
+  getSchemaInfo(tableName) {
+    if (!tableName.includes('.')) return '';
+
+    const schema = tableName.split('.')[0];
+    const amtsstelle = this.getAmtsstelleFromSchema(schema);
+
+    return amtsstelle ? ` - ${amtsstelle}` : '';
+  }
+
+  // Get Amtsstelle from schema prefix
+  getAmtsstelleFromSchema(schema) {
+    const amtsstellen = {
+      'agi': 'Amt für Geoinformation',
+      'afu': 'Amt für Umwelt',
+      'arp': 'Amt für Raumplanung',
+      'ada': 'Amt für Denkmalpflege und Archäologie',
+      'avt': 'Amt für Verkehr und Tiefbau',
+      'awjf': 'Amt für Wald, Jagd und Fischerei',
+      'ala': 'Amt für Landwirtschaft',
+      'so': 'Kanton Solothurn',
+      'sogis': 'sogis'
+    };
+
+    const prefix = schema.split('_')[0];
+    return amtsstellen[prefix] || '';
+  }
+
+  // Analyze jobs and tables by schema
+  analyzeSchemas(jobs) {
+    const schemas = {};
+
+    jobs.forEach(job => {
+      const allTables = [...job.sourceTables, ...job.targetTables];
+
+      allTables.forEach(table => {
+        if (table.includes('.')) {
+          const schema = table.split('.')[0];
+          const prefix = schema.split('_')[0];
+
+          if (!schemas[schema]) {
+            schemas[schema] = {
+              description: this.getAmtsstelleFromSchema(schema) || schema,
+              jobs: new Set(),
+              tables: new Set()
+            };
+          }
+
+          schemas[schema].jobs.add(job.name);
+          schemas[schema].tables.add(table);
+        }
+      });
+    });
+
+    // Convert Sets to Arrays
+    Object.keys(schemas).forEach(schema => {
+      schemas[schema].jobs = Array.from(schemas[schema].jobs);
+      schemas[schema].tables = Array.from(schemas[schema].tables);
+    });
+
+    return schemas;
   }
 
   // Main analysis function
@@ -341,7 +471,7 @@ class GretlJobsAnalyzer {
 
       console.log(`✅ Documentation created: ${this.outputFile}`);
       console.log(`📊 Analyzed ${jobs.length} jobs`);
-      console.log('📄 Script completed successfully!');
+      console.log(`📄 Script completed successfully!`);
 
     } catch (error) {
       this.error(`Analysis failed: ${error.message}`);
