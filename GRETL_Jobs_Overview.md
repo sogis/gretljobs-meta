@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: Di 15 Jul 2025 09:39:05 CEST*
+*Generiert am: Tue Jul 15 08:22:20 UTC 2025*
 *Repository: gretljobs*
 *Jenkins-Instanz: [Jenkins-URL]*
 
@@ -8,22 +8,11 @@
 
 | Job Name | Trigger | Schedule | Lesbar | Pfad | Status |
 |----------|---------|----------|--------|------|---------|
-| agi_av_dm01_mopublic_pub | Cron | `00 21 * * *` | 21:00 | `../gretljobs/agi_av_dm01_mopublic_pub/` | Aktiv |
 | afu_ewsabfrage_2d | Cron | `0 4 * * 0` | So 04:00 | `../gretljobs/afu_ewsabfrage_2d/` | Aktiv |
+| agi_av_dm01_mopublic_pub | Cron | `00 21 * * *` | 21:00 | `../gretljobs/agi_av_dm01_mopublic_pub/` | Aktiv |
 | agi_av_kaso_abgleich_pub | Cron | `H 3 * * *` | ~3:xx | `../gretljobs/agi_av_kaso_abgleich_pub/` | Aktiv |
 | agi_generate_matomo_reports | Cron | `H 4 1 * *` | 1. ~4:xx | `../gretljobs/agi_generate_matomo_reports/` | Aktiv |
 | afu_neophyten_pub | Cron | `H 6 * * *` | ~6:xx | `../gretljobs/afu_neophyten_pub/` | Aktiv |
-| agi_ch_gemeinden | Cron | `H H(1-3) 1 2 *` | 1. ~1-3h | `../gretljobs/agi_ch_gemeinden/` | Aktiv |
-| awjf_rodung_rodungsersatz_mgdm | Cron | `H H(1-3) 1 3 *` | 1. ~1-3h | `../gretljobs/awjf_rodung_rodungsersatz_mgdm/` | Aktiv |
-| arp_mjpnl_v2_auszahlung | Cron | `H H(1-3) 15 1 *` | 15. ~1-3h | `../gretljobs/arp_mjpnl_v2_auszahlung/` | Aktiv |
-| amb_zivilschutz_adressen_export | Cron | `H H(1-3) 1 * *` | 1. ~1-3h | `../gretljobs/amb_zivilschutz_adressen_export/` | Aktiv |
-| arp_richtplan_grundnutzung_pub | Cron | `H H(1-3) 1 * *` | 1. ~1-3h | `../gretljobs/arp_richtplan_grundnutzung_pub/` | Aktiv |
-| agi_swisstopo_gebaeudeadressen | Cron | `H H(1-3) 2 * *` | 2. ~1-3h | `../gretljobs/agi_swisstopo_gebaeudeadressen/` | Aktiv |
-| arp_auswertung_nutzungsplanung_pub | Cron | `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` | 31. ~1-3h | `../gretljobs/arp_auswertung_nutzungsplanung_pub/` | Aktiv |
-| alw_strukturverbesserungen_pub | Cron | `H H(1-3) * * 6` | Sa ~1-3h | `../gretljobs/alw_strukturverbesserungen_pub/` | Aktiv |
-| ada_archaeologie_pub | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/ada_archaeologie_pub/` | Aktiv |
-| afu_stehende_gewaesser_abgleich | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/afu_stehende_gewaesser_abgleich/` | Aktiv |
-| afu_wasserbewirtschaftung_pub | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/afu_wasserbewirtschaftung_pub/` | Aktiv |
 | afu_altlasten_import_pub | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/afu_altlasten_import_pub/` | Aktiv |
 | afu_asiatische_hornisse_pub | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/afu_asiatische_hornisse_pub/` | Aktiv |
 | afu_erdwaermesonden_private_quellen_pub | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/afu_erdwaermesonden_private_quellen_pub/` | Aktiv |
@@ -63,15 +52,26 @@
 | awjf_waldpflege_kontrolle | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/awjf_waldpflege_kontrolle/` | Aktiv |
 | awjf_waldportal | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/awjf_waldportal/` | Aktiv |
 | awjf_wegsanierungen_pub | Cron | `H H(1-3) * * *` | ~1-3h | `../gretljobs/awjf_wegsanierungen_pub/` | Aktiv |
+| alw_strukturverbesserungen_pub | Cron | `H H(1-3) * * 6` | Sa ~1-3h | `../gretljobs/alw_strukturverbesserungen_pub/` | Aktiv |
+| ada_archaeologie_pub | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/ada_archaeologie_pub/` | Aktiv |
+| afu_stehende_gewaesser_abgleich | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/afu_stehende_gewaesser_abgleich/` | Aktiv |
+| afu_wasserbewirtschaftung_pub | Cron | `H H(1-3) * * 7` | So ~1-3h | `../gretljobs/afu_wasserbewirtschaftung_pub/` | Aktiv |
+| amb_zivilschutz_adressen_export | Cron | `H H(1-3) 1 * *` | 1. ~1-3h | `../gretljobs/amb_zivilschutz_adressen_export/` | Aktiv |
+| arp_richtplan_grundnutzung_pub | Cron | `H H(1-3) 1 * *` | 1. ~1-3h | `../gretljobs/arp_richtplan_grundnutzung_pub/` | Aktiv |
+| agi_ch_gemeinden | Cron | `H H(1-3) 1 2 *` | 1. ~1-3h | `../gretljobs/agi_ch_gemeinden/` | Aktiv |
+| awjf_rodung_rodungsersatz_mgdm | Cron | `H H(1-3) 1 3 *` | 1. ~1-3h | `../gretljobs/awjf_rodung_rodungsersatz_mgdm/` | Aktiv |
+| arp_mjpnl_v2_auszahlung | Cron | `H H(1-3) 15 1 *` | 15. ~1-3h | `../gretljobs/arp_mjpnl_v2_auszahlung/` | Aktiv |
+| agi_swisstopo_gebaeudeadressen | Cron | `H H(1-3) 2 * *` | 2. ~1-3h | `../gretljobs/agi_swisstopo_gebaeudeadressen/` | Aktiv |
+| arp_auswertung_nutzungsplanung_pub | Cron | `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` | 31. ~1-3h | `../gretljobs/arp_auswertung_nutzungsplanung_pub/` | Aktiv |
 | afu_onlinerisk_transfer | Cron | `H H(18-19) * * 1-5` | ~18-19h | `../gretljobs/afu_onlinerisk_transfer/` | Aktiv |
 | alw_landwirtschaft_tierhaltung_pub | Cron | `H H(2-4) * * *` | ~2-4h | `../gretljobs/alw_landwirtschaft_tierhaltung_pub/` | Aktiv |
 | avt_bodenfaktor_pub | Cron | `H H(2-5) * * 0` | So ~2-5h | `../gretljobs/avt_bodenfaktor_pub/` | Aktiv |
-| afu_igel | Cron | `H H(3-4) * * 0` | So ~3-4h | `../gretljobs/afu_igel/` | Aktiv |
-| alw_landwirtschaft_tierhaltung_import_massnahmen | Cron | `H H(3-4) 1 * *` | 1. ~3-4h | `../gretljobs/alw_landwirtschaft_tierhaltung_import_massnahmen/` | Aktiv |
-| alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Cron | `H H(3-4) * * 5` | Fr ~3-4h | `../gretljobs/alw_landwirtschaft_tierhaltung_import_bodenbedeckung/` | Aktiv |
 | agi_av_meldewesen | Cron | `H H(3-4) * * *` | ~3-4h | `../gretljobs/agi_av_meldewesen/` | Aktiv |
 | agi_gwr_pub | Cron | `H H(3-4) * * *` | ~3-4h | `../gretljobs/agi_gwr_pub/` | Aktiv |
 | dsbjd_ebauso_rahmenmodell_pub | Cron | `H H(3-4) * * *` | ~3-4h | `../gretljobs/dsbjd_ebauso_rahmenmodell_pub/` | Aktiv |
+| afu_igel | Cron | `H H(3-4) * * 0` | So ~3-4h | `../gretljobs/afu_igel/` | Aktiv |
+| alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Cron | `H H(3-4) * * 5` | Fr ~3-4h | `../gretljobs/alw_landwirtschaft_tierhaltung_import_bodenbedeckung/` | Aktiv |
+| alw_landwirtschaft_tierhaltung_import_massnahmen | Cron | `H H(3-4) 1 * *` | 1. ~3-4h | `../gretljobs/alw_landwirtschaft_tierhaltung_import_massnahmen/` | Aktiv |
 | awjf_efj | Cron | `H H(4-5) * * *` | ~4-5h | `../gretljobs/awjf_efj/` | Aktiv |
 | agi_stac | Cron | `H H(5-6) * * *` | ~5-6h | `../gretljobs/agi_stac/` | Aktiv |
 | ada_denkmalschutz_pub | Upstream | oerebv2_einzelschutz_denkmal | - | `../gretljobs/ada_denkmalschutz_pub/` | Aktiv |
@@ -85,25 +85,11 @@
 | arp_richtplan_gewaesserschutz_pub | Upstream | afu_gewaesserschutz_zonen_areale_pub | - | `../gretljobs/arp_richtplan_gewaesserschutz_pub/` | Aktiv |
 | arp_richtplan_naturreservate_pub | Upstream | arp_naturreservate_pub | - | `../gretljobs/arp_richtplan_naturreservate_pub/` | Aktiv |
 | arp_richtplan_oeffentlicher_verkehr_pub | Upstream | avt_oeffentlicher_verkehr_pub | - | `../gretljobs/arp_richtplan_oeffentlicher_verkehr_pub/` | Aktiv |
+| arp_sein_strukturdaten_pub | Upstream | arp_auswertung_nutzungsplanung_pub | - | `../gretljobs/arp_sein_strukturdaten_pub/` | Aktiv |
 | awjf_efj_geodaten_upload | Upstream | awjf_jagdreviere_jagdbanngebiete_pub, awjf_gewaesser_fischerei_pub | - | `../gretljobs/awjf_efj_geodaten_upload/` | Aktiv |
 | awjf_statische_waldgrenzen_export_ai | Upstream | awjf_statische_waldgrenze_pub | - | `../gretljobs/awjf_statische_waldgrenzen_export_ai/` | Aktiv |
 
 ## Tabellenzugriffe pro Job
-
-### agi_av_dm01_mopublic_pub
-- **Pfad**: `../gretljobs/agi_av_dm01_mopublic_pub/`
-- **Schedule**: `00 21 * * *` (21:00)
-- **Quell-Tabellen**: 
-  - `boden_obj` (READ)
-  - `boden_proj_obj` (READ)
-  - `einzelobjekt_flaeche` (READ)
-  - `einzelobjekt_linie` (READ)
-  - `einzelobjekt_punkt` (READ)
-  - `hfp1` (READ)
-  - `hfp2` (READ)
-  - `hfp3` (READ)
-  - `lfp1` (READ)
-  - `lfp2` (READ)
 
 ### afu_ewsabfrage_2d
 - **Pfad**: `../gretljobs/afu_ewsabfrage_2d/`
@@ -119,6 +105,21 @@
   - `afu_ewsabfrage_2d_v1.abklaerung` (READ)
   - `afu_ewsabfrage_2d_v1.tiefenbeschraenkung` (READ)
   - `afu_gewaesser_oekomorphologie_pub_v1.oekomorphologie` (READ)
+
+### agi_av_dm01_mopublic_pub
+- **Pfad**: `../gretljobs/agi_av_dm01_mopublic_pub/`
+- **Schedule**: `00 21 * * *` (21:00)
+- **Quell-Tabellen**: 
+  - `boden_obj` (READ)
+  - `boden_proj_obj` (READ)
+  - `einzelobjekt_flaeche` (READ)
+  - `einzelobjekt_linie` (READ)
+  - `einzelobjekt_punkt` (READ)
+  - `hfp1` (READ)
+  - `hfp2` (READ)
+  - `hfp3` (READ)
+  - `lfp1` (READ)
+  - `lfp2` (READ)
 
 ### agi_av_kaso_abgleich_pub
 - **Pfad**: `../gretljobs/agi_av_kaso_abgleich_pub/`
@@ -138,95 +139,6 @@
 ### afu_neophyten_pub
 - **Pfad**: `../gretljobs/afu_neophyten_pub/`
 - **Schedule**: `H 6 * * *` (~6:xx)
-
-### agi_ch_gemeinden
-- **Pfad**: `../gretljobs/agi_ch_gemeinden/`
-- **Schedule**: `H H(1-3) 1 2 *` (1. ~1-3h)
-- **Quell-Tabellen**: 
-  - `agi_swissboundaries3d_v2.multisurface3d` (READ)
-
-### awjf_rodung_rodungsersatz_mgdm
-- **Pfad**: `../gretljobs/awjf_rodung_rodungsersatz_mgdm/`
-- **Schedule**: `H H(1-3) 1 3 *` (1. ~1-3h)
-- **Quell-Tabellen**: 
-  - `awjf_rodung_rodungsersatz_mgdm_v1.rodungsbewilligung` (READ)
-- **Ziel-Tabellen**: 
-  - `awjf_rodung_rodungsersatz_mgdm_v1.ersatzmassnahmennl_` (INSERT/UPDATE)
-  - `awjf_rodung_rodungsersatz_mgdm_v1.ersatzverzicht_` (INSERT/UPDATE)
-  - `awjf_rodung_rodungsersatz_mgdm_v1.massnahmenltyp_` (INSERT/UPDATE)
-  - `awjf_rodung_rodungsersatz_mgdm_v1.objekt` (INSERT/UPDATE)
-  - `awjf_rodung_rodungsersatz_mgdm_v1.rodungsbewilligung` (INSERT/UPDATE)
-
-### arp_mjpnl_v2_auszahlung
-- **Pfad**: `../gretljobs/arp_mjpnl_v2_auszahlung/`
-- **Schedule**: `H H(1-3) 15 1 *` (15. ~1-3h)
-
-### amb_zivilschutz_adressen_export
-- **Pfad**: `../gretljobs/amb_zivilschutz_adressen_export/`
-- **Schedule**: `H H(1-3) 1 * *` (1. ~1-3h)
-- **Quell-Tabellen**: 
-  - `adressen` (READ)
-  - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (READ)
-- **Ziel-Tabellen**: 
-  - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (INSERT/UPDATE)
-
-### arp_richtplan_grundnutzung_pub
-- **Pfad**: `../gretljobs/arp_richtplan_grundnutzung_pub/`
-- **Schedule**: `H H(1-3) 1 * *` (1. ~1-3h)
-- **Ziel-Tabellen**: 
-  - `arp_richtplan_pub_v2.richtplankarte_grundnutzung` (INSERT/UPDATE)
-
-### agi_swisstopo_gebaeudeadressen
-- **Pfad**: `../gretljobs/agi_swisstopo_gebaeudeadressen/`
-- **Schedule**: `H H(1-3) 2 * *` (2. ~1-3h)
-
-### arp_auswertung_nutzungsplanung_pub
-- **Pfad**: `../gretljobs/arp_auswertung_nutzungsplanung_pub/`
-- **Schedule**: `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` (31. ~1-3h)
-- **Quell-Tabellen**: 
-  - `2` (READ)
-  - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ)
-  - `agi_mopublic_pub.mopublic_einzelobjekt_flaeche` (READ)
-  - `agi_mopublic_pub.mopublic_grundstueck` (READ)
-  - `arp_auswertung_nutzungsplanung_pub_v1.auswrtngtzngsznen_grundnutzungszone_aggregiert_pro_gemeinde` (READ)
-  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_ohne_lsgrenzen` (READ)
-  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_und_lsgrenzen` (READ)
-  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_pro_gemeinde` (READ)
-  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_gines` (READ)
-  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand` (READ)
-
-### alw_strukturverbesserungen_pub
-- **Pfad**: `../gretljobs/alw_strukturverbesserungen_pub/`
-- **Schedule**: `H H(1-3) * * 6` (Sa ~1-3h)
-- **Quell-Tabellen**: 
-  - `1` (READ)
-  - `3` (READ)
-  - `5` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_bew_flaechen_bewaesserung` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_flaeche` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_pumpwerk` (READ)
-
-### ada_archaeologie_pub
-- **Pfad**: `../gretljobs/ada_archaeologie_pub/`
-- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
-- **Quell-Tabellen**: 
-  - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ)
-  - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (READ)
-- **Ziel-Tabellen**: 
-  - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (INSERT/UPDATE)
-  - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (INSERT/UPDATE)
-
-### afu_stehende_gewaesser_abgleich
-- **Pfad**: `../gretljobs/afu_stehende_gewaesser_abgleich/`
-- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
-
-### afu_wasserbewirtschaftung_pub
-- **Pfad**: `../gretljobs/afu_wasserbewirtschaftung_pub/`
-- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
 
 ### afu_altlasten_import_pub
 - **Pfad**: `../gretljobs/afu_altlasten_import_pub/`
@@ -445,6 +357,95 @@
 - **Pfad**: `../gretljobs/awjf_wegsanierungen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 
+### alw_strukturverbesserungen_pub
+- **Pfad**: `../gretljobs/alw_strukturverbesserungen_pub/`
+- **Schedule**: `H H(1-3) * * 6` (Sa ~1-3h)
+- **Quell-Tabellen**: 
+  - `1` (READ)
+  - `3` (READ)
+  - `5` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_bew_flaechen_bewaesserung` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_linie` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_punkt` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_flaeche` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_linie` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_pumpwerk` (READ)
+
+### ada_archaeologie_pub
+- **Pfad**: `../gretljobs/ada_archaeologie_pub/`
+- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
+- **Quell-Tabellen**: 
+  - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ)
+  - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (READ)
+- **Ziel-Tabellen**: 
+  - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (INSERT/UPDATE)
+  - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (INSERT/UPDATE)
+
+### afu_stehende_gewaesser_abgleich
+- **Pfad**: `../gretljobs/afu_stehende_gewaesser_abgleich/`
+- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
+
+### afu_wasserbewirtschaftung_pub
+- **Pfad**: `../gretljobs/afu_wasserbewirtschaftung_pub/`
+- **Schedule**: `H H(1-3) * * 7` (So ~1-3h)
+
+### amb_zivilschutz_adressen_export
+- **Pfad**: `../gretljobs/amb_zivilschutz_adressen_export/`
+- **Schedule**: `H H(1-3) 1 * *` (1. ~1-3h)
+- **Quell-Tabellen**: 
+  - `adressen` (READ)
+  - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (READ)
+- **Ziel-Tabellen**: 
+  - `amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz` (INSERT/UPDATE)
+
+### arp_richtplan_grundnutzung_pub
+- **Pfad**: `../gretljobs/arp_richtplan_grundnutzung_pub/`
+- **Schedule**: `H H(1-3) 1 * *` (1. ~1-3h)
+- **Ziel-Tabellen**: 
+  - `arp_richtplan_pub_v2.richtplankarte_grundnutzung` (INSERT/UPDATE)
+
+### agi_ch_gemeinden
+- **Pfad**: `../gretljobs/agi_ch_gemeinden/`
+- **Schedule**: `H H(1-3) 1 2 *` (1. ~1-3h)
+- **Quell-Tabellen**: 
+  - `agi_swissboundaries3d_v2.multisurface3d` (READ)
+
+### awjf_rodung_rodungsersatz_mgdm
+- **Pfad**: `../gretljobs/awjf_rodung_rodungsersatz_mgdm/`
+- **Schedule**: `H H(1-3) 1 3 *` (1. ~1-3h)
+- **Quell-Tabellen**: 
+  - `awjf_rodung_rodungsersatz_mgdm_v1.rodungsbewilligung` (READ)
+- **Ziel-Tabellen**: 
+  - `awjf_rodung_rodungsersatz_mgdm_v1.ersatzmassnahmennl_` (INSERT/UPDATE)
+  - `awjf_rodung_rodungsersatz_mgdm_v1.ersatzverzicht_` (INSERT/UPDATE)
+  - `awjf_rodung_rodungsersatz_mgdm_v1.massnahmenltyp_` (INSERT/UPDATE)
+  - `awjf_rodung_rodungsersatz_mgdm_v1.objekt` (INSERT/UPDATE)
+  - `awjf_rodung_rodungsersatz_mgdm_v1.rodungsbewilligung` (INSERT/UPDATE)
+
+### arp_mjpnl_v2_auszahlung
+- **Pfad**: `../gretljobs/arp_mjpnl_v2_auszahlung/`
+- **Schedule**: `H H(1-3) 15 1 *` (15. ~1-3h)
+
+### agi_swisstopo_gebaeudeadressen
+- **Pfad**: `../gretljobs/agi_swisstopo_gebaeudeadressen/`
+- **Schedule**: `H H(1-3) 2 * *` (2. ~1-3h)
+
+### arp_auswertung_nutzungsplanung_pub
+- **Pfad**: `../gretljobs/arp_auswertung_nutzungsplanung_pub/`
+- **Schedule**: `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` (31. ~1-3h)
+- **Quell-Tabellen**: 
+  - `2` (READ)
+  - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ)
+  - `agi_mopublic_pub.mopublic_einzelobjekt_flaeche` (READ)
+  - `agi_mopublic_pub.mopublic_grundstueck` (READ)
+  - `arp_auswertung_nutzungsplanung_pub_v1.auswrtngtzngsznen_grundnutzungszone_aggregiert_pro_gemeinde` (READ)
+  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_ohne_lsgrenzen` (READ)
+  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_und_lsgrenzen` (READ)
+  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_pro_gemeinde` (READ)
+  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_gines` (READ)
+  - `arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand` (READ)
+
 ### afu_onlinerisk_transfer
 - **Pfad**: `../gretljobs/afu_onlinerisk_transfer/`
 - **Schedule**: `H H(18-19) * * 1-5` (~18-19h)
@@ -472,20 +473,6 @@
 - **Ziel-Tabellen**: 
   - `avt_bodenfaktor.bodenfaktor` (INSERT/UPDATE)
 
-### afu_igel
-- **Pfad**: `../gretljobs/afu_igel/`
-- **Schedule**: `H H(3-4) * * 0` (So ~3-4h)
-- **Quell-Tabellen**: 
-  - `mapped_records` (READ)
-
-### alw_landwirtschaft_tierhaltung_import_massnahmen
-- **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_import_massnahmen/`
-- **Schedule**: `H H(3-4) 1 * *` (1. ~3-4h)
-
-### alw_landwirtschaft_tierhaltung_import_bodenbedeckung
-- **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_import_bodenbedeckung/`
-- **Schedule**: `H H(3-4) * * 5` (Fr ~3-4h)
-
 ### agi_av_meldewesen
 - **Pfad**: `../gretljobs/agi_av_meldewesen/`
 - **Schedule**: `H H(3-4) * * *` (~3-4h)
@@ -497,6 +484,20 @@
 ### dsbjd_ebauso_rahmenmodell_pub
 - **Pfad**: `../gretljobs/dsbjd_ebauso_rahmenmodell_pub/`
 - **Schedule**: `H H(3-4) * * *` (~3-4h)
+
+### afu_igel
+- **Pfad**: `../gretljobs/afu_igel/`
+- **Schedule**: `H H(3-4) * * 0` (So ~3-4h)
+- **Quell-Tabellen**: 
+  - `mapped_records` (READ)
+
+### alw_landwirtschaft_tierhaltung_import_bodenbedeckung
+- **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_import_bodenbedeckung/`
+- **Schedule**: `H H(3-4) * * 5` (Fr ~3-4h)
+
+### alw_landwirtschaft_tierhaltung_import_massnahmen
+- **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_import_massnahmen/`
+- **Schedule**: `H H(3-4) 1 * *` (1. ~3-4h)
 
 ### awjf_efj
 - **Pfad**: `../gretljobs/awjf_efj/`
@@ -567,6 +568,10 @@
 - **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie` (INSERT/UPDATE)
 
+### arp_sein_strukturdaten_pub
+- **Pfad**: `../gretljobs/arp_sein_strukturdaten_pub/`
+- **Upstream-Trigger**: arp_auswertung_nutzungsplanung_pub
+
 ### awjf_efj_geodaten_upload
 - **Pfad**: `../gretljobs/awjf_efj_geodaten_upload/`
 - **Upstream-Trigger**: awjf_jagdreviere_jagdbanngebiete_pub, awjf_gewaesser_fischerei_pub
@@ -604,4 +609,4 @@
 | 20 | erhebungsgebiet_mapped | erhebungsgebiet_mapped |
 
 ---
-*Diese Dokumentation wurde automatisch generiert am Di 15 Jul 2025 09:39:10 CEST*
+*Diese Dokumentation wurde automatisch generiert am Tue Jul 15 08:22:28 UTC 2025*
