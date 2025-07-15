@@ -139,7 +139,7 @@ Die GitHub Action läuft automatisch:
 - **Täglich um 4:00 UTC**
 - **Bei Push in main branch**
 - **Manuell über GitHub UI**
-- **Webhook vom gretljobs Repository**
+- ~~**Webhook vom gretljobs Repository**~~
 
 ### Outputs
 - **Aktualisierte Dokumentation** in `GRETL_Jobs_Overview.md`

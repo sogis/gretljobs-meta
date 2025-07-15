@@ -398,7 +398,7 @@ class GretlJobsAnalyzer {
       'ada': 'Amt für Denkmalpflege und Archäologie',
       'avt': 'Amt für Verkehr und Tiefbau',
       'awjf': 'Amt für Wald, Jagd und Fischerei',
-      'ala': 'Amt für Landwirtschaft',
+      'alw': 'Amt für Landwirtschaft',
       'so': 'Kanton Solothurn',
       'sogis': 'sogis'
     };
