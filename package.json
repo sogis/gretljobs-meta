@@ -1,0 +1,32 @@
+{
+  "name": "gretl-jobs-analyzer",
+  "version": "1.0.0",
+  "description": "Analyze GRETL jobs from job.properties and generate documentation",
+  "main": "src/analyzer.js",
+  "scripts": {
+    "start": "node src/analyzer.js",
+    "dev": "nodemon src/analyzer.js",
+    "test": "jest",
+    "analyze": "node src/analyzer.js",
+    "watch": "nodemon --watch ../gretljobs src/analyzer.js"
+  },
+  "dependencies": {
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "gretl",
+    "jenkins",
+    "documentation",
+    "cron",
+    "jobs"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
