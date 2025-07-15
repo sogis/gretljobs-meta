@@ -1,4 +1,4 @@
-# gretljobs-meta
+# gretljobs-meta [![GRETL Jobs Analysis (Node.js)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml/badge.svg)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml)
 ### Zeitgesteuerte und getriggerte GRETL-Jobs
 
 Siehe [Zusammenfassung](./GRETL_Jobs_Overview.md), täglich um 4:00 UTC automatisch aktualisiert
