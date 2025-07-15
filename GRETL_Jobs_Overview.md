@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht - sogis
 
-*Generiert am: 2025-07-15 12:35:21*
+*Generiert am: 2025-07-15 12:53:34*
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -115,6 +115,9 @@
 - **Pfad**: `../gretljobs/agi_av_dm01_mopublic_pub/`
 - **Schedule**: `00 21 * * *` (21:00)
 - **Quell-Tabellen**: 
+  - `t_ili2db_basket` (READ)
+  - `t_ili2db_dataset` (READ)
+  - `mopublic_gemeindegrenze` (READ)
   - `agi_dm01avso24.t_ili2db_import` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsname` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.gebaeudeadressen_lokalisationsnamepos` (READ) - Amt für Geoinformation
@@ -196,9 +199,6 @@
   - `agi_dm01avso24.einzelobjekte_objektnummer` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_projgebaeudenummer` (READ) - Amt für Geoinformation
   - `agi_dm01avso24.bodenbedeckung_gebaeudenummer` (READ) - Amt für Geoinformation
-  - `t_ili2db_basket` (READ)
-  - `t_ili2db_dataset` (READ)
-  - `mopublic_gemeindegrenze` (READ)
 - **Ziel-Tabellen**: 
   - `mopublic_bodenbedeckung` (INSERT/UPDATE)
   - `mopublic_bodenbedeckung_proj` (INSERT/UPDATE)
@@ -467,9 +467,9 @@
 - **Pfad**: `../gretljobs/alw_tiergesundheit_pflanzengesundheit_massnahmen_pub/`
 - **Schedule**: `H H(1-3) * * *` (~1-3h)
 - **Quell-Tabellen**: 
-  - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_tiergesundheit_massnahmengebiet` (READ)
-  - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_pflanzengesundheit_schadorganismen` (READ)
-  - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_bienensperrgebiet` (READ)
+  - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_tiergesundheit_massnahmengebiet` (READ) - Amt für Landwirtschaft
+  - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_pflanzengesundheit_schadorganismen` (READ) - Amt für Landwirtschaft
+  - `alw_tiergesundheit_pflanzengesundheit_massnahmen_v1.massnhmnngsndheit_bienensperrgebiet` (READ) - Amt für Landwirtschaft
 
 ### arp_arbeitszonenbewirtschaftung_inventar_pub
 - **Pfad**: `../gretljobs/arp_arbeitszonenbewirtschaftung_inventar_pub/`
@@ -630,58 +630,58 @@
 - **Pfad**: `../gretljobs/alw_strukturverbesserungen_pub/`
 - **Schedule**: `H H(1-3) * * 6` (Sa ~1-3h)
 - **Quell-Tabellen**: 
-  - `alw_strukturverbesserungen.raeumlicheelemnte_projekt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_raeumliches_element_dokument` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_bew_flaechen_bewaesserung` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_flaeche` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_pumpwerk` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_ev_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_ev_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_wv_leitung_wasserversorgung` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_wasserversorgung_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_flaeche` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_trockenmauer` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_wegebau_linie` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_wege_bruecke_lehnenviadukt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_wiederherstellung_punkt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_dokument` (READ)
-  - `alw_strukturverbesserungen.astatus` (READ)
-  - `alw_strukturverbesserungen.bewaesserung_flaechen` (READ)
-  - `alw_strukturverbesserungen.bautyp` (READ)
-  - `alw_strukturverbesserungen.projekt` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_werkeigentum` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_element` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft` (READ)
-  - `alw_strukturverbesserungen.genossenschaften` (READ)
-  - `alw_strukturverbesserungen.bewaesserung_linien` (READ)
-  - `alw_strukturverbesserungen.bewaesserung_punkte` (READ)
-  - `alw_strukturverbesserungen.entw_bodenstruktur_flaechen` (READ)
-  - `alw_strukturverbesserungen.entw_bodenstruktur_linien` (READ)
-  - `alw_strukturverbesserungen.elektrizitaet_linien` (READ)
-  - `alw_strukturverbesserungen.elektrizitaet_punkte` (READ)
-  - `alw_strukturverbesserungen.wasserversorgung_punkte` (READ)
-  - `alw_strukturverbesserungen.oekologische_flaechen` (READ)
-  - `alw_strukturverbesserungen.oekologie_linien` (READ)
-  - `alw_strukturverbesserungen.oekologie_punkte` (READ)
-  - `alw_strukturverbesserungen.oekologie_trockenmauern` (READ)
-  - `alw_strukturverbesserungen.wege` (READ)
-  - `alw_strukturverbesserungen.funktionstyp` (READ)
-  - `alw_strukturverbesserungen.raeumlichelmnte_wege_bruecke_lehnenviadukt_material` (READ)
-  - `alw_strukturverbesserungen.wiederherstellung_punkte` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_dokument` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_gemeinde_flurreglement_dokument` (READ)
-  - `alw_strukturverbesserungen.stand_gutrrglrung_stand_gueterregulierung` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_gemeinde_flurreglement` (READ)
+  - `alw_strukturverbesserungen.raeumlicheelemnte_projekt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_raeumliches_element_dokument` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_bew_flaechen_bewaesserung` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_linie` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_bewaesserung_punkt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_flaeche` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_linie` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_entw_bodenstruktur_pumpwerk` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_ev_linie` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_ev_punkt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_wv_leitung_wasserversorgung` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_wasserversorgung_punkt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_flaeche` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_linie` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_punkt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_oekologie_trockenmauer` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_wegebau_linie` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_wege_bruecke_lehnenviadukt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_wiederherstellung_punkt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_dokument` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.astatus` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.bewaesserung_flaechen` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.bautyp` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.projekt` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_werkeigentum` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_element` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.genossenschaften` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.bewaesserung_linien` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.bewaesserung_punkte` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.entw_bodenstruktur_flaechen` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.entw_bodenstruktur_linien` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.elektrizitaet_linien` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.elektrizitaet_punkte` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.wasserversorgung_punkte` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.oekologische_flaechen` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.oekologie_linien` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.oekologie_punkte` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.oekologie_trockenmauern` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.wege` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.funktionstyp` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlichelmnte_wege_bruecke_lehnenviadukt_material` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.wiederherstellung_punkte` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_genossenschaft_dokument` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_gemeinde_flurreglement_dokument` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.stand_gutrrglrung_stand_gueterregulierung` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_gemeinde_flurreglement` (READ) - Amt für Landwirtschaft
   - `agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze` (READ) - Amt für Geoinformation
-  - `alw_strukturverbesserungen.stand` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet` (READ)
-  - `alw_strukturverbesserungen.beizugsgebiete` (READ)
-  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet_projekt` (READ)
+  - `alw_strukturverbesserungen.stand` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.beizugsgebiete` (READ) - Amt für Landwirtschaft
+  - `alw_strukturverbesserungen.raeumlicheelemnte_beizugsgebiet_projekt` (READ) - Amt für Landwirtschaft
 
 ### ada_archaeologie_pub
 - **Pfad**: `../gretljobs/ada_archaeologie_pub/`
@@ -876,16 +876,16 @@
 - **Pfad**: `../gretljobs/alw_landwirtschaft_tierhaltung_pub/`
 - **Schedule**: `H H(2-4) * * *` (~2-4h)
 - **Quell-Tabellen**: 
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_standorte` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_betrieb` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_summe_tiere_flaechen` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_gelan_person` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_kultur_punktelemente` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_bewirtschaftungseinheit` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_kultur_flaechen` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.t_ili2db_dataset` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.bff_qualitaet_bff_qualitaet` (READ)
-  - `alw_landwirtschaft_tierhaltung_v1.t_ili2db_basket` (READ)
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_standorte` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_betrieb` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_summe_tiere_flaechen` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_gelan_person` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_kultur_punktelemente` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_bewirtschaftungseinheit` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_kultur_flaechen` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.t_ili2db_dataset` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.bff_qualitaet_bff_qualitaet` (READ) - Amt für Landwirtschaft
+  - `alw_landwirtschaft_tierhaltung_v1.t_ili2db_basket` (READ) - Amt für Landwirtschaft
 
 ### avt_bodenfaktor_pub
 - **Pfad**: `../gretljobs/avt_bodenfaktor_pub/`
@@ -950,7 +950,7 @@
   - `agi_av_gb_admin_einteilung_pub.grundbuchkreise_grundbuchkreis` (READ) - Amt für Geoinformation
   - `dsbjd_ebauso_rahmenmodell_pub_v1.lokalisation_gebaeudeeingang` (READ)
   - `agi_mopublic_pub.mopublic_gebaeudeadresse` (READ) - Amt für Geoinformation
-  - `alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche` (READ)
+  - `alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche` (READ) - Amt für Landwirtschaft
   - `ada_denkmalschutz_pub_v1.denkmal_polygon` (READ) - Amt für Denkmalpflege und Archäologie
   - `ada_denkmalschutz_pub_v1.denkmal_punkt` (READ) - Amt für Denkmalpflege und Archäologie
   - `agi_mopublic_pub.mopublic_bodenbedeckung` (READ) - Amt für Geoinformation
@@ -1163,7 +1163,7 @@
 - **Upstream-Trigger**: alw_fruchtfolgeflaechen_pub
 - **Quell-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (READ) - Amt für Raumplanung
-  - `alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche` (READ)
+  - `alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche` (READ) - Amt für Landwirtschaft
 - **Ziel-Tabellen**: 
   - `arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche` (INSERT/UPDATE) - Amt für Raumplanung
 
@@ -1381,7 +1381,7 @@
 - **Tabellen**: 13
 - **Job-Namen**: agi_kartenkatalog_pub
 
-### alw_tiergesundheit_pflanzengesundheit_massnahmen_v1 (alw_tiergesundheit_pflanzengesundheit_massnahmen_v1)
+### Amt für Landwirtschaft (alw_tiergesundheit_pflanzengesundheit_massnahmen_v1)
 - **Jobs**: 1
 - **Tabellen**: 3
 - **Job-Namen**: alw_tiergesundheit_pflanzengesundheit_massnahmen_pub
@@ -1491,7 +1491,7 @@
 - **Tabellen**: 1
 - **Job-Namen**: awjf_wegsanierungen_pub
 
-### alw_strukturverbesserungen (alw_strukturverbesserungen)
+### Amt für Landwirtschaft (alw_strukturverbesserungen)
 - **Jobs**: 1
 - **Tabellen**: 51
 - **Job-Namen**: alw_strukturverbesserungen_pub
@@ -1581,7 +1581,7 @@
 - **Tabellen**: 10
 - **Job-Namen**: afu_onlinerisk_transfer
 
-### alw_landwirtschaft_tierhaltung_v1 (alw_landwirtschaft_tierhaltung_v1)
+### Amt für Landwirtschaft (alw_landwirtschaft_tierhaltung_v1)
 - **Jobs**: 1
 - **Tabellen**: 10
 - **Job-Namen**: alw_landwirtschaft_tierhaltung_pub
@@ -1626,7 +1626,7 @@
 - **Tabellen**: 1
 - **Job-Namen**: dsbjd_ebauso_rahmenmodell_pub
 
-### alw_fruchtfolgeflaechen_pub_v1 (alw_fruchtfolgeflaechen_pub_v1)
+### Amt für Landwirtschaft (alw_fruchtfolgeflaechen_pub_v1)
 - **Jobs**: 2
 - **Tabellen**: 1
 - **Job-Namen**: dsbjd_ebauso_rahmenmodell_pub, arp_richtplan_fruchtfolgeflaechen_pub
@@ -1756,5 +1756,5 @@
 - **Support**: christian.baumann@bd.so.ch
 
 ---
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:35:21*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 12:53:34*
 *Entwickelt für sogis - Solothurner Geoinformations GmbH*
