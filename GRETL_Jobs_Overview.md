@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-*Generiert am: 2025-07-15 11:11:02*
+*Generiert am: 2025-07-15 11:12:57*
 *Repository: gretljobs*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
@@ -811,16 +811,9 @@
 - **Pfad**: `../gretljobs/ada_archaeologie_pub/`
 - **Schedule**: `H H(1-3) * * 7` (~1-3h)
 - **Quell-Tabellen**: 
-  - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ)
-  - `orphan_rrb` (READ)
+  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
   - `ada_archaeologie_v1.fachapplikation_fundstelle` (READ)
   - `ada_archaeologie_v1.geo_flaeche` (READ)
-  - `rrb_with_oerebgeom` (READ)
-  - `rrb_num_join` (READ)
-  - `AS` (READ)
-  - `j` (READ)
-  - `fst_num_join` (READ)
-  - `ada_archaeologie_v1.geo_schutzbereich_innenstadt` (READ)
   - `ada_archaeologie_v1.geo_ablage_gemeinde` (READ)
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (READ)
   - `arp_bauzonengrenzen_pub.bauzonengrenzen_bauzonengrenze` (READ)
@@ -829,15 +822,22 @@
   - `ada_archaeologie_pub_v1.restricted_flaechenfundstelle` (READ)
   - `flaeche_beruert_siedlung` (READ)
   - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (READ)
+  - `ada_archaeologie_v1.fachapplikation_regierungsratsbeschluss` (READ)
+  - `orphan_rrb` (READ)
+  - `rrb_with_oerebgeom` (READ)
+  - `rrb_num_join` (READ)
+  - `AS` (READ)
+  - `j` (READ)
+  - `fst_num_join` (READ)
   - `rep_view_rrb` (READ)
   - `public.rep_view_fundstellen` (READ)
   - `ada_archaeologie_pub_v1.public_qualitaet_lokalisierung_typ` (READ)
   - `enum_map` (READ)
 - **Ziel-Tabellen**: 
-  - `ada_archaeologie_v1.fachapplikation_fundstelle` (INSERT/UPDATE)
-  - `ada_archaeologie_v1.geo_flaeche` (INSERT/UPDATE)
   - `ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet` (INSERT/UPDATE)
   - `ada_archaeologie_pub_v1.public_flaechenfundstelle_siedlungsgebiet` (INSERT/UPDATE)
+  - `ada_archaeologie_v1.fachapplikation_fundstelle` (INSERT/UPDATE)
+  - `ada_archaeologie_v1.geo_flaeche` (INSERT/UPDATE)
   - `ada_archaeologie_pub_v1.restricted_punktfundstelle` (INSERT/UPDATE)
   - `ada_archaeologie_pub_v1.restricted_flaechenfundstelle` (INSERT/UPDATE)
 
@@ -1515,4 +1515,4 @@
 ---
 Fehler-Notifications: christian.baumann@bd.so.ch 
 
-*Diese Dokumentation wurde automatisch generiert am 2025-07-15 11:11:02*
+*Diese Dokumentation wurde automatisch generiert am 2025-07-15 11:12:57*
