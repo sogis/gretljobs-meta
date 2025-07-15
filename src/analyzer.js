@@ -274,7 +274,7 @@ class GretlJobsAnalyzer {
 
     let markdown = `# GRETL Jobs Übersicht - sogis
 
-*Generiert am: ${timestamp}*
+*Generiert am: ${timestamp} UTC, *
 *Repository: ${repoName}*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
