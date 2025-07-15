@@ -217,7 +217,6 @@ class GretlJobsAnalyzer {
 
 *Generiert am: ${timestamp}*
 *Repository: ${repoName}*
-*Jenkins-Instanz: [Jenkins-URL]*
 
 ## Zeitgesteuerte Jobs (sortiert nach Schedule)
 
@@ -292,12 +291,8 @@ class GretlJobsAnalyzer {
     }
 
     // Footer
-    markdown += `\n## Monitoring & Alerts\n\n`;
-    markdown += `### Jenkins-Integration\n`;
-    markdown += `- Build-Status: [Jenkins Dashboard Link]\n`;
-    markdown += `- Log-Dateien: \`./logs/\`\n`;
-    markdown += `- Fehler-Notifications: [Team-Email]\n\n`;
     markdown += `---\n`;
+    markdown += `Fehler-Notifications: christian.baumann@bd.so.ch \n\n`;
     markdown += `*Diese Dokumentation wurde automatisch generiert am ${timestamp}*\n`;
 
     return markdown;
