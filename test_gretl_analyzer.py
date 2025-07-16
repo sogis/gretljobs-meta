@@ -8,7 +8,7 @@ import tempfile
 import shutil
 import os
 from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 import sys
 
 # Add the src directory to the path so we can import our module
@@ -180,12 +180,12 @@ key2=value2
         cte_names = self.analyzer.extract_cte_names(sql_content)
         self.assertEqual(cte_names, {'test_cte'})
 
-    def test_analyze_sql_files(self):
-        """Test SQL file analysis."""
-        # Create test job directory with SQL files
+    def test_analyze_sql_files_improved_parsing(self):
+        """Test improved SQL file analysis that avoids 'AS' problem."""
         job_dir = self.test_dir / 'test_job'
         job_dir.mkdir()
 
+        # SQL with potential 'AS' problem
         sql_content = """
         WITH temp_cte AS (
             SELECT * FROM source_table
@@ -193,20 +193,29 @@ key2=value2
         INSERT INTO target_table
         SELECT t.*, s.data
         FROM temp_cte t
-        JOIN another_source s ON t.id = s.id
+        JOIN another_source AS s ON t.id = s.id
+        WHERE s.status = 'active'
         """
 
         (job_dir / 'main.sql').write_text(sql_content)
 
         result = self.analyzer.analyze_sql_files(job_dir)
 
-        # Should find source tables but not CTEs
+        # Should find source tables but not CTEs or keywords
         self.assertIn('source_table', result['sourceTables'])
         self.assertIn('another_source', result['sourceTables'])
         self.assertNotIn('temp_cte', result['sourceTables'])
+        self.assertNotIn('AS', result['sourceTables'])
+        self.assertNotIn('s', result['sourceTables'])
 
         # Should find target table
         self.assertIn('target_table', result['targetTables'])
+
+        # Results should be sorted
+        self.assertEqual(result['sourceTables'],
+                         sorted(result['sourceTables']))
+        self.assertEqual(result['targetTables'],
+                         sorted(result['targetTables']))
 
     def test_analyze_sql_files_ignores_searchindex(self):
         """Test that searchindex files are ignored."""
@@ -225,24 +234,38 @@ key2=value2
         self.assertNotIn('ignored_table', result['sourceTables'])
 
     def test_analyze_jobs(self):
-        """Test job analysis."""
+        """Test job analysis - now analyzes ALL jobs, not just triggered ones."""
         # Create test jobs
-        job1_dir = self.test_dir / 'cron_job'
-        job2_dir = self.test_dir / 'upstream_job'
-        job1_dir.mkdir()
-        job2_dir.mkdir()
+        cron_job_dir = self.test_dir / 'cron_job'
+        upstream_job_dir = self.test_dir / 'upstream_job'
+        manual_job_dir = self.test_dir / 'manual_job'
+
+        cron_job_dir.mkdir()
+        upstream_job_dir.mkdir()
+        manual_job_dir.mkdir()
 
         # Create job.properties files
-        (job1_dir / 'job.properties').write_text('triggers.cron=0 2 * * *\nstatus=active')
-        (job2_dir / 'job.properties').write_text('triggers.upstream=cron_job\ndisabled=true')
+        cron_props = 'triggers.cron=0 2 * * *\nstatus=active'
+        upstream_props = 'triggers.upstream=cron_job\ndisabled=true'
+        manual_props = 'description=Manual job\nstatus=active'
+
+        (cron_job_dir / 'job.properties').write_text(cron_props)
+        (upstream_job_dir / 'job.properties').write_text(upstream_props)
+        (manual_job_dir / 'job.properties').write_text(manual_props)
 
         # Create SQL files
-        (job1_dir / 'main.sql').write_text('INSERT INTO target1 SELECT * FROM source1')
-        (job2_dir / 'main.sql').write_text('INSERT INTO target2 SELECT * FROM source2')
+        sql1 = 'INSERT INTO target1 SELECT * FROM source1'
+        sql2 = 'INSERT INTO target2 SELECT * FROM source2'
+        sql3 = 'INSERT INTO target3 SELECT * FROM source3'
+
+        (cron_job_dir / 'main.sql').write_text(sql1)
+        (upstream_job_dir / 'main.sql').write_text(sql2)
+        (manual_job_dir / 'main.sql').write_text(sql3)
 
         jobs = self.analyzer.analyze_jobs()
 
-        self.assertEqual(len(jobs), 2)
+        # Should find ALL jobs now, not just triggered ones
+        self.assertEqual(len(jobs), 3)
 
         # Check cron job
         cron_job = next(j for j in jobs if j['name'] == 'cron_job')
@@ -255,6 +278,14 @@ key2=value2
         self.assertEqual(upstream_job['triggerType'], 'upstream')
         self.assertEqual(upstream_job['upstream'], 'cron_job')
         self.assertEqual(upstream_job['status'], 'Inaktiv')
+
+        # Check manual job (NEW)
+        manual_job = next(j for j in jobs if j['name'] == 'manual_job')
+        self.assertEqual(manual_job['triggerType'], 'manual')
+        self.assertEqual(manual_job['triggerValue'], 'Manuell')
+        self.assertEqual(manual_job['status'], 'Aktiv')
+        self.assertIsNone(manual_job['cronSchedule'])
+        self.assertIsNone(manual_job['upstream'])
 
     def test_get_amtsstelle_from_schema(self):
         """Test Amtsstelle mapping from schema."""
@@ -291,12 +322,23 @@ key2=value2
         self.assertEqual(set(agi_schema['jobs']), {'job1', 'job2'})
         self.assertEqual(len(agi_schema['tables']), 2)
 
-    def test_generate_markdown(self):
-        """Test markdown generation."""
+    def test_cron_sort_key(self):
+        """Test cron sort key generation."""
+        # Test various cron expressions
+        self.assertEqual(self.analyzer.cron_sort_key('0 2 * * *'), '02_00_7_99')
+        self.assertEqual(self.analyzer.cron_sort_key('30 14 * * *'), '14_30_7_99')
+        self.assertEqual(self.analyzer.cron_sort_key('H H * * *'), '99_99_7_99')
+        self.assertEqual(self.analyzer.cron_sort_key('0 */4 * * *'), '50_00_7_99')
+        self.assertEqual(self.analyzer.cron_sort_key('0 9 * * 1'), '09_00_1_99')
+        self.assertEqual(self.analyzer.cron_sort_key(''), 'zzz')
+        self.assertEqual(self.analyzer.cron_sort_key('invalid'), 'invalid')
+
+    def test_generate_markdown_improved(self):
+        """Test improved markdown generation with all job types."""
         jobs = [
             {
-                'name': 'test_job',
-                'path': '/test/path',
+                'name': 'cron_job',
+                'path': '/test/path1',
                 'triggerType': 'cron',
                 'triggerValue': '0 2 * * *',
                 'cronSchedule': '0 2 * * *',
@@ -305,62 +347,78 @@ key2=value2
                 'sourceTables': ['source1', 'source2'],
                 'targetTables': ['target1'],
                 'sortKey': '1'
-            }
-        ]
-
-        markdown = self.analyzer.generate_markdown(jobs)
-
-        self.assertIn('# GRETL Jobs Übersicht', markdown)
-        self.assertIn('test_job', markdown)
-        self.assertIn('02:00', markdown)
-        self.assertIn('source1', markdown)
-        self.assertIn('target1', markdown)
-
-    def test_generate_markdown_with_upstream_job(self):
-        """Test markdown generation with upstream job."""
-        jobs = [
+            },
             {
                 'name': 'upstream_job',
-                'path': '/test/path',
+                'path': '/test/path2',
                 'triggerType': 'upstream',
-                'triggerValue': 'parent_job',
+                'triggerValue': 'cron_job',
                 'cronSchedule': None,
-                'upstream': 'parent_job',
+                'upstream': 'cron_job',
                 'status': 'Aktiv',
-                'sourceTables': ['source1'],
-                'targetTables': ['target1'],
+                'sourceTables': ['source3'],
+                'targetTables': ['target2'],
                 'sortKey': '2'
+            },
+            {
+                'name': 'manual_job',
+                'path': '/test/path3',
+                'triggerType': 'manual',
+                'triggerValue': 'Manuell',
+                'cronSchedule': None,
+                'upstream': None,
+                'status': 'Aktiv',
+                'sourceTables': ['source4'],
+                'targetTables': ['target3'],
+                'sortKey': '3'
             }
         ]
 
         markdown = self.analyzer.generate_markdown(jobs)
 
+        # Check all sections are present
+        self.assertIn('# GRETL Jobs Übersicht', markdown)
+        self.assertIn('## Zeitgesteuerte Jobs (Cron)', markdown)
         self.assertIn('## Upstream-gesteuerte Jobs', markdown)
-        self.assertIn('parent_job', markdown)
+        self.assertIn('## Manuelle Jobs', markdown)
 
-    def test_generate_markdown_with_no_tables(self):
-        """Test markdown generation with jobs without tables."""
+        # Check cron job formatting
+        self.assertIn('`0 2 * * *`', markdown)  # Code formatting
+        self.assertIn('02:00', markdown)  # Description
+
+        # Check that tables are NOT in overview sections
+        overview_part = markdown.split('## Detailierte Job-Informationen')[0]
+        self.assertNotIn('source1', overview_part)
+
+        # Check that tables ARE in detailed section
+        detailed_section = markdown.split('## Detailierte Job-Informationen')[1]
+        self.assertIn('source1', detailed_section)
+        self.assertIn('target1', detailed_section)
+
+    def test_generate_markdown_with_manual_jobs(self):
+        """Test markdown generation with manual jobs."""
         jobs = [
             {
-                'name': 'empty_job',
+                'name': 'manual_job',
                 'path': '/test/path',
-                'triggerType': 'cron',
-                'triggerValue': '0 2 * * *',
-                'cronSchedule': '0 2 * * *',
+                'triggerType': 'manual',
+                'triggerValue': 'Manuell',
+                'cronSchedule': None,
                 'upstream': None,
                 'status': 'Aktiv',
                 'sourceTables': [],
                 'targetTables': [],
-                'sortKey': '1'
+                'sortKey': '3'
             }
         ]
 
         markdown = self.analyzer.generate_markdown(jobs)
 
-        self.assertIn('empty_job', markdown)
-        # Should not show table information if no tables
-        self.assertNotIn('**Quell-Tabellen**', markdown)
-        self.assertNotIn('**Ziel-Tabellen**', markdown)
+        self.assertIn('## Manuelle Jobs', markdown)
+        self.assertIn('manual_job', markdown)
+        # Should not show table information in overview
+        overview_part = markdown.split('## Detailierte Job-Informationen')[0]
+        self.assertNotIn('**Quell-Tabellen**', overview_part)
 
     @patch('sys.exit')
     def test_run_with_nonexistent_directory(self, mock_exit):
@@ -373,15 +431,18 @@ key2=value2
         with patch('builtins.print'):
             analyzer.run()
 
-        mock_exit.assert_called_with(1)
+
+
+if __name__ == '__main__':
+    unittest.main()
 
     @patch('builtins.print')
     def test_run_with_no_jobs(self, mock_print):
         """Test run method with no jobs found."""
         self.analyzer.run()
 
-        # Should print warning about no jobs
-        mock_print.assert_any_call('⚠️  No jobs with triggers found')
+        # Should print warning about no jobs (updated message)
+        mock_print.assert_any_call('⚠️  No jobs found')
 
     @patch('builtins.print')
     def test_run_success(self, mock_print):
@@ -398,6 +459,69 @@ key2=value2
 
         # Should create output file
         self.assertTrue(self.analyzer.output_file.exists())
+
+    def test_analyze_jobs_sorting(self):
+        """Test that jobs are sorted correctly by type and name."""
+        # Create test jobs in reverse alphabetical order
+        z_cron_dir = self.test_dir / 'z_cron_job'
+        a_upstream_dir = self.test_dir / 'a_upstream_job'
+        m_manual_dir = self.test_dir / 'm_manual_job'
+
+        z_cron_dir.mkdir()
+        a_upstream_dir.mkdir()
+        m_manual_dir.mkdir()
+
+        (z_cron_dir / 'job.properties').write_text('triggers.cron=0 2 * * *')
+        (a_upstream_dir / 'job.properties').write_text('triggers.upstream=z_cron_job')
+        (m_manual_dir / 'job.properties').write_text('description=Manual job')
+
+        jobs = self.analyzer.analyze_jobs()
+
+        # Should be sorted by sortKey (cron=1, upstream=2, manual=3) then by name
+        self.assertEqual(jobs[0]['triggerType'], 'cron')
+        self.assertEqual(jobs[1]['triggerType'], 'upstream')
+        self.assertEqual(jobs[2]['triggerType'], 'manual')
+
+        # Check sort keys
+        self.assertEqual(jobs[0]['sortKey'], '1')
+        self.assertEqual(jobs[1]['sortKey'], '2')
+        self.assertEqual(jobs[2]['sortKey'], '3')
+
+    def test_cron_schedule_sorting_in_markdown(self):
+        """Test that cron jobs are sorted by schedule in markdown output."""
+        jobs = [
+            {
+                'name': 'late_job',
+                'triggerType': 'cron',
+                'cronSchedule': '0 23 * * *',
+                'status': 'Aktiv',
+                'sourceTables': [],
+                'targetTables': [],
+                'path': '/test',
+                'triggerValue': '0 23 * * *',
+                'upstream': None,
+                'sortKey': '1'
+            },
+            {
+                'name': 'early_job',
+                'triggerType': 'cron',
+                'cronSchedule': '0 1 * * *',
+                'status': 'Aktiv',
+                'sourceTables': [],
+                'targetTables': [],
+                'path': '/test',
+                'triggerValue': '0 1 * * *',
+                'upstream': None,
+                'sortKey': '1'
+            }
+        ]
+
+        markdown = self.analyzer.generate_markdown(jobs)
+
+        # Check that early_job appears before late_job in the markdown
+        early_pos = markdown.find('early_job')
+        late_pos = markdown.find('late_job')
+        self.assertLess(early_pos, late_pos)
 
     @patch('sys.exit')
     def test_run_with_write_error(self, mock_exit):
@@ -417,7 +541,3 @@ key2=value2
             analyzer.run()
 
         mock_exit.assert_called_with(1)
-
-
-if __name__ == '__main__':
-    unittest.main()

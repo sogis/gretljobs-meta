@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
 GRETL Jobs Analyzer - Python Version
-Converts the JavaScript GRETL Jobs Analyzer to Python
-
 Analyzes GRETL Jenkins Jobs and generates documentation from job.properties files.
 """
 
@@ -12,7 +10,7 @@ import re
 import glob
 import argparse
 from pathlib import Path
-from typing import Dict, List, Set, Optional, Tuple
+from typing import Dict, List, Set, Optional
 import logging
 
 
@@ -22,14 +20,7 @@ class GretlJobsAnalyzer:
     def __init__(self, gretl_jobs_dir: str = '../gretljobs',
                  output_file: str = 'GRETL_Jobs_Overview.md',
                  debug: bool = False):
-        """
-        Initialize the analyzer.
-
-        Args:
-            gretl_jobs_dir: Path to the GRETL jobs directory
-            output_file: Path to the output markdown file
-            debug: Enable debug logging
-        """
+        """Initialize the analyzer."""
         self.gretl_jobs_dir = Path(gretl_jobs_dir)
         self.output_file = Path(output_file)
         self.debug = debug
@@ -53,15 +44,7 @@ class GretlJobsAnalyzer:
         return file_path.exists()
 
     def parse_job_properties(self, file_path: Path) -> Dict[str, str]:
-        """
-        Parse job.properties file.
-
-        Args:
-            file_path: Path to the job.properties file
-
-        Returns:
-            Dictionary of properties
-        """
+        """Parse job.properties file."""
         try:
             properties = {}
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -78,15 +61,7 @@ class GretlJobsAnalyzer:
             return {}
 
     def cron_to_text(self, cron_expression: str) -> str:
-        """
-        Convert Jenkins cron expression to human readable format.
-
-        Args:
-            cron_expression: Jenkins cron expression
-
-        Returns:
-            Human readable time string
-        """
+        """Convert Jenkins cron expression to human readable format."""
         if not cron_expression:
             return '-'
 
@@ -112,7 +87,6 @@ class GretlJobsAnalyzer:
             else:
                 time_str = f"{hour}:xx"
         elif re.match(r'^\*/\d+$', hour):
-            # Only handle standard interval syntax */N, not H/N
             interval = hour.split('/')[1]
             time_str = f"alle {interval}h"
         else:
@@ -126,7 +100,7 @@ class GretlJobsAnalyzer:
                 if 0 <= day_num <= 6:
                     return f"{day_names[day_num]} {time_str}"
                 elif day_num == 7:
-                    return f"{day_names[0]} {time_str}"  # 7 is also Sunday
+                    return f"{day_names[0]} {time_str}"
             except ValueError:
                 pass
         elif re.match(r'^\d+$', day):
@@ -135,12 +109,7 @@ class GretlJobsAnalyzer:
         return time_str
 
     def find_job_properties(self) -> List[Path]:
-        """
-        Find all job.properties files.
-
-        Returns:
-            List of paths to job.properties files
-        """
+        """Find all job.properties files."""
         pattern = str(self.gretl_jobs_dir / '**/job.properties')
         self.log(f"Searching for job.properties files in: {pattern}")
 
@@ -153,31 +122,28 @@ class GretlJobsAnalyzer:
             return []
 
     def extract_cte_names(self, sql_content: str) -> Set[str]:
-        """
-        Extract CTE (Common Table Expression) names from SQL content.
-
-        Args:
-            sql_content: SQL content
-
-        Returns:
-            Set of CTE names (lowercase)
-        """
+        """Extract CTE names from SQL content."""
         cte_names = set()
 
-        # Remove comments and strings to avoid false matches
+        # Remove comments and strings
         clean_sql = sql_content
-        clean_sql = re.sub(r'--[^\n]*', '', clean_sql)  # Remove single-line comments
-        clean_sql = re.sub(r'/\*[\s\S]*?\*/', '', clean_sql)  # Remove multi-line comments
-        clean_sql = re.sub(r"'[^']*'", "''", clean_sql)  # Remove string literals
-        clean_sql = re.sub(r'"[^"]*"', '""', clean_sql)  # Remove quoted identifiers
+        clean_sql = re.sub(r'--[^\n]*', '', clean_sql)
+        clean_sql = re.sub(r'/\*[\s\S]*?\*/', '', clean_sql)
+        clean_sql = re.sub(r"'[^']*'", "''", clean_sql)
+        clean_sql = re.sub(r'"[^"]*"', '""', clean_sql)
 
-        # Match WITH clauses: WITH cte_name AS (...), another_cte AS (...)
-        with_matches = re.findall(r'WITH\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+AS\s*\(', clean_sql, re.IGNORECASE)
+        # Match WITH clauses
+        with_matches = re.findall(
+            r'WITH\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+AS\s*\(',
+            clean_sql, re.IGNORECASE
+        )
         for match in with_matches:
             cte_names.add(match.lower())
 
-        # Match additional CTEs in the same WITH clause: , cte_name AS (...)
-        additional_cte_matches = re.findall(r',\s*([a-zA-Z_][a-zA-Z0-9_]*)\s+AS\s*\(', clean_sql, re.IGNORECASE)
+        additional_cte_matches = re.findall(
+            r',\s*([a-zA-Z_][a-zA-Z0-9_]*)\s+AS\s*\(',
+            clean_sql, re.IGNORECASE
+        )
         for match in additional_cte_matches:
             cte_names.add(match.lower())
 
@@ -185,20 +151,11 @@ class GretlJobsAnalyzer:
         return cte_names
 
     def analyze_sql_files(self, job_dir: Path) -> Dict[str, List[str]]:
-        """
-        Analyze SQL files for table access.
-
-        Args:
-            job_dir: Job directory path
-
-        Returns:
-            Dictionary with 'sourceTables' and 'targetTables' lists
-        """
+        """Analyze SQL files for table access."""
         pattern = str(job_dir / '**/*.sql')
 
         try:
             sql_files = [Path(f) for f in glob.glob(pattern, recursive=True)]
-            # Filter out searchindex files
             filtered_files = [f for f in sql_files if not f.name.startswith('searchindex_')]
 
             source_tables = set()
@@ -209,47 +166,68 @@ class GretlJobsAnalyzer:
                     with open(sql_file, 'r', encoding='utf-8') as f:
                         content = f.read()
 
-                    # Extract CTE names to ignore them later
                     cte_names = self.extract_cte_names(content)
 
-                    # Find FROM tables (source)
-                    from_matches = re.findall(r'FROM\s+([a-zA-Z_][a-zA-Z0-9_.]*)', content, re.IGNORECASE)
+                    # Find FROM tables
+                    from_matches = re.findall(
+                        r'FROM\s+([a-zA-Z_][a-zA-Z0-9_.]*)\s*'
+                        r'(?:AS\s+[a-zA-Z_][a-zA-Z0-9_]*)?',
+                        content, re.IGNORECASE
+                    )
                     for match in from_matches:
                         table = match.strip()
-                        if table.lower() not in cte_names:
+                        excluded_keywords = [
+                            'AS', 'SELECT', 'WITH', 'WHERE', 'ORDER', 'GROUP',
+                            'HAVING'
+                        ]
+                        if (table.upper() not in excluded_keywords and
+                                table.lower() not in cte_names):
                             source_tables.add(table)
 
-                    # Find JOIN tables (also source)
-                    join_matches = re.findall(r'JOIN\s+([a-zA-Z_][a-zA-Z0-9_.]*)', content, re.IGNORECASE)
+                    # Find JOIN tables
+                    join_matches = re.findall(
+                        r'JOIN\s+([a-zA-Z_][a-zA-Z0-9_.]*)\s*'
+                        r'(?:AS\s+[a-zA-Z_][a-zA-Z0-9_]*)?',
+                        content, re.IGNORECASE
+                    )
                     for match in join_matches:
                         table = match.strip()
-                        if table.lower() not in cte_names:
+                        excluded_keywords = [
+                            'AS', 'SELECT', 'WITH', 'WHERE', 'ORDER', 'GROUP',
+                            'HAVING'
+                        ]
+                        if (table.upper() not in excluded_keywords and
+                                table.lower() not in cte_names):
                             source_tables.add(table)
 
-                    # Find INSERT/UPDATE/CREATE tables (target)
-                    target_matches = re.findall(r'(INSERT\s+INTO|UPDATE|CREATE\s+TABLE)\s+([a-zA-Z_][a-zA-Z0-9_.]*)', content, re.IGNORECASE)
+                    # Find INSERT/UPDATE/CREATE tables
+                    target_matches = re.findall(
+                        r'(?:INSERT\s+INTO|UPDATE|CREATE\s+TABLE)\s+'
+                        r'([a-zA-Z_][a-zA-Z0-9_.]*)',
+                        content, re.IGNORECASE
+                    )
                     for match in target_matches:
-                        table = match[1].strip()
-                        target_tables.add(table)
+                        table = match.strip()
+                        excluded_keywords = [
+                            'AS', 'SELECT', 'WITH', 'WHERE', 'ORDER', 'GROUP',
+                            'HAVING'
+                        ]
+                        if table.upper() not in excluded_keywords:
+                            target_tables.add(table)
 
                 except Exception as e:
                     self.error(f"Error reading SQL file {sql_file}: {e}")
 
             return {
-                'sourceTables': list(source_tables),
-                'targetTables': list(target_tables)
+                'sourceTables': sorted(list(source_tables)),
+                'targetTables': sorted(list(target_tables))
             }
         except Exception as e:
             self.error(f"Error analyzing SQL files in {job_dir}: {e}")
             return {'sourceTables': [], 'targetTables': []}
 
     def analyze_jobs(self) -> List[Dict]:
-        """
-        Analyze all jobs.
-
-        Returns:
-            List of job dictionaries
-        """
+        """Analyze all jobs."""
         job_files = self.find_job_properties()
         jobs = []
 
@@ -263,43 +241,41 @@ class GretlJobsAnalyzer:
             cron_schedule = properties.get('triggers.cron')
             upstream = properties.get('triggers.upstream')
 
-            if cron_schedule or upstream:
-                status = 'Inaktiv' if (properties.get('disabled') == 'true' or
-                                     properties.get('enabled') == 'false') else 'Aktiv'
+            status = ('Inaktiv' if (properties.get('disabled') == 'true' or
+                                       properties.get('enabled') == 'false')
+                      else 'Aktiv')
 
-                trigger_type = 'cron' if cron_schedule else 'upstream'
-                trigger_value = cron_schedule or upstream
+            if cron_schedule:
+                trigger_type = 'cron'
+                trigger_value = cron_schedule
+            elif upstream:
+                trigger_type = 'upstream'
+                trigger_value = upstream
+            else:
+                trigger_type = 'manual'
+                trigger_value = 'Manuell'
 
-                # Analyze SQL files
-                sql_analysis = self.analyze_sql_files(job_dir)
+            sql_analysis = self.analyze_sql_files(job_dir)
 
-                jobs.append({
-                    'name': job_name,
-                    'path': str(job_dir),
-                    'triggerType': trigger_type,
-                    'triggerValue': trigger_value,
-                    'cronSchedule': cron_schedule,
-                    'upstream': upstream,
-                    'status': status,
-                    'sourceTables': sql_analysis['sourceTables'],
-                    'targetTables': sql_analysis['targetTables'],
-                    'sortKey': '1' if trigger_type == 'cron' else '2'
-                })
+            jobs.append({
+                'name': job_name,
+                'path': str(job_dir),
+                'triggerType': trigger_type,
+                'triggerValue': trigger_value,
+                'cronSchedule': cron_schedule,
+                'upstream': upstream,
+                'status': status,
+                'sourceTables': sql_analysis['sourceTables'],
+                'targetTables': sql_analysis['targetTables'],
+                'sortKey': ('1' if trigger_type == 'cron' else
+                           ('2' if trigger_type == 'upstream' else '3'))
+            })
 
-        # Sort jobs: cron jobs first, then by name
         jobs.sort(key=lambda x: (x['sortKey'], x['name'].lower()))
         return jobs
 
     def get_amtsstelle_from_schema(self, schema: str) -> Optional[str]:
-        """
-        Get Amtsstelle description from schema name (sogis specific).
-
-        Args:
-            schema: Schema name
-
-        Returns:
-            Amtsstelle description or None
-        """
+        """Get Amtsstelle description from schema name."""
         schema_mappings = {
             'agi': 'Amt für Geoinformation',
             'afu': 'Amt für Umwelt',
@@ -314,16 +290,28 @@ class GretlJobsAnalyzer:
         prefix = schema.split('_')[0].lower()
         return schema_mappings.get(prefix)
 
+    def cron_sort_key(self, cron_expression: str) -> str:
+        """Generate sort key for cron expressions."""
+        if not cron_expression:
+            return 'zzz'
+
+        parts = cron_expression.split(' ')
+        if len(parts) < 5:
+            return cron_expression
+
+        minute, hour, day, month, dow = parts[:5]
+
+        hour_key = ('99' if hour == 'H' or hour.startswith('H(') else
+                    hour.zfill(2) if hour.isdigit() else '50')
+        minute_key = ('99' if minute == 'H' else
+                      minute.zfill(2) if minute.isdigit() else '50')
+        dow_key = '7' if dow == '*' else dow
+        day_key = '99' if day == '*' else day.zfill(2)
+
+        return f"{hour_key}_{minute_key}_{dow_key}_{day_key}"
+
     def generate_markdown(self, jobs: List[Dict]) -> str:
-        """
-        Generate markdown documentation.
-
-        Args:
-            jobs: List of job dictionaries
-
-        Returns:
-            Markdown content string
-        """
+        """Generate markdown documentation."""
         from datetime import datetime
 
         lines = [
@@ -336,15 +324,18 @@ class GretlJobsAnalyzer:
             "",
             "- [Zeitgesteuerte Jobs (Cron)](#zeitgesteuerte-jobs-cron)",
             "- [Upstream-gesteuerte Jobs](#upstream-gesteuerte-jobs)",
+            "- [Manuelle Jobs](#manuelle-jobs)",
             "- [Schema-Übersicht](#schema-übersicht)",
             "",
             "---",
             ""
         ]
 
-        # Group jobs by trigger type
         cron_jobs = [job for job in jobs if job['triggerType'] == 'cron']
         upstream_jobs = [job for job in jobs if job['triggerType'] == 'upstream']
+        manual_jobs = [job for job in jobs if job['triggerType'] == 'manual']
+
+        cron_jobs.sort(key=lambda x: self.cron_sort_key(x['cronSchedule']))
 
         # Zeitgesteuerte Jobs
         lines.extend([
@@ -356,20 +347,17 @@ class GretlJobsAnalyzer:
 
         if cron_jobs:
             lines.extend([
-                "| Job | Status | Schedule | Quell-Tabellen | Ziel-Tabellen |",
-                "|-----|--------|----------|----------------|---------------|"
+                "| Job | Status | Cron Schedule | Beschreibung |",
+                "|-----|--------|---------------|--------------|"
             ])
 
             for job in cron_jobs:
-                schedule = self.cron_to_text(job['cronSchedule'])
-                source_tables = ', '.join(job['sourceTables'][:3])
-                if len(job['sourceTables']) > 3:
-                    source_tables += f" (+{len(job['sourceTables']) - 3} weitere)"
-                target_tables = ', '.join(job['targetTables'][:3])
-                if len(job['targetTables']) > 3:
-                    target_tables += f" (+{len(job['targetTables']) - 3} weitere)"
-
-                lines.append(f"| {job['name']} | {job['status']} | {schedule} | {source_tables} | {target_tables} |")
+                schedule_desc = self.cron_to_text(job['cronSchedule'])
+                job_line = (
+                    f"| {job['name']} | {job['status']} | "
+                    f"`{job['cronSchedule']}` | {schedule_desc} |"
+                )
+                lines.append(job_line)
         else:
             lines.append("*Keine zeitgesteuerten Jobs gefunden.*")
 
@@ -385,21 +373,39 @@ class GretlJobsAnalyzer:
 
         if upstream_jobs:
             lines.extend([
-                "| Job | Status | Upstream | Quell-Tabellen | Ziel-Tabellen |",
-                "|-----|--------|----------|----------------|---------------|"
+                "| Job | Status | Upstream Job |",
+                "|-----|--------|--------------|"
             ])
 
             for job in upstream_jobs:
-                source_tables = ', '.join(job['sourceTables'][:3])
-                if len(job['sourceTables']) > 3:
-                    source_tables += f" (+{len(job['sourceTables']) - 3} weitere)"
-                target_tables = ', '.join(job['targetTables'][:3])
-                if len(job['targetTables']) > 3:
-                    target_tables += f" (+{len(job['targetTables']) - 3} weitere)"
-
-                lines.append(f"| {job['name']} | {job['status']} | {job['upstream']} | {source_tables} | {target_tables} |")
+                job_line = (
+                    f"| {job['name']} | {job['status']} | {job['upstream']} |"
+                )
+                lines.append(job_line)
         else:
             lines.append("*Keine upstream-gesteuerten Jobs gefunden.*")
+
+        lines.extend(["", "---", ""])
+
+        # Manual Jobs
+        lines.extend([
+            "## Manuelle Jobs",
+            "",
+            f"**Anzahl:** {len(manual_jobs)}",
+            ""
+        ])
+
+        if manual_jobs:
+            lines.extend([
+                "| Job | Status |",
+                "|-----|--------|"
+            ])
+
+            for job in manual_jobs:
+                job_line = f"| {job['name']} | {job['status']} |"
+                lines.append(job_line)
+        else:
+            lines.append("*Keine manuellen Jobs gefunden.*")
 
         lines.extend(["", "---", ""])
 
@@ -415,7 +421,11 @@ class GretlJobsAnalyzer:
         ])
 
         for schema, info in sorted(schemas.items()):
-            lines.append(f"| {schema} | {info['description']} | {len(info['jobs'])} | {len(info['tables'])} |")
+            schema_line = (
+                f"| {schema} | {info['description']} | "
+                f"{len(info['jobs'])} | {len(info['tables'])} |"
+            )
+            lines.append(schema_line)
 
         lines.extend(["", "---", ""])
 
@@ -435,7 +445,11 @@ class GretlJobsAnalyzer:
             ])
 
             if job['cronSchedule']:
-                lines.append(f"**Schedule:** {job['cronSchedule']} ({self.cron_to_text(job['cronSchedule'])})")
+                schedule_line = (
+                    f"**Schedule:** `{job['cronSchedule']}` "
+                    f"({self.cron_to_text(job['cronSchedule'])})"
+                )
+                lines.append(schedule_line)
 
             if job['upstream']:
                 lines.append(f"**Upstream:** {job['upstream']}")
@@ -461,15 +475,7 @@ class GretlJobsAnalyzer:
         return '\n'.join(lines)
 
     def analyze_schemas(self, jobs: List[Dict]) -> Dict[str, Dict]:
-        """
-        Analyze schemas used by jobs.
-
-        Args:
-            jobs: List of job dictionaries
-
-        Returns:
-            Dictionary of schema information
-        """
+        """Analyze schemas used by jobs."""
         schemas = {}
 
         for job in jobs:
@@ -488,7 +494,6 @@ class GretlJobsAnalyzer:
                     schemas[schema]['jobs'].add(job['name'])
                     schemas[schema]['tables'].add(table)
 
-        # Convert sets to lists for JSON serialization
         for schema in schemas:
             schemas[schema]['jobs'] = list(schemas[schema]['jobs'])
             schemas[schema]['tables'] = list(schemas[schema]['tables'])
@@ -501,23 +506,19 @@ class GretlJobsAnalyzer:
         print(f'Analysiere Jobs in: {self.gretl_jobs_dir}')
         print(f'Ausgabedatei: {self.output_file}')
 
-        # Check if GRETL jobs directory exists
         if not self.path_exists(self.gretl_jobs_dir):
             self.error(f"GRETL Jobs directory not found: {self.gretl_jobs_dir}")
             sys.exit(1)
 
         try:
-            # Analyze jobs
             jobs = self.analyze_jobs()
 
             if len(jobs) == 0:
-                print('⚠️  No jobs with triggers found')
+                print('⚠️  No jobs found')
                 return
 
-            # Generate documentation
             markdown = self.generate_markdown(jobs)
 
-            # Write to file
             with open(self.output_file, 'w', encoding='utf-8') as f:
                 f.write(markdown)
 
@@ -532,13 +533,25 @@ class GretlJobsAnalyzer:
 
 def main():
     """CLI entry point."""
-    parser = argparse.ArgumentParser(description='Analyze GRETL Jenkins jobs and generate documentation')
-    parser.add_argument('--gretl-jobs-dir', default=os.environ.get('GRETL_JOBS_DIR', '../gretljobs'),
-                        help='Path to GRETL jobs directory (default: ../gretljobs)')
-    parser.add_argument('--output-file', default=os.environ.get('OUTPUT_FILE', 'GRETL_Jobs_Overview.md'),
-                        help='Output markdown file (default: GRETL_Jobs_Overview.md)')
-    parser.add_argument('--debug', action='store_true', default=os.environ.get('DEBUG', '').lower() == 'true',
-                        help='Enable debug output')
+    parser = argparse.ArgumentParser(
+        description='Analyze GRETL Jenkins jobs and generate documentation'
+    )
+    parser.add_argument(
+        '--gretl-jobs-dir',
+        default=os.environ.get('GRETL_JOBS_DIR', '../gretljobs'),
+        help='Path to GRETL jobs directory (default: ../gretljobs)'
+    )
+    parser.add_argument(
+        '--output-file',
+        default=os.environ.get('OUTPUT_FILE', 'GRETL_Jobs_Overview.md'),
+        help='Output markdown file (default: GRETL_Jobs_Overview.md)'
+    )
+    parser.add_argument(
+        '--debug',
+        action='store_true',
+        default=os.environ.get('DEBUG', '').lower() == 'true',
+        help='Enable debug output'
+    )
 
     args = parser.parse_args()
 

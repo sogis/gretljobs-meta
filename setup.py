@@ -9,12 +9,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="gretl-jobs-analyzer",
     version="1.0.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Christian Baumann",
+    author_email="christian.baumann@bd.so.ch",
     description="Analyze GRETL Jenkins jobs and generate documentation",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/your-org/gretl-jobs-analyzer-python",
+    url="https://github.com/sogis/gretljobs-meta",
     py_modules=["gretl_analyzer"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
