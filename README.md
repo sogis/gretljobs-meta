@@ -1,7 +1,7 @@
 [![GRETL Jobs Analysis (Python)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-python.yml/badge.svg)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-python.yml)
 
 > [!TIP]
-> Siehe [Zusammenfassung](./nodejs_version/GRETL_Jobs_Overview.md), täglich um 4:00 UTC automatisch aktualisiert
+> Siehe [Zusammenfassung](./GRETL_Jobs_Overview.md), täglich um 4:00 UTC automatisch aktualisiert
 
 # GRETL Jobs Analyzer - sogis
 
