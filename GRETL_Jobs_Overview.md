@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 16.07.2025 11:05
-**Anzahl Jobs:** 200
+**Automatisch generiert am:** 16.07.2025 09:10
+**Anzahl Jobs:** 201
 
 ## Inhaltsverzeichnis
 
@@ -109,7 +109,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 123
+**Anzahl:** 124
 
 | Job | Status |
 |-----|--------|
@@ -231,6 +231,7 @@
 | awjf_waldplan_bestandeskarte_staging | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | dsbjd_ausgleichsabgabe_pub | Aktiv |
+| hba_gebaeude_pub | Aktiv |
 | hba_gebaeude_pub_v2 | Aktiv |
 | hba_grundstuecke_pub | Aktiv |
 | hba_grundstuecke_pub_v2 | Aktiv |
@@ -241,7 +242,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 215
+**Anzahl Schemas:** 216
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -325,7 +326,7 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 20 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
@@ -445,6 +446,7 @@
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
 | editdb | editdb | 1 | 5 |
 | flachmoore | flachmoore | 1 | 1 |
+| hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hochmoore | hochmoore | 1 | 1 |
 | klimaeignung | klimaeignung | 1 | 2 |
@@ -495,9 +497,6 @@
 - ada_archaeologie_pub_v1.restricted_punktfundstelle
 - ada_archaeologie_v1.fachapplikation_fundstelle
 - ada_archaeologie_v1.geo_flaeche
-- ada_archaeologie_pub_v1.restricted_flaechenfundstelle
-- ada_archaeologie_pub_v1.public_punktfundstelle_siedlungsgebiet
-- ada_archaeologie_pub_v1.restricted_punktfundstelle
 
 ---
 
@@ -542,8 +541,8 @@
 **Schedule:** `H H(1-3) * * *` (~1-3h)
 
 **Quell-Tabellen:**
-- afu_erdwaermesonden_v2.erdwaermesonden_bohrung
 - afu_erdwaermesonden_v2.erdwaermesonden_anlage
+- afu_erdwaermesonden_v2.erdwaermesonden_bohrung
 
 ---
 
@@ -912,8 +911,8 @@
 - capi_p.V_AIO_GrundstueckeMitFlaeche
 
 **Ziel-Tabellen:**
-- agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging
 - agi_av_gb_abgleich_import.differenzen_staging
+- agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging
 
 ---
 
@@ -1093,8 +1092,8 @@
 
 **Ziel-Tabellen:**
 - SET
-- agi_gb2av_controlling.controlling_gb2av_vollzugsmeldung_delta
 - agi_gb2av_controlling.controlling_av2gb_mutationen
+- agi_gb2av_controlling.controlling_gb2av_vollzugsmeldung_delta
 
 ---
 
@@ -1366,13 +1365,6 @@
 - arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand
 - arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung
 - arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_flaeche
-- arp_arbeitszonenbewirtschaftung_v1.regionen_region
-- arp_arbeitszonenbewirtschaftung_staging_v1.inventar_flaeche_v
-- arp_arbeitszonenbewirtschaftung_pub_v1.region_region
-- arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung
-- arp_arbeitszonenbewirtschaftung_staging_v1.arbtszng_nvntar_arbeitszonenbewirtschaftung_inventar_bebtand
-- arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand
-- agi_mopublic_pub.mopublic_grundstueck
 
 **Ziel-Tabellen:**
 - arp_arbeitszonenbewirtschaftung_staging_v1.arbtsznnng_nvntar_arbeitszonenbewirtschaftung_inventar
@@ -1439,7 +1431,6 @@
 **Schedule:** `H H(1-3) * * *` (~1-3h)
 
 **Quell-Tabellen:**
-- arp_mjpnl_v2.mjpnl_beurteilung_hostet
 - arp_mjpnl_gelan_v1.mehrjahresprgramm_vereinbarungensflaechen
 - arp_mjpnl_v2.mjpnl_beurteilung_hostet
 - arp_mjpnl_v2.mjpnl_vereinbarung
@@ -1463,10 +1454,7 @@
 - arp_mjpnl_v2.mjpnl_beurteilung_hecke
 - arp_mjpnl_v2.mjpnl_beurteilung_hostet
 - arp_mjpnl_v2.mjpnl_beurteilung_obl
-- arp_mjpnl_v2.mjpnl_beurteilung_wiese
-- arp_mjpnl_v2.mjpnl_beurteilung_hostet
 - arp_mjpnl_v2.mjpnl_beurteilung_wbl_weide
-- arp_mjpnl_v2.mjpnl_beurteilung_alr_saum
 - arp_mjpnl_v2.mjpnl_beurteilung_wbl_wiese
 - arp_mjpnl_v2.mjpnl_beurteilung_weide_ln
 - arp_mjpnl_v2.mjpnl_beurteilung_weide_soeg
@@ -1501,8 +1489,8 @@
 **Schedule:** `H H(1-3) * * *` (~1-3h)
 
 **Quell-Tabellen:**
-- agi_hoheitsgrenzen_v1.hoheitsgrenzen_gemeinde
 - agi_hoheitsgrenzen_v1.hoheitsgrenzen_bezirk
+- agi_hoheitsgrenzen_v1.hoheitsgrenzen_gemeinde
 
 **Ziel-Tabellen:**
 - abrechnung_per_leistung
@@ -1676,7 +1664,6 @@
 
 **Ziel-Tabellen:**
 - awjf_schutzwald_pub_v1.behandelte_flaeche
-- awjf_schutzwald_pub_v1.schutzwald
 - awjf_schutzwald_pub_v1.dokument
 - awjf_schutzwald_pub_v1.schutzwald
 - awjf_schutzwald_pub_v1.schutzwald_info
@@ -1858,8 +1845,8 @@
 - mit
 
 **Ziel-Tabellen:**
-- afu_bodendaten_nabodat_abfrage_pub_v1.horizont
 - afu_bodendaten_nabodat_abfrage_pub_v1.bodenprofil
+- afu_bodendaten_nabodat_abfrage_pub_v1.horizont
 
 ---
 
@@ -1984,8 +1971,8 @@
 **Upstream:** alw_fruchtfolgeflaechen_pub
 
 **Quell-Tabellen:**
-- arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
 - alw_fruchtfolgeflaechen_pub_v1.fruchtfolgeflaeche
+- arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
 
 **Ziel-Tabellen:**
 - arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
@@ -2017,8 +2004,8 @@
 **Upstream:** arp_naturreservate_pub
 
 **Quell-Tabellen:**
-- arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
 - arp_naturreservate_pub.naturreservate_reservat
+- arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
 
 **Ziel-Tabellen:**
 - arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
@@ -2064,8 +2051,8 @@
 - awjf_jagdreviere_jagdbanngebiete_v1.jagdreviere_jagdreviere
 
 **Ziel-Tabellen:**
-- awjf_efj_geodaten_upload_v1.transfermetadaten_datenbestand
 - awjf_efj_geodaten_upload_v1.gebiete_gebiet
+- awjf_efj_geodaten_upload_v1.transfermetadaten_datenbestand
 
 ---
 
@@ -4842,6 +4829,22 @@
 - agi_dm01avso24.liegenschaften_liegenschaft
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - dsbjd_ausgleichsabgabe_v1.ausgleichsabgaben_ausgleichsabgabe
+
+---
+
+### hba_gebaeude_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/hba_gebaeude_pub`
+
+**Quell-Tabellen:**
+- agi_dm01avso24.bodenbedeckung_boflaeche
+- agi_dm01avso24.bodenbedeckung_gebaeudenummer
+- agi_dm01avso24.einzelobjekte_einzelobjekt
+- agi_dm01avso24.einzelobjekte_flaechenelement
+- agi_dm01avso24.einzelobjekte_objektnummer
+- hba_gebaeude_v2.gebaeude_gebaeude
 
 ---
 
