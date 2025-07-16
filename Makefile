@@ -91,6 +91,11 @@ install:
 	@echo "Installing package..."
 	pip3 install .
 
+# Uninstall package
+uninstall:
+	@echo "Uninstalling package..."
+	pip3 uninstall gretl-jobs-analyzer
+
 # Install package in development mode
 dev-install:
 	@echo "Installing package in development mode..."
@@ -163,9 +168,9 @@ setup-dev:
 	@echo "Now you can use: make lint, make format, make coverage, make typecheck"
 
 # Upload to PyPI (requires credentials)
-upload:
-	@echo "Uploading to PyPI..."
-	python3 -m twine upload dist/*
+#upload:
+#	@echo "Uploading to PyPI..."
+#	python3 -m twine upload dist/*
 
 # Show project info
 info:
