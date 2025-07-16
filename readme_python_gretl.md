@@ -1,11 +1,8 @@
-[![GRETL Jobs Analysis (Node.js)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml/badge.svg)](https://github.com/sogis/gretljobs-meta/actions/workflows/gretl-analysis-nodejs.yml)
-
-> [!TIP]
-> Siehe [Zusammenfassung](./nodejs_version/GRETL_Jobs_Overview.md)
-
-# GRETL Jobs Analyzer - sogis
+# GRETL Jobs Analyzer - Python Version
 
 Ein Python-basierter Analyzer für GRETL Jenkins Jobs, der automatisch Dokumentation aus `job.properties` Dateien generiert.
+
+> **Hinweis:** Dies ist die Python-Portierung des ursprünglich in JavaScript/Node.js geschriebenen GRETL Jobs Analyzers.
 
 ## 🚀 Features
 
@@ -142,7 +139,7 @@ triggers.cron=H H(1-3) * * *
 triggers.cron=0 2 * * *
 triggers.cron=*/15 * * * *
 
-# Upstream-abhängige Jobs
+# Upstream-abhängige Jobs  
 triggers.upstream=other_job_name
 
 # Job Status
@@ -166,7 +163,7 @@ Das Script generiert eine strukturierte Markdown-Datei mit:
 
 ### 1. Übersichtstabellen
 - **Zeitgesteuerte Jobs**: Cron-Schedule, Status, Tabellen
-- **Upstream Jobs**: Abhängigkeiten, Status, Tabellen
+- **Upstream Jobs**: Abhängigkeiten, Status, Tabellen  
 - **Schema-Übersicht**: Verwendete Datenbank-Schemas
 
 ### 2. Detailierte Job-Informationen
@@ -213,7 +210,7 @@ coverage html
 ### Test-Abdeckung
 - ✅ Job Properties Parsing
 - ✅ Cron Expression Parsing
-- ✅ SQL File Analysis
+- ✅ SQL File Analysis  
 - ✅ CTE Detection
 - ✅ Schema Analysis
 - ✅ Markdown Generation
@@ -233,10 +230,10 @@ coverage html
 | **Async** | async/await | Synchron |
 
 ### Funktionale Äquivalenz
-✅ Alle Features der JavaScript-Version portiert
-✅ Gleiche Ausgabe-Formate
-✅ Identische Cron-Parsing-Logik
-✅ Gleiche SQL-Analyse-Features
+✅ Alle Features der JavaScript-Version portiert  
+✅ Gleiche Ausgabe-Formate  
+✅ Identische Cron-Parsing-Logik  
+✅ Gleiche SQL-Analyse-Features  
 
 ## 🐛 Troubleshooting
 
@@ -295,7 +292,7 @@ class GretlJobsAnalyzer:
         """Füge eigene Analyse-Logik hinzu."""
         # Implementierung hier
         pass
-
+    
     def generate_custom_output(self, jobs: List[Dict]) -> str:
         """Generiere alternatives Ausgabe-Format."""
         # z.B. JSON, HTML, XML
@@ -315,11 +312,11 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-
+    
     - name: Run Analysis
       run: |
         python gretl_analyzer.py --gretl-jobs-dir ../gretljobs
-
+    
     - name: Run Tests
       run: |
         python -m unittest test_gretl_analyzer.py
@@ -327,14 +324,15 @@ jobs:
 
 ## 📞 Support
 
-- **Issues**: https://github.com/sogis/gretljobs-meta/issues
-- **Kontakt**: christian.baumann@bd.so.ch
-- **Dokumentation**: Siehe README im sogis/gretljobs Repository
+- **Issues**: Erstelle ein GitHub Issue
+- **Dokumentation**: Siehe Inline-Docstrings im Code
+- **Original JavaScript Version**: Siehe entsprechendes Repository
 
 ## 📄 Lizenz
 
 MIT License
 
+---
 
 ## 🔗 Siehe auch
 
@@ -342,5 +340,3 @@ MIT License
 - [Jenkins Cron Syntax](https://www.jenkins.io/doc/book/pipeline/syntax/#cron-syntax)
 - [Python pathlib](https://docs.python.org/3/library/pathlib.html)
 - [Python argparse](https://docs.python.org/3/library/argparse.html)
-
-

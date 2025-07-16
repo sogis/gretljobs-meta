@@ -1,0 +1,17 @@
+
+# requirements.txt
+# No external dependencies required
+# All functionality uses Python standard library only
+
+# Development dependencies (optional)
+# coverage>=5.0
+# black>=21.0
+# flake8>=3.8
+# mypy>=0.800
+
+# requirements-dev.txt
+coverage>=5.0
+black>=21.0
+flake8>=3.8
+mypy>=0.800
+pytest>=6.0

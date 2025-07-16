@@ -1,4 +1,4 @@
-# Dependencies
+# Dependencies (JavaScript/Node.js)
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -87,6 +87,130 @@ typings/
 # TernJS port file
 .tern-port
 
+# Python specific additions
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports (Python)
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# PyCharm
+.idea/
+
+# Performance profiling
+*.prof
+profile_results/
+
+# Memory profiling
+*.mprof
+mprofile_*/
+
 # IDE files
 .vscode/
 .idea/
@@ -103,10 +227,107 @@ typings/
 ehthumbs.db
 Thumbs.db
 
+# Project specific
 # Generated documentation
 GRETL_Jobs_Overview.md
-*.log
+example_output.md
 
-# Test temporary files
+# Example/test directories
+example_jobs/
+test_jobs/
+
+# Temporary files
 test-*
-GRETL_Jobs_Overview.md
+temp-*
+
+# Build artifacts
+*.tar.gz
+*.zip
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Local configuration
+local_config.py
+config_local.py
+
+# Development notes
+NOTES.md
+TODO.md
+DEVELOPMENT.md
+
+# Makefile generated files
+.make/
+
+# Python wheel build
+wheelhouse/
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Local test results
+test_results/
+test_output/
+
+# Performance profiling
+*.prof
+profile_results/
+
+# Memory profiling
+*.mprof
+mprofile_*/
+
+# Security
+.env.local
+.env.production
+secrets.py
+*.pem
+*.key
+
+# Logs
+*.log
+logs/
+
+# Databases (if any)
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled extensions
+*.so
+*.dylib
+*.dll
+
+# Cython debug symbols
+cython_debug/

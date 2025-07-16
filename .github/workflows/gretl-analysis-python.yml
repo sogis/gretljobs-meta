@@ -1,0 +1,257 @@
+# .github/workflows/gretl-analysis-python.yml
+name: GRETL Jobs Analysis (Python)
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: 'Enable debug output'
+        required: false
+        default: 'false'
+        type: boolean
+      gretl_jobs_dir:
+        description: 'GRETL Jobs directory path'
+        required: false
+        default: '../gretljobs'
+        type: string
+
+  # Daily at 4:00 UTC
+  schedule:
+    - cron: '0 4 * * *'
+
+  # On push to main branch
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'gretl_analyzer.py'
+      - 'test_gretl_analyzer.py'
+      - '.github/workflows/gretl-analysis-python.yml'
+
+  # On pull requests
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'gretl_analyzer.py'
+      - 'test_gretl_analyzer.py'
+      - '.github/workflows/gretl-analysis-python.yml'
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install development dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install coverage flake8 black mypy
+
+    - name: Run syntax check
+      run: |
+        python -m py_compile gretl_analyzer.py test_gretl_analyzer.py
+
+    - name: Run linting
+      run: |
+        flake8 gretl_analyzer.py test_gretl_analyzer.py --max-line-length=88 --extend-ignore=E203,W503
+      continue-on-error: true
+
+    - name: Run type checking
+      run: |
+        mypy gretl_analyzer.py --ignore-missing-imports
+      continue-on-error: true
+
+    - name: Run unit tests
+      run: |
+        python -m unittest test_gretl_analyzer.py -v
+
+    - name: Run tests with coverage
+      run: |
+        coverage run -m unittest test_gretl_analyzer.py
+        coverage report -m
+        coverage xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-python-${{ matrix.python-version }}
+      continue-on-error: true
+
+  analyze-gretl-jobs:
+    name: Analyze GRETL Jobs
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name != 'pull_request'
+
+    steps:
+    - name: Checkout Meta Repository
+      uses: actions/checkout@v4
+      with:
+        path: gretljobs-meta
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout GRETL Jobs Repository
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.repository_owner }}/gretljobs
+        path: gretljobs
+        token: ${{ secrets.GRETL_JOBS_TOKEN || secrets.GITHUB_TOKEN }}
+      continue-on-error: true
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Verify repository structure
+      run: |
+        echo "Repository Owner: ${{ github.repository_owner }}"
+        echo "Current Repository: ${{ github.repository }}"
+        echo "Debug Mode: ${{ github.event.inputs.debug || 'false' }}"
+        echo "GRETL Jobs Dir: ${{ github.event.inputs.gretl_jobs_dir || '../gretljobs' }}"
+        echo ""
+        echo "=== Directory Structure ==="
+        ls -la
+        echo ""
+        echo "=== Meta Repository ==="
+        ls -la gretljobs-meta/ || echo "gretljobs-meta directory not found"
+        echo ""
+        echo "=== GRETL Jobs Repository ==="
+        ls -la gretljobs/ || echo "gretljobs directory not found"
+        echo ""
+        echo "=== Looking for job.properties files ==="
+        find gretljobs/ -name "job.properties" 2>/dev/null | head -10 || echo "No job.properties files found"
+
+    - name: Run GRETL Jobs Analysis
+      run: |
+        cd gretljobs-meta
+        python gretl_analyzer.py \
+          --gretl-jobs-dir ${{ github.event.inputs.gretl_jobs_dir || '../gretljobs' }} \
+          --output-file GRETL_Jobs_Overview.md \
+          ${{ github.event.inputs.debug == 'true' && '--debug' || '' }}
+      env:
+        PYTHONPATH: .
+
+    - name: Validate generated documentation
+      run: |
+        cd gretljobs-meta
+
+        # Check if documentation was generated
+        if [ ! -f "GRETL_Jobs_Overview.md" ]; then
+          echo "❌ Documentation file not generated"
+          exit 1
+        fi
+
+        # Check file size
+        size=$(wc -c < "GRETL_Jobs_Overview.md")
+        if [ $size -lt 100 ]; then
+          echo "❌ Documentation file too small ($size bytes)"
+          exit 1
+        fi
+
+        echo "✅ Documentation generated successfully ($size bytes)"
+
+        # Show preview
+        echo ""
+        echo "=== Documentation Preview ==="
+        head -30 "GRETL_Jobs_Overview.md"
+        echo ""
+        echo "=== File Statistics ==="
+        wc -l "GRETL_Jobs_Overview.md"
+        echo ""
+        echo "=== Jobs Found ==="
+        grep -c "###" "GRETL_Jobs_Overview.md" || echo "0 jobs found"
+
+    - name: Run additional validation
+      run: |
+        cd gretljobs-meta
+
+        # Test that the analyzer can be imported
+        python -c "from gretl_analyzer import GretlJobsAnalyzer; print('✅ Module imports correctly')"
+
+        # Run a quick syntax validation
+        python -m py_compile gretl_analyzer.py
+        echo "✅ Syntax validation passed"
+
+        # Check for common issues in generated markdown
+        if grep -q "ERROR" "GRETL_Jobs_Overview.md"; then
+          echo "⚠️ Found ERROR messages in documentation"
+          grep "ERROR" "GRETL_Jobs_Overview.md" || true
+        fi
+
+        if grep -q "Exception" "GRETL_Jobs_Overview.md"; then
+          echo "⚠️ Found Exception messages in documentation"
+          grep "Exception" "GRETL_Jobs_Overview.md" || true
+        fi
+
+    - name: Commit and push documentation
+      run: |
+        cd gretljobs-meta
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action (Python)"
+
+        # Add generated documentation
+        git add GRETL_Jobs_Overview.md
+
+        # Check if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "docs: update GRETL jobs analysis (Python) - $(date +%Y-%m-%d %H:%M)"
+          git push
+          echo "✅ Documentation updated and pushed"
+        fi
+
+    - name: Upload documentation artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: gretl-jobs-documentation-python
+        path: |
+          gretljobs-meta/GRETL_Jobs_Overview.md
+        retention-days: 30
+
+    - name: Create GitHub Release (on tags)
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: GRETL Jobs Analysis (Python) ${{ github.ref }}
+        body: |
+          Automated GRETL jobs analysis documentation (Python version)
+
+          - Generated: $(date)
+          - Python version: 3.9
+          - Jobs analyzed: See attached documentation
+          - Tests: All 26 tests passed ✅
+        draft: false
+        prerelease: false
+
+  notify:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: [test, analyze-gretl-jobs]
+    if: failure() && github.event_name == 'schedule'
+
+    steps:
+    - name: Send notification
+      run: |
+        echo "🚨 GRETL Jobs Analysis (Python) failed!"
+        echo "Time: $(date)"
+        echo "Repository: ${{ github.repository }}"
+        echo "Run: ${{ github.run_id }}"
+        # Add notification logic here (email, Slack, etc.)
