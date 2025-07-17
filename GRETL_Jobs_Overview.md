@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 16.07.2025 12:03
+**Automatisch generiert am:** 17.07.2025 04:37
 **Anzahl Jobs:** 201
 
 ## Inhaltsverzeichnis
@@ -242,7 +242,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 216
+**Anzahl Schemas:** 218
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -439,7 +439,9 @@
 | awjf_waldwanderwege | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_wegsanierungen_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | bohrung | bohrung | 1 | 1 |
-| bundesinventar_ivs_reg_lok | bundesinventar_ivs_reg_lok | 1 | 3 |
+| bundesinventar_isos | bundesinventar_isos | 1 | 7 |
+| bundesinventar_ivs_national | bundesinventar_ivs_national | 1 | 2 |
+| bundesinventar_ivs_reg_lok | bundesinventar_ivs_reg_lok | 1 | 2 |
 | capi_p | capi_p | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
@@ -453,11 +455,11 @@
 | ksta_landwerte | ksta_landwerte | 1 | 1 |
 | l | l | 1 | 2 |
 | live | live | 1 | 3 |
-| main | main | 1 | 5 |
+| main | main | 1 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
-| pubdb | pubdb | 1 | 3 |
+| pubdb | pubdb | 1 | 20 |
 | public | public | 2 | 4 |
-| sein | sein | 1 | 6 |
+| sein | sein | 1 | 8 |
 | simi | simi | 3 | 44 |
 | sk_plakatstandorte_staging_v1 | sk_plakatstandorte_staging_v1 | 1 | 1 |
 | sk_plakatstandorte_v1 | sk_plakatstandorte_v1 | 1 | 1 |
@@ -4257,56 +4259,70 @@
 **Quell-Tabellen:**
 - ST_Read
 - Shapefile
-- bundesinventar_amphibien_laichgebiete
-- bundesinventar_amphibien_wanderobjekte
-- bundesinventar_auen
-- bundesinventar_bln
-- bundesinventar_flachmoore
-- bundesinventar_hochmoore
+- bundesinventar_isos.geometrie
+- bundesinventar_isos.geometrie_linie
+- bundesinventar_isos.geometrie_perimeter
+- bundesinventar_isos.geometrie_punkt
+- bundesinventar_isos.geometriekollektion
+- bundesinventar_isos.hinweis
+- bundesinventar_isos.hinweisortsbildteil
+- bundesinventar_ivs_national.ivs_linienobjekte_lv95
+- bundesinventar_ivs_national.ivs_objekte
 - bundesinventar_ivs_reg_lok.ivs_linienobjekte_lv95
 - bundesinventar_ivs_reg_lok.ivs_objekte
-- bundesinventar_ivs_reg_lok.ivs_signatur_linie
-- bundesinventar_trockenwiesen_trockenweiden
-- bundesinventar_vogelreservate
-- downloaded
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde_objektinfo
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gruppe
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_objektinfo
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_thema
-- main.bundesinventar_amphibien_laichgebiete
-- main.bundesinventar_bln
-- main.bundesinventar_flachmoore
-- main.bundesinventar_hochmoore
-- main.objektinfos_sein_sammeltabelle
-- objektinfos_sein_sammeltabelle
+- main.
+- main.sein_sammeltabelle
+- main.sein_sammeltabelle_filtered
+- pubdb.ada_archaeologie_pub_v1.restricted_flaechenfundstelle
+- pubdb.ada_archaeologie_pub_v1.restricted_punktfundstelle
+- pubdb.afu_altlasten_pub_v2.belasteter_standort
+- pubdb.afu_stoerfallverordnung_pub_v1.betrieb
+- pubdb.afu_stoerfallverordnung_pub_v1.betrieb_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher
+- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse
+- pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze
+- pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+- pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
 - pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_flaeche
 - pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_linie
 - pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_punkt
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_erschliessung_linienobjekt_v
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernder_punkt
+- pubdb.awjf_wildtierkorridore_pub_v1.wildtierkorridor
+- read_parquet
 - sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
+- sein.main.sein_sammeltabelle
+- sein.main.sein_sammeltabelle_filtered
+- sein_sammeltabelle
+- sein_sammeltabelle_filtered
 
 **Ziel-Tabellen:**
-- bundesinventar_amphibien_laichgebiete
-- bundesinventar_amphibien_wanderobjekte
-- bundesinventar_auen
-- bundesinventar_bln
-- bundesinventar_flachmoore
-- bundesinventar_hochmoore
-- bundesinventar_trockenwiesen_trockenweiden
-- bundesinventar_vogelreservate
+- Sammeltabelle
 - for
-- objektinfos_sein_sammeltabelle
 - sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
 - sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
+- sein.main.sein_sammeltabelle
+- sein.main.sein_sammeltabelle_filtered
+- sein_sammeltabelle
+- sein_sammeltabelle_filtered
 
 ---
 
