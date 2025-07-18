@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 17.07.2025 04:37
+**Automatisch generiert am:** 18.07.2025 04:39
 **Anzahl Jobs:** 201
 
 ## Inhaltsverzeichnis
@@ -458,7 +458,7 @@
 | main | main | 1 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
 | pubdb | pubdb | 1 | 20 |
-| public | public | 2 | 4 |
+| public | public | 2 | 5 |
 | sein | sein | 1 | 8 |
 | simi | simi | 3 | 44 |
 | sk_plakatstandorte_staging_v1 | sk_plakatstandorte_staging_v1 | 1 | 1 |
@@ -2606,6 +2606,7 @@
 - poly_cleanup
 - public.gk_mocklayer
 - public.poly_cleanup
+- public.poly_cleanup_gpkg
 - public.verification
 
 ---
