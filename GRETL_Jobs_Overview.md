@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 22.07.2025 04:39
+**Automatisch generiert am:** 23.07.2025 04:41
 **Anzahl Jobs:** 201
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 63
+**Anzahl:** 64
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -64,6 +64,7 @@
 | agi_stac | Aktiv | `H H(5-6) * * *` | ~5-6h |
 | alw_landwirtschaft_tierhaltung_pub | Aktiv | `H H(2-4) * * *` | ~2-4h |
 | alw_tiergesundheit_pflanzengesundheit_massnahmen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| arp_agglomerationsprogramme_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_arbeitszonenbewirtschaftung_inventar_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_bauzonengrenzen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_fledermaus | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -109,7 +110,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 124
+**Anzahl:** 123
 
 | Job | Status |
 |-----|--------|
@@ -175,7 +176,6 @@
 | alw_gewaesserraum_pub | Aktiv |
 | alw_strukturverbesserungen_suissemelio | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
-| arp_agglomerationsprogramme_pub | Aktiv |
 | arp_mjpnl_auszahlung | Aktiv |
 | arp_mjpnl_gelan_update | Aktiv |
 | arp_mjpnl_initialisierung | Aktiv |
@@ -1348,6 +1348,32 @@
 
 **Ziel-Tabellen:**
 - amb_zivilschutz_adressen_staging_pub.adressen_zivilschutz
+
+---
+
+### arp_agglomerationsprogramme_pub
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/arp_agglomerationsprogramme_pub`
+**Schedule:** `H H(1-3) * * *` (~1-3h)
+
+**Quell-Tabellen:**
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+- agi_swissboundaries3d_pub.swissboundaries3d_hoheitsgebiet
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglo_line
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglo_point
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglo_surface
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglomerationsprogramm
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_federfuehrung
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_federfuehrung_massnahme
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_gemeinde
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_gemeinde_massnahme
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_massnahme
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_paket
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_prioritaet
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_projektphase
+- arp_agglomerationsprogramme.agglomrtnsprgrmme_umsetzungsstand
 
 ---
 
@@ -3449,31 +3475,6 @@
 - alw_zonengrenzen.lz_kataloge_lz_katalog_typref
 - alw_zonengrenzen.multilingualtext
 - alw_zonengrenzen.zonengrenzen_lz_flaeche
-
----
-
-### arp_agglomerationsprogramme_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_agglomerationsprogramme_pub`
-
-**Quell-Tabellen:**
-- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- agi_swissboundaries3d_pub.swissboundaries3d_hoheitsgebiet
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglo_line
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglo_point
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglo_surface
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_agglomerationsprogramm
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_federfuehrung
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_federfuehrung_massnahme
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_gemeinde
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_gemeinde_massnahme
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_massnahme
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_paket
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_prioritaet
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_projektphase
-- arp_agglomerationsprogramme.agglomrtnsprgrmme_umsetzungsstand
 
 ---
 
