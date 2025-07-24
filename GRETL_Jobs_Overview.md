@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 23.07.2025 04:41
+**Automatisch generiert am:** 24.07.2025 04:39
 **Anzahl Jobs:** 201
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 64
+**Anzahl:** 63
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -79,7 +79,6 @@
 | awjf_programm_biodiversitaet_wald_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_schutzwald_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_waldpflege_kontrolle | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| awjf_waldportal | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_wegsanierungen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | dsbjd_ebauso_rahmenmodell_pub | Aktiv | `H H(3-4) * * *` | ~3-4h |
 
@@ -110,7 +109,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 123
+**Anzahl:** 124
 
 | Job | Status |
 |-----|--------|
@@ -229,6 +228,7 @@
 | awjf_waldplan_bestandeskarte_import_shp | Aktiv |
 | awjf_waldplan_bestandeskarte_pub | Aktiv |
 | awjf_waldplan_bestandeskarte_staging | Aktiv |
+| awjf_waldportal | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | dsbjd_ausgleichsabgabe_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
@@ -1708,15 +1708,6 @@
 **Quell-Tabellen:**
 - awjf_gesuchsteller.gesuchsteller_gesuchsteller
 - awjf_waldpflege_erfassung.waldpflege_waldpflege
-
----
-
-### awjf_waldportal
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/awjf_waldportal`
-**Schedule:** `H H(1-3) * * *` (~1-3h)
 
 ---
 
@@ -4820,6 +4811,14 @@
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - awjf_waldplan_bestandeskarte_staging_v1.waldplan_bestandeskarte
 - awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte
+
+---
+
+### awjf_waldportal
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/awjf_waldportal`
 
 ---
 
