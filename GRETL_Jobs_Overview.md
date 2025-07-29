@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 28.07.2025 04:46
-**Anzahl Jobs:** 201
+**Automatisch generiert am:** 29.07.2025 04:48
+**Anzahl Jobs:** 203
 
 ## Inhaltsverzeichnis
 
@@ -109,12 +109,13 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 124
+**Anzahl:** 126
 
 | Job | Status |
 |-----|--------|
 | afu_abbaustellen_pub | Aktiv |
 | afu_ara_einzugsgebiete_pub | Aktiv |
+| afu_asiatische_hornisse_import | Aktiv |
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
@@ -193,6 +194,7 @@
 | arp_nutzungsplanung_pub | Aktiv |
 | arp_richtplan_inventar_historische_verkehrswege_pub | Aktiv |
 | arp_richtplan_richtplan_pub | Aktiv |
+| arp_sein_konfiguration | Aktiv |
 | arp_sein_konfiguration_local | Aktiv |
 | arp_sein_upload_test | Aktiv |
 | arp_statent_import | Aktiv |
@@ -392,6 +394,7 @@
 | arp_planungszonen_mgdm_v1 | Amt für Raumplanung | 1 | 8 |
 | arp_richtplan_pub_v2 | Amt für Raumplanung | 8 | 10 |
 | arp_richtplan_v2 | Amt für Raumplanung | 2 | 16 |
+| arp_sein_konfiguration_grundlagen_v2 | Amt für Raumplanung | 2 | 1 |
 | arp_statpop_statent_staging_v1 | Amt für Raumplanung | 2 | 3 |
 | arp_statpop_statent_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_waldabstandslinien_mgdm_v1 | Amt für Raumplanung | 1 | 9 |
@@ -439,30 +442,29 @@
 | awjf_waldwanderwege | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_wegsanierungen_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | bohrung | bohrung | 1 | 1 |
-| bundesinventar_isos | bundesinventar_isos | 1 | 7 |
-| bundesinventar_ivs_national | bundesinventar_ivs_national | 1 | 2 |
-| bundesinventar_ivs_reg_lok | bundesinventar_ivs_reg_lok | 1 | 2 |
 | capi_p | capi_p | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
-| editdb | editdb | 1 | 5 |
+| editdb | editdb | 2 | 5 |
 | flachmoore | flachmoore | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hochmoore | hochmoore | 1 | 1 |
+| importschema_xtf | importschema_xtf | 2 | 10 |
 | klimaeignung | klimaeignung | 1 | 2 |
 | ksta_landwerte | ksta_landwerte | 1 | 1 |
 | l | l | 1 | 2 |
 | live | live | 1 | 3 |
-| main | main | 1 | 3 |
+| main | main | 2 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
-| pubdb | pubdb | 1 | 20 |
+| pubdb | pubdb | 2 | 33 |
 | public | public | 2 | 4 |
-| sein | sein | 1 | 8 |
+| sein | sein | 2 | 8 |
 | simi | simi | 3 | 44 |
 | sk_plakatstandorte_staging_v1 | sk_plakatstandorte_staging_v1 | 1 | 1 |
 | sk_plakatstandorte_v1 | sk_plakatstandorte_v1 | 1 | 1 |
+| themeDB | themeDB | 1 | 1 |
 | trockenwiesenweiden | trockenwiesenweiden | 1 | 1 |
 
 ---
@@ -2126,6 +2128,14 @@
 
 **Quell-Tabellen:**
 - afu_ara_einzugsgebiete.einzugsgebiete_ara_einzugsgebiet
+
+---
+
+### afu_asiatische_hornisse_import
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
 
 ---
 
@@ -4242,53 +4252,66 @@
 
 ---
 
-### arp_sein_konfiguration_local
+### arp_sein_konfiguration
 
 **Status:** Aktiv
 **Trigger:** manual
-**Pfad:** `../gretljobs/arp_sein_konfiguration_local`
+**Pfad:** `../gretljobs/arp_sein_konfiguration`
 
 **Quell-Tabellen:**
 - ST_Read
 - Shapefile
-- bundesinventar_isos.geometrie
-- bundesinventar_isos.geometrie_linie
-- bundesinventar_isos.geometrie_perimeter
-- bundesinventar_isos.geometrie_punkt
-- bundesinventar_isos.geometriekollektion
-- bundesinventar_isos.hinweis
-- bundesinventar_isos.hinweisortsbildteil
-- bundesinventar_ivs_national.ivs_linienobjekte_lv95
-- bundesinventar_ivs_national.ivs_objekte
-- bundesinventar_ivs_reg_lok.ivs_linienobjekte_lv95
-- bundesinventar_ivs_reg_lok.ivs_objekte
+- arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde_objektinfo
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gruppe
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_objektinfo
 - editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_thema
+- importschema_xtf.buildingline
+- importschema_xtf.geometrie
+- importschema_xtf.geometrie_linie
+- importschema_xtf.geometrie_perimeter
+- importschema_xtf.geometrie_punkt
+- importschema_xtf.geometriekollektion
+- importschema_xtf.hinweis
+- importschema_xtf.hinweisortsbildteil
+- importschema_xtf.ivs_linienobjekte_lv95
+- importschema_xtf.ivs_objekte
 - main.
 - main.sein_sammeltabelle
 - main.sein_sammeltabelle_filtered
 - pubdb.ada_archaeologie_pub_v1.restricted_flaechenfundstelle
 - pubdb.ada_archaeologie_pub_v1.restricted_punktfundstelle
+- pubdb.ada_denkmalschutz_pub_v1.denkmal_polygon
+- pubdb.ada_denkmalschutz_pub_v1.denkmal_punkt
 - pubdb.afu_altlasten_pub_v2.belasteter_standort
+- pubdb.afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzareal_v
+- pubdb.afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzzone_v
 - pubdb.afu_stoerfallverordnung_pub_v1.betrieb
 - pubdb.afu_stoerfallverordnung_pub_v1.betrieb_kb
 - pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse_kb
 - pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher
 - pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher_kb
 - pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse_kb
 - pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze
 - pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
 - pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_flaeche
 - pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_linie
 - pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_punkt
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_uebersicht_gemeinde
 - pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_erschliessung_linienobjekt_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_flaeche_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_linie_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_punkt_v
 - pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
 - pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie
 - pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernder_punkt
+- pubdb.arp_wanderwege_pub_v1.wanderwege_wanderweg
+- pubdb.avt_oev_gueteklassen_pub_v1.oev_gueteklassen
 - pubdb.awjf_wildtierkorridore_pub_v1.wildtierkorridor
 - read_parquet
 - sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
@@ -4301,6 +4324,97 @@
 - sein.main.sein_sammeltabelle_filtered
 - sein_sammeltabelle
 - sein_sammeltabelle_filtered
+
+**Ziel-Tabellen:**
+- Sammeltabelle
+- for
+- sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
+- sein.main.sein_sammeltabelle
+- sein.main.sein_sammeltabelle_filtered
+- sein_sammeltabelle
+- sein_sammeltabelle_filtered
+
+---
+
+### arp_sein_konfiguration_local
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/arp_sein_konfiguration_local`
+
+**Quell-Tabellen:**
+- ST_Read
+- Shapefile
+- arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
+- duckdb_settings
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde_objektinfo
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gruppe
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_objektinfo
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_thema
+- importschema_xtf.buildingline
+- importschema_xtf.geometrie
+- importschema_xtf.geometrie_linie
+- importschema_xtf.geometrie_perimeter
+- importschema_xtf.geometrie_punkt
+- importschema_xtf.geometriekollektion
+- importschema_xtf.hinweis
+- importschema_xtf.hinweisortsbildteil
+- importschema_xtf.ivs_linienobjekte_lv95
+- importschema_xtf.ivs_objekte
+- main.
+- main.sein_sammeltabelle
+- main.sein_sammeltabelle_filtered
+- pubdb.ada_archaeologie_pub_v1.restricted_flaechenfundstelle
+- pubdb.ada_archaeologie_pub_v1.restricted_punktfundstelle
+- pubdb.ada_denkmalschutz_pub_v1.denkmal_polygon
+- pubdb.ada_denkmalschutz_pub_v1.denkmal_punkt
+- pubdb.afu_altlasten_pub_v2.belasteter_standort
+- pubdb.afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzareal_v
+- pubdb.afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzzone_v
+- pubdb.afu_stoerfallverordnung_pub_v1.betrieb
+- pubdb.afu_stoerfallverordnung_pub_v1.betrieb_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher
+- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse_kb
+- pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze
+- pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+- pubdb.agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_flaeche
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_linie
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_punkt
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_uebersicht_gemeinde
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_erschliessung_linienobjekt_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_flaeche_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_linie_v
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_punkt_v
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernder_punkt
+- pubdb.arp_wanderwege_pub_v1.wanderwege_wanderweg
+- pubdb.avt_oev_gueteklassen_pub_v1.oev_gueteklassen
+- pubdb.awjf_wildtierkorridore_pub_v1.wildtierkorridor
+- read_parquet
+- sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
+- sein.main.sein_sammeltabelle
+- sein.main.sein_sammeltabelle_filtered
+- sein_sammeltabelle
+- sein_sammeltabelle_filtered
+- themeDB.main.sein_sammeltabelle
 
 **Ziel-Tabellen:**
 - Sammeltabelle
