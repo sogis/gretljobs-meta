@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 29.07.2025 04:48
-**Anzahl Jobs:** 203
+**Automatisch generiert am:** 30.07.2025 04:43
+**Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
 
@@ -109,7 +109,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 126
+**Anzahl:** 127
 
 | Job | Status |
 |-----|--------|
@@ -173,6 +173,7 @@
 | alw_fruchtfolgeflaechen | Aktiv |
 | alw_fruchtfolgeflaechen_export_ai | Aktiv |
 | alw_fruchtfolgeflaechen_pub | Aktiv |
+| alw_futterbaulinien_pub | Aktiv |
 | alw_gewaesserraum_pub | Aktiv |
 | alw_strukturverbesserungen_suissemelio | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
@@ -244,7 +245,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 218
+**Anzahl Schemas:** 219
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -353,6 +354,7 @@
 | alw_fruchtfolgeflaechen_mgdm_v1 | Amt für Landwirtschaft | 1 | 2 |
 | alw_fruchtfolgeflaechen_pub_v1 | Amt für Landwirtschaft | 3 | 1 |
 | alw_fruchtfolgeflaechen_v1 | Amt für Landwirtschaft | 2 | 2 |
+| alw_futterbaulinien_v1 | Amt für Landwirtschaft | 1 | 1 |
 | alw_gewaesserraum | Amt für Landwirtschaft | 1 | 1 |
 | alw_gewaesserraum_v1 | Amt für Landwirtschaft | 2 | 1 |
 | alw_landwirtschaft_tierhaltung_v1 | Amt für Landwirtschaft | 1 | 10 |
@@ -3421,6 +3423,17 @@
 **Quell-Tabellen:**
 - alw_fruchtfolgeflaechen_v1.fruchtfolgeflaeche
 - alw_fruchtfolgeflaechen_v1.statistik
+
+---
+
+### alw_futterbaulinien_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/alw_futterbaulinien_pub`
+
+**Quell-Tabellen:**
+- alw_futterbaulinien_v1.futterbaulinien_geometrie
 
 ---
 
