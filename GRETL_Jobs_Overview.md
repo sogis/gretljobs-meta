@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 06.08.2025 04:45
+**Automatisch generiert am:** 07.08.2025 04:45
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 63
+**Anzahl:** 64
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -38,6 +38,7 @@
 | arp_mjpnl_v2_auszahlung | Aktiv | `H H(1-3) 15 1 *` | 15. ~1-3h |
 | ada_archaeologie_pub | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | afu_altlasten_import_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| afu_asiatische_hornisse_import | Aktiv | `H H(0-1) * * *` | ~0-1h |
 | afu_asiatische_hornisse_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_private_quellen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -109,13 +110,12 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 127
+**Anzahl:** 126
 
 | Job | Status |
 |-----|--------|
 | afu_abbaustellen_pub | Aktiv |
 | afu_ara_einzugsgebiete_pub | Aktiv |
-| afu_asiatische_hornisse_import | Aktiv |
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
@@ -245,10 +245,11 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 219
+**Anzahl Schemas:** 220
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
+| EXCLUDED | EXCLUDED | 1 | 15 |
 | ada_archaeologie_pub_v1 | Amt für Denkmalpflege und Archäologie | 2 | 5 |
 | ada_archaeologie_v1 | Amt für Denkmalpflege und Archäologie | 1 | 5 |
 | ada_denkmalschutz_pub_v1 | Amt für Denkmalpflege und Archäologie | 1 | 2 |
@@ -448,7 +449,7 @@
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
-| editdb | editdb | 2 | 5 |
+| editdb | editdb | 3 | 7 |
 | flachmoore | flachmoore | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
@@ -512,6 +513,49 @@
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_altlasten_import_pub`
 **Schedule:** `H H(1-3) * * *` (~1-3h)
+
+---
+
+### afu_asiatische_hornisse_import
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
+**Schedule:** `H H(0-1) * * *` (~0-1h)
+
+**Quell-Tabellen:**
+- EXCLUDED.geometrie
+- EXCLUDED.import_bemerkung
+- EXCLUDED.import_datum_sichtung
+- EXCLUDED.import_foto_url
+- EXCLUDED.import_kanton
+- EXCLUDED.import_lat
+- EXCLUDED.import_lon
+- EXCLUDED.import_nest_id
+- EXCLUDED.import_nest_status
+- EXCLUDED.import_occurrence_id
+- EXCLUDED.import_ort
+- EXCLUDED.import_unique_nest_id
+- EXCLUDED.import_url
+- EXCLUDED.import_x_koordinate
+- EXCLUDED.import_y_koordinate
+- ST_Read
+- afu_individuals
+- afu_nests
+- editdb.afu_asiatische_hornisse_v2.asia_hornisse_nest
+- editdb.afu_asiatische_hornisse_v2.asia_hornisse_sichtung
+- infofauna_individuals
+- infofauna_nests
+
+**Ziel-Tabellen:**
+- SET
+- afu_individuals
+- afu_nests
+- anstatt
+- auf
+- infofauna_individuals
+- infofauna_nests
+- nur
 
 ---
 
@@ -2130,14 +2174,6 @@
 
 **Quell-Tabellen:**
 - afu_ara_einzugsgebiete.einzugsgebiete_ara_einzugsgebiet
-
----
-
-### afu_asiatische_hornisse_import
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
 
 ---
 
