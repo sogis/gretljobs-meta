@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.08.2025 04:44
+**Automatisch generiert am:** 12.08.2025 04:28
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -38,7 +38,7 @@
 | arp_mjpnl_v2_auszahlung | Aktiv | `H H(1-3) 15 1 *` | 15. ~1-3h |
 | ada_archaeologie_pub | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | afu_altlasten_import_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| afu_asiatische_hornisse_import | Aktiv | `H H(0-1) * * *` | ~0-1h |
+| afu_asiatische_hornisse_import | Aktiv | `H H(3-4) * * *` | ~3-4h |
 | afu_asiatische_hornisse_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_private_quellen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -521,7 +521,7 @@
 **Status:** Aktiv
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
-**Schedule:** `H H(0-1) * * *` (~0-1h)
+**Schedule:** `H H(3-4) * * *` (~3-4h)
 
 **Quell-Tabellen:**
 - EXCLUDED.geometrie
