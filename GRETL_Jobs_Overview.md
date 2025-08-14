@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 13.08.2025 04:30
+**Automatisch generiert am:** 14.08.2025 04:30
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -14,12 +14,13 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 64
+**Anzahl:** 65
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
 | agi_av_kaso_abgleich_pub | Aktiv | `H 3 * * *` | ~3:xx |
 | afu_ewsabfrage_2d | Aktiv | `0 4 * * 0` | So 04:00 |
+| arp_sein_strukturdaten_export | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | agi_generate_matomo_reports | Aktiv | `H 4 1 * *` | 1. ~4:xx |
 | afu_neophyten_pub | Aktiv | `H 6 * * *` | ~6:xx |
 | agi_av_dm01_mopublic_pub | Aktiv | `00 21 * * *` | 21:00 |
@@ -87,7 +88,7 @@
 
 ## Upstream-gesteuerte Jobs
 
-**Anzahl:** 14
+**Anzahl:** 13
 
 | Job | Status | Upstream Job |
 |-----|--------|--------------|
@@ -102,7 +103,6 @@
 | arp_richtplan_gewaesserschutz_pub | Aktiv | afu_gewaesserschutz_zonen_areale_pub |
 | arp_richtplan_naturreservate_pub | Aktiv | arp_naturreservate_pub |
 | arp_richtplan_oeffentlicher_verkehr_pub | Aktiv | avt_oeffentlicher_verkehr_pub |
-| arp_sein_strukturdaten_pub | Aktiv | arp_auswertung_nutzungsplanung_pub |
 | awjf_efj_geodaten_upload | Aktiv | awjf_jagdreviere_jagdbanngebiete_pub, awjf_gewaesser_fischerei_pub |
 | awjf_statische_waldgrenzen_export_ai | Aktiv | awjf_statische_waldgrenze_pub |
 
@@ -245,7 +245,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 220
+**Anzahl Schemas:** 222
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -334,13 +334,13 @@
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
-| agi_gwr_pub_v1 | Amt für Geoinformation | 1 | 1 |
+| agi_gwr_pub_v1 | Amt für Geoinformation | 2 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 34 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 35 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
-| agi_mopublic_pub | Amt für Geoinformation | 8 | 7 |
+| agi_mopublic_pub | Amt für Geoinformation | 9 | 7 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
 | agi_plz_ortschaften_pub | Amt für Geoinformation | 1 | 2 |
 | agi_swissboundaries3d_pub | Amt für Geoinformation | 3 | 4 |
@@ -368,7 +368,7 @@
 | arp_arbeitszonenbewirtschaftung_pub_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_arbeitszonenbewirtschaftung_staging_v1 | Amt für Raumplanung | 1 | 3 |
 | arp_arbeitszonenbewirtschaftung_v1 | Amt für Raumplanung | 1 | 2 |
-| arp_auswertung_nutzungsplanung_pub_v1 | Amt für Raumplanung | 2 | 6 |
+| arp_auswertung_nutzungsplanung_pub_v1 | Amt für Raumplanung | 3 | 6 |
 | arp_bauzonengrenzen_pub | Amt für Raumplanung | 2 | 1 |
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
@@ -389,7 +389,7 @@
 | arp_nutzungsplanung_kanton_v1 | Amt für Raumplanung | 3 | 28 |
 | arp_nutzungsplanung_mgdm_v1 | Amt für Raumplanung | 2 | 20 |
 | arp_nutzungsplanung_planregister_pub_v1 | Amt für Raumplanung | 6 | 1 |
-| arp_nutzungsplanung_pub_v1 | Amt für Raumplanung | 7 | 7 |
+| arp_nutzungsplanung_pub_v1 | Amt für Raumplanung | 8 | 7 |
 | arp_nutzungsplanung_transfer_pub_v1 | Amt für Raumplanung | 3 | 10 |
 | arp_nutzungsplanung_transfer_v1 | Amt für Raumplanung | 2 | 28 |
 | arp_nutzungsplanung_v1 | Amt für Raumplanung | 2 | 32 |
@@ -397,9 +397,9 @@
 | arp_planungszonen_mgdm_v1 | Amt für Raumplanung | 1 | 8 |
 | arp_richtplan_pub_v2 | Amt für Raumplanung | 8 | 10 |
 | arp_richtplan_v2 | Amt für Raumplanung | 2 | 16 |
-| arp_sein_konfiguration_grundlagen_v2 | Amt für Raumplanung | 2 | 1 |
+| arp_sein_konfiguration_grundlagen_v2 | Amt für Raumplanung | 3 | 2 |
 | arp_statpop_statent_staging_v1 | Amt für Raumplanung | 2 | 3 |
-| arp_statpop_statent_v1 | Amt für Raumplanung | 1 | 1 |
+| arp_statpop_statent_v1 | Amt für Raumplanung | 2 | 3 |
 | arp_waldabstandslinien_mgdm_v1 | Amt für Raumplanung | 1 | 9 |
 | arp_waldreservate_mgdm_v1 | Amt für Raumplanung | 1 | 3 |
 | arp_waldreservate_pub_v1 | Amt für Raumplanung | 1 | 3 |
@@ -450,10 +450,12 @@
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
 | editdb | editdb | 3 | 7 |
+| export | export | 1 | 46 |
 | flachmoore | flachmoore | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hochmoore | hochmoore | 1 | 1 |
+| import | import | 1 | 9 |
 | importschema_xtf | importschema_xtf | 2 | 10 |
 | klimaeignung | klimaeignung | 1 | 2 |
 | ksta_landwerte | ksta_landwerte | 1 | 1 |
@@ -1617,6 +1619,132 @@
 
 ---
 
+### arp_sein_strukturdaten_export
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/arp_sein_strukturdaten_export`
+**Schedule:** `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` (~4:xx)
+
+**Quell-Tabellen:**
+- Parzelle
+- agi_gwr_pub_v1.gwr_gebaeude
+- agi_gwr_pub_v1.gwr_wohnung
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+- agi_mopublic_pub.mopublic_bodenbedeckung
+- agi_mopublic_pub.mopublic_grundstueck
+- arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand
+- arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung
+- arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde
+- arp_statpop_statent_v1.statent
+- arp_statpop_statent_v1.statpop
+- export.gebaeude
+- export.gebklasse10_mapping
+- export.gemeinde_bodenbedeckung
+- export.gemeinde_bodenbedeckungen_json
+- export.gemeinde_gebaeude_statistik
+- export.gemeinde_geoms
+- export.gemeinde_grundnutzungen_json
+- export.gemeinde_gwr_json
+- export.gemeinde_statent_statistik
+- export.gemeinde_statpop_json
+- export.gemeinde_wohnungen_statistik
+- export.parzellen_bodenbedeckung
+- export.parzellen_bodenbedeckungen_json
+- export.parzellen_gebaeude_statistik
+- export.parzellen_geoms
+- export.parzellen_grundnutzungen_json
+- export.parzellen_gwr_json
+- export.parzellen_statent_statistik
+- export.parzellen_statpop_json
+- export.parzellen_wohnungen_statistik
+- export.statent
+- export.statpop
+- export.strukturdaten_gemeinde
+- export.strukturdaten_parzelle
+- export.strukturdaten_zonenschild
+- export.strukturdaten_zonentyp
+- export.wohnung
+- export.zonenschild_bodenbedeckung
+- export.zonenschild_bodenbedeckungen_json
+- export.zonenschild_gebaeude_statistik
+- export.zonenschild_geoms
+- export.zonenschild_grundnutzungen_json
+- export.zonenschild_gwr_json
+- export.zonenschild_statent_statistik
+- export.zonenschild_statpop_json
+- export.zonenschild_wohnungen_statistik
+- export.zonentyp_bodenbedeckung
+- export.zonentyp_bodenbedeckungen_json
+- export.zonentyp_dump
+- export.zonentyp_gebaeude_statistik
+- export.zonentyp_geoms
+- export.zonentyp_grundnutzungen_json
+- export.zonentyp_gwr_json
+- export.zonentyp_statent_statistik
+- export.zonentyp_statpop_json
+- export.zonentyp_wohnungen_statistik
+- import.bauzonenstatistik_liegenschaft_nach_bebauungsstand
+- import.grundlagen_gemeinde
+- import.gwr_gebaeude
+- import.gwr_wohnung
+- import.hoheitsgrenzen_gemeindegrenze
+- import.mopublic_bodenbedeckung
+- import.nutzungsplanung_grundnutzung
+- import.statpop_statent_statent
+- import.statpop_statent_statpop
+- verwendet
+
+**Ziel-Tabellen:**
+- export.gebaeude
+- export.gebklasse10_mapping
+- export.gemeinde_bodenbedeckung
+- export.gemeinde_bodenbedeckungen_json
+- export.gemeinde_gebaeude_statistik
+- export.gemeinde_geoms
+- export.gemeinde_grundnutzungen_json
+- export.gemeinde_gwr_json
+- export.gemeinde_statent_statistik
+- export.gemeinde_statpop_json
+- export.gemeinde_wohnungen_statistik
+- export.parzellen_bodenbedeckung
+- export.parzellen_bodenbedeckungen_json
+- export.parzellen_gebaeude_statistik
+- export.parzellen_geoms
+- export.parzellen_grundnutzungen_json
+- export.parzellen_gwr_json
+- export.parzellen_statent_statistik
+- export.parzellen_statpop_json
+- export.parzellen_wohnungen_statistik
+- export.statent
+- export.statpop
+- export.strukturdaten_gemeinde
+- export.strukturdaten_parzelle
+- export.strukturdaten_zonenschild
+- export.strukturdaten_zonentyp
+- export.wohnung
+- export.zonenschild_bodenbedeckung
+- export.zonenschild_bodenbedeckungen_json
+- export.zonenschild_gebaeude_statistik
+- export.zonenschild_geoms
+- export.zonenschild_grundnutzungen_json
+- export.zonenschild_gwr_json
+- export.zonenschild_statent_statistik
+- export.zonenschild_statpop_json
+- export.zonenschild_wohnungen_statistik
+- export.zonentyp_bodenbedeckung
+- export.zonentyp_bodenbedeckungen_json
+- export.zonentyp_dump
+- export.zonentyp_gebaeude_statistik
+- export.zonentyp_geoms
+- export.zonentyp_grundnutzungen_json
+- export.zonentyp_gwr_json
+- export.zonentyp_statent_statistik
+- export.zonentyp_statpop_json
+- export.zonentyp_wohnungen_statistik
+
+---
+
 ### avt_bodenfaktor_pub
 
 **Status:** Aktiv
@@ -2092,15 +2220,6 @@
 
 **Ziel-Tabellen:**
 - arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie
-
----
-
-### arp_sein_strukturdaten_pub
-
-**Status:** Aktiv
-**Trigger:** upstream
-**Pfad:** `../gretljobs/arp_sein_strukturdaten_pub`
-**Upstream:** arp_auswertung_nutzungsplanung_pub
 
 ---
 
