@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 14.08.2025 04:30
+**Automatisch generiert am:** 15.08.2025 04:30
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -40,7 +40,7 @@
 | ada_archaeologie_pub | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | afu_altlasten_import_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_asiatische_hornisse_import | Aktiv | `H H(3-4) * * *` | ~3-4h |
-| afu_asiatische_hornisse_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| afu_asiatische_hornisse_pub | Aktiv | `H H(5-6) * * *` | ~5-6h |
 | afu_erdwaermesonden_private_quellen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_grundlagendaten_ews_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -261,7 +261,7 @@
 | afu_altlasten_pub_v2 | Amt für Umwelt | 1 | 1 |
 | afu_altlasten_restricted_pub_v1 | Amt für Umwelt | 1 | 1 |
 | afu_ara_einzugsgebiete | Amt für Umwelt | 1 | 1 |
-| afu_asiatische_hornisse_v1 | Amt für Umwelt | 1 | 1 |
+| afu_asiatische_hornisse_v2 | Amt für Umwelt | 1 | 2 |
 | afu_baugrundklassen_v1 | Amt für Umwelt | 1 | 1 |
 | afu_bodendaten_nabodat_abfrage_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_bodendaten_nabodat_pub | Amt für Umwelt | 1 | 1 |
@@ -566,10 +566,11 @@
 **Status:** Aktiv
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_asiatische_hornisse_pub`
-**Schedule:** `H H(1-3) * * *` (~1-3h)
+**Schedule:** `H H(5-6) * * *` (~5-6h)
 
 **Quell-Tabellen:**
-- afu_asiatische_hornisse_v1.asia_hornisse_ash
+- afu_asiatische_hornisse_v2.asia_hornisse_nest
+- afu_asiatische_hornisse_v2.asia_hornisse_sichtung
 
 ---
 
