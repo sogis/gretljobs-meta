@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 18.08.2025 04:38
+**Automatisch generiert am:** 19.08.2025 04:23
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -20,6 +20,8 @@
 |-----|--------|---------------|--------------|
 | agi_av_kaso_abgleich_pub | Aktiv | `H 3 * * *` | ~3:xx |
 | afu_ewsabfrage_2d | Aktiv | `0 4 * * 0` | So 04:00 |
+| afu_asiatische_hornisse_import | Aktiv | `15 4 * * *` | 04:15 |
+| afu_asiatische_hornisse_pub | Aktiv | `30 4 * * *` | 04:30 |
 | arp_sein_strukturdaten_export | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | agi_generate_matomo_reports | Aktiv | `H 4 1 * *` | 1. ~4:xx |
 | afu_neophyten_pub | Aktiv | `H 6 * * *` | ~6:xx |
@@ -39,8 +41,6 @@
 | arp_mjpnl_v2_auszahlung | Aktiv | `H H(1-3) 15 1 *` | 15. ~1-3h |
 | ada_archaeologie_pub | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | afu_altlasten_import_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| afu_asiatische_hornisse_import | Aktiv | `H H(3-4) * * *` | ~3-4h |
-| afu_asiatische_hornisse_pub | Aktiv | `H H(5-6) * * *` | ~5-6h |
 | afu_erdwaermesonden_private_quellen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_grundlagendaten_ews_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -523,7 +523,7 @@
 **Status:** Aktiv
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
-**Schedule:** `H H(3-4) * * *` (~3-4h)
+**Schedule:** `15 4 * * *` (04:15)
 
 **Quell-Tabellen:**
 - EXCLUDED.geometrie
@@ -566,7 +566,7 @@
 **Status:** Aktiv
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_asiatische_hornisse_pub`
-**Schedule:** `H H(5-6) * * *` (~5-6h)
+**Schedule:** `30 4 * * *` (04:30)
 
 **Quell-Tabellen:**
 - afu_asiatische_hornisse_v2.asia_hornisse_nest
