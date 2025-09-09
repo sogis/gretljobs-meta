@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 08.09.2025 04:24
+**Automatisch generiert am:** 09.09.2025 04:23
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 65
+**Anzahl:** 66
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -22,6 +22,7 @@
 | afu_ewsabfrage_2d | Aktiv | `0 4 * * 0` | So 04:00 |
 | afu_asiatische_hornisse_import | Aktiv | `15 4 * * *` | 04:15 |
 | afu_asiatische_hornisse_pub | Aktiv | `30 4 * * *` | 04:30 |
+| arp_sein_konfiguration | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | arp_sein_strukturdaten_export | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | agi_generate_matomo_reports | Aktiv | `H 4 1 * *` | 1. ~4:xx |
 | afu_neophyten_pub | Aktiv | `H 6 * * *` | ~6:xx |
@@ -110,7 +111,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 126
+**Anzahl:** 125
 
 | Job | Status |
 |-----|--------|
@@ -195,7 +196,6 @@
 | arp_nutzungsplanung_pub | Aktiv |
 | arp_richtplan_inventar_historische_verkehrswege_pub | Aktiv |
 | arp_richtplan_richtplan_pub | Aktiv |
-| arp_sein_konfiguration | Aktiv |
 | arp_sein_konfiguration_local | Aktiv |
 | arp_sein_upload_test | Aktiv |
 | arp_statent_import | Aktiv |
@@ -1617,6 +1617,83 @@
 
 **Ziel-Tabellen:**
 - arp_richtplan_pub_v2.richtplankarte_grundnutzung
+
+---
+
+### arp_sein_konfiguration
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/arp_sein_konfiguration`
+**Schedule:** `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` (~4:xx)
+
+**Quell-Tabellen:**
+- ST_Read
+- Shapefile
+- arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde_objektinfo
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gruppe
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_objektinfo
+- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_thema
+- importschema_xtf.geometrie
+- importschema_xtf.geometrie_linie
+- importschema_xtf.geometrie_perimeter
+- importschema_xtf.geometrie_punkt
+- importschema_xtf.geometriekollektion
+- importschema_xtf.hinweis
+- importschema_xtf.hinweisortsbildteil
+- importschema_xtf.ivs_linienobjekte_lv95
+- importschema_xtf.ivs_objekte
+- importschema_xtf.ivs_slanamen
+- main.
+- main.sein_sammeltabelle
+- main.sein_sammeltabelle_filtered
+- pubdb.ada_archaeologie_pub_v1.restricted_flaechenfundstelle
+- pubdb.ada_archaeologie_pub_v1.restricted_punktfundstelle
+- pubdb.afu_altlasten_pub_v2.belasteter_standort
+- pubdb.afu_stoerfallverordnung_pub_v1.betrieb
+- pubdb.afu_stoerfallverordnung_pub_v1.betrieb_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher
+- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher_kb
+- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse
+- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse_kb
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_flaeche
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_linie
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_punkt
+- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_uebersicht_gemeinde
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie
+- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernder_punkt
+- pubdb.awjf_wildtierkorridore_pub_v1.wildtierkorridor
+- read_parquet
+- sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
+- sein.main.sein_sammeltabelle
+- sein.main.sein_sammeltabelle_filtered
+- sein_sammeltabelle
+- sein_sammeltabelle_filtered
+
+**Ziel-Tabellen:**
+- Sammeltabelle
+- for
+- main.sein_sammeltabelle_filtered
+- sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
+- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
+- sein.main.sein_sammeltabelle
+- sein.main.sein_sammeltabelle_filtered
+- sein_sammeltabelle
+- sein_sammeltabelle_filtered
 
 ---
 
@@ -4418,82 +4495,6 @@
 - arp_richtplan_v2.richtplankarte_ueberlagernde_linie_dokument
 - arp_richtplan_v2.richtplankarte_ueberlagernder_punkt
 - arp_richtplan_v2.richtplankarte_ueberlagernder_punkt_dokument
-
----
-
-### arp_sein_konfiguration
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_sein_konfiguration`
-
-**Quell-Tabellen:**
-- ST_Read
-- Shapefile
-- arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
-- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde
-- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gemeinde_objektinfo
-- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_gruppe
-- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_objektinfo
-- editdb.arp_sein_konfiguration_grundlagen_v2.grundlagen_thema
-- importschema_xtf.geometrie
-- importschema_xtf.geometrie_linie
-- importschema_xtf.geometrie_perimeter
-- importschema_xtf.geometrie_punkt
-- importschema_xtf.geometriekollektion
-- importschema_xtf.hinweis
-- importschema_xtf.hinweisortsbildteil
-- importschema_xtf.ivs_linienobjekte_lv95
-- importschema_xtf.ivs_objekte
-- importschema_xtf.ivs_slanamen
-- main.
-- main.sein_sammeltabelle
-- main.sein_sammeltabelle_filtered
-- pubdb.ada_archaeologie_pub_v1.restricted_flaechenfundstelle
-- pubdb.ada_archaeologie_pub_v1.restricted_punktfundstelle
-- pubdb.afu_altlasten_pub_v2.belasteter_standort
-- pubdb.afu_stoerfallverordnung_pub_v1.betrieb
-- pubdb.afu_stoerfallverordnung_pub_v1.betrieb_kb
-- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse
-- pubdb.afu_stoerfallverordnung_pub_v1.durchgangsstrasse_kb
-- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher
-- pubdb.afu_stoerfallverordnung_pub_v1.erdgasroehrenspeicher_kb
-- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse
-- pubdb.afu_stoerfallverordnung_pub_v1.nationalstrasse_kb
-- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_flaeche
-- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_linie
-- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_massnahme_punkt
-- pubdb.arp_agglomerationsprogramme_pub.agglomrtnsprgrmme_uebersicht_gemeinde
-- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_flaeche
-- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernde_linie
-- pubdb.arp_richtplan_pub_v2.richtplankarte_ueberlagernder_punkt
-- pubdb.awjf_wildtierkorridore_pub_v1.wildtierkorridor
-- read_parquet
-- sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
-- sein.main.sein_sammeltabelle
-- sein.main.sein_sammeltabelle_filtered
-- sein_sammeltabelle
-- sein_sammeltabelle_filtered
-
-**Ziel-Tabellen:**
-- Sammeltabelle
-- for
-- main.sein_sammeltabelle_filtered
-- sein.arp_sein_konfiguration_grundlagen_v2.gemeinde_objektinfo
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115auswertung_gemeinde
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gemeinde
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_gruppe
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_objektinfo
-- sein.arp_sein_konfiguration_grundlagen_v2.so_rp_s0250115grundlagen_thema
-- sein.main.sein_sammeltabelle
-- sein.main.sein_sammeltabelle_filtered
-- sein_sammeltabelle
-- sein_sammeltabelle_filtered
 
 ---
 
