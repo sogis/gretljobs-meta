@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.09.2025 04:22
+**Automatisch generiert am:** 12.09.2025 04:21
 **Anzahl Jobs:** 204
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 66
+**Anzahl:** 65
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -73,7 +73,6 @@
 | arp_fledermaus | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_mjpnatur_gelan_export | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_mjpnatur_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| arp_mjpnl_v2_gelan_update | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_mjpnl_v2_zahlungslauf | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_nutzungsplanung_planregister_export | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_nutzungsvereinbarung_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -111,7 +110,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 125
+**Anzahl:** 126
 
 | Job | Status |
 |-----|--------|
@@ -182,6 +181,7 @@
 | arp_mjpnl_gelan_update | Aktiv |
 | arp_mjpnl_initialisierung | Aktiv |
 | arp_mjpnl_migration | Aktiv |
+| arp_mjpnl_v2_gelan_update | Aktiv |
 | arp_mjpnl_v2_initialisierung | Aktiv |
 | arp_mjpnl_v2_migration | Aktiv |
 | arp_mjpnl_zahlungslauf | Aktiv |
@@ -1548,15 +1548,6 @@
 **Trigger:** cron
 **Pfad:** `../gretljobs/arp_mjpnl_v2_auszahlung`
 **Schedule:** `H H(1-3) 15 1 *` (15. ~1-3h)
-
----
-
-### arp_mjpnl_v2_gelan_update
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/arp_mjpnl_v2_gelan_update`
-**Schedule:** `H H(1-3) * * *` (~1-3h)
 
 ---
 
@@ -3780,6 +3771,14 @@
 **Ziel-Tabellen:**
 - abrechnung_per_leistung
 - basierend
+
+---
+
+### arp_mjpnl_v2_gelan_update
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/arp_mjpnl_v2_gelan_update`
 
 ---
 
