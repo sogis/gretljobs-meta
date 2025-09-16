@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 15.09.2025 04:23
-**Anzahl Jobs:** 204
+**Automatisch generiert am:** 16.09.2025 04:22
+**Anzahl Jobs:** 205
 
 ## Inhaltsverzeichnis
 
@@ -110,7 +110,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 126
+**Anzahl:** 127
 
 | Job | Status |
 |-----|--------|
@@ -119,6 +119,7 @@
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
+| afu_bootsanbindeplaetze_pub | Aktiv |
 | afu_ekat_2005_pub | Aktiv |
 | afu_ekat_2010_pub | Aktiv |
 | afu_ekat_2015_pub | Aktiv |
@@ -245,7 +246,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 222
+**Anzahl Schemas:** 223
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -266,6 +267,7 @@
 | afu_bodendaten_nabodat_abfrage_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_bodendaten_nabodat_pub | Amt für Umwelt | 1 | 1 |
 | afu_bodendaten_nabodat_v1 | Amt für Umwelt | 3 | 77 |
+| afu_bootsanbindeplaetze_v1 | Amt für Umwelt | 1 | 8 |
 | afu_erdwaermesonden_private_quellen_v1 | Amt für Umwelt | 1 | 1 |
 | afu_erdwaermesonden_v2 | Amt für Umwelt | 1 | 2 |
 | afu_ewsabfrage_2d_staging_v1 | Amt für Umwelt | 1 | 5 |
@@ -2479,6 +2481,24 @@
 - afu_bodendaten_nabodat_v1.punktdaten_standorteigenschaften
 - afu_bodendaten_nabodat_v1.punktdaten_untertyp
 - afu_bodendaten_nabodat_v1.punktdaten_wald
+
+---
+
+### afu_bootsanbindeplaetze_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_bootsanbindeplaetze_pub`
+
+**Quell-Tabellen:**
+- afu_bootsanbindeplaetze_v1.bootsanbindeplatz
+- afu_bootsanbindeplaetze_v1.bootsdaten
+- afu_bootsanbindeplaetze_v1.bootskategorie
+- afu_bootsanbindeplaetze_v1.dokument
+- afu_bootsanbindeplaetze_v1.eigentum
+- afu_bootsanbindeplaetze_v1.hauptstandort
+- afu_bootsanbindeplaetze_v1.kontaktdaten
+- afu_bootsanbindeplaetze_v1.standort
 
 ---
 
