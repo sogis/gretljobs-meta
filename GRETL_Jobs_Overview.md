@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 16.09.2025 04:22
-**Anzahl Jobs:** 205
+**Automatisch generiert am:** 17.09.2025 04:22
+**Anzahl Jobs:** 206
 
 ## Inhaltsverzeichnis
 
@@ -110,7 +110,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 127
+**Anzahl:** 128
 
 | Job | Status |
 |-----|--------|
@@ -120,6 +120,7 @@
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
 | afu_bootsanbindeplaetze_pub | Aktiv |
+| afu_bootsanbindeplaetze_sap | Aktiv |
 | afu_ekat_2005_pub | Aktiv |
 | afu_ekat_2010_pub | Aktiv |
 | afu_ekat_2015_pub | Aktiv |
@@ -246,7 +247,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 223
+**Anzahl Schemas:** 224
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -267,6 +268,7 @@
 | afu_bodendaten_nabodat_abfrage_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_bodendaten_nabodat_pub | Amt für Umwelt | 1 | 1 |
 | afu_bodendaten_nabodat_v1 | Amt für Umwelt | 3 | 77 |
+| afu_bootsanbindeplaetze | Amt für Umwelt | 1 | 1 |
 | afu_bootsanbindeplaetze_v1 | Amt für Umwelt | 1 | 8 |
 | afu_erdwaermesonden_private_quellen_v1 | Amt für Umwelt | 1 | 1 |
 | afu_erdwaermesonden_v2 | Amt für Umwelt | 1 | 2 |
@@ -465,7 +467,7 @@
 | live | live | 1 | 3 |
 | main | main | 2 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
-| pubdb | pubdb | 2 | 20 |
+| pubdb | pubdb | 3 | 21 |
 | public | public | 2 | 4 |
 | sein | sein | 2 | 8 |
 | simi | simi | 3 | 44 |
@@ -2499,6 +2501,24 @@
 - afu_bootsanbindeplaetze_v1.hauptstandort
 - afu_bootsanbindeplaetze_v1.kontaktdaten
 - afu_bootsanbindeplaetze_v1.standort
+
+---
+
+### afu_bootsanbindeplaetze_sap
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_bootsanbindeplaetze_sap`
+
+**Quell-Tabellen:**
+- CURRENT_DATE
+- afu_bootsanbindeplaetze.main.sap_structure
+- pubdb.afu_bootsanbindeplaetze_pub_v1.bootsanbindeplatz
+
+**Ziel-Tabellen:**
+- afu_bootsanbindeplaetze.main.sap_structure
+- for
+- sap_structure
 
 ---
 
