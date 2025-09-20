@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 19.09.2025 04:22
+**Automatisch generiert am:** 20.09.2025 04:22
 **Anzahl Jobs:** 206
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 65
+**Anzahl:** 66
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -82,6 +82,7 @@
 | awjf_schutzwald_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_waldpflege_kontrolle | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_wegsanierungen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| dsbjd_ausgleichsabgabe_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | dsbjd_ebauso_rahmenmodell_pub | Aktiv | `H H(3-4) * * *` | ~3-4h |
 
 ---
@@ -110,7 +111,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 128
+**Anzahl:** 127
 
 | Job | Status |
 |-----|--------|
@@ -235,7 +236,6 @@
 | awjf_waldplan_bestandeskarte_staging | Aktiv |
 | awjf_waldportal | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
-| dsbjd_ausgleichsabgabe_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
 | hba_gebaeude_pub_v2 | Aktiv |
 | hba_grundstuecke_pub | Aktiv |
@@ -1969,6 +1969,21 @@
 
 **Quell-Tabellen:**
 - awjf_wegsanierungen_v1.wegsanierungen_wegsanierung
+
+---
+
+### dsbjd_ausgleichsabgabe_pub
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/dsbjd_ausgleichsabgabe_pub`
+**Schedule:** `H H(1-3) * * *` (~1-3h)
+
+**Quell-Tabellen:**
+- agi_dm01avso24.liegenschaften_grundstueck
+- agi_dm01avso24.liegenschaften_liegenschaft
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+- dsbjd_ausgleichsabgabe_v1.ausgleichsabgaben_ausgleichsabgabe
 
 ---
 
@@ -5129,20 +5144,6 @@
 **Quell-Tabellen:**
 - awjf_waldwanderwege.waldwanderwege_posten
 - awjf_waldwanderwege.waldwanderwege_wanderwege
-
----
-
-### dsbjd_ausgleichsabgabe_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/dsbjd_ausgleichsabgabe_pub`
-
-**Quell-Tabellen:**
-- agi_dm01avso24.liegenschaften_grundstueck
-- agi_dm01avso24.liegenschaften_liegenschaft
-- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- dsbjd_ausgleichsabgabe_v1.ausgleichsabgaben_ausgleichsabgabe
 
 ---
 
