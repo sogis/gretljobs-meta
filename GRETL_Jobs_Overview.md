@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 29.09.2025 04:23
+**Automatisch generiert am:** 30.09.2025 04:23
 **Anzahl Jobs:** 206
 
 ## Inhaltsverzeichnis
@@ -251,7 +251,7 @@
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
-| EXCLUDED | EXCLUDED | 1 | 15 |
+| EXCLUDED | EXCLUDED | 1 | 12 |
 | ada_archaeologie_pub_v1 | Amt für Denkmalpflege und Archäologie | 2 | 5 |
 | ada_archaeologie_v1 | Amt für Denkmalpflege und Archäologie | 1 | 5 |
 | ada_denkmalschutz_pub_v1 | Amt für Denkmalpflege und Archäologie | 1 | 2 |
@@ -453,7 +453,7 @@
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
-| editdb | editdb | 3 | 7 |
+| editdb | editdb | 3 | 6 |
 | export | export | 1 | 46 |
 | flachmoore | flachmoore | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
@@ -537,18 +537,13 @@
 - EXCLUDED.import_kanton
 - EXCLUDED.import_lat
 - EXCLUDED.import_lon
-- EXCLUDED.import_nest_id
-- EXCLUDED.import_nest_status
 - EXCLUDED.import_occurrence_id
 - EXCLUDED.import_ort
 - EXCLUDED.import_unique_nest_id
-- EXCLUDED.import_url
 - EXCLUDED.import_x_koordinate
 - EXCLUDED.import_y_koordinate
 - ST_Read
 - afu_individuals
-- afu_nests
-- editdb.afu_asiatische_hornisse_v2.asia_hornisse_nest
 - editdb.afu_asiatische_hornisse_v2.asia_hornisse_sichtung
 - infofauna_individuals
 - infofauna_nests
@@ -556,7 +551,6 @@
 **Ziel-Tabellen:**
 - SET
 - afu_individuals
-- afu_nests
 - anstatt
 - auf
 - infofauna_individuals
