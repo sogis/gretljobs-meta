@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 14.10.2025 04:23
-**Anzahl Jobs:** 206
+**Automatisch generiert am:** 15.10.2025 04:23
+**Anzahl Jobs:** 207
 
 ## Inhaltsverzeichnis
 
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 66
+**Anzahl:** 67
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -84,6 +84,7 @@
 | awjf_wegsanierungen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | dsbjd_ausgleichsabgabe_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | dsbjd_ebauso_rahmenmodell_pub | Aktiv | `H H(3-4) * * *` | ~3-4h |
+| sgv_schadenkarte | Aktiv | `H H(6-7) * * *` | ~6-7h |
 
 ---
 
@@ -247,7 +248,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 224
+**Anzahl Schemas:** 227
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -326,7 +327,7 @@
 | afu_wasserversorg_obj_v1 | Amt für Umwelt | 1 | 15 |
 | agem_fila | agem_fila | 1 | 1 |
 | agi_av_gb_abgleich_import | Amt für Geoinformation | 1 | 3 |
-| agi_av_gb_admin_einteilung_pub | Amt für Geoinformation | 3 | 2 |
+| agi_av_gb_admin_einteilung_pub | Amt für Geoinformation | 4 | 2 |
 | agi_av_gb_administrative_einteilungen_v2 | Amt für Geoinformation | 4 | 4 |
 | agi_av_gwr_abgleich_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_gwr_abgleich_v1 | Amt für Geoinformation | 1 | 1 |
@@ -337,14 +338,15 @@
 | agi_dm01avso24 | Amt für Geoinformation | 20 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
+| agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
-| agi_gwr_pub_v1 | Amt für Geoinformation | 2 | 2 |
+| agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
 | agi_hoheitsgrenzen_pub | Amt für Geoinformation | 35 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
-| agi_mopublic_pub | Amt für Geoinformation | 9 | 7 |
+| agi_mopublic_pub | Amt für Geoinformation | 10 | 7 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
 | agi_plz_ortschaften_pub | Amt für Geoinformation | 1 | 2 |
 | agi_swissboundaries3d_pub | Amt für Geoinformation | 3 | 4 |
@@ -470,6 +472,8 @@
 | pubdb | pubdb | 3 | 21 |
 | public | public | 2 | 4 |
 | sein | sein | 2 | 8 |
+| sgv_schadenkarte_pub_v1 | sgv_schadenkarte_pub_v1 | 1 | 1 |
+| sgv_schadenkarte_v1 | sgv_schadenkarte_v1 | 1 | 1 |
 | simi | simi | 3 | 44 |
 | sk_plakatstandorte_staging_v1 | sk_plakatstandorte_staging_v1 | 1 | 1 |
 | sk_plakatstandorte_v1 | sk_plakatstandorte_v1 | 1 | 1 |
@@ -2027,6 +2031,27 @@
 - dsbjd_ebauso_rahmenmodell_stage_v1.fachthemen_fachthema_linie
 - dsbjd_ebauso_rahmenmodell_stage_v1.fachthemen_fachthema_polygon
 - dsbjd_ebauso_rahmenmodell_stage_v1.fachthemen_fachthema_punkt
+
+---
+
+### sgv_schadenkarte
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/sgv_schadenkarte`
+**Schedule:** `H H(6-7) * * *` (~6-7h)
+
+**Quell-Tabellen:**
+- LATERAL
+- agi_av_gb_admin_einteilung_pub.grundbuchkreise_grundbuchkreis
+- agi_gebaeudeinformationen_pub_v1.gebaeude_gebaeude
+- agi_gwr_pub_v1.gwr_gebaeude
+- agi_mopublic_pub.mopublic_grundstueck
+- sgv_schadenkarte_v1.schadenfall
+
+**Ziel-Tabellen:**
+- sgv_schadenkarte_pub_v1.schadenfall
+- wo
 
 ---
 
