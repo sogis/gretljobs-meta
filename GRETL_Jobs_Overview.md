@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 15.10.2025 04:23
+**Automatisch generiert am:** 16.10.2025 04:22
 **Anzahl Jobs:** 207
 
 ## Inhaltsverzeichnis
@@ -269,7 +269,7 @@
 | afu_bodendaten_nabodat_abfrage_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_bodendaten_nabodat_pub | Amt für Umwelt | 1 | 1 |
 | afu_bodendaten_nabodat_v1 | Amt für Umwelt | 3 | 77 |
-| afu_bootsanbindeplaetze | Amt für Umwelt | 1 | 1 |
+| afu_bootsanbindeplaetze | Amt für Umwelt | 1 | 2 |
 | afu_bootsanbindeplaetze_v1 | Amt für Umwelt | 1 | 8 |
 | afu_erdwaermesonden_private_quellen_v1 | Amt für Umwelt | 1 | 1 |
 | afu_erdwaermesonden_v2 | Amt für Umwelt | 1 | 2 |
@@ -2546,12 +2546,15 @@
 
 **Quell-Tabellen:**
 - CURRENT_DATE
+- afu_bootsanbindeplaetze.main.kontokorrent_structure
 - afu_bootsanbindeplaetze.main.sap_structure
 - pubdb.afu_bootsanbindeplaetze_pub_v1.bootsanbindeplatz
 
 **Ziel-Tabellen:**
+- afu_bootsanbindeplaetze.main.kontokorrent_structure
 - afu_bootsanbindeplaetze.main.sap_structure
 - for
+- kontokorrent_structure
 - sap_structure
 
 ---
