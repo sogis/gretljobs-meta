@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 28.10.2025 04:22
+**Automatisch generiert am:** 29.10.2025 04:26
 **Anzahl Jobs:** 207
 
 ## Inhaltsverzeichnis
@@ -372,8 +372,8 @@
 | amb_zivilschutz_adressen_staging_pub | amb_zivilschutz_adressen_staging_pub | 1 | 1 |
 | arp_agglomerationsprogramme | Amt für Raumplanung | 1 | 13 |
 | arp_arbeitszonenbewirtschaftung_pub_v1 | Amt für Raumplanung | 1 | 1 |
-| arp_arbeitszonenbewirtschaftung_staging_v1 | Amt für Raumplanung | 1 | 3 |
-| arp_arbeitszonenbewirtschaftung_v1 | Amt für Raumplanung | 1 | 2 |
+| arp_arbeitszonenbewirtschaftung_staging_v2 | Amt für Raumplanung | 1 | 3 |
+| arp_arbeitszonenbewirtschaftung_v2 | Amt für Raumplanung | 1 | 2 |
 | arp_auswertung_nutzungsplanung_pub_v1 | Amt für Raumplanung | 3 | 6 |
 | arp_bauzonengrenzen_pub | Amt für Raumplanung | 2 | 1 |
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
@@ -1440,16 +1440,18 @@
 **Quell-Tabellen:**
 - agi_mopublic_pub.mopublic_grundstueck
 - arp_arbeitszonenbewirtschaftung_pub_v1.region_region
-- arp_arbeitszonenbewirtschaftung_staging_v1.arbtszng_nvntar_arbeitszonenbewirtschaftung_inventar_bebtand
-- arp_arbeitszonenbewirtschaftung_staging_v1.inventar_flaeche_v
-- arp_arbeitszonenbewirtschaftung_v1.regionen_region
+- arp_arbeitszonenbewirtschaftung_staging_v2.arbtszng_nvntar_arbeitszonenbewirtschaftung_inventar_bebtand
+- arp_arbeitszonenbewirtschaftung_staging_v2.inventar_flaeche_v
+- arp_arbeitszonenbewirtschaftung_v2.regionen_region
+- arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_bebauungsstand_mit_zonen_und_lsgrenzen
 - arp_auswertung_nutzungsplanung_pub_v1.bauzonenstatistik_liegenschaft_nach_bebauungsstand
 - arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung
 - arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_flaeche
+- mit
 
 **Ziel-Tabellen:**
-- arp_arbeitszonenbewirtschaftung_staging_v1.arbtsznnng_nvntar_arbeitszonenbewirtschaftung_inventar
-- arp_arbeitszonenbewirtschaftung_v1.bewertung_bewertung
+- arp_arbeitszonenbewirtschaftung_staging_v2.arbtsznnng_nvntar_arbeitszonenbewirtschaftung_inventar
+- arp_arbeitszonenbewirtschaftung_v2.bewertung_bewertung
 
 ---
 
