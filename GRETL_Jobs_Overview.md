@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 29.10.2025 04:26
-**Anzahl Jobs:** 207
+**Automatisch generiert am:** 30.10.2025 04:22
+**Anzahl Jobs:** 208
 
 ## Inhaltsverzeichnis
 
@@ -112,7 +112,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 127
+**Anzahl:** 128
 
 | Job | Status |
 |-----|--------|
@@ -148,6 +148,7 @@
 | afu_naturgefahren_import | Aktiv |
 | afu_naturgefahren_pilot_import | Aktiv |
 | afu_naturgefahren_produkte | Aktiv |
+| afu_naturgefahren_produkte_erweitert | Aktiv |
 | afu_naturgefahren_pub | Aktiv |
 | afu_naturgefahrenhinweiskarte_pub | Aktiv |
 | afu_oekomorphologie_csvimport | Aktiv |
@@ -276,7 +277,7 @@
 | afu_ewsabfrage_2d_staging_v1 | Amt für Umwelt | 1 | 5 |
 | afu_ewsabfrage_2d_v1 | Amt für Umwelt | 1 | 3 |
 | afu_ewsabfrage_3d_staging_v1 | Amt für Umwelt | 1 | 2 |
-| afu_gefahrenkartierung | Amt für Umwelt | 1 | 13 |
+| afu_gefahrenkartierung | Amt für Umwelt | 2 | 13 |
 | afu_geologie_v1 | Amt für Umwelt | 1 | 27 |
 | afu_geotope | Amt für Umwelt | 1 | 25 |
 | afu_gewaesser_gewaessereigenschaften_pub_v1 | Amt für Umwelt | 1 | 5 |
@@ -305,13 +306,13 @@
 | afu_klimaanalyse_v1 | Amt für Umwelt | 1 | 12 |
 | afu_klimaanalyse_windpfeile_v1 | Amt für Umwelt | 1 | 12 |
 | afu_naturereigniskataster_mgdm_v1 | Amt für Umwelt | 1 | 15 |
-| afu_naturgefahren_beurteilungsgebiet_v1 | Amt für Umwelt | 1 | 10 |
+| afu_naturgefahren_beurteilungsgebiet_v1 | Amt für Umwelt | 2 | 10 |
 | afu_naturgefahren_beurteilungsgebiet_v2 | Amt für Umwelt | 1 | 7 |
 | afu_naturgefahren_mgdm_v1 | Amt für Umwelt | 1 | 3 |
 | afu_naturgefahren_pub_v2 | Amt für Umwelt | 2 | 2 |
-| afu_naturgefahren_staging_v1 | Amt für Umwelt | 1 | 24 |
-| afu_naturgefahren_staging_v2 | Amt für Umwelt | 2 | 33 |
-| afu_naturgefahren_v1 | Amt für Umwelt | 1 | 22 |
+| afu_naturgefahren_staging_v1 | Amt für Umwelt | 2 | 24 |
+| afu_naturgefahren_staging_v2 | Amt für Umwelt | 3 | 33 |
+| afu_naturgefahren_v1 | Amt für Umwelt | 2 | 22 |
 | afu_naturgefahren_v2 | Amt für Umwelt | 1 | 2 |
 | afu_naturgefahrenhinweiskarte_pub_v1 | Amt für Umwelt | 1 | 1 |
 | afu_naturgefahrenhinweiskarte_v1 | Amt für Umwelt | 1 | 9 |
@@ -342,7 +343,7 @@
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 35 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 36 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
@@ -470,7 +471,7 @@
 | main | main | 2 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
 | pubdb | pubdb | 3 | 21 |
-| public | public | 2 | 4 |
+| public | public | 3 | 4 |
 | sein | sein | 2 | 8 |
 | sgv_schadenkarte_pub_v1 | sgv_schadenkarte_pub_v1 | 1 | 1 |
 | sgv_schadenkarte_v1 | sgv_schadenkarte_v1 | 1 | 1 |
@@ -3086,6 +3087,145 @@
 - afu_naturgefahren_staging_v1.t_ili2db_dataset
 - afu_naturgefahren_staging_v1.ufererosion
 - gk_poly
+- splited
+
+---
+
+### afu_naturgefahren_produkte_erweitert
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_naturgefahren_produkte_erweitert`
+
+**Quell-Tabellen:**
+- LATERAL
+- afu_gefahrenkartierung.gefahrenkartirung_erhebungsgebiet
+- afu_gefahrenkartierung.gefahrenkartirung_gk_absenkung_einsturz
+- afu_gefahrenkartierung.gefahrenkartirung_gk_hangmure
+- afu_gefahrenkartierung.gefahrenkartirung_gk_rutsch_kont_sackung
+- afu_gefahrenkartierung.gefahrenkartirung_gk_rutsch_spontan
+- afu_gefahrenkartierung.gefahrenkartirung_gk_sturz
+- afu_gefahrenkartierung.gefahrenkartirung_gk_synoptisch_generiert
+- afu_gefahrenkartierung.gefahrenkartirung_gk_wasser
+- afu_gefahrenkartierung.gefahrenkartirung_ik_synoptisch_mgdm
+- afu_gefahrenkartierung.gefahrenkartirung_perimeter_gefahrenkartierung
+- afu_gefahrenkartierung.gefahrenkartirung_prozessquelle_wasser
+- afu_gefahrenkartierung.gefahrenkartirung_punktsignatur
+- afu_gefahrenkartierung.gefahrenkartirung_ueberflutungskarte
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_absenkung
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_einsturz
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_fels_berg_sturz
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_hangmure
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_permanente_rutschung
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_spontane_rutschung
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_stein_block_schlag
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_uebermurung
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_ueberschwemmung
+- afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_ufererosion
+- afu_naturgefahren_staging_v1.abklaerungsperimeter
+- afu_naturgefahren_staging_v1.dokumente_pro_gemeinde
+- afu_naturgefahren_staging_v1.erhebungsgebiet
+- afu_naturgefahren_staging_v1.fliessrichtung
+- afu_naturgefahren_staging_v1.fliesstiefen
+- afu_naturgefahren_staging_v1.gefahrengebiet_hauptprozess_rutschung
+- afu_naturgefahren_staging_v1.gefahrengebiet_hauptprozess_sturz
+- afu_naturgefahren_staging_v1.gefahrengebiet_hauptprozess_wasser
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_absenkung_einsturz
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_fels_bergsturz
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_hangmure
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_murgang
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_permanente_rutschung
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_spontane_rutschung
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_stein_blockschlag
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_ueberflutung
+- afu_naturgefahren_staging_v1.kennwert_uebermurung_geschwindigkeit
+- afu_naturgefahren_staging_v1.kennwert_uebermurung_hoehe
+- afu_naturgefahren_staging_v1.kennwert_ueberschwemmung_geschwindigkeit
+- afu_naturgefahren_staging_v1.synoptische_intensitaet
+- afu_naturgefahren_staging_v1.synoptisches_gefahrengebiet
+- afu_naturgefahren_staging_v1.t_ili2db_basket
+- afu_naturgefahren_staging_v1.ufererosion
+- afu_naturgefahren_staging_v2.dokumente_pro_gemeinde
+- afu_naturgefahren_staging_v2.erhebungsgebiet
+- afu_naturgefahren_staging_v2.fliessrichtung
+- afu_naturgefahren_staging_v2.fliesstiefen
+- afu_naturgefahren_staging_v2.gefahrengebiet_hauptprozess_rutschung
+- afu_naturgefahren_staging_v2.gefahrengebiet_hauptprozess_sturz
+- afu_naturgefahren_staging_v2.gefahrengebiet_hauptprozess_wasser
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_absenkung_einsturz
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_fels_bergsturz
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_hangmure
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_murgang
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_permanente_rutschung
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_spontane_rutschung
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_stein_blockschlag
+- afu_naturgefahren_staging_v2.gefahrengebiet_teilprozess_ueberflutung
+- afu_naturgefahren_staging_v2.kennwert_uebermurung_geschwindigkeit
+- afu_naturgefahren_staging_v2.kennwert_uebermurung_hoehe
+- afu_naturgefahren_staging_v2.kennwert_ueberschwemmung_geschwindigkeit
+- afu_naturgefahren_staging_v2.synoptische_intensitaet
+- afu_naturgefahren_staging_v2.synoptisches_gefahrengebiet
+- afu_naturgefahren_staging_v2.ufererosion
+- afu_naturgefahren_v1.abklaerungsperimeter
+- afu_naturgefahren_v1.auftrag
+- afu_naturgefahren_v1.befundabsenkung
+- afu_naturgefahren_v1.befundbergfelssturz
+- afu_naturgefahren_v1.befundeinsturz
+- afu_naturgefahren_v1.befundhangmure
+- afu_naturgefahren_v1.befundpermanenterutschung
+- afu_naturgefahren_v1.befundspontanerutschung
+- afu_naturgefahren_v1.befundsteinblockschlag
+- afu_naturgefahren_v1.befunduebermurung
+- afu_naturgefahren_v1.befundueberschwemmungdynamisch
+- afu_naturgefahren_v1.befundueberschwemmungstatisch
+- afu_naturgefahren_v1.befundufererosion
+- afu_naturgefahren_v1.bericht
+- afu_naturgefahren_v1.pq_jaehrlichkeit_bergfelssturz
+- afu_naturgefahren_v1.pq_jaehrlichkeit_hangmure
+- afu_naturgefahren_v1.pq_jaehrlichkeit_spontanerutschung
+- afu_naturgefahren_v1.pq_jaehrlichkeit_steinblockschlag
+- afu_naturgefahren_v1.prozessquelle
+- afu_naturgefahren_v1.t_ili2db_basket
+- afu_naturgefahren_v1.t_ili2db_dataset
+- afu_naturgefahren_v1.teilauftrag
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+- auf
+- gk_poly
+- node_parent_root_map
+- poly_cleanup
+- public.poly_cleanup
+- splited
+
+**Ziel-Tabellen:**
+- afu_naturgefahren_staging_v1.abklaerungsperimeter
+- afu_naturgefahren_staging_v1.dokumente_pro_gemeinde
+- afu_naturgefahren_staging_v1.erhebungsgebiet
+- afu_naturgefahren_staging_v1.fliessrichtung
+- afu_naturgefahren_staging_v1.fliesstiefen
+- afu_naturgefahren_staging_v1.gefahrengebiet_hauptprozess_rutschung
+- afu_naturgefahren_staging_v1.gefahrengebiet_hauptprozess_sturz
+- afu_naturgefahren_staging_v1.gefahrengebiet_hauptprozess_wasser
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_absenkung_einsturz
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_fels_bergsturz
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_hangmure
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_murgang
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_permanente_rutschung
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_spontane_rutschung
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_stein_blockschlag
+- afu_naturgefahren_staging_v1.gefahrengebiet_teilprozess_ueberflutung
+- afu_naturgefahren_staging_v1.kennwert_uebermurung_geschwindigkeit
+- afu_naturgefahren_staging_v1.kennwert_uebermurung_hoehe
+- afu_naturgefahren_staging_v1.kennwert_ueberschwemmung_geschwindigkeit
+- afu_naturgefahren_staging_v1.synoptische_intensitaet
+- afu_naturgefahren_staging_v1.synoptisches_gefahrengebiet
+- afu_naturgefahren_staging_v1.t_ili2db_basket
+- afu_naturgefahren_staging_v1.t_ili2db_dataset
+- afu_naturgefahren_staging_v1.ufererosion
+- der
+- f
+- gk_poly
+- poly_cleanup
+- public.poly_cleanup
 - splited
 
 ---
