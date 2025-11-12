@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.11.2025 04:24
-**Anzahl Jobs:** 206
+**Automatisch generiert am:** 12.11.2025 04:24
+**Anzahl Jobs:** 207
 
 ## Inhaltsverzeichnis
 
@@ -112,7 +112,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 126
+**Anzahl:** 127
 
 | Job | Status |
 |-----|--------|
@@ -121,6 +121,7 @@
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
+| afu_bootsanbindeplaetze_mfk | Aktiv |
 | afu_bootsanbindeplaetze_pub | Aktiv |
 | afu_bootsanbindeplaetze_sap | Aktiv |
 | afu_ekat_2005_pub | Aktiv |
@@ -247,7 +248,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 227
+**Anzahl Schemas:** 228
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -269,6 +270,7 @@
 | afu_bodendaten_nabodat_pub | Amt für Umwelt | 1 | 1 |
 | afu_bodendaten_nabodat_v1 | Amt für Umwelt | 3 | 77 |
 | afu_bootsanbindeplaetze | Amt für Umwelt | 1 | 2 |
+| afu_bootsanbindeplaetze_mfk | Amt für Umwelt | 1 | 2 |
 | afu_bootsanbindeplaetze_v1 | Amt für Umwelt | 1 | 8 |
 | afu_erdwaermesonden_private_quellen_v1 | Amt für Umwelt | 1 | 1 |
 | afu_erdwaermesonden_v2 | Amt für Umwelt | 1 | 2 |
@@ -454,7 +456,7 @@
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
-| editdb | editdb | 3 | 6 |
+| editdb | editdb | 4 | 9 |
 | export | export | 1 | 46 |
 | flachmoore | flachmoore | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
@@ -2518,6 +2520,28 @@
 - afu_bodendaten_nabodat_v1.punktdaten_standorteigenschaften
 - afu_bodendaten_nabodat_v1.punktdaten_untertyp
 - afu_bodendaten_nabodat_v1.punktdaten_wald
+
+---
+
+### afu_bootsanbindeplaetze_mfk
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_bootsanbindeplaetze_mfk`
+
+**Quell-Tabellen:**
+- ST_READ
+- afu_bootsanbindeplaetze_mfk.main.abgleich_mfk
+- afu_bootsanbindeplaetze_mfk.main.data_mfk
+- editdb.afu_bootsanbindeplaetze_v1.bootsanbindeplatz
+- editdb.afu_bootsanbindeplaetze_v1.bootsdaten
+- editdb.afu_bootsanbindeplaetze_v1.kontaktdaten
+
+**Ziel-Tabellen:**
+- abgleich_mfk
+- afu_bootsanbindeplaetze_mfk.main.abgleich_mfk
+- data_mfk
+- for
 
 ---
 
