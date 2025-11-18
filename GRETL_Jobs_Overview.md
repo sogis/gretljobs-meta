@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 17.11.2025 04:26
-**Anzahl Jobs:** 207
+**Automatisch generiert am:** 18.11.2025 04:24
+**Anzahl Jobs:** 206
 
 ## Inhaltsverzeichnis
 
@@ -112,7 +112,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 127
+**Anzahl:** 126
 
 | Job | Status |
 |-----|--------|
@@ -201,7 +201,6 @@
 | arp_richtplan_inventar_historische_verkehrswege_pub | Aktiv |
 | arp_richtplan_richtplan_pub | Aktiv |
 | arp_sein_konfiguration_local | Aktiv |
-| arp_sein_upload_test | Aktiv |
 | arp_statent_import | Aktiv |
 | arp_statpop_import | Aktiv |
 | arp_statpopent_hektarraster | Aktiv |
@@ -4660,14 +4659,6 @@
 - sein.main.sein_sammeltabelle_filtered
 - sein_sammeltabelle
 - sein_sammeltabelle_filtered
-
----
-
-### arp_sein_upload_test
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_sein_upload_test`
 
 ---
 
