@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 05.12.2025 04:30
+**Automatisch generiert am:** 06.12.2025 04:23
 **Anzahl Jobs:** 206
 
 ## Inhaltsverzeichnis
@@ -247,7 +247,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 228
+**Anzahl Schemas:** 229
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -330,6 +330,7 @@
 | agi_av_gb_admin_einteilung_pub | Amt für Geoinformation | 4 | 2 |
 | agi_av_gb_administrative_einteilungen_v2 | Amt für Geoinformation | 4 | 4 |
 | agi_av_gwr_abgleich_import_v1 | Amt für Geoinformation | 1 | 1 |
+| agi_av_gwr_abgleich_pub_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_gwr_abgleich_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_kaso_abgleich_v1 | Amt für Geoinformation | 1 | 3 |
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
@@ -338,7 +339,7 @@
 | agi_dm01avso24 | Amt für Geoinformation | 20 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
-| agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 1 | 1 |
+| agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
@@ -980,9 +981,12 @@
 
 **Quell-Tabellen:**
 - agi_av_gwr_abgleich_import_v1.av_gwr_differnzen_av_gwr_differenzen
+- agi_av_gwr_abgleich_pub_v1.av_gwr_differnzen_av_gwr_differenzen
 - agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen
+- agi_gebaeudeinformationen_pub_v1.gebaeude_gebaeude
 
 **Ziel-Tabellen:**
+- agi_av_gwr_abgleich_pub_v1.av_gwr_differnzen_av_gwr_differenzen
 - agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen
 
 ---
