@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 08.12.2025 04:34
-**Anzahl Jobs:** 206
+**Automatisch generiert am:** 09.12.2025 04:29
+**Anzahl Jobs:** 207
 
 ## Inhaltsverzeichnis
 
@@ -112,7 +112,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 126
+**Anzahl:** 127
 
 | Job | Status |
 |-----|--------|
@@ -236,6 +236,7 @@
 | awjf_waldplan_bestandeskarte_staging | Aktiv |
 | awjf_waldportal | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
+| awjf_wildtiersensible_gebiete_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
 | hba_gebaeude_pub_v2 | Aktiv |
 | hba_grundstuecke_pub | Aktiv |
@@ -247,7 +248,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 229
+**Anzahl Schemas:** 230
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -451,6 +452,7 @@
 | awjf_waldstandorte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
 | awjf_waldwanderwege | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_wegsanierungen_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
+| awjf_wildtiersensible_gebiete_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | bohrung | bohrung | 1 | 1 |
 | capi_p | capi_p | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
@@ -5171,6 +5173,17 @@
 **Quell-Tabellen:**
 - awjf_waldwanderwege.waldwanderwege_posten
 - awjf_waldwanderwege.waldwanderwege_wanderwege
+
+---
+
+### awjf_wildtiersensible_gebiete_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/awjf_wildtiersensible_gebiete_pub`
+
+**Quell-Tabellen:**
+- awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_gebiet
 
 ---
 
