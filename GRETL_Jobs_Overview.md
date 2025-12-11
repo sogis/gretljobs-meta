@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 10.12.2025 04:33
+**Automatisch generiert am:** 11.12.2025 04:35
 **Anzahl Jobs:** 210
 
 ## Inhaltsverzeichnis
@@ -458,7 +458,7 @@
 | awjf_waldstandorte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
 | awjf_waldwanderwege | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_wegsanierungen_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
-| awjf_wildtiersensible_gebiete_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
+| awjf_wildtiersensible_gebiete_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | bohrung | bohrung | 1 | 1 |
 | capi_p | capi_p | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
@@ -5392,6 +5392,7 @@
 **Pfad:** `../gretljobs/awjf_wildtiersensible_gebiete_pub`
 
 **Quell-Tabellen:**
+- awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_fokus_typ
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_gebiet
 
 ---
