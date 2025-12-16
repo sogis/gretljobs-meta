@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 15.12.2025 04:40
-**Anzahl Jobs:** 210
+**Automatisch generiert am:** 16.12.2025 04:35
+**Anzahl Jobs:** 211
 
 ## Inhaltsverzeichnis
 
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 67
+**Anzahl:** 68
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -63,6 +63,7 @@
 | agi_gb2av_controlling | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_gwr_pub | Aktiv | `H H(3-4) * * *` | ~3-4h |
 | agi_hoheitsgrenzen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| agi_kartenkatalog | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_kartenkatalog_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_stac | Aktiv | `H H(5-6) * * *` | ~5-6h |
 | alw_landwirtschaft_tierhaltung_pub | Aktiv | `H H(2-4) * * *` | ~2-4h |
@@ -251,7 +252,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 233
+**Anzahl Schemas:** 234
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -351,6 +352,7 @@
 | agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
+| agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
 | agi_mopublic_pub | Amt für Geoinformation | 12 | 7 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
@@ -483,7 +485,7 @@
 | sein | sein | 2 | 8 |
 | sgv_schadenkarte_pub_v1 | sgv_schadenkarte_pub_v1 | 1 | 1 |
 | sgv_schadenkarte_v1 | sgv_schadenkarte_v1 | 1 | 1 |
-| simi | simi | 3 | 44 |
+| simi | simi | 4 | 44 |
 | sk_plakatstandorte_staging_v1 | sk_plakatstandorte_staging_v1 | 1 | 1 |
 | sk_plakatstandorte_v1 | sk_plakatstandorte_v1 | 1 | 1 |
 | themeDB | themeDB | 1 | 1 |
@@ -1226,6 +1228,32 @@
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze_generalisiert
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze_generalisiert
+
+---
+
+### agi_kartenkatalog
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/agi_kartenkatalog`
+**Schedule:** `H H(1-3) * * *` (~1-3h)
+
+**Quell-Tabellen:**
+- agi_kartenkatalog_v2.kartenkatalog_ebene
+- agi_kartenkatalog_v2.kartenkatalog_thema
+- simi.simidata_data_set_view
+- simi.simidata_postgres_table
+- simi.simidata_table_view
+- simi.simiiam_permission
+- simi.simiiam_role
+- simi.simiproduct_data_product
+- simi.simiproduct_data_product_pub_scope
+- simi.simiproduct_layer_group
+- simi.simiproduct_properties_in_list
+- simi.simiproduct_single_actor
+- simi.simitheme_org_unit
+- simi.simitheme_theme
+- simi.simitheme_theme_publication
 
 ---
 
