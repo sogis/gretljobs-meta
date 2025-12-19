@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 18.12.2025 04:34
+**Automatisch generiert am:** 19.12.2025 04:34
 **Anzahl Jobs:** 211
 
 ## Inhaltsverzeichnis
@@ -379,7 +379,7 @@
 | alw_zonengrenzen | Amt für Landwirtschaft | 2 | 6 |
 | amb_zivilschutz_adressen_staging_pub | amb_zivilschutz_adressen_staging_pub | 1 | 1 |
 | arp_agglomerationsprogramme | Amt für Raumplanung | 1 | 13 |
-| arp_arbeitszonenbewirtschaftung_pub_v1 | Amt für Raumplanung | 1 | 1 |
+| arp_arbeitszonenbewirtschaftung_pub_v2 | Amt für Raumplanung | 1 | 1 |
 | arp_arbeitszonenbewirtschaftung_staging_v2 | Amt für Raumplanung | 1 | 3 |
 | arp_arbeitszonenbewirtschaftung_v2 | Amt für Raumplanung | 1 | 2 |
 | arp_auswertung_nutzungsplanung_pub_v1 | Amt für Raumplanung | 3 | 6 |
@@ -1479,7 +1479,7 @@
 
 **Quell-Tabellen:**
 - agi_mopublic_pub.mopublic_grundstueck
-- arp_arbeitszonenbewirtschaftung_pub_v1.region_region
+- arp_arbeitszonenbewirtschaftung_pub_v2.region_region
 - arp_arbeitszonenbewirtschaftung_staging_v2.arbtszng_nvntar_arbeitszonenbewirtschaftung_inventar_bebtand
 - arp_arbeitszonenbewirtschaftung_staging_v2.inventar_flaeche_v
 - arp_arbeitszonenbewirtschaftung_v2.regionen_region
@@ -5243,7 +5243,6 @@
 - awjf_waldplan_v2.waldplankatalog_forstbetrieb
 - awjf_waldplan_v2.waldplankatalog_forstrevier
 - awjf_waldplan_v2.wirtschaftszonen
-- biodiversitaet_id_flaechen_berechnet
 - biodiversitaet_objekt_flaechen_berechnet
 - grundstuecke
 - grundstuecke_berechnung
@@ -5279,7 +5278,6 @@
 - awjf_waldplan_v2.waldplan_waldnutzung
 - awjf_waldplan_v2.waldplankatalog_forstbetrieb
 - awjf_waldplan_v2.waldplankatalog_forstrevier
-- biodiversitaet_id_flaechen_berechnet
 - biodiversitaet_objekt_flaechen_berechnet
 - grundstuecke
 - grundstuecke_berechnung
@@ -5334,16 +5332,14 @@
 - awjf_waldplan_v2.waldplan_waldeigentum
 - awjf_waldplan_v2.waldplan_waldfunktion
 - awjf_waldplan_v2.waldplan_waldnutzung
-- awjf_waldplan_v2.waldplan_waldplantyp
-- awjf_waldplan_v2.waldplancatalgues_forstrevier
 - awjf_waldplan_v2.waldplankatalog_forstbetrieb
 - awjf_waldplan_v2.waldplankatalog_forstrevier
 - awjf_waldplan_v2.wirtschaftszonen
-- biodiversitaet_id_flaechen_berechnet
 - biodiversitaet_objekt_flaechen_berechnet
 - grundstuecke
 - grundstuecke_berechnung
 - hiebsatzrelevante_waldflaechen_grundstueck
+- jsonb_array_elements
 - position
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
@@ -5374,8 +5370,9 @@
 - awjf_waldplan_v2.waldplan_waldnutzung
 - awjf_waldplan_v2.waldplankatalog_forstbetrieb
 - awjf_waldplan_v2.waldplankatalog_forstrevier
-- biodiversitaet_id_flaechen_berechnet
 - biodiversitaet_objekt_flaechen_berechnet
+- calculated_values
+- differences
 - grundstuecke
 - grundstuecke_berechnung
 - hiebsatzrelevante_waldflaechen_grundstueck
