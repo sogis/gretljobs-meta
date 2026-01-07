@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 06.01.2026 04:40
-**Anzahl Jobs:** 211
+**Automatisch generiert am:** 07.01.2026 04:40
+**Anzahl Jobs:** 212
 
 ## Inhaltsverzeichnis
 
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 68
+**Anzahl:** 70
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -31,6 +31,7 @@
 | afu_igel | Aktiv | `H H(3-4) * * 0` | So ~3-4h |
 | avt_bodenfaktor_pub | Aktiv | `H H(2-5) * * 0` | So ~2-5h |
 | afu_onlinerisk_transfer | Aktiv | `H H(18-19) * * 1-5` | ~18-19h |
+| awjf_holznutzungsbewilligung_pub | Aktiv | `H H(1-3) * * 4` | Do ~1-3h |
 | alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Aktiv | `H H(3-4) * * 5` | Fr ~3-4h |
 | alw_strukturverbesserungen_pub | Aktiv | `H H(1-3) * * 6` | Sa ~1-3h |
 | agi_ch_gemeinden | Aktiv | `H H(1-3) 1 2 *` | 1. ~1-3h |
@@ -82,6 +83,7 @@
 | awjf_programm_biodiversitaet_wald_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_schutzwald_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_waldpflege_kontrolle | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| awjf_waldportal | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_wegsanierungen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | dsbjd_ausgleichsabgabe_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | dsbjd_ebauso_rahmenmodell_pub | Aktiv | `H H(3-4) * * *` | ~3-4h |
@@ -113,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 130
+**Anzahl:** 129
 
 | Job | Status |
 |-----|--------|
@@ -238,7 +240,6 @@
 | awjf_waldplan_bestandeskarte_staging | Aktiv |
 | awjf_waldplan_pub | Aktiv |
 | awjf_waldplan_pub_erstimport | Aktiv |
-| awjf_waldportal | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | awjf_wildtiersensible_gebiete_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
@@ -252,7 +253,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 234
+**Anzahl Schemas:** 236
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -438,6 +439,8 @@
 | awjf_efj_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_forstreviere | Amt für Wald, Jagd und Fischerei | 5 | 3 |
 | awjf_gesuchsteller | Amt für Wald, Jagd und Fischerei | 2 | 1 |
+| awjf_holznutzungsbewilligung_pub_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
+| awjf_holznutzungsbewilligung_v1 | Amt für Wald, Jagd und Fischerei | 1 | 8 |
 | awjf_jagdreviere_jagdbanngebiete_v1 | Amt für Wald, Jagd und Fischerei | 2 | 4 |
 | awjf_programm_biodiversitaet_wald_v1 | Amt für Wald, Jagd und Fischerei | 2 | 7 |
 | awjf_rodung_rodungsersatz_mgdm_v1 | Amt für Wald, Jagd und Fischerei | 1 | 6 |
@@ -1903,6 +1906,29 @@
 
 ---
 
+### awjf_holznutzungsbewilligung_pub
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/awjf_holznutzungsbewilligung_pub`
+**Schedule:** `H H(1-3) * * 4` (Do ~1-3h)
+
+**Quell-Tabellen:**
+- awjf_holznutzungsbewilligung_pub_v1.countrycode_iso3166_1
+- awjf_holznutzungsbewilligung_v1.codelisten_bewilligte_holzart_catalogue
+- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung
+- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung_egrid
+- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung_gemeinde
+- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung_revier
+- awjf_holznutzungsbewilligung_v1.holznutzung_mengeholzart
+- awjf_holznutzungsbewilligung_v1.localisedtext
+- awjf_holznutzungsbewilligung_v1.multilingualtext
+
+**Ziel-Tabellen:**
+- awjf_holznutzungsbewilligung_pub_v1.holznutzung_holznutzungsbewilligung
+
+---
+
 ### awjf_programm_biodiversitaet_wald_pub
 
 **Status:** Aktiv
@@ -1997,6 +2023,15 @@
 **Quell-Tabellen:**
 - awjf_gesuchsteller.gesuchsteller_gesuchsteller
 - awjf_waldpflege_erfassung.waldpflege_waldpflege
+
+---
+
+### awjf_waldportal
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/awjf_waldportal`
+**Schedule:** `H H(1-3) * * *` (~1-3h)
 
 ---
 
@@ -5387,14 +5422,6 @@
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
 - wytweideflaechen_berechnet
-
----
-
-### awjf_waldportal
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/awjf_waldportal`
 
 ---
 
