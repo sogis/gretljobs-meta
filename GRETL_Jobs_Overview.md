@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 14.01.2026 04:47
+**Automatisch generiert am:** 15.01.2026 04:41
 **Anzahl Jobs:** 212
 
 ## Inhaltsverzeichnis
@@ -5287,6 +5287,7 @@
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
 - waldflaeche_grundstueck
+- waldflaeche_grundstueck_bereinigt
 - waldflaechen_berechnet
 - waldfunktion
 - waldfunktion_flaechen_berechnet
@@ -5320,6 +5321,7 @@
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
 - waldflaeche_grundstueck
+- waldflaeche_grundstueck_bereinigt
 - waldflaechen_berechnet
 - waldfunktion
 - waldfunktion_flaechen_berechnet
