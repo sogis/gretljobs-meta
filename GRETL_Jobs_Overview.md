@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 22.01.2026 04:49
+**Automatisch generiert am:** 23.01.2026 04:43
 **Anzahl Jobs:** 212
 
 ## Inhaltsverzeichnis
@@ -447,7 +447,7 @@
 | awjf_rodung_rodungsersatz_v1 | Amt für Wald, Jagd und Fischerei | 2 | 13 |
 | awjf_samenerntekataster_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_schutzwald_pub_v1 | Amt für Wald, Jagd und Fischerei | 1 | 11 |
-| awjf_schutzwald_v1 | Amt für Wald, Jagd und Fischerei | 3 | 4 |
+| awjf_schutzwald_v1 | Amt für Wald, Jagd und Fischerei | 2 | 4 |
 | awjf_seltene_baeume | Amt für Wald, Jagd und Fischerei | 1 | 4 |
 | awjf_silvaprotect_v1 | Amt für Wald, Jagd und Fischerei | 1 | 5 |
 | awjf_statische_waldgrenze | Amt für Wald, Jagd und Fischerei | 5 | 4 |
@@ -457,7 +457,7 @@
 | awjf_waldpflege_erfassung | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldpflege_kontrolle | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldplan_bestandeskarte_staging_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
-| awjf_waldplan_bestandeskarte_v1 | Amt für Wald, Jagd und Fischerei | 4 | 1 |
+| awjf_waldplan_bestandeskarte_v1 | Amt für Wald, Jagd und Fischerei | 3 | 1 |
 | awjf_waldplan_pub_v2 | Amt für Wald, Jagd und Fischerei | 2 | 7 |
 | awjf_waldplan_v2 | Amt für Wald, Jagd und Fischerei | 2 | 19 |
 | awjf_waldstandorte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
@@ -5271,7 +5271,7 @@
 - awjf_waldplan_v2.wirtschaftszonen
 - biodiversitaet_objekt_flaechen_berechnet
 - grundstuecke
-- grundstuecke_berechnung
+- grundstuecke_mop
 - hiebsatzrelevante_waldflaechen_grundstueck
 - hiebsatzrelevante_waldflaechen_grundstueck_json
 - position
@@ -5282,8 +5282,12 @@
 - waldflaechen_berechnet
 - waldfunktion
 - waldfunktion_flaechen_berechnet
+- waldfunktion_flaechen_berechnet_angepasst
+- waldfunktion_flaechen_summen
 - waldnutzung
 - waldnutzung_flaechen_berechnet
+- waldnutzung_flaechen_berechnet_angepasst
+- waldnutzung_flaechen_summen
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
 - wytweideflaechen_berechnet
@@ -5307,7 +5311,7 @@
 - awjf_waldplan_v2.waldplankatalog_forstrevier
 - biodiversitaet_objekt_flaechen_berechnet
 - grundstuecke
-- grundstuecke_berechnung
+- grundstuecke_mop
 - hiebsatzrelevante_waldflaechen_grundstueck
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
@@ -5316,8 +5320,12 @@
 - waldflaechen_berechnet
 - waldfunktion
 - waldfunktion_flaechen_berechnet
+- waldfunktion_flaechen_berechnet_angepasst
+- waldfunktion_flaechen_summen
 - waldnutzung
 - waldnutzung_flaechen_berechnet
+- waldnutzung_flaechen_berechnet_angepasst
+- waldnutzung_flaechen_summen
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
 - wytweideflaechen_berechnet
@@ -5331,14 +5339,11 @@
 **Pfad:** `../gretljobs/awjf_waldplan_pub_erstimport`
 
 **Quell-Tabellen:**
-- agi_dm01avso24.gemeindegrenzen_gemeinde
 - agi_dm01avso24.liegenschaften_grundstueck
 - agi_dm01avso24.liegenschaften_liegenschaft
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - agi_mopublic_pub.mopublic_grundstueck
-- awjf_schutzwald_v1.schutzwald
 - awjf_statische_waldgrenze.geobasisdaten_waldgrenze_linie
-- awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte
 - awjf_waldplan_pub_v2.t_ili2db_basket
 - awjf_waldplan_pub_v2.t_ili2db_dataset
 - awjf_waldplan_pub_v2.waldplan_schutzwald
@@ -5368,7 +5373,6 @@
 - grundstuecke_berechnung
 - hiebsatzrelevante_waldflaechen_grundstueck
 - jsonb_array_elements
-- position
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
 - waldflaeche_grundstueck
@@ -5392,12 +5396,6 @@
 - awjf_waldplan_pub_v2.waldplan_walduebersicht
 - awjf_waldplan_v2.t_ili2db_basket
 - awjf_waldplan_v2.t_ili2db_dataset
-- awjf_waldplan_v2.waldplan_schutzwald
-- awjf_waldplan_v2.waldplan_waldeigentum
-- awjf_waldplan_v2.waldplan_waldfunktion
-- awjf_waldplan_v2.waldplan_waldnutzung
-- awjf_waldplan_v2.waldplankatalog_forstbetrieb
-- awjf_waldplan_v2.waldplankatalog_forstrevier
 - biodiversitaet_objekt_flaechen_berechnet
 - calculated_values
 - differences
