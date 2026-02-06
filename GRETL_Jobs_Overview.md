@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 05.02.2026 05:16
+**Automatisch generiert am:** 06.02.2026 05:15
 **Anzahl Jobs:** 211
 
 ## Inhaltsverzeichnis
@@ -279,8 +279,8 @@
 | afu_bootsanbindeplaetze_v1 | Amt für Umwelt | 1 | 8 |
 | afu_erdwaermesonden_private_quellen_v1 | Amt für Umwelt | 1 | 1 |
 | afu_erdwaermesonden_v2 | Amt für Umwelt | 1 | 2 |
-| afu_ewsabfrage_2d_staging_v1 | Amt für Umwelt | 1 | 5 |
-| afu_ewsabfrage_2d_v1 | Amt für Umwelt | 1 | 3 |
+| afu_ewsabfrage_2d_staging_v2 | Amt für Umwelt | 1 | 5 |
+| afu_ewsabfrage_2d_v2 | Amt für Umwelt | 1 | 4 |
 | afu_ewsabfrage_3d_staging_v1 | Amt für Umwelt | 1 | 2 |
 | afu_gefahrenkartierung | Amt für Umwelt | 1 | 13 |
 | afu_geologie_v1 | Amt für Umwelt | 1 | 27 |
@@ -623,14 +623,15 @@
 
 **Quell-Tabellen:**
 - afu_altlasten_pub_v2.belasteter_standort
-- afu_ewsabfrage_2d_staging_v1.abfrageperimeter
-- afu_ewsabfrage_2d_staging_v1.abklaerung
-- afu_ewsabfrage_2d_staging_v1.grundstueck
-- afu_ewsabfrage_2d_staging_v1.hinweis
-- afu_ewsabfrage_2d_staging_v1.tiefenbeschraenkung
-- afu_ewsabfrage_2d_v1.abfrageperimeter
-- afu_ewsabfrage_2d_v1.abklaerung
-- afu_ewsabfrage_2d_v1.tiefenbeschraenkung
+- afu_ewsabfrage_2d_staging_v2.abfrageperimeter
+- afu_ewsabfrage_2d_staging_v2.abklaerung
+- afu_ewsabfrage_2d_staging_v2.grundstueck
+- afu_ewsabfrage_2d_staging_v2.hinweis
+- afu_ewsabfrage_2d_staging_v2.tiefenbeschraenkung
+- afu_ewsabfrage_2d_v2.abfrageperimeter
+- afu_ewsabfrage_2d_v2.abklaerung
+- afu_ewsabfrage_2d_v2.hinweis
+- afu_ewsabfrage_2d_v2.tiefenbeschraenkung
 - afu_gewaesser_oekomorphologie_pub_v1.oekomorphologie
 - afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzareal
 - afu_gewaesserschutz_pub_v3.gewaesserschutz_schutzzone
