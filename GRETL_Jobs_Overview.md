@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.02.2026 05:27
-**Anzahl Jobs:** 212
+**Automatisch generiert am:** 12.02.2026 05:24
+**Anzahl Jobs:** 213
 
 ## Inhaltsverzeichnis
 
@@ -115,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 129
+**Anzahl:** 130
 
 | Job | Status |
 |-----|--------|
@@ -160,6 +160,7 @@
 | afu_quellen_ungefasst_pub | Aktiv |
 | afu_schadendienst_pub | Aktiv |
 | afu_schadstoffbelastete_boeden_pub | Aktiv |
+| afu_schiesslaerm_pub | Aktiv |
 | afu_schutzbauten_export | Aktiv |
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
@@ -483,7 +484,7 @@
 | live | live | 1 | 3 |
 | main | main | 2 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
-| pubdb | pubdb | 3 | 21 |
+| pubdb | pubdb | 3 | 22 |
 | public | public | 2 | 2 |
 | sein | sein | 2 | 8 |
 | sgv_schadenkarte_pub_v1 | sgv_schadenkarte_pub_v1 | 1 | 1 |
@@ -2658,14 +2659,15 @@
 
 **Quell-Tabellen:**
 - CURRENT_DATE
+- LATERAL
 - afu_bootsanbindeplaetze.main.kontokorrent_structure
 - afu_bootsanbindeplaetze.main.sap_structure
 - pubdb.afu_bootsanbindeplaetze_pub_v1.bootsanbindeplatz
+- pubdb.afu_bootsanbindeplaetze_pub_v1.standortdaten
 
 **Ziel-Tabellen:**
 - afu_bootsanbindeplaetze.main.kontokorrent_structure
 - afu_bootsanbindeplaetze.main.sap_structure
-- for
 - kontokorrent_structure
 - sap_structure
 
@@ -3412,6 +3414,14 @@
 - agi_dm01avso24.liegenschaften_liegenschaft
 - agi_dm01avso24.nomenklatur_flurname
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+
+---
+
+### afu_schiesslaerm_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_schiesslaerm_pub`
 
 ---
 
