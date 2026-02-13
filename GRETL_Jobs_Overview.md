@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 12.02.2026 05:24
+**Automatisch generiert am:** 13.02.2026 05:21
 **Anzahl Jobs:** 213
 
 ## Inhaltsverzeichnis
@@ -433,7 +433,7 @@
 | avt_oeffentlicher_verkehr_pub | Amt für Verkehr und Tiefbau | 1 | 1 |
 | avt_strassenlaerm_v1 | Amt für Verkehr und Tiefbau | 1 | 5 |
 | avt_strassenzustand_staging_v1 | Amt für Verkehr und Tiefbau | 1 | 1 |
-| avt_verkehrszaehlstellen | Amt für Verkehr und Tiefbau | 1 | 2 |
+| avt_verkehrszaehlstellen_v1 | Amt für Verkehr und Tiefbau | 1 | 6 |
 | awa_stromversorgungssicherheit_mgdm_v1 | awa_stromversorgungssicherheit_mgdm_v1 | 1 | 4 |
 | awjf | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_efj_geodaten_upload_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
@@ -5035,8 +5035,12 @@
 
 **Quell-Tabellen:**
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- avt_verkehrszaehlstellen.verkehrszhlstllen_dokument
-- avt_verkehrszaehlstellen.verkehrszhlstllen_verkehrszaehlstelle
+- avt_verkehrszaehlstellen_v1.dokument
+- avt_verkehrszaehlstellen_v1.staedtische_verkehrszaehlung
+- avt_verkehrszaehlstellen_v1.verkehrszaehlstelle
+- avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlart
+- avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlkadenz
+- avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlobjekt
 
 ---
 
