@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 13.02.2026 05:21
+**Automatisch generiert am:** 14.02.2026 05:08
 **Anzahl Jobs:** 213
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 70
+**Anzahl:** 69
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -50,7 +50,6 @@
 | afu_stehende_gewaesser_abgleich | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | afu_wasserbewirtschaftung_pub | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | agem_finanz_und_lastenausgleich | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| agi_adressen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_export_ai | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gb_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gwr_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -115,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 130
+**Anzahl:** 131
 
 | Job | Status |
 |-----|--------|
@@ -165,6 +164,7 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
+| agi_adressen_pub | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
 | agi_dmav_fixpunkte3_import | Aktiv |
@@ -805,25 +805,6 @@
 **Quell-Tabellen:**
 - agem_fila.strassen_strassenachse
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-
----
-
-### agi_adressen_pub
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/agi_adressen_pub`
-**Schedule:** `H H(1-3) * * *` (~1-3h)
-
-**Quell-Tabellen:**
-- agi_dm01avso24.gebaeudeadressen_benanntesgebiet
-- agi_dm01avso24.gebaeudeadressen_gebaeudeeingang
-- agi_dm01avso24.gebaeudeadressen_hausnummerpos
-- agi_dm01avso24.gebaeudeadressen_lokalisation
-- agi_dm01avso24.gebaeudeadressen_lokalisationsname
-- agi_dm01avso24.gebaeudeadressen_strassenstueck
-- agi_dm01avso24.t_ili2db_basket
-- agi_dm01avso24.t_ili2db_import
 
 ---
 
@@ -3506,6 +3487,24 @@
 - afu_stoerfallverordnung_v1.erdgasroehrenspeicher
 - afu_stoerfallverordnung_v1.konsultationsbereich
 - afu_stoerfallverordnung_v1.nationalstrasse
+
+---
+
+### agi_adressen_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/agi_adressen_pub`
+
+**Quell-Tabellen:**
+- agi_dm01avso24.gebaeudeadressen_benanntesgebiet
+- agi_dm01avso24.gebaeudeadressen_gebaeudeeingang
+- agi_dm01avso24.gebaeudeadressen_hausnummerpos
+- agi_dm01avso24.gebaeudeadressen_lokalisation
+- agi_dm01avso24.gebaeudeadressen_lokalisationsname
+- agi_dm01avso24.gebaeudeadressen_strassenstueck
+- agi_dm01avso24.t_ili2db_basket
+- agi_dm01avso24.t_ili2db_import
 
 ---
 
