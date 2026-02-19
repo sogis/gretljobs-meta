@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 18.02.2026 05:23
-**Anzahl Jobs:** 213
+**Automatisch generiert am:** 19.02.2026 05:21
+**Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 131
+**Anzahl:** 132
 
 | Job | Status |
 |-----|--------|
@@ -186,6 +186,7 @@
 | alw_gewaesserraum_pub | Aktiv |
 | alw_strukturverbesserungen_suissemelio | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
+| arp_isos_inventar_pub | Aktiv |
 | arp_mjpnl_auszahlung | Aktiv |
 | arp_mjpnl_gelan_update | Aktiv |
 | arp_mjpnl_initialisierung | Aktiv |
@@ -254,7 +255,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 236
+**Anzahl Schemas:** 237
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -388,6 +389,7 @@
 | arp_bauzonengrenzen_pub | Amt für Raumplanung | 2 | 1 |
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
+| arp_isos_inventar_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_laermempfindlichkeitsstufen_mgdm_v1 | Amt für Raumplanung | 1 | 9 |
 | arp_mehrjahresprogramm | Amt für Raumplanung | 2 | 1 |
 | arp_mjpnatur_pub | Amt für Raumplanung | 1 | 1 |
@@ -3896,6 +3898,17 @@
 - alw_zonengrenzen.lz_kataloge_lz_katalog_typref
 - alw_zonengrenzen.multilingualtext
 - alw_zonengrenzen.zonengrenzen_lz_flaeche
+
+---
+
+### arp_isos_inventar_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/arp_isos_inventar_pub`
+
+**Quell-Tabellen:**
+- arp_isos_inventar_v1.isos_inventar
 
 ---
 
