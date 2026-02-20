@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 19.02.2026 05:21
-**Anzahl Jobs:** 214
+**Automatisch generiert am:** 20.02.2026 05:16
+**Anzahl Jobs:** 215
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 132
+**Anzahl:** 133
 
 | Job | Status |
 |-----|--------|
@@ -226,6 +226,7 @@
 | avt_strassenlaerm | Aktiv |
 | avt_strassenzustand_pub | Aktiv |
 | avt_verkehrszaehlstellen_pub | Aktiv |
+| awjf_bestandeshinweiskarte_pub | Aktiv |
 | awjf_biotopbaeume_import | Aktiv |
 | awjf_gesuchsteller | Aktiv |
 | awjf_gewaesser_fischerei_pub | Aktiv |
@@ -255,7 +256,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 237
+**Anzahl Schemas:** 238
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -438,6 +439,7 @@
 | avt_verkehrszaehlstellen_v1 | Amt für Verkehr und Tiefbau | 1 | 6 |
 | awa_stromversorgungssicherheit_mgdm_v1 | awa_stromversorgungssicherheit_mgdm_v1 | 1 | 4 |
 | awjf | Amt für Wald, Jagd und Fischerei | 1 | 1 |
+| awjf_bestandeshinweiskarte_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_efj_geodaten_upload_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_efj_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_forstreviere | Amt für Wald, Jagd und Fischerei | 5 | 3 |
@@ -5053,6 +5055,17 @@
 - avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlart
 - avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlkadenz
 - avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlobjekt
+
+---
+
+### awjf_bestandeshinweiskarte_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/awjf_bestandeshinweiskarte_pub`
+
+**Quell-Tabellen:**
+- awjf_bestandeshinweiskarte_v1.bestendeshnwskrte_bestandeshinweis
 
 ---
 
