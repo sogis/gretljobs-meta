@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 23.02.2026 05:25
+**Automatisch generiert am:** 24.02.2026 05:21
 **Anzahl Jobs:** 215
 
 ## Inhaltsverzeichnis
@@ -463,7 +463,7 @@
 | awjf_waldpflege_kontrolle | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldplan_bestandeskarte_staging_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
 | awjf_waldplan_bestandeskarte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
-| awjf_waldplan_pub_v2 | Amt für Wald, Jagd und Fischerei | 2 | 13 |
+| awjf_waldplan_pub_v2 | Amt für Wald, Jagd und Fischerei | 2 | 14 |
 | awjf_waldplan_v2 | Amt für Wald, Jagd und Fischerei | 2 | 17 |
 | awjf_waldstandorte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
 | awjf_waldwanderwege | Amt für Wald, Jagd und Fischerei | 1 | 2 |
@@ -5297,6 +5297,7 @@
 - awjf_waldplan_pub_v2.t_ili2db_dataset
 - awjf_waldplan_pub_v2.waldfunktionskategorie
 - awjf_waldplan_pub_v2.waldnutzungskategorie
+- awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
 - awjf_waldplan_pub_v2.waldplan_schutzwald
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
 - awjf_waldplan_pub_v2.waldplan_waldnutzung
@@ -5320,15 +5321,20 @@
 - awjf_waldplan_v2.waldplankatalog_forstrevier
 - awjf_waldplan_v2.wirtschaftszonen
 - biodiversitaet_objekt_flaechen_berechnet
+- biodiversitaetsobjekte_grundstueck
+- grundstueck
 - grundstuecke
 - hiebsatzrelevante_waldflaechen_grundstueck
 - hiebsatzrelevante_waldflaechen_grundstueck_plausibilisiert
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
 - produktive_waldflaechen_grundstueck_plausibilisiert
+- waldflaeche_berechnet
+- waldflaeche_berechnet_plausibilisiert
 - waldflaeche_grundstueck
 - waldflaeche_grundstueck_bereinigt
 - waldflaeche_grundstueck_final
+- waldflaeche_produktiv
 - waldflaechen_berechnet
 - waldflaechen_berechnet_plausibilisiert
 - waldfunktion
@@ -5336,12 +5342,23 @@
 - waldfunktion_flaechen_berechnet_plausibilisiert
 - waldfunktion_flaechen_summen
 - waldfunktion_funktion_flaechen_berechnet
+- waldfunktion_hiebsatzrelevant
+- waldfunktion_nach_waldnutzung
+- waldfunktion_waldnutzung
+- waldfunktion_waldnutzung_flaechen
+- waldfunktion_waldnutzung_flaechen_berechnet
+- waldfunktion_waldnutzung_grundstueck_berechnet
+- waldfunktion_waldnutzung_grundstueck_berechnet_plausibilisiert
+- waldfunktionsflaechen_grundstueck
 - waldnutzung
 - waldnutzung_flaechen_berechnet
 - waldnutzung_flaechen_berechnet_plausibilisiert
 - waldnutzung_flaechen_summen
+- waldnutzung_hiebsatzrelevant
+- waldnutzungsflaechen_grundstueck
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
+- wytweide_grundstueck
 - wytweideflaechen_berechnet
 
 **Ziel-Tabellen:**
@@ -5350,21 +5367,27 @@
 - Fl
 - awjf_waldplan_pub_v2.t_ili2db_basket
 - awjf_waldplan_pub_v2.t_ili2db_dataset
+- awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
 - awjf_waldplan_pub_v2.waldplan_schutzwald
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
 - awjf_waldplan_pub_v2.waldplan_waldnutzung
 - awjf_waldplan_pub_v2.waldplan_waldplan_grundstueck
 - awjf_waldplan_pub_v2.waldplan_walduebersicht
 - biodiversitaet_objekt_flaechen_berechnet
+- biodiversitaetsobjekte_grundstueck
+- grundstueck
 - grundstuecke
 - hiebsatzrelevante_waldflaechen_grundstueck
 - hiebsatzrelevante_waldflaechen_grundstueck_plausibilisiert
 - produktive_waldflaechen
 - produktive_waldflaechen_grundstueck
 - produktive_waldflaechen_grundstueck_plausibilisiert
+- waldflaeche_berechnet
+- waldflaeche_berechnet_plausibilisiert
 - waldflaeche_grundstueck
 - waldflaeche_grundstueck_bereinigt
 - waldflaeche_grundstueck_final
+- waldflaeche_produktiv
 - waldflaechen_berechnet
 - waldflaechen_berechnet_plausibilisiert
 - waldfunktion
@@ -5372,12 +5395,23 @@
 - waldfunktion_flaechen_berechnet_plausibilisiert
 - waldfunktion_flaechen_summen
 - waldfunktion_funktion_flaechen_berechnet
+- waldfunktion_hiebsatzrelevant
+- waldfunktion_nach_waldnutzung
+- waldfunktion_waldnutzung
+- waldfunktion_waldnutzung_flaechen
+- waldfunktion_waldnutzung_flaechen_berechnet
+- waldfunktion_waldnutzung_grundstueck_berechnet
+- waldfunktion_waldnutzung_grundstueck_berechnet_plausibilisiert
+- waldfunktionsflaechen_grundstueck
 - waldnutzung
 - waldnutzung_flaechen_berechnet
 - waldnutzung_flaechen_berechnet_plausibilisiert
 - waldnutzung_flaechen_summen
+- waldnutzung_hiebsatzrelevant
+- waldnutzungsflaechen_grundstueck
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
+- wytweide_grundstueck
 - wytweideflaechen_berechnet
 
 ---
