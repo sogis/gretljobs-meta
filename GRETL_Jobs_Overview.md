@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 26.02.2026 05:19
+**Automatisch generiert am:** 27.02.2026 05:14
 **Anzahl Jobs:** 215
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 70
+**Anzahl:** 69
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -40,7 +40,6 @@
 | arp_richtplan_grundnutzung_pub | Aktiv | `H H(1-3) 1 * *` | 1. ~1-3h |
 | awjf_rodung_rodungsersatz_mgdm | Aktiv | `H H(1-3) 1 3 *` | 1. ~1-3h |
 | agi_swisstopo_gebaeudeadressen | Aktiv | `H H(1-3) 2 * *` | 2. ~1-3h |
-| arp_mjpnl_v2_auszahlung | Aktiv | `H H(1-3) 15 1 *` | 15. ~1-3h |
 | ada_archaeologie_pub | Aktiv | `H H(1-3) * * 7` | So ~1-3h |
 | afu_altlasten_import_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | afu_erdwaermesonden_private_quellen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -115,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 132
+**Anzahl:** 133
 
 | Job | Status |
 |-----|--------|
@@ -191,6 +190,7 @@
 | arp_mjpnl_gelan_update | Aktiv |
 | arp_mjpnl_initialisierung | Aktiv |
 | arp_mjpnl_migration | Aktiv |
+| arp_mjpnl_v2_auszahlung | Aktiv |
 | arp_mjpnl_v2_gelan_update | Aktiv |
 | arp_mjpnl_v2_initialisierung | Aktiv |
 | arp_mjpnl_v2_migration | Aktiv |
@@ -242,7 +242,7 @@
 | awjf_waldplan_bestandeskarte_pub | Aktiv |
 | awjf_waldplan_bestandeskarte_staging | Aktiv |
 | awjf_waldplan_pub | Aktiv |
-| awjf_waldplan_pub_import_alles | Aktiv |
+| awjf_waldplan_pub_alle_gemeinden | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | awjf_wildtiersensible_gebiete_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
@@ -346,7 +346,7 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 21 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 20 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
@@ -455,7 +455,7 @@
 | awjf_schutzwald_v1 | Amt für Wald, Jagd und Fischerei | 1 | 4 |
 | awjf_seltene_baeume | Amt für Wald, Jagd und Fischerei | 1 | 4 |
 | awjf_silvaprotect_v1 | Amt für Wald, Jagd und Fischerei | 1 | 5 |
-| awjf_statische_waldgrenze | Amt für Wald, Jagd und Fischerei | 4 | 4 |
+| awjf_statische_waldgrenze | Amt für Wald, Jagd und Fischerei | 3 | 4 |
 | awjf_statische_waldgrenze_mgdm_v1 | Amt für Wald, Jagd und Fischerei | 1 | 9 |
 | awjf_statische_waldgrenze_staging_v1 | Amt für Wald, Jagd und Fischerei | 1 | 8 |
 | awjf_wald_oberhoehenbonitaet_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
@@ -1196,7 +1196,7 @@
 - agi_gwr_v1.gwr_gebaeude
 - agi_gwr_v1.gwr_wohnung
 - building
-- codes
+- code
 - dwelling
 
 ---
@@ -1592,15 +1592,6 @@
 - arp_mjpnl_v2.mjpnl_beurteilung_weide_soeg
 - arp_mjpnl_v2.mjpnl_beurteilung_wiese
 - arp_mjpnl_v2.mjpnl_vereinbarung
-
----
-
-### arp_mjpnl_v2_auszahlung
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/arp_mjpnl_v2_auszahlung`
-**Schedule:** `H H(1-3) 15 1 *` (15. ~1-3h)
 
 ---
 
@@ -3973,6 +3964,14 @@
 
 ---
 
+### arp_mjpnl_v2_auszahlung
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/arp_mjpnl_v2_auszahlung`
+
+---
+
 ### arp_mjpnl_v2_gelan_update
 
 **Status:** Aktiv
@@ -5285,11 +5284,8 @@
 **Pfad:** `../gretljobs/awjf_waldplan_pub`
 
 **Quell-Tabellen:**
-- agi_dm01avso24.liegenschaften_grundstueck
-- agi_dm01avso24.liegenschaften_liegenschaft
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - agi_mopublic_pub.mopublic_grundstueck
-- awjf_statische_waldgrenze.geobasisdaten_waldgrenze_linie
 - awjf_waldplan_pub_v2.art_hauptgefahrenpotential
 - awjf_waldplan_pub_v2.biodiversitaetstyp
 - awjf_waldplan_pub_v2.intensitaetsstufe
@@ -5298,11 +5294,8 @@
 - awjf_waldplan_pub_v2.t_ili2db_dataset
 - awjf_waldplan_pub_v2.waldfunktionskategorie
 - awjf_waldplan_pub_v2.waldnutzungskategorie
-- awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
-- awjf_waldplan_pub_v2.waldplan_schutzwald
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
 - awjf_waldplan_pub_v2.waldplan_waldnutzung
-- awjf_waldplan_pub_v2.waldplan_waldplan_grundstueck
 - awjf_waldplan_pub_v2.waldplan_walduebersicht
 - awjf_waldplan_v2.art_hauptgefahrenpotential
 - awjf_waldplan_v2.biodiversitaetstyp
@@ -5321,118 +5314,80 @@
 - awjf_waldplan_v2.waldplankatalog_forstbetrieb
 - awjf_waldplan_v2.waldplankatalog_forstrevier
 - awjf_waldplan_v2.wirtschaftszonen
-- biodiversitaet_objekt_flaechen_berechnet
 - biodiversitaetsobjekte_grundstueck
 - grundstueck
-- grundstuecke
-- hiebsatzrelevante_waldflaechen_grundstueck
-- hiebsatzrelevante_waldflaechen_grundstueck_plausibilisiert
-- produktive_waldflaechen
-- produktive_waldflaechen_grundstueck
-- produktive_waldflaechen_grundstueck_plausibilisiert
 - waldflaeche_berechnet
 - waldflaeche_berechnet_plausibilisiert
 - waldflaeche_grundstueck
 - waldflaeche_grundstueck_bereinigt
 - waldflaeche_grundstueck_final
 - waldflaeche_produktiv
-- waldflaechen_berechnet
-- waldflaechen_berechnet_plausibilisiert
 - waldfunktion
-- waldfunktion_flaechen_berechnet
-- waldfunktion_flaechen_berechnet_plausibilisiert
-- waldfunktion_flaechen_summen
-- waldfunktion_funktion_flaechen_berechnet
 - waldfunktion_hiebsatzrelevant
 - waldfunktion_nach_waldnutzung
 - waldfunktion_waldnutzung
-- waldfunktion_waldnutzung_flaechen
-- waldfunktion_waldnutzung_flaechen_berechnet
 - waldfunktion_waldnutzung_grundstueck_berechnet
 - waldfunktion_waldnutzung_grundstueck_berechnet_plausibilisiert
 - waldfunktionsflaechen_grundstueck
 - waldnutzung
-- waldnutzung_flaechen_berechnet
-- waldnutzung_flaechen_berechnet_plausibilisiert
-- waldnutzung_flaechen_summen
 - waldnutzung_hiebsatzrelevant
 - waldnutzungsflaechen_grundstueck
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
 - wytweide_grundstueck
-- wytweideflaechen_berechnet
 
 **Ziel-Tabellen:**
 - Boolean
 - Dispname
-- Fl
-- awjf_waldplan_pub_v2.t_ili2db_basket
-- awjf_waldplan_pub_v2.t_ili2db_dataset
 - awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
 - awjf_waldplan_pub_v2.waldplan_schutzwald
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
 - awjf_waldplan_pub_v2.waldplan_waldnutzung
 - awjf_waldplan_pub_v2.waldplan_waldplan_grundstueck
 - awjf_waldplan_pub_v2.waldplan_walduebersicht
-- biodiversitaet_objekt_flaechen_berechnet
 - biodiversitaetsobjekte_grundstueck
 - grundstueck
-- grundstuecke
-- hiebsatzrelevante_waldflaechen_grundstueck
-- hiebsatzrelevante_waldflaechen_grundstueck_plausibilisiert
-- produktive_waldflaechen
-- produktive_waldflaechen_grundstueck
-- produktive_waldflaechen_grundstueck_plausibilisiert
 - waldflaeche_berechnet
 - waldflaeche_berechnet_plausibilisiert
 - waldflaeche_grundstueck
 - waldflaeche_grundstueck_bereinigt
 - waldflaeche_grundstueck_final
 - waldflaeche_produktiv
-- waldflaechen_berechnet
-- waldflaechen_berechnet_plausibilisiert
 - waldfunktion
-- waldfunktion_flaechen_berechnet
-- waldfunktion_flaechen_berechnet_plausibilisiert
-- waldfunktion_flaechen_summen
-- waldfunktion_funktion_flaechen_berechnet
 - waldfunktion_hiebsatzrelevant
 - waldfunktion_nach_waldnutzung
 - waldfunktion_waldnutzung
-- waldfunktion_waldnutzung_flaechen
-- waldfunktion_waldnutzung_flaechen_berechnet
 - waldfunktion_waldnutzung_grundstueck_berechnet
 - waldfunktion_waldnutzung_grundstueck_berechnet_plausibilisiert
 - waldfunktionsflaechen_grundstueck
 - waldnutzung
-- waldnutzung_flaechen_berechnet
-- waldnutzung_flaechen_berechnet_plausibilisiert
-- waldnutzung_flaechen_summen
 - waldnutzung_hiebsatzrelevant
 - waldnutzungsflaechen_grundstueck
 - walduebersicht_cleaned_geometry
 - walduebersicht_union_geometry
 - wytweide_grundstueck
-- wytweideflaechen_berechnet
 
 ---
 
-### awjf_waldplan_pub_import_alles
+### awjf_waldplan_pub_alle_gemeinden
 
 **Status:** Aktiv
 **Trigger:** manual
-**Pfad:** `../gretljobs/awjf_waldplan_pub_import_alles`
+**Pfad:** `../gretljobs/awjf_waldplan_pub_alle_gemeinden`
 
 **Quell-Tabellen:**
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - agi_mopublic_pub.mopublic_grundstueck
+- awjf_waldplan_pub_v2.art_hauptgefahrenpotential
+- awjf_waldplan_pub_v2.biodiversitaetstyp
+- awjf_waldplan_pub_v2.intensitaetsstufe
+- awjf_waldplan_pub_v2.objekte_schutzwald
 - awjf_waldplan_pub_v2.t_ili2db_basket
 - awjf_waldplan_pub_v2.t_ili2db_dataset
-- awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
-- awjf_waldplan_pub_v2.waldplan_schutzwald
+- awjf_waldplan_pub_v2.waldfunktionskategorie
+- awjf_waldplan_pub_v2.waldnutzungskategorie
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
 - awjf_waldplan_pub_v2.waldplan_waldnutzung
-- awjf_waldplan_pub_v2.waldplan_waldplan_grundstueck
 - awjf_waldplan_pub_v2.waldplan_walduebersicht
 - awjf_waldplan_v2.art_hauptgefahrenpotential
 - awjf_waldplan_v2.biodiversitaetstyp
@@ -5474,6 +5429,8 @@
 - wytweide_grundstueck
 
 **Ziel-Tabellen:**
+- Boolean
+- Dispname
 - awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
 - awjf_waldplan_pub_v2.waldplan_schutzwald
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
