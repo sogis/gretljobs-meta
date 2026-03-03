@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 02.03.2026 05:14
-**Anzahl Jobs:** 215
+**Automatisch generiert am:** 03.03.2026 05:14
+**Anzahl Jobs:** 216
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 133
+**Anzahl:** 134
 
 | Job | Status |
 |-----|--------|
@@ -186,6 +186,7 @@
 | alw_strukturverbesserungen_suissemelio | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
 | arp_isos_inventar_pub | Aktiv |
+| arp_kulturgueterschutzobjekte_pub | Aktiv |
 | arp_mjpnl_auszahlung | Aktiv |
 | arp_mjpnl_gelan_update | Aktiv |
 | arp_mjpnl_initialisierung | Aktiv |
@@ -256,7 +257,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 238
+**Anzahl Schemas:** 239
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -391,6 +392,7 @@
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
 | arp_isos_inventar_v1 | Amt für Raumplanung | 1 | 1 |
+| arp_kulturgueterschutzobjekte_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_laermempfindlichkeitsstufen_mgdm_v1 | Amt für Raumplanung | 1 | 9 |
 | arp_mehrjahresprogramm | Amt für Raumplanung | 2 | 1 |
 | arp_mjpnatur_pub | Amt für Raumplanung | 1 | 1 |
@@ -3903,6 +3905,17 @@
 
 **Quell-Tabellen:**
 - arp_isos_inventar_v1.isos_inventar
+
+---
+
+### arp_kulturgueterschutzobjekte_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/arp_kulturgueterschutzobjekte_pub`
+
+**Quell-Tabellen:**
+- arp_kulturgueterschutzobjekte_v1.objekte
 
 ---
 
