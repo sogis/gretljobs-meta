@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 03.03.2026 05:14
+**Automatisch generiert am:** 04.03.2026 05:08
 **Anzahl Jobs:** 216
 
 ## Inhaltsverzeichnis
@@ -2661,6 +2661,7 @@
 - afu_bootsanbindeplaetze.main.sap_structure
 - pubdb.afu_bootsanbindeplaetze_pub_v1.bootsanbindeplatz
 - pubdb.afu_bootsanbindeplaetze_pub_v1.standortdaten
+- rechnungsstelle_steggebuehr
 
 **Ziel-Tabellen:**
 - afu_bootsanbindeplaetze.main.kontokorrent_structure
