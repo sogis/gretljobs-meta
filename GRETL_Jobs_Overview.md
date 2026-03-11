@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 10.03.2026 05:09
+**Automatisch generiert am:** 11.03.2026 05:11
 **Anzahl Jobs:** 216
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 69
+**Anzahl:** 70
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -74,6 +74,7 @@
 | arp_fledermaus | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_mjpnatur_gelan_export | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_mjpnatur_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| arp_mjpnl_v2_gelan_update | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_mjpnl_v2_zahlungslauf | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_nutzungsplanung_planregister_export | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_nutzungsvereinbarung_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -114,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 134
+**Anzahl:** 133
 
 | Job | Status |
 |-----|--------|
@@ -192,7 +193,6 @@
 | arp_mjpnl_initialisierung | Aktiv |
 | arp_mjpnl_migration | Aktiv |
 | arp_mjpnl_v2_auszahlung | Aktiv |
-| arp_mjpnl_v2_gelan_update | Aktiv |
 | arp_mjpnl_v2_initialisierung | Aktiv |
 | arp_mjpnl_v2_migration | Aktiv |
 | arp_mjpnl_zahlungslauf | Aktiv |
@@ -391,7 +391,7 @@
 | arp_bauzonengrenzen_pub | Amt für Raumplanung | 2 | 1 |
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
-| arp_isos_inventar_v1 | Amt für Raumplanung | 1 | 1 |
+| arp_isos_inventar_v2 | Amt für Raumplanung | 1 | 1 |
 | arp_kulturgueterschutzobjekte_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_laermempfindlichkeitsstufen_mgdm_v1 | Amt für Raumplanung | 1 | 9 |
 | arp_mehrjahresprogramm | Amt für Raumplanung | 2 | 1 |
@@ -1594,6 +1594,15 @@
 - arp_mjpnl_v2.mjpnl_beurteilung_weide_soeg
 - arp_mjpnl_v2.mjpnl_beurteilung_wiese
 - arp_mjpnl_v2.mjpnl_vereinbarung
+
+---
+
+### arp_mjpnl_v2_gelan_update
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/arp_mjpnl_v2_gelan_update`
+**Schedule:** `H H(1-3) * * *` (~1-3h)
 
 ---
 
@@ -3905,7 +3914,7 @@
 **Pfad:** `../gretljobs/arp_isos_inventar_pub`
 
 **Quell-Tabellen:**
-- arp_isos_inventar_v1.isos_inventar
+- arp_isos_inventar_v2.isos_inventar
 
 ---
 
@@ -3983,14 +3992,6 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/arp_mjpnl_v2_auszahlung`
-
----
-
-### arp_mjpnl_v2_gelan_update
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_mjpnl_v2_gelan_update`
 
 ---
 
