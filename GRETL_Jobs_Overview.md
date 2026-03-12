@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.03.2026 05:11
-**Anzahl Jobs:** 216
+**Automatisch generiert am:** 12.03.2026 05:15
+**Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
 
@@ -115,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 133
+**Anzahl:** 131
 
 | Job | Status |
 |-----|--------|
@@ -239,9 +239,7 @@
 | awjf_statische_waldgrenze_pub | Aktiv |
 | awjf_wald_pub | Aktiv |
 | awjf_waldpflege_kontrolle_pub | Aktiv |
-| awjf_waldplan_bestandeskarte_import_shp | Aktiv |
 | awjf_waldplan_bestandeskarte_pub | Aktiv |
-| awjf_waldplan_bestandeskarte_staging | Aktiv |
 | awjf_waldplan_pub | Aktiv |
 | awjf_waldplan_pub_alle_gemeinden | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
@@ -347,14 +345,14 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 20 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 36 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
@@ -392,6 +390,7 @@
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
 | arp_isos_inventar_v2 | Amt für Raumplanung | 1 | 1 |
+| arp_kulturgueterschutzobjekte_pub_v1 | Amt für Raumplanung | 1 | 2 |
 | arp_kulturgueterschutzobjekte_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_laermempfindlichkeitsstufen_mgdm_v1 | Amt für Raumplanung | 1 | 9 |
 | arp_mehrjahresprogramm | Amt für Raumplanung | 2 | 1 |
@@ -463,8 +462,7 @@
 | awjf_wald_oberhoehenbonitaet_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_waldpflege_erfassung | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldpflege_kontrolle | Amt für Wald, Jagd und Fischerei | 1 | 1 |
-| awjf_waldplan_bestandeskarte_staging_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
-| awjf_waldplan_bestandeskarte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
+| awjf_waldplan_bestandeskarte_waldbestand_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldplan_pub_v2 | Amt für Wald, Jagd und Fischerei | 2 | 14 |
 | awjf_waldplan_v2 | Amt für Wald, Jagd und Fischerei | 2 | 17 |
 | awjf_waldstandorte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
@@ -3925,7 +3923,11 @@
 **Pfad:** `../gretljobs/arp_kulturgueterschutzobjekte_pub`
 
 **Quell-Tabellen:**
+- arp_kulturgueterschutzobjekte_pub_v1.objekte_kategorie
 - arp_kulturgueterschutzobjekte_v1.objekte
+
+**Ziel-Tabellen:**
+- arp_kulturgueterschutzobjekte_pub_v1.objekte
 
 ---
 
@@ -5258,14 +5260,6 @@
 
 ---
 
-### awjf_waldplan_bestandeskarte_import_shp
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/awjf_waldplan_bestandeskarte_import_shp`
-
----
-
 ### awjf_waldplan_bestandeskarte_pub
 
 **Status:** Aktiv
@@ -5273,22 +5267,7 @@
 **Pfad:** `../gretljobs/awjf_waldplan_bestandeskarte_pub`
 
 **Quell-Tabellen:**
-- agi_dm01avso24.bodenbedeckung_boflaeche
-- awjf_waldplan_bestandeskarte_staging_v1.waldplan_bestandeskarte
-- awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte
-
----
-
-### awjf_waldplan_bestandeskarte_staging
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/awjf_waldplan_bestandeskarte_staging`
-
-**Quell-Tabellen:**
-- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- awjf_waldplan_bestandeskarte_staging_v1.waldplan_bestandeskarte
-- awjf_waldplan_bestandeskarte_v1.waldplan_bestandeskarte
+- awjf_waldplan_bestandeskarte_waldbestand_v1.waldplan_bestandeskarte
 
 ---
 
