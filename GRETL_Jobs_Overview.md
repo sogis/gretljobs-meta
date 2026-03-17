@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 16.03.2026 05:49
+**Automatisch generiert am:** 17.03.2026 05:21
 **Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
@@ -255,7 +255,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 239
+**Anzahl Schemas:** 242
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -329,6 +329,9 @@
 | afu_schadendienst_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schadstoffbelastete_boeden | Amt für Umwelt | 1 | 63 |
 | afu_schadstoffbelastete_boeden_pub | Amt für Umwelt | 1 | 8 |
+| afu_schiesslaerm_pub_v1 | Amt für Umwelt | 1 | 2 |
+| afu_schiesslaerm_stage_v1 | Amt für Umwelt | 1 | 1 |
+| afu_schiesslaerm_v1 | Amt für Umwelt | 1 | 3 |
 | afu_schutzbauten_v1 | Amt für Umwelt | 1 | 40 |
 | afu_stehende_gewaesser_v1 | Amt für Umwelt | 2 | 1 |
 | afu_stoerfallverordnung_v1 | Amt für Umwelt | 1 | 8 |
@@ -3427,6 +3430,18 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/afu_schiesslaerm_pub`
+
+**Quell-Tabellen:**
+- afu_schiesslaerm_pub_v1.empfindlichkeitsstufe_tag
+- afu_schiesslaerm_stage_v1.schiesslaerm
+- afu_schiesslaerm_v1.anlage_attribute
+- afu_schiesslaerm_v1.anlage_kandidat
+- afu_schiesslaerm_v1.schiesslaerm_import
+
+**Ziel-Tabellen:**
+- afu_schiesslaerm_pub_v1.schiesslaerm
+- afu_schiesslaerm_stage_v1.schiesslaerm
+- afu_schiesslaerm_v1.anlage_kandidat
 
 ---
 
