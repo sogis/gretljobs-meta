@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 17.03.2026 05:21
+**Automatisch generiert am:** 18.03.2026 05:26
 **Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
@@ -255,7 +255,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 242
+**Anzahl Schemas:** 243
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -392,6 +392,7 @@
 | arp_bauzonengrenzen_pub | Amt für Raumplanung | 2 | 1 |
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
+| arp_isos_inventar_pub_v2 | Amt für Raumplanung | 1 | 4 |
 | arp_isos_inventar_v2 | Amt für Raumplanung | 1 | 1 |
 | arp_kulturgueterschutzobjekte_pub_v1 | Amt für Raumplanung | 1 | 2 |
 | arp_kulturgueterschutzobjekte_v1 | Amt für Raumplanung | 1 | 1 |
@@ -3927,7 +3928,13 @@
 **Pfad:** `../gretljobs/arp_isos_inventar_pub`
 
 **Quell-Tabellen:**
+- arp_isos_inventar_pub_v2.isos_inventar_art
+- arp_isos_inventar_pub_v2.isos_inventar_erhaltungsziel
+- arp_isos_inventar_pub_v2.qualitaet
 - arp_isos_inventar_v2.isos_inventar
+
+**Ziel-Tabellen:**
+- arp_isos_inventar_pub_v2.isos_inventar
 
 ---
 
@@ -5440,6 +5447,8 @@
 **Ziel-Tabellen:**
 - Boolean
 - Dispname
+- awjf_waldplan_pub_v2.t_ili2db_basket
+- awjf_waldplan_pub_v2.t_ili2db_dataset
 - awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
 - awjf_waldplan_pub_v2.waldplan_schutzwald
 - awjf_waldplan_pub_v2.waldplan_waldfunktion
