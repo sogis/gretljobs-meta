@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 27.03.2026 05:42
-**Anzahl Jobs:** 214
+**Automatisch generiert am:** 28.03.2026 05:21
+**Anzahl Jobs:** 215
 
 ## Inhaltsverzeichnis
 
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 70
+**Anzahl:** 71
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -78,6 +78,7 @@
 | arp_mjpnl_v2_zahlungslauf | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_nutzungsplanung_planregister_export | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_nutzungsvereinbarung_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| arp_solaranlagen_bewilligungsverfahren | Aktiv | `H H(5-6) * * *` | ~5-6h |
 | awjf_efj | Aktiv | `H H(4-5) * * *` | ~4-5h |
 | awjf_forstreviere_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | awjf_programm_biodiversitaet_wald_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -492,7 +493,7 @@
 | live | live | 1 | 3 |
 | main | main | 2 | 3 |
 | mjpnatur | mjpnatur | 1 | 11 |
-| pubdb | pubdb | 3 | 22 |
+| pubdb | pubdb | 4 | 31 |
 | public | public | 2 | 2 |
 | sein | sein | 2 | 8 |
 | sgv_schadenkarte_pub_v1 | sgv_schadenkarte_pub_v1 | 1 | 1 |
@@ -1868,6 +1869,32 @@
 - export.zonentyp_statent_statistik
 - export.zonentyp_statpop_json
 - export.zonentyp_wohnungen_statistik
+
+---
+
+### arp_solaranlagen_bewilligungsverfahren
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/arp_solaranlagen_bewilligungsverfahren`
+**Schedule:** `H H(5-6) * * *` (~5-6h)
+
+**Quell-Tabellen:**
+- ST_Read
+- bln_swisstopo
+- pubdb.ada_denkmalschutz_pub_v1.denkmal_polygon
+- pubdb.ada_denkmalschutz_pub_v1.denkmal_punkt
+- pubdb.agi_mopublic_pub.mopublic_bodenbedeckung
+- pubdb.agi_mopublic_pub.mopublic_einzelobjekt_flaeche
+- pubdb.arp_isos_inventar_pub_v2.isos_inventar
+- pubdb.arp_kulturgueterschutzobjekte_pub_v1.objekte
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung
+- pubdb.arp_nutzungsplanung_pub_v1.nutzungsplanung_ueberlagernd_flaeche
+- pubdb.arp_solaranlagen_bewilligungsverfahren_pub_v1.bauten_baute
+
+**Ziel-Tabellen:**
+- IF
+- pubdb.arp_solaranlagen_bewilligungsverfahren_pub_v1.bauten_baute
 
 ---
 
