@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 02.04.2026 05:41
-**Anzahl Jobs:** 215
+**Automatisch generiert am:** 03.04.2026 05:42
+**Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
 
@@ -116,7 +116,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 131
+**Anzahl:** 130
 
 | Job | Status |
 |-----|--------|
@@ -242,7 +242,6 @@
 | awjf_waldpflege_kontrolle_pub | Aktiv |
 | awjf_waldplan_bestandeskarte_pub | Aktiv |
 | awjf_waldplan_pub | Aktiv |
-| awjf_waldplan_pub_alle_gemeinden | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | awjf_wildtiersensible_gebiete_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
@@ -356,12 +355,12 @@
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 36 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 35 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
-| agi_mopublic_pub | Amt für Geoinformation | 12 | 7 |
+| agi_mopublic_pub | Amt für Geoinformation | 11 | 7 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
 | agi_plz_ortschaften_pub | Amt für Geoinformation | 1 | 2 |
 | agi_swissboundaries3d_pub | Amt für Geoinformation | 3 | 4 |
@@ -468,8 +467,8 @@
 | awjf_waldpflege_erfassung | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldpflege_kontrolle | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_waldplan_bestandeskarte_waldbestand_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
-| awjf_waldplan_pub_v2 | Amt für Wald, Jagd und Fischerei | 2 | 14 |
-| awjf_waldplan_v2 | Amt für Wald, Jagd und Fischerei | 2 | 17 |
+| awjf_waldplan_pub_v2 | Amt für Wald, Jagd und Fischerei | 1 | 14 |
+| awjf_waldplan_v2 | Amt für Wald, Jagd und Fischerei | 1 | 17 |
 | awjf_waldstandorte_v1 | Amt für Wald, Jagd und Fischerei | 2 | 1 |
 | awjf_waldwanderwege | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_wegsanierungen_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
@@ -5325,98 +5324,6 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/awjf_waldplan_pub`
-
-**Quell-Tabellen:**
-- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- agi_mopublic_pub.mopublic_grundstueck
-- awjf_waldplan_pub_v2.art_hauptgefahrenpotential
-- awjf_waldplan_pub_v2.biodiversitaetstyp
-- awjf_waldplan_pub_v2.intensitaetsstufe
-- awjf_waldplan_pub_v2.objekte_schutzwald
-- awjf_waldplan_pub_v2.t_ili2db_basket
-- awjf_waldplan_pub_v2.t_ili2db_dataset
-- awjf_waldplan_pub_v2.waldfunktionskategorie
-- awjf_waldplan_pub_v2.waldnutzungskategorie
-- awjf_waldplan_pub_v2.waldplan_waldfunktion
-- awjf_waldplan_pub_v2.waldplan_waldnutzung
-- awjf_waldplan_pub_v2.waldplan_walduebersicht
-- awjf_waldplan_v2.art_hauptgefahrenpotential
-- awjf_waldplan_v2.biodiversitaetstyp
-- awjf_waldplan_v2.forstkreise
-- awjf_waldplan_v2.intensitaetsstufe
-- awjf_waldplan_v2.objekte_schutzwald
-- awjf_waldplan_v2.t_ili2db_basket
-- awjf_waldplan_v2.t_ili2db_dataset
-- awjf_waldplan_v2.waldeigentuemer
-- awjf_waldplan_v2.waldfunktionskategorie
-- awjf_waldplan_v2.waldnutzungskategorie
-- awjf_waldplan_v2.waldplan_schutzwald
-- awjf_waldplan_v2.waldplan_waldeigentum
-- awjf_waldplan_v2.waldplan_waldfunktion
-- awjf_waldplan_v2.waldplan_waldnutzung
-- awjf_waldplan_v2.waldplankatalog_forstbetrieb
-- awjf_waldplan_v2.waldplankatalog_forstrevier
-- awjf_waldplan_v2.wirtschaftszonen
-- biodiversitaetsobjekte_grundstueck
-- grundstueck
-- waldflaeche_berechnet
-- waldflaeche_berechnet_plausibilisiert
-- waldflaeche_produktiv
-- waldfunktion
-- waldfunktion_hiebsatzrelevant
-- waldfunktion_nach_waldnutzung
-- waldfunktion_waldnutzung
-- waldfunktion_waldnutzung_grundstueck_berechnet
-- waldfunktion_waldnutzung_grundstueck_berechnet_plausibilisiert
-- waldfunktionsflaechen_grundstueck
-- waldgeometrie_grundstueck
-- waldgeometrie_grundstueck_bereinigt
-- waldgeometrie_grundstueck_final
-- waldnutzung
-- waldnutzung_hiebsatzrelevant
-- waldnutzungsflaechen_grundstueck
-- walduebersicht_cleaned_geometry
-- walduebersicht_union_geometry
-- wytweide_grundstueck
-
-**Ziel-Tabellen:**
-- Boolean
-- Dispname
-- awjf_waldplan_pub_v2.waldplan_aswrtung_auswertung
-- awjf_waldplan_pub_v2.waldplan_schutzwald
-- awjf_waldplan_pub_v2.waldplan_waldfunktion
-- awjf_waldplan_pub_v2.waldplan_waldnutzung
-- awjf_waldplan_pub_v2.waldplan_waldplan_grundstueck
-- awjf_waldplan_pub_v2.waldplan_walduebersicht
-- biodiversitaetsobjekte_grundstueck
-- grundstueck
-- waldflaeche_berechnet
-- waldflaeche_berechnet_plausibilisiert
-- waldflaeche_produktiv
-- waldfunktion
-- waldfunktion_hiebsatzrelevant
-- waldfunktion_nach_waldnutzung
-- waldfunktion_waldnutzung
-- waldfunktion_waldnutzung_grundstueck_berechnet
-- waldfunktion_waldnutzung_grundstueck_berechnet_plausibilisiert
-- waldfunktionsflaechen_grundstueck
-- waldgeometrie_grundstueck
-- waldgeometrie_grundstueck_bereinigt
-- waldgeometrie_grundstueck_final
-- waldnutzung
-- waldnutzung_hiebsatzrelevant
-- waldnutzungsflaechen_grundstueck
-- walduebersicht_cleaned_geometry
-- walduebersicht_union_geometry
-- wytweide_grundstueck
-
----
-
-### awjf_waldplan_pub_alle_gemeinden
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/awjf_waldplan_pub_alle_gemeinden`
 
 **Quell-Tabellen:**
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
