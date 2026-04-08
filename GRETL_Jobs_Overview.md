@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 07.04.2026 05:46
+**Automatisch generiert am:** 08.04.2026 05:47
 **Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
@@ -355,7 +355,7 @@
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 35 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 36 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
@@ -378,7 +378,7 @@
 | alw_futterbaulinien_v1 | Amt für Landwirtschaft | 1 | 1 |
 | alw_gewaesserraum | Amt für Landwirtschaft | 1 | 1 |
 | alw_gewaesserraum_v1 | Amt für Landwirtschaft | 2 | 1 |
-| alw_landwirtschaft_tierhaltung_v1 | Amt für Landwirtschaft | 1 | 10 |
+| alw_landwirtschaft_tierhaltung_v1 | Amt für Landwirtschaft | 1 | 11 |
 | alw_strukturverbesserungen | Amt für Landwirtschaft | 2 | 51 |
 | alw_tiergesundheit_pflanzengesundheit_massnahmen_v1 | Amt für Landwirtschaft | 1 | 3 |
 | alw_uebersteuerung_fff_v2 | Amt für Landwirtschaft | 1 | 1 |
@@ -1343,6 +1343,7 @@
 **Schedule:** `H H(2-4) * * *` (~2-4h)
 
 **Quell-Tabellen:**
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
 - alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_betrieb
 - alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_bewirtschaftungseinheit
 - alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_gelan_person
@@ -1351,6 +1352,7 @@
 - alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_standorte
 - alw_landwirtschaft_tierhaltung_v1.betrbsdttrktrdten_summe_tiere_flaechen
 - alw_landwirtschaft_tierhaltung_v1.bff_qualitaet_bff_qualitaet
+- alw_landwirtschaft_tierhaltung_v1.gelan_bodnbdckung_bodenbedeckung
 - alw_landwirtschaft_tierhaltung_v1.t_ili2db_basket
 - alw_landwirtschaft_tierhaltung_v1.t_ili2db_dataset
 
