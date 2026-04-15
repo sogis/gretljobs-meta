@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 14.04.2026 06:00
+**Automatisch generiert am:** 15.04.2026 06:00
 **Anzahl Jobs:** 214
 
 ## Inhaltsverzeichnis
@@ -2665,7 +2665,6 @@
 - abgleich_mfk
 - afu_bootsanbindeplaetze_mfk.main.abgleich_mfk
 - data_mfk
-- for
 
 ---
 
