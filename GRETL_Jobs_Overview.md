@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 20.04.2026 06:14
-**Anzahl Jobs:** 214
+**Automatisch generiert am:** 21.04.2026 06:02
+**Anzahl Jobs:** 215
 
 ## Inhaltsverzeichnis
 
@@ -116,7 +116,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 130
+**Anzahl:** 131
 
 | Job | Status |
 |-----|--------|
@@ -228,6 +228,7 @@
 | avt_strassenlaerm | Aktiv |
 | avt_strassenzustand_pub | Aktiv |
 | avt_verkehrszaehlstellen_pub | Aktiv |
+| awa_energieberater_pub | Aktiv |
 | awjf_bestandeshinweiskarte_pub | Aktiv |
 | awjf_biotopbaeume_import | Aktiv |
 | awjf_gesuchsteller | Aktiv |
@@ -255,7 +256,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 243
+**Anzahl Schemas:** 244
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -442,6 +443,7 @@
 | avt_strassenlaerm_v1 | Amt für Verkehr und Tiefbau | 1 | 5 |
 | avt_strassenzustand_staging_v1 | Amt für Verkehr und Tiefbau | 1 | 1 |
 | avt_verkehrszaehlstellen_v1 | Amt für Verkehr und Tiefbau | 1 | 6 |
+| awa_energieberater_v1 | awa_energieberater_v1 | 1 | 5 |
 | awa_stromversorgungssicherheit_mgdm_v1 | awa_stromversorgungssicherheit_mgdm_v1 | 1 | 4 |
 | awjf | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_bestandeshinweiskarte_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
@@ -5121,6 +5123,21 @@
 - avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlart
 - avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlkadenz
 - avt_verkehrszaehlstellen_v1.verkehrszaehlstelle_zaehlobjekt
+
+---
+
+### awa_energieberater_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/awa_energieberater_pub`
+
+**Quell-Tabellen:**
+- awa_energieberater_v1.energieberater_berater
+- awa_energieberater_v1.energieberater_berater_aus_weiterbildung
+- awa_energieberater_v1.energieberater_berater_themengebiete
+- awa_energieberater_v1.energieberater_region
+- awa_energieberater_v1.energieberater_themengebiete
 
 ---
 
