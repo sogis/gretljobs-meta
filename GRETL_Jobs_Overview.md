@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 27.04.2026 06:27
+**Automatisch generiert am:** 28.04.2026 06:29
 **Anzahl Jobs:** 215
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 71
+**Anzahl:** 70
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -52,7 +52,6 @@
 | agi_adressen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_export_ai | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gb_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| agi_av_gwr_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_meldewesen | Aktiv | `H H(3-4) * * *` | ~3-4h |
 | agi_av_mocheckso | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_dmav_fixpunkte2_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -116,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 131
+**Anzahl:** 132
 
 | Job | Status |
 |-----|--------|
@@ -166,6 +165,7 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
+| agi_av_gwr_abgleich_pub | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
 | agi_dmav_fixpunkte3_import | Aktiv |
@@ -994,25 +994,6 @@
 **Ziel-Tabellen:**
 - agi_av_gb_abgleich_import.differenzen_staging
 - agi_av_gb_abgleich_import.uebersicht_des_vergleichs_staging
-
----
-
-### agi_av_gwr_abgleich_pub
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/agi_av_gwr_abgleich_pub`
-**Schedule:** `H H(1-3) * * *` (~1-3h)
-
-**Quell-Tabellen:**
-- agi_av_gwr_abgleich_import_v1.av_gwr_differnzen_av_gwr_differenzen
-- agi_av_gwr_abgleich_pub_v1.av_gwr_differnzen_av_gwr_differenzen
-- agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen
-- agi_gebaeudeinformationen_pub_v1.gebaeude_gebaeude
-
-**Ziel-Tabellen:**
-- agi_av_gwr_abgleich_pub_v1.av_gwr_differnzen_av_gwr_differenzen
-- agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen
 
 ---
 
@@ -3556,6 +3537,24 @@
 - afu_stoerfallverordnung_v1.erdgasroehrenspeicher
 - afu_stoerfallverordnung_v1.konsultationsbereich
 - afu_stoerfallverordnung_v1.nationalstrasse
+
+---
+
+### agi_av_gwr_abgleich_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/agi_av_gwr_abgleich_pub`
+
+**Quell-Tabellen:**
+- agi_av_gwr_abgleich_import_v1.av_gwr_differnzen_av_gwr_differenzen
+- agi_av_gwr_abgleich_pub_v1.av_gwr_differnzen_av_gwr_differenzen
+- agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen
+- agi_gebaeudeinformationen_pub_v1.gebaeude_gebaeude
+
+**Ziel-Tabellen:**
+- agi_av_gwr_abgleich_pub_v1.av_gwr_differnzen_av_gwr_differenzen
+- agi_av_gwr_abgleich_v1.av_gwr_differnzen_av_gwr_differenzen
 
 ---
 
