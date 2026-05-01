@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 30.04.2026 06:27
-**Anzahl Jobs:** 215
+**Automatisch generiert am:** 01.05.2026 06:36
+**Anzahl Jobs:** 216
 
 ## Inhaltsverzeichnis
 
@@ -115,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 132
+**Anzahl:** 133
 
 | Job | Status |
 |-----|--------|
@@ -245,6 +245,7 @@
 | awjf_waldplan_pub | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | awjf_wildtiersensible_gebiete_pub | Aktiv |
+| gesa_tigermueckenfundstellen_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
 | hba_gebaeude_pub_v2 | Aktiv |
 | hba_grundstuecke_pub | Aktiv |
@@ -256,7 +257,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 244
+**Anzahl Schemas:** 245
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -356,14 +357,14 @@
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 36 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
 | agi_mopublic_pub | Amt für Geoinformation | 11 | 7 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
-| agi_plz_ortschaften_pub | Amt für Geoinformation | 1 | 2 |
+| agi_plz_ortschaften_pub | Amt für Geoinformation | 2 | 2 |
 | agi_swissboundaries3d_pub | Amt für Geoinformation | 3 | 4 |
 | agi_swissboundaries3d_v1 | Amt für Geoinformation | 1 | 4 |
 | agi_swissboundaries3d_v2 | Amt für Geoinformation | 1 | 6 |
@@ -483,6 +484,7 @@
 | editdb | editdb | 4 | 9 |
 | export | export | 1 | 46 |
 | flachmoore | flachmoore | 1 | 1 |
+| gesa_tigermueckenfundstellen_v1 | gesa_tigermueckenfundstellen_v1 | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hochmoore | hochmoore | 1 | 1 |
@@ -5451,6 +5453,19 @@
 **Quell-Tabellen:**
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_fokus_typ
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_gebiet
+
+---
+
+### gesa_tigermueckenfundstellen_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/gesa_tigermueckenfundstellen_pub`
+
+**Quell-Tabellen:**
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
+- agi_plz_ortschaften_pub.plzortschaften_postleitzahl
+- gesa_tigermueckenfundstellen_v1.csv_import
 
 ---
 
