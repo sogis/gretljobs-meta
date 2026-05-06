@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 05.05.2026 06:16
-**Anzahl Jobs:** 216
+**Automatisch generiert am:** 06.05.2026 06:29
+**Anzahl Jobs:** 217
 
 ## Inhaltsverzeichnis
 
@@ -115,7 +115,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 133
+**Anzahl:** 134
 
 | Job | Status |
 |-----|--------|
@@ -123,6 +123,7 @@
 | afu_ara_einzugsgebiete_pub | Aktiv |
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
+| afu_bodeneinheiten_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
 | afu_bodenverdichtung_pub | Aktiv |
 | afu_bootsanbindeplaetze_mfk | Aktiv |
@@ -257,7 +258,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 245
+**Anzahl Schemas:** 247
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -278,6 +279,8 @@
 | afu_bodendaten_nabodat_abfrage_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_bodendaten_nabodat_pub | Amt für Umwelt | 1 | 1 |
 | afu_bodendaten_nabodat_v1 | Amt für Umwelt | 3 | 77 |
+| afu_bodeneinheiten_pub_v1 | Amt für Umwelt | 1 | 2 |
+| afu_bodeneinheiten_v1 | Amt für Umwelt | 1 | 33 |
 | afu_bodenverdichtung_v1 | Amt für Umwelt | 1 | 2 |
 | afu_bootsanbindeplaetze | Amt für Umwelt | 1 | 2 |
 | afu_bootsanbindeplaetze_mfk | Amt für Umwelt | 1 | 2 |
@@ -2541,6 +2544,67 @@
 - afu_bodendaten_nabodat_v1.punktdaten_projekt
 - afu_bodendaten_nabodat_v1.punktdaten_projektstandort
 - afu_bodendaten_nabodat_v1.punktdaten_standort
+
+---
+
+### afu_bodeneinheiten_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_bodeneinheiten_pub`
+
+**Quell-Tabellen:**
+- afu_bodeneinheiten_pub_v1.bodeneinheit_landwirtschaft
+- afu_bodeneinheiten_pub_v1.bodeneinheit_wald
+- afu_bodeneinheiten_v1.alte_daten_vorhanden_enum
+- afu_bodeneinheiten_v1.bodeneinheithauptauspraegung_landwirtschaft
+- afu_bodeneinheiten_v1.bodeneinheithauptauspraegung_wald
+- afu_bodeneinheiten_v1.bodentypcode
+- afu_bodeneinheiten_v1.gefuegeform
+- afu_bodeneinheiten_v1.gefuegegroesse
+- afu_bodeneinheiten_v1.gelaendeform
+- afu_bodeneinheiten_v1.humusform_wald
+- afu_bodeneinheiten_v1.kalkgehalt
+- afu_bodeneinheiten_v1.kartierperson
+- afu_bodeneinheiten_v1.kartierpersonteam
+- afu_bodeneinheiten_v1.kartierteam
+- afu_bodeneinheiten_v1.koernungsklasse
+- afu_bodeneinheiten_v1.los
+- afu_bodeneinheiten_v1.nebenauspraegung_landwirtschaft
+- afu_bodeneinheiten_v1.nebenauspraegung_wald
+- afu_bodeneinheiten_v1.skelettgehalt_landwirtschaft
+- afu_bodeneinheiten_v1.skelettgehalt_wald
+- afu_bodeneinheiten_v1.t_ili2db_basket
+- afu_bodeneinheiten_v1.t_ili2db_dataset
+- afu_bodeneinheiten_v1.untertyp_diverse_hauptlandwirtschaft
+- afu_bodeneinheiten_v1.untertyp_diverse_hauptwald
+- afu_bodeneinheiten_v1.untertyp_diverse_nebenlandwirtschaft
+- afu_bodeneinheiten_v1.untertyp_diverse_nebenwald
+- afu_bodeneinheiten_v1.untertyp_k_hauptlandwirtschaft
+- afu_bodeneinheiten_v1.untertyp_k_hauptwald
+- afu_bodeneinheiten_v1.untertyp_k_nebenlandwirtschaft
+- afu_bodeneinheiten_v1.untertyp_k_nebenwald
+- afu_bodeneinheiten_v1.untertyp_p_hauptlandwirtschaft
+- afu_bodeneinheiten_v1.untertyp_p_hauptwald
+- afu_bodeneinheiten_v1.untertyp_p_nebenlandwirtschaft
+- afu_bodeneinheiten_v1.untertyp_p_nebenwald
+- afu_bodeneinheiten_v1.wasserhaushaltcode_enum
+- bemerkungen
+- lut_bodart
+- lut_hydro
+- lut_korr_skelettgehalt
+- lut_nfk_aus_trd
+- lut_os
+- lut_png
+- lut_ta_sv_to_nfk
+- lut_trockenrohdichte
+- lut_whg_faktor
+- lut_zs_sv_to_nfk
+
+**Ziel-Tabellen:**
+- afu_bodeneinheiten_pub_v1.bodeneinheit_landwirtschaft
+- afu_bodeneinheiten_pub_v1.bodeneinheit_wald
+- nutzbare
 
 ---
 
