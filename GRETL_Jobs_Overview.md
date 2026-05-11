@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 10.05.2026 06:32
+**Automatisch generiert am:** 11.05.2026 07:41
 **Anzahl Jobs:** 217
 
 ## Inhaltsverzeichnis
@@ -14,14 +14,13 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 71
+**Anzahl:** 70
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
 | agi_av_kaso_abgleich_pub | Aktiv | `H 3 * * *` | ~3:xx |
 | afu_ewsabfrage_2d | Aktiv | `0 4 * * 0` | So 04:00 |
 | afu_asiatische_hornisse_import | Aktiv | `15 4 * * *` | 04:15 |
-| afu_asiatische_hornisse_pub | Aktiv | `30 4 * * *` | 04:30 |
 | arp_sein_konfiguration | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | arp_sein_strukturdaten_export | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | agi_generate_matomo_reports | Aktiv | `H 4 1 * *` | 1. ~4:xx |
@@ -116,12 +115,13 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 133
+**Anzahl:** 134
 
 | Job | Status |
 |-----|--------|
 | afu_abbaustellen_pub | Aktiv |
 | afu_ara_einzugsgebiete_pub | Aktiv |
+| afu_asiatische_hornisse_pub | Aktiv |
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
 | afu_bodeneinheiten_pub | Aktiv |
@@ -590,19 +590,6 @@
 - infofauna_individuals
 - infofauna_nests
 - nur
-
----
-
-### afu_asiatische_hornisse_pub
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/afu_asiatische_hornisse_pub`
-**Schedule:** `30 4 * * *` (04:30)
-
-**Quell-Tabellen:**
-- afu_asiatische_hornisse_v2.asia_hornisse_nest
-- afu_asiatische_hornisse_v2.asia_hornisse_sichtung
 
 ---
 
@@ -2522,6 +2509,18 @@
 
 **Quell-Tabellen:**
 - afu_ara_einzugsgebiete.einzugsgebiete_ara_einzugsgebiet
+
+---
+
+### afu_asiatische_hornisse_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_asiatische_hornisse_pub`
+
+**Quell-Tabellen:**
+- afu_asiatische_hornisse_v2.asia_hornisse_nest
+- afu_asiatische_hornisse_v2.asia_hornisse_sichtung
 
 ---
 
