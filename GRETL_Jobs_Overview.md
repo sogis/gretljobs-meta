@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.05.2026 07:41
-**Anzahl Jobs:** 217
+**Automatisch generiert am:** 12.05.2026 06:37
+**Anzahl Jobs:** 218
 
 ## Inhaltsverzeichnis
 
@@ -14,13 +14,12 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 70
+**Anzahl:** 69
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
 | agi_av_kaso_abgleich_pub | Aktiv | `H 3 * * *` | ~3:xx |
 | afu_ewsabfrage_2d | Aktiv | `0 4 * * 0` | So 04:00 |
-| afu_asiatische_hornisse_import | Aktiv | `15 4 * * *` | 04:15 |
 | arp_sein_konfiguration | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | arp_sein_strukturdaten_export | Aktiv | `H 4 31 1,3,4,7,8,10,12 *\nH 4 30 4,6,9,11 *\nH 4 28,29 2 *` | ~4:xx |
 | agi_generate_matomo_reports | Aktiv | `H 4 1 * *` | 1. ~4:xx |
@@ -115,15 +114,17 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 134
+**Anzahl:** 136
 
 | Job | Status |
 |-----|--------|
 | afu_abbaustellen_pub | Aktiv |
 | afu_ara_einzugsgebiete_pub | Aktiv |
+| afu_asiatische_hornisse_import | Aktiv |
 | afu_asiatische_hornisse_pub | Aktiv |
 | afu_baugrundklassen_pub | Aktiv |
 | afu_bodendaten_schadstoffuntersuchung_pub | Aktiv |
+| afu_bodeneinheiten_import | Aktiv |
 | afu_bodeneinheiten_pub | Aktiv |
 | afu_bodenprofilstandorte_nabodat_pub | Aktiv |
 | afu_bodenverdichtung_pub | Aktiv |
@@ -553,43 +554,6 @@
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_altlasten_import_pub`
 **Schedule:** `H H(1-3) * * *` (~1-3h)
-
----
-
-### afu_asiatische_hornisse_import
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
-**Schedule:** `15 4 * * *` (04:15)
-
-**Quell-Tabellen:**
-- EXCLUDED.geometrie
-- EXCLUDED.import_bemerkung
-- EXCLUDED.import_datum_sichtung
-- EXCLUDED.import_foto_url
-- EXCLUDED.import_kanton
-- EXCLUDED.import_lat
-- EXCLUDED.import_lon
-- EXCLUDED.import_occurrence_id
-- EXCLUDED.import_ort
-- EXCLUDED.import_unique_nest_id
-- EXCLUDED.import_x_koordinate
-- EXCLUDED.import_y_koordinate
-- ST_Read
-- afu_individuals
-- editdb.afu_asiatische_hornisse_v2.asia_hornisse_sichtung
-- infofauna_individuals
-- infofauna_nests
-
-**Ziel-Tabellen:**
-- SET
-- afu_individuals
-- anstatt
-- auf
-- infofauna_individuals
-- infofauna_nests
-- nur
 
 ---
 
@@ -2512,6 +2476,42 @@
 
 ---
 
+### afu_asiatische_hornisse_import
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_asiatische_hornisse_import`
+
+**Quell-Tabellen:**
+- EXCLUDED.geometrie
+- EXCLUDED.import_bemerkung
+- EXCLUDED.import_datum_sichtung
+- EXCLUDED.import_foto_url
+- EXCLUDED.import_kanton
+- EXCLUDED.import_lat
+- EXCLUDED.import_lon
+- EXCLUDED.import_occurrence_id
+- EXCLUDED.import_ort
+- EXCLUDED.import_unique_nest_id
+- EXCLUDED.import_x_koordinate
+- EXCLUDED.import_y_koordinate
+- ST_Read
+- afu_individuals
+- editdb.afu_asiatische_hornisse_v2.asia_hornisse_sichtung
+- infofauna_individuals
+- infofauna_nests
+
+**Ziel-Tabellen:**
+- SET
+- afu_individuals
+- anstatt
+- auf
+- infofauna_individuals
+- infofauna_nests
+- nur
+
+---
+
 ### afu_asiatische_hornisse_pub
 
 **Status:** Aktiv
@@ -2562,6 +2562,14 @@
 - afu_bodendaten_nabodat_v1.punktdaten_projekt
 - afu_bodendaten_nabodat_v1.punktdaten_projektstandort
 - afu_bodendaten_nabodat_v1.punktdaten_standort
+
+---
+
+### afu_bodeneinheiten_import
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_bodeneinheiten_import`
 
 ---
 
