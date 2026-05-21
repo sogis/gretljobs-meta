@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 20.05.2026 07:43
-**Anzahl Jobs:** 218
+**Automatisch generiert am:** 21.05.2026 07:53
+**Anzahl Jobs:** 219
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 136
+**Anzahl:** 137
 
 | Job | Status |
 |-----|--------|
@@ -163,6 +163,7 @@
 | afu_quellen_ungefasst_pub | Aktiv |
 | afu_schadendienst_pub | Aktiv |
 | afu_schadstoffbelastete_boeden_pub | Aktiv |
+| afu_schadstoffbelastete_boeden_test_pub | Aktiv |
 | afu_schiesslaerm_pub | Aktiv |
 | afu_schutzbauten_export | Aktiv |
 | afu_schutzbauten_import | Aktiv |
@@ -259,7 +260,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 247
+**Anzahl Schemas:** 249
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -335,6 +336,8 @@
 | afu_schadendienst_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schadstoffbelastete_boeden | Amt für Umwelt | 1 | 63 |
 | afu_schadstoffbelastete_boeden_pub | Amt für Umwelt | 1 | 8 |
+| afu_schadstoffbelastete_boeden_pub_v1 | Amt für Umwelt | 1 | 33 |
+| afu_schadstoffbelastete_boeden_v1 | Amt für Umwelt | 1 | 66 |
 | afu_schiesslaerm_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schiesslaerm_stage_v1 | Amt für Umwelt | 1 | 1 |
 | afu_schiesslaerm_v1 | Amt für Umwelt | 1 | 3 |
@@ -354,14 +357,14 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 20 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 38 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
@@ -3525,6 +3528,121 @@
 - agi_dm01avso24.liegenschaften_liegenschaft
 - agi_dm01avso24.nomenklatur_flurname
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+
+---
+
+### afu_schadstoffbelastete_boeden_test_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_schadstoffbelastete_boeden_test_pub`
+
+**Quell-Tabellen:**
+- afu_schadstoffbelastete_boeden_pub_v1.betriebsstatus
+- afu_schadstoffbelastete_boeden_pub_v1.schadstoffbelasteter_boden_begruendung_aus_vsb_entlassen
+- afu_schadstoffbelastete_boeden_pub_v1.schadstoffbelasteter_boden_status
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_bodenbelastungsgebiet_belastungsstufe
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_bodenbelastungsgebiet_flaechentyp
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_bodenbelastungsgebiet_verursacher
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_eisenbahn_flaechentyp
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_eisenbahn_verdachtsstreifenbreite
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_eisenbahn_verkehrsfrequenz
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_militaerischer_schiessplatz_betriebsstatus
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_schiessanlage_sanierungsstatus
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_schiessanlage_trennkriterium
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_stahlbruecke_brueckentyp
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_stahlmast_radius
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_strasse_strassentyp
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_strasse_verdachtsstreifenbreite
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_strasse_verkehrsfrequenz
+- afu_schadstoffbelastete_boeden_v1.schadstoffbelasteter_boden_begruendung_aus_vsb_entlassen
+- afu_schadstoffbelastete_boeden_v1.schadstoffbelasteter_boden_status
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_anbaugebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_bodenbelastungsgebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_anbaugebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_bodenbelastungsflaeche
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_eisenbahn
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_flugplatz
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_gartenbau
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_geogene_bodenbelastung
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_militaerischer_schiessplatz
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_pfas
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_schiessanlage
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_siedlungsgebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_stahlbruecke
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_stahlkonstruktion
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_stahlmast
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_dokument_strasse
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_eisenbahn
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_flugplatz
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_gartenbau
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_gebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_geogene_bodenbelastung
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_lage
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_leitung
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_militaerischer_schiessplatz
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_pfas
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_anbaugebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_bodenbelastungsflaeche
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_eisenbahn
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_flugplatz
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_gartenbau
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_geogene_bodenbelastung
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_militaerischer_schiessplatz
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_pfas
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_schiessanlage
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_siedlungsgebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_stahlbruecke
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_stahlkonstruktion
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_stahlmast
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schadstoff_strasse
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schiessanlage
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schiessanlage_schiessanlagentyp
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_schiessanlagentyp
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_siedlungsgebiet
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_stahlbruecke
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_stahlkonstruktion
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_stahlkonstruktionstyp
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_stahlmast
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_strasse
+- afu_schadstoffbelastete_boeden_v1.schdstfflstt_bden_transportunternehmen
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_bodenbelastungsgebiet_belastungsstufe
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_bodenbelastungsgebiet_verursacher
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_eisenbahn_flaechentyp
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_eisenbahn_verdachtsstreifenbreite
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_eisenbahn_verkehrsfrequenz
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_militaerischer_schiessplatz_betriebsstatus
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_schiessanlage_sanierungsstatus
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_schiessanlage_trennkriterium
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_stahlbruecke_brueckentyp
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_stahlmast_radius
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_strasse_strassentyp
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_strasse_verdachtsstreifenbreite
+- afu_schadstoffbelastete_boeden_v1.schdstfstt_bden_strasse_verkehrsfrequenz
+- agi_dm01avso24.liegenschaften_grundstueck
+- agi_dm01avso24.liegenschaften_liegenschaft
+- agi_dm01avso24.nomenklatur_flurname
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
+
+**Ziel-Tabellen:**
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_bodenbelastungsgebiet
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_eisenbahn
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_flugplatz
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_gaertnerei
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_geogene_bodenbelastung
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_hopfenbau
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_militaerischer_schiessplatz
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_pfas
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_rebbau
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schiessanlage
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schrebergarten
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_siedlungsgebiet
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlbruecke
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlkonstruktion
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlmast
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_strasse
 
 ---
 
