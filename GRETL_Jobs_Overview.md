@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 28.05.2026 07:58
+**Automatisch generiert am:** 29.05.2026 07:56
 **Anzahl Jobs:** 219
 
 ## Inhaltsverzeichnis
@@ -336,7 +336,7 @@
 | afu_schadendienst_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schadstoffbelastete_boeden | Amt für Umwelt | 1 | 63 |
 | afu_schadstoffbelastete_boeden_pub | Amt für Umwelt | 1 | 8 |
-| afu_schadstoffbelastete_boeden_pub_v1 | Amt für Umwelt | 1 | 33 |
+| afu_schadstoffbelastete_boeden_pub_v1 | Amt für Umwelt | 1 | 34 |
 | afu_schadstoffbelastete_boeden_v1 | Amt für Umwelt | 1 | 66 |
 | afu_schiesslaerm_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schiesslaerm_stage_v1 | Amt für Umwelt | 1 | 1 |
@@ -3541,6 +3541,22 @@
 - afu_schadstoffbelastete_boeden_pub_v1.betriebsstatus
 - afu_schadstoffbelastete_boeden_pub_v1.schadstoffbelasteter_boden_begruendung_aus_vsb_entlassen
 - afu_schadstoffbelastete_boeden_pub_v1.schadstoffbelasteter_boden_status
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_bodenbelastungsgebiet
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_eisenbahn
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_flugplatz
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_gaertnerei
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_geogene_bodenbelastung
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_hopfenbau
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_militaerischer_schiessplatz
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_pruefperimeter_bodenabtrag
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_rebbau
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schiessanlage
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schrebergarten
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_siedlungsgebiet
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlbruecke
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlkonstruktion
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlmast
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_strasse
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_bodenbelastungsgebiet_belastungsstufe
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_bodenbelastungsgebiet_flaechentyp
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfstt_bden_bodenbelastungsgebiet_verursacher
@@ -3635,6 +3651,7 @@
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_hopfenbau
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_militaerischer_schiessplatz
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_pfas
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_pruefperimeter_bodenabtrag
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_rebbau
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schiessanlage
 - afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schrebergarten
