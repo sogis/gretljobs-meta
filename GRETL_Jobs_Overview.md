@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 07.06.2026 07:55
+**Automatisch generiert am:** 08.06.2026 08:55
 **Anzahl Jobs:** 219
 
 ## Inhaltsverzeichnis
@@ -460,7 +460,7 @@
 | awjf_forstreviere | Amt für Wald, Jagd und Fischerei | 5 | 3 |
 | awjf_gesuchsteller | Amt für Wald, Jagd und Fischerei | 2 | 1 |
 | awjf_holznutzungsbewilligung_pub_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
-| awjf_holznutzungsbewilligung_v1 | Amt für Wald, Jagd und Fischerei | 1 | 8 |
+| awjf_holznutzungsbewilligung_staging_v1 | Amt für Wald, Jagd und Fischerei | 1 | 10 |
 | awjf_jagdreviere_jagdbanngebiete_v1 | Amt für Wald, Jagd und Fischerei | 2 | 4 |
 | awjf_programm_biodiversitaet_wald_v1 | Amt für Wald, Jagd und Fischerei | 2 | 7 |
 | awjf_rodung_rodungsersatz_mgdm_v1 | Amt für Wald, Jagd und Fischerei | 1 | 6 |
@@ -1914,14 +1914,16 @@
 
 **Quell-Tabellen:**
 - awjf_holznutzungsbewilligung_pub_v1.countrycode_iso3166_1
-- awjf_holznutzungsbewilligung_v1.codelisten_bewilligte_holzart_catalogue
-- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung
-- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung_egrid
-- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung_gemeinde
-- awjf_holznutzungsbewilligung_v1.holznutzung_holznutzungsbewilligung_revier
-- awjf_holznutzungsbewilligung_v1.holznutzung_mengeholzart
-- awjf_holznutzungsbewilligung_v1.localisedtext
-- awjf_holznutzungsbewilligung_v1.multilingualtext
+- awjf_holznutzungsbewilligung_staging_v1.codelisten_bewilligte_holzart_catalogue
+- awjf_holznutzungsbewilligung_staging_v1.holznutzung_holznutzungsbewilligung
+- awjf_holznutzungsbewilligung_staging_v1.holznutzung_holznutzungsbewilligung_egrid
+- awjf_holznutzungsbewilligung_staging_v1.holznutzung_holznutzungsbewilligung_gemeinde
+- awjf_holznutzungsbewilligung_staging_v1.holznutzung_holznutzungsbewilligung_revier
+- awjf_holznutzungsbewilligung_staging_v1.holznutzung_mengeholzart
+- awjf_holznutzungsbewilligung_staging_v1.localisedtext
+- awjf_holznutzungsbewilligung_staging_v1.multilingualtext
+- awjf_holznutzungsbewilligung_staging_v1.t_ili2db_basket
+- awjf_holznutzungsbewilligung_staging_v1.t_ili2db_dataset
 
 **Ziel-Tabellen:**
 - awjf_holznutzungsbewilligung_pub_v1.holznutzung_holznutzungsbewilligung
