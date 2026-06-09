@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 08.06.2026 08:55
-**Anzahl Jobs:** 219
+**Automatisch generiert am:** 09.06.2026 07:49
+**Anzahl Jobs:** 220
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 137
+**Anzahl:** 138
 
 | Job | Status |
 |-----|--------|
@@ -248,6 +248,7 @@
 | awjf_waldplan_pub | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | awjf_wildtiersensible_gebiete_pub | Aktiv |
+| gesa_gesundheitseinrichtungen_pub | Aktiv |
 | gesa_tigermueckenfundstellen_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
 | hba_gebaeude_pub_v2 | Aktiv |
@@ -5662,6 +5663,14 @@
 **Quell-Tabellen:**
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_fokus_typ
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_gebiet
+
+---
+
+### gesa_gesundheitseinrichtungen_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/gesa_gesundheitseinrichtungen_pub`
 
 ---
 
