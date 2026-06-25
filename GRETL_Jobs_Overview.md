@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 24.06.2026 07:40
+**Automatisch generiert am:** 25.06.2026 07:42
 **Anzahl Jobs:** 219
 
 ## Inhaltsverzeichnis
@@ -260,7 +260,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 248
+**Anzahl Schemas:** 249
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -483,6 +483,7 @@
 | awjf_wegsanierungen_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_wildtiersensible_gebiete_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | bohrung | bohrung | 1 | 1 |
+| bp | bp | 1 | 1 |
 | capi_p | capi_p | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
@@ -2776,6 +2777,7 @@
 - LATERAL
 - afu_bootsanbindeplaetze.main.kontokorrent_structure
 - afu_bootsanbindeplaetze.main.sap_structure
+- bp.rechnungsstelle_steggebuehr
 - pubdb.afu_bootsanbindeplaetze_pub_v1.bootsanbindeplatz
 - pubdb.afu_bootsanbindeplaetze_pub_v1.standortdaten
 - rechnungsstelle_steggebuehr
