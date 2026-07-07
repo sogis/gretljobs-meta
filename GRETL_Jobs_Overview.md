@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 06.07.2026 08:20
-**Anzahl Jobs:** 219
+**Automatisch generiert am:** 07.07.2026 07:38
+**Anzahl Jobs:** 222
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 137
+**Anzahl:** 140
 
 | Job | Status |
 |-----|--------|
@@ -255,6 +255,9 @@
 | hba_grundstuecke_pub_v2 | Aktiv |
 | ksta_landwert_pub | Aktiv |
 | sk_plakatstandorte | Aktiv |
+| xy_jenkinsfile_template_fileupload | Aktiv |
+| xy_jenkinsfile_template_fileupload_origname | Aktiv |
+| xy_jenkinsfile_template_stringparams | Aktiv |
 
 ---
 
@@ -5680,5 +5683,29 @@
 
 **Ziel-Tabellen:**
 - sk_plakatstandorte_staging_v1.standorte
+
+---
+
+### xy_jenkinsfile_template_fileupload
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/xy_jenkinsfile_template_fileupload`
+
+---
+
+### xy_jenkinsfile_template_fileupload_origname
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/xy_jenkinsfile_template_fileupload_origname`
+
+---
+
+### xy_jenkinsfile_template_stringparams
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/xy_jenkinsfile_template_stringparams`
 
 ---
