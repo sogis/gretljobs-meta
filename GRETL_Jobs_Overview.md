@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 07.07.2026 07:38
+**Automatisch generiert am:** 08.07.2026 06:27
 **Anzahl Jobs:** 222
 
 ## Inhaltsverzeichnis
@@ -371,9 +371,9 @@
 | agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
-| agi_mopublic_pub | Amt für Geoinformation | 11 | 7 |
+| agi_mopublic_pub | Amt für Geoinformation | 12 | 8 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
-| agi_plz_ortschaften_pub | Amt für Geoinformation | 2 | 2 |
+| agi_plz_ortschaften_pub | Amt für Geoinformation | 3 | 2 |
 | agi_swissboundaries3d_pub | Amt für Geoinformation | 3 | 4 |
 | agi_swissboundaries3d_v1 | Amt für Geoinformation | 1 | 4 |
 | agi_swissboundaries3d_v2 | Amt für Geoinformation | 1 | 6 |
@@ -796,6 +796,9 @@
 - agi_dm01avso24.gebaeudeadressen_strassenstueck
 - agi_dm01avso24.t_ili2db_basket
 - agi_dm01avso24.t_ili2db_import
+- agi_mopublic_pub.mopublic_strassenachse
+- agi_plz_ortschaften_pub.plzortschaften_ortschaft
+- agi_plz_ortschaften_pub.plzortschaften_postleitzahl
 
 ---
 
