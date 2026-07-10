@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 09.07.2026 07:36
-**Anzahl Jobs:** 222
+**Automatisch generiert am:** 10.07.2026 07:35
+**Anzahl Jobs:** 220
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 140
+**Anzahl:** 138
 
 | Job | Status |
 |-----|--------|
@@ -173,7 +173,6 @@
 | agi_dmav_fixpunkte3_import | Aktiv |
 | agi_dmav_rohrleitungen_export | Aktiv |
 | agi_dmav_toleranzstufen_export | Aktiv |
-| agi_inventar_hoheitsgrenzen_pub | Aktiv |
 | agi_layer_rollout | Aktiv |
 | agi_lk_netzgebiete_pub | Aktiv |
 | agi_plz_ortschaften_pub_manueller_import | Aktiv |
@@ -213,7 +212,6 @@
 | arp_sein_konfiguration_local | Aktiv |
 | arp_statent_import | Aktiv |
 | arp_statpop_import | Aktiv |
-| arp_statpopent_hektarraster | Aktiv |
 | arp_waldreservate_pub | Aktiv |
 | arp_wanderwege_import_xtf | Aktiv |
 | arp_wanderwege_pub | Aktiv |
@@ -263,7 +261,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 249
+**Anzahl Schemas:** 248
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -368,7 +366,6 @@
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
 | agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
-| agi_inventar_hoheitsgrenzen | Amt für Geoinformation | 1 | 3 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
 | agi_mopublic_pub | Amt für Geoinformation | 12 | 8 |
@@ -3739,19 +3736,6 @@
 
 ---
 
-### agi_inventar_hoheitsgrenzen_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/agi_inventar_hoheitsgrenzen_pub`
-
-**Quell-Tabellen:**
-- agi_inventar_hoheitsgrenzen.invntr_hhtsgrnzen_gemeinde
-- agi_inventar_hoheitsgrenzen.invntr_hhtsgrnzen_gemeinde_hoheitsgrenzstein
-- agi_inventar_hoheitsgrenzen.invntr_hhtsgrnzen_kantonsgrenzstein
-
----
-
 ### agi_layer_rollout
 
 **Status:** Aktiv
@@ -5007,17 +4991,6 @@
 - arp_nutzungsplanung_pub_v1.nutzungsplanung_grundnutzung
 - arp_statpop_statent_staging_v1.nutzungszonen
 - arp_statpop_statent_staging_v1.statpop
-
----
-
-### arp_statpopent_hektarraster
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_statpopent_hektarraster`
-
-**Quell-Tabellen:**
-- employees_total
 
 ---
 
