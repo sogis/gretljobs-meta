@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 15.07.2026 06:13
-**Anzahl Jobs:** 220
+**Automatisch generiert am:** 16.07.2026 06:18
+**Anzahl Jobs:** 221
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 138
+**Anzahl:** 139
 
 | Job | Status |
 |-----|--------|
@@ -168,6 +168,7 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
+| agi_av_meldewesen_archiv | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
 | agi_dmav_fixpunkte3_import | Aktiv |
@@ -261,7 +262,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 248
+**Anzahl Schemas:** 249
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -354,8 +355,9 @@
 | agi_av_gwr_abgleich_pub_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_gwr_abgleich_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_kaso_abgleich_v1 | Amt für Geoinformation | 1 | 3 |
+| agi_av_meldewesen_archiv_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
-| agi_av_meldewesen_work_v1 | Amt für Geoinformation | 1 | 1 |
+| agi_av_meldewesen_work_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
 | agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
@@ -3693,6 +3695,20 @@
 - afu_stoerfallverordnung_v1.erdgasroehrenspeicher
 - afu_stoerfallverordnung_v1.konsultationsbereich
 - afu_stoerfallverordnung_v1.nationalstrasse
+
+---
+
+### agi_av_meldewesen_archiv
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/agi_av_meldewesen_archiv`
+
+**Quell-Tabellen:**
+- agi_av_meldewesen_work_v1.meldungen_meldung
+
+**Ziel-Tabellen:**
+- agi_av_meldewesen_archiv_v1.meldungen_meldung
 
 ---
 
