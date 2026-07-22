@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 21.07.2026 06:27
+**Automatisch generiert am:** 22.07.2026 06:27
 **Anzahl Jobs:** 221
 
 ## Inhaltsverzeichnis
@@ -262,7 +262,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 249
+**Anzahl Schemas:** 250
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -487,6 +487,7 @@
 | bohrung | bohrung | 1 | 1 |
 | bp | bp | 1 | 1 |
 | capi_p | capi_p | 1 | 1 |
+| dbo | dbo | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
@@ -701,6 +702,7 @@
 - afu_online_risk.verordnung
 - afu_online_risk.verordnungsrelevanz
 - bereich
+- dbo.abfrage_log
 - gebaeude
 - untersuchungseinheit
 
