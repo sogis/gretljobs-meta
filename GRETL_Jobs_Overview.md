@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 22.07.2026 06:27
-**Anzahl Jobs:** 221
+**Automatisch generiert am:** 23.07.2026 06:29
+**Anzahl Jobs:** 222
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 139
+**Anzahl:** 140
 
 | Job | Status |
 |-----|--------|
@@ -218,6 +218,7 @@
 | arp_wanderwege_pub | Aktiv |
 | arp_wildruhezonen_export_ai | Aktiv |
 | avt_ausnahmetransportrouten_export_ai | Aktiv |
+| avt_erarbeitung_grundstueck_kanton | Aktiv |
 | avt_groblaermkataster_pub | Aktiv |
 | avt_gvm_import | Aktiv |
 | avt_kantonsstrassen_pub | Aktiv |
@@ -370,7 +371,7 @@
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
-| agi_mopublic_pub | Amt für Geoinformation | 12 | 8 |
+| agi_mopublic_pub | Amt für Geoinformation | 13 | 9 |
 | agi_plz_ortschaften | Amt für Geoinformation | 3 | 3 |
 | agi_plz_ortschaften_pub | Amt für Geoinformation | 3 | 2 |
 | agi_swissboundaries3d_pub | Amt für Geoinformation | 3 | 4 |
@@ -443,7 +444,7 @@
 | auen | auen | 1 | 1 |
 | avt_bodenfaktor | Amt für Verkehr und Tiefbau | 1 | 3 |
 | avt_gesamtverkehrsmodell_2019_pub_v1 | Amt für Verkehr und Tiefbau | 1 | 4 |
-| avt_kantonsstrassen_pub_v1 | Amt für Verkehr und Tiefbau | 1 | 2 |
+| avt_kantonsstrassen_pub_v1 | Amt für Verkehr und Tiefbau | 2 | 2 |
 | avt_kantonsstrassen_staging_v1 | Amt für Verkehr und Tiefbau | 1 | 3 |
 | avt_kunstbauten_staging_v1 | Amt für Verkehr und Tiefbau | 1 | 1 |
 | avt_mehrjahresplanung_v2 | Amt für Verkehr und Tiefbau | 1 | 4 |
@@ -5106,6 +5107,20 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/avt_ausnahmetransportrouten_export_ai`
+
+---
+
+### avt_erarbeitung_grundstueck_kanton
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/avt_erarbeitung_grundstueck_kanton`
+
+**Quell-Tabellen:**
+- agi_mopublic_pub.mopublic_bodenbedeckung
+- agi_mopublic_pub.mopublic_grundstueck
+- agi_mopublic_pub.mopublic_grundstueck_proj
+- avt_kantonsstrassen_pub_v1.achse
 
 ---
 
