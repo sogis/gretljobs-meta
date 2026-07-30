@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 29.07.2026 06:30
+**Automatisch generiert am:** 30.07.2026 06:27
 **Anzahl Jobs:** 222
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 69
+**Anzahl:** 68
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -28,7 +28,6 @@
 | arp_auswertung_nutzungsplanung_pub | Aktiv | `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` | ~1-3h |
 | afu_igel | Aktiv | `H H(3-4) * * 0` | So ~3-4h |
 | avt_bodenfaktor_pub | Aktiv | `H H(2-5) * * 0` | So ~2-5h |
-| afu_onlinerisk_transfer | Aktiv | `H H(18-19) * * 1-5` | ~18-19h |
 | awjf_holznutzungsbewilligung_pub | Aktiv | `H H(1-3) * * 4` | Do ~1-3h |
 | alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Aktiv | `H H(3-4) * * 5` | Fr ~3-4h |
 | alw_strukturverbesserungen_pub | Aktiv | `H H(1-3) * * 6` | Sa ~1-3h |
@@ -114,7 +113,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 140
+**Anzahl:** 141
 
 | Job | Status |
 |-----|--------|
@@ -158,6 +157,7 @@
 | afu_naturgefahren_pub | Aktiv |
 | afu_naturgefahrenhinweiskarte_pub | Aktiv |
 | afu_oekomorphologie_csvimport | Aktiv |
+| afu_onlinerisk_transfer | Aktiv |
 | afu_qrcat_berechnungen | Aktiv |
 | afu_quellen_ungefasst_csvimport | Aktiv |
 | afu_quellen_ungefasst_pub | Aktiv |
@@ -681,31 +681,6 @@
 
 **Quell-Tabellen:**
 - neophyten
-
----
-
-### afu_onlinerisk_transfer
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/afu_onlinerisk_transfer`
-**Schedule:** `H H(18-19) * * 1-5` (~18-19h)
-
-**Quell-Tabellen:**
-- afu_online_risk.bereich
-- afu_online_risk.bereichstoff
-- afu_online_risk.betrieb
-- afu_online_risk.gebaeude
-- afu_online_risk.konstruktion
-- afu_online_risk.stammdaten
-- afu_online_risk.stoff
-- afu_online_risk.untersuchungseinheit
-- afu_online_risk.verordnung
-- afu_online_risk.verordnungsrelevanz
-- bereich
-- dbo.abfrage_log
-- gebaeude
-- untersuchungseinheit
 
 ---
 
@@ -3409,6 +3384,30 @@
 - bauwerk
 - oekomorph
 - oekomorphcsv
+
+---
+
+### afu_onlinerisk_transfer
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_onlinerisk_transfer`
+
+**Quell-Tabellen:**
+- afu_online_risk.bereich
+- afu_online_risk.bereichstoff
+- afu_online_risk.betrieb
+- afu_online_risk.gebaeude
+- afu_online_risk.konstruktion
+- afu_online_risk.stammdaten
+- afu_online_risk.stoff
+- afu_online_risk.untersuchungseinheit
+- afu_online_risk.verordnung
+- afu_online_risk.verordnungsrelevanz
+- bereich
+- dbo.abfrage_log
+- gebaeude
+- untersuchungseinheit
 
 ---
 
