@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 30.07.2026 06:27
+**Automatisch generiert am:** 31.07.2026 06:43
 **Anzahl Jobs:** 222
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 68
+**Anzahl:** 69
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -29,6 +29,7 @@
 | afu_igel | Aktiv | `H H(3-4) * * 0` | So ~3-4h |
 | avt_bodenfaktor_pub | Aktiv | `H H(2-5) * * 0` | So ~2-5h |
 | awjf_holznutzungsbewilligung_pub | Aktiv | `H H(1-3) * * 4` | Do ~1-3h |
+| agi_av_meldewesen_archiv | Aktiv | `H H(1-3) * * 5` | Fr ~1-3h |
 | alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Aktiv | `H H(3-4) * * 5` | Fr ~3-4h |
 | alw_strukturverbesserungen_pub | Aktiv | `H H(1-3) * * 6` | Sa ~1-3h |
 | agi_ch_gemeinden | Aktiv | `H H(1-3) 1 2 *` | 1. ~1-3h |
@@ -113,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 141
+**Anzahl:** 140
 
 | Job | Status |
 |-----|--------|
@@ -168,7 +169,6 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
-| agi_av_meldewesen_archiv | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
 | agi_dmav_fixpunkte3_import | Aktiv |
@@ -263,7 +263,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 250
+**Anzahl Schemas:** 251
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -306,7 +306,8 @@
 | afu_gewaesserschutz_pub | Amt für Umwelt | 1 | 1 |
 | afu_gewaesserschutz_pub_v3 | Amt für Umwelt | 3 | 2 |
 | afu_gewaesserschutz_staging_v3 | Amt für Umwelt | 1 | 10 |
-| afu_gewaesserschutz_zonen_areale_v1 | Amt für Umwelt | 2 | 6 |
+| afu_gewaesserschutz_zonen_areale_mgdm_v1 | Amt für Umwelt | 1 | 6 |
+| afu_gewaesserschutz_zonen_areale_v1 | Amt für Umwelt | 2 | 7 |
 | afu_grundlagendaten_ews_v1 | Amt für Umwelt | 1 | 4 |
 | afu_grundwassergeometrie_pub_v1 | Amt für Umwelt | 1 | 1 |
 | afu_grundwassergeometrie_v1 | Amt für Umwelt | 1 | 12 |
@@ -1009,6 +1010,21 @@
 
 **Ziel-Tabellen:**
 - agi_av_meldewesen_work_v1.meldungen_meldung
+
+---
+
+### agi_av_meldewesen_archiv
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/agi_av_meldewesen_archiv`
+**Schedule:** `H H(1-3) * * 5` (Fr ~1-3h)
+
+**Quell-Tabellen:**
+- agi_av_meldewesen_work_v1.meldungen_meldung
+
+**Ziel-Tabellen:**
+- agi_av_meldewesen_archiv_v1.meldungen_meldung
 
 ---
 
@@ -2917,14 +2933,29 @@
 - afu_gewaesserschutz_staging_v3.gewaesserschutz_zustroembereich
 - afu_gewaesserschutz_staging_v3.t_ili2db_basket
 - afu_gewaesserschutz_staging_v3.t_ili2db_dataset
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_dokument
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_gwsareal
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_gwszone
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_status
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.localiseduri
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.multilingualuri
 - afu_gewaesserschutz_zonen_areale_v1.gwszonen_dokument
 - afu_gewaesserschutz_zonen_areale_v1.gwszonen_gwsareal
 - afu_gewaesserschutz_zonen_areale_v1.gwszonen_gwszone
 - afu_gewaesserschutz_zonen_areale_v1.gwszonen_rechtsvorschriftgwsareal
 - afu_gewaesserschutz_zonen_areale_v1.gwszonen_rechtsvorschriftgwszone
 - afu_gewaesserschutz_zonen_areale_v1.gwszonen_status
+- afu_gewaesserschutz_zonen_areale_v1.t_ili2db_basket
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 - arp_nutzungsplanung_planregister_pub_v1.planregister_dokument
+
+**Ziel-Tabellen:**
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_dokument
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_gwsareal
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_gwszone
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.gwszonen_status
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.localiseduri
+- afu_gewaesserschutz_zonen_areale_mgdm_v1.multilingualuri
 
 ---
 
@@ -3697,20 +3728,6 @@
 - afu_stoerfallverordnung_v1.erdgasroehrenspeicher
 - afu_stoerfallverordnung_v1.konsultationsbereich
 - afu_stoerfallverordnung_v1.nationalstrasse
-
----
-
-### agi_av_meldewesen_archiv
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/agi_av_meldewesen_archiv`
-
-**Quell-Tabellen:**
-- agi_av_meldewesen_work_v1.meldungen_meldung
-
-**Ziel-Tabellen:**
-- agi_av_meldewesen_archiv_v1.meldungen_meldung
 
 ---
 
