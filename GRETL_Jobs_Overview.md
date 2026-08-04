@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 03.08.2026 07:26
-**Anzahl Jobs:** 222
+**Automatisch generiert am:** 04.08.2026 06:27
+**Anzahl Jobs:** 224
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 140
+**Anzahl:** 142
 
 | Job | Status |
 |-----|--------|
@@ -148,6 +148,8 @@
 | afu_isboden_csv_import | Aktiv |
 | afu_isboden_pub | Aktiv |
 | afu_karst_pub | Aktiv |
+| afu_klaeranlagen_import | Aktiv |
+| afu_klaeranlagen_pub | Aktiv |
 | afu_klimaanalyse_pub | Aktiv |
 | afu_klimaanalyse_windpfeile_pub | Aktiv |
 | afu_nabodat_import | Aktiv |
@@ -263,7 +265,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 251
+**Anzahl Schemas:** 252
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -322,6 +324,7 @@
 | afu_isboden_fff_pub | Amt für Umwelt | 1 | 1 |
 | afu_isboden_pub | Amt für Umwelt | 1 | 1 |
 | afu_karst_v1 | Amt für Umwelt | 1 | 6 |
+| afu_klaeranlagen_v1 | Amt für Umwelt | 2 | 2 |
 | afu_klimaanalyse_v1 | Amt für Umwelt | 1 | 12 |
 | afu_klimaanalyse_windpfeile_v1 | Amt für Umwelt | 1 | 12 |
 | afu_naturereigniskataster_mgdm_v1 | Amt für Umwelt | 1 | 15 |
@@ -368,7 +371,7 @@
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 38 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
@@ -3094,6 +3097,30 @@
 - afu_karst_v1.karst_subartesische_zone
 - afu_karst_v1.karst_verkarstung
 - afu_karst_v1.karst_verkarstung_verkarstungsgrad
+
+---
+
+### afu_klaeranlagen_import
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_klaeranlagen_import`
+
+**Quell-Tabellen:**
+- afu_klaeranlagen_v1.klaeranlagen_kleinklaeranlage_import
+
+---
+
+### afu_klaeranlagen_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_klaeranlagen_pub`
+
+**Quell-Tabellen:**
+- afu_klaeranlagen_v1.klaeranlagen_ara
+- afu_klaeranlagen_v1.klaeranlagen_kleinklaeranlage_import
+- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
 
 ---
 
