@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 04.08.2026 06:27
-**Anzahl Jobs:** 224
+**Automatisch generiert am:** 05.08.2026 06:27
+**Anzahl Jobs:** 226
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 142
+**Anzahl:** 144
 
 | Job | Status |
 |-----|--------|
@@ -255,6 +255,8 @@
 | hba_gebaeude_pub_v2 | Aktiv |
 | hba_grundstuecke_pub | Aktiv |
 | hba_grundstuecke_pub_v2 | Aktiv |
+| hba_immobilienportfolio_gebaeude_pub | Aktiv |
+| hba_immobilienportfolio_grundstuecke_pub | Aktiv |
 | ksta_landwert_pub | Aktiv |
 | sk_plakatstandorte | Aktiv |
 | xy_jenkinsfile_template_fileupload | Aktiv |
@@ -265,7 +267,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 252
+**Anzahl Schemas:** 255
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -364,7 +366,7 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 21 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
@@ -502,6 +504,9 @@
 | gesa_tigermueckenfundstellen_v1 | gesa_tigermueckenfundstellen_v1 | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
+| hba_immobilienportfolio_gebaeude_v2 | hba_immobilienportfolio_gebaeude_v2 | 1 | 1 |
+| hba_immobilienportfolio_grundstuecke_v2 | hba_immobilienportfolio_grundstuecke_v2 | 1 | 1 |
+| hba_immobilienportfolio_pub_v2 | hba_immobilienportfolio_pub_v2 | 2 | 5 |
 | hochmoore | hochmoore | 1 | 1 |
 | import | import | 1 | 9 |
 | importschema_xtf | importschema_xtf | 2 | 10 |
@@ -5708,6 +5713,43 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/hba_grundstuecke_pub_v2`
+
+---
+
+### hba_immobilienportfolio_gebaeude_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/hba_immobilienportfolio_gebaeude_pub`
+
+**Quell-Tabellen:**
+- agi_dm01avso24.bodenbedeckung_boflaeche
+- agi_dm01avso24.bodenbedeckung_gebaeudenummer
+- hba_immobilienportfolio_gebaeude_v2.csv_import_gebaeude
+- hba_immobilienportfolio_pub_v2.nutzungsart
+- hba_immobilienportfolio_pub_v2.prioritaetsstufe
+- hba_immobilienportfolio_pub_v2.vermoegensart
+
+**Ziel-Tabellen:**
+- hba_immobilienportfolio_pub_v2.immobilienprtflio_gebaeude
+
+---
+
+### hba_immobilienportfolio_grundstuecke_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/hba_immobilienportfolio_grundstuecke_pub`
+
+**Quell-Tabellen:**
+- agi_dm01avso24.liegenschaften_grundstueck
+- agi_dm01avso24.liegenschaften_liegenschaft
+- hba_immobilienportfolio_grundstuecke_v2.csv_import_grundstuecke
+- hba_immobilienportfolio_pub_v2.prioritaetsstufe
+- hba_immobilienportfolio_pub_v2.vermoegensart
+
+**Ziel-Tabellen:**
+- hba_immobilienportfolio_pub_v2.immobilienprtflio_grundsteucke
 
 ---
 
