@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 05.08.2026 06:27
+**Automatisch generiert am:** 06.08.2026 06:30
 **Anzahl Jobs:** 226
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 69
+**Anzahl:** 67
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -29,7 +29,6 @@
 | afu_igel | Aktiv | `H H(3-4) * * 0` | So ~3-4h |
 | avt_bodenfaktor_pub | Aktiv | `H H(2-5) * * 0` | So ~2-5h |
 | awjf_holznutzungsbewilligung_pub | Aktiv | `H H(1-3) * * 4` | Do ~1-3h |
-| agi_av_meldewesen_archiv | Aktiv | `H H(1-3) * * 5` | Fr ~1-3h |
 | alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Aktiv | `H H(3-4) * * 5` | Fr ~3-4h |
 | alw_strukturverbesserungen_pub | Aktiv | `H H(1-3) * * 6` | Sa ~1-3h |
 | agi_ch_gemeinden | Aktiv | `H H(1-3) 1 2 *` | 1. ~1-3h |
@@ -51,7 +50,6 @@
 | agi_av_export_ai | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gb_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gwr_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
-| agi_av_meldewesen | Aktiv | `H H(3-4) * * *` | ~3-4h |
 | agi_av_mocheckso | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_dmav_fixpunkte2_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_dmav_fixpunktelv_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -114,7 +112,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 144
+**Anzahl:** 146
 
 | Job | Status |
 |-----|--------|
@@ -171,6 +169,8 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
+| agi_av_meldewesen | Aktiv |
+| agi_av_meldewesen_archiv | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
 | agi_dmav_fixpunkte3_import | Aktiv |
@@ -996,43 +996,6 @@
 **Ziel-Tabellen:**
 - agi_av_kaso_abgleich_v1.differenzen_staging
 - agi_av_kaso_abgleich_v1.uebersicht_des_vergleichs_staging
-
----
-
-### agi_av_meldewesen
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/agi_av_meldewesen`
-**Schedule:** `H H(3-4) * * *` (~3-4h)
-
-**Quell-Tabellen:**
-- agi_av_meldewesen_import_v1.meldungen_meldung
-- agi_av_meldewesen_work_v1.meldungen_meldung
-- agi_dm01avso24.gemeindegrenzen_gemeinde
-- agi_dm01avso24.gemeindegrenzen_gemeindegrenze
-- agi_dm01avso24.liegenschaften_bergwerk
-- agi_dm01avso24.liegenschaften_grundstueck
-- agi_dm01avso24.liegenschaften_liegenschaft
-- agi_dm01avso24.liegenschaften_selbstrecht
-
-**Ziel-Tabellen:**
-- agi_av_meldewesen_work_v1.meldungen_meldung
-
----
-
-### agi_av_meldewesen_archiv
-
-**Status:** Aktiv
-**Trigger:** cron
-**Pfad:** `../gretljobs/agi_av_meldewesen_archiv`
-**Schedule:** `H H(1-3) * * 5` (Fr ~1-3h)
-
-**Quell-Tabellen:**
-- agi_av_meldewesen_work_v1.meldungen_meldung
-
-**Ziel-Tabellen:**
-- agi_av_meldewesen_archiv_v1.meldungen_meldung
 
 ---
 
@@ -3760,6 +3723,41 @@
 - afu_stoerfallverordnung_v1.erdgasroehrenspeicher
 - afu_stoerfallverordnung_v1.konsultationsbereich
 - afu_stoerfallverordnung_v1.nationalstrasse
+
+---
+
+### agi_av_meldewesen
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/agi_av_meldewesen`
+
+**Quell-Tabellen:**
+- agi_av_meldewesen_import_v1.meldungen_meldung
+- agi_av_meldewesen_work_v1.meldungen_meldung
+- agi_dm01avso24.gemeindegrenzen_gemeinde
+- agi_dm01avso24.gemeindegrenzen_gemeindegrenze
+- agi_dm01avso24.liegenschaften_bergwerk
+- agi_dm01avso24.liegenschaften_grundstueck
+- agi_dm01avso24.liegenschaften_liegenschaft
+- agi_dm01avso24.liegenschaften_selbstrecht
+
+**Ziel-Tabellen:**
+- agi_av_meldewesen_work_v1.meldungen_meldung
+
+---
+
+### agi_av_meldewesen_archiv
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/agi_av_meldewesen_archiv`
+
+**Quell-Tabellen:**
+- agi_av_meldewesen_work_v1.meldungen_meldung
+
+**Ziel-Tabellen:**
+- agi_av_meldewesen_archiv_v1.meldungen_meldung
 
 ---
 
