@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 06.08.2026 06:30
-**Anzahl Jobs:** 226
+**Automatisch generiert am:** 07.08.2026 05:39
+**Anzahl Jobs:** 227
 
 ## Inhaltsverzeichnis
 
@@ -112,7 +112,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 146
+**Anzahl:** 147
 
 | Job | Status |
 |-----|--------|
@@ -191,6 +191,7 @@
 | alw_gewaesserraum_pub | Aktiv |
 | alw_strukturverbesserungen_suissemelio | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
+| arp_fruchtfolgeflaechen_kompensation_pub | Aktiv |
 | arp_isos_inventar_pub | Aktiv |
 | arp_kulturgueterschutzobjekte_pub | Aktiv |
 | arp_mjpnl_auszahlung | Aktiv |
@@ -267,7 +268,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 255
+**Anzahl Schemas:** 257
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -408,6 +409,7 @@
 | arp_auswertung_nutzungsplanung_pub_v1 | Amt für Raumplanung | 3 | 6 |
 | arp_bauzonengrenzen_pub | Amt für Raumplanung | 2 | 1 |
 | arp_fledermaus_v1 | Amt für Raumplanung | 1 | 1 |
+| arp_fruchtfolgeflaechen_kompensation_v1 | Amt für Raumplanung | 1 | 4 |
 | arp_inventar_historische_verkehrswege_v1 | Amt für Raumplanung | 1 | 2 |
 | arp_isos_inventar_pub_v2 | Amt für Raumplanung | 1 | 4 |
 | arp_isos_inventar_v2 | Amt für Raumplanung | 1 | 1 |
@@ -501,6 +503,7 @@
 | editdb | editdb | 4 | 9 |
 | export | export | 1 | 46 |
 | flachmoore | flachmoore | 1 | 1 |
+| gesa_gesundheitseinrichtungen_staging_v1 | gesa_gesundheitseinrichtungen_staging_v1 | 1 | 1 |
 | gesa_tigermueckenfundstellen_v1 | gesa_tigermueckenfundstellen_v1 | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
@@ -4139,6 +4142,20 @@
 
 ---
 
+### arp_fruchtfolgeflaechen_kompensation_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/arp_fruchtfolgeflaechen_kompensation_pub`
+
+**Quell-Tabellen:**
+- arp_fruchtfolgeflaechen_kompensation_v1.kompensation_beanspruchungsflaeche
+- arp_fruchtfolgeflaechen_kompensation_v1.kompensation_gesuchsteller
+- arp_fruchtfolgeflaechen_kompensation_v1.kompensation_kompensationsflaeche
+- arp_fruchtfolgeflaechen_kompensation_v1.kompensation_projekt
+
+---
+
 ### arp_isos_inventar_pub
 
 **Status:** Aktiv
@@ -5652,6 +5669,12 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/gesa_gesundheitseinrichtungen_pub`
+
+**Quell-Tabellen:**
+- gesa_gesundheitseinrichtungen_staging_v1.gesundheitseinrichtung
+
+**Ziel-Tabellen:**
+- gesa_gesundheitseinrichtungen_staging_v1.gesundheitseinrichtung
 
 ---
 
