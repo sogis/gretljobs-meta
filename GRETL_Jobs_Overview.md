@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 11.08.2026 05:08
+**Automatisch generiert am:** 12.08.2026 05:36
 **Anzahl Jobs:** 227
 
 ## Inhaltsverzeichnis
@@ -503,7 +503,7 @@
 | editdb | editdb | 4 | 9 |
 | export | export | 1 | 46 |
 | flachmoore | flachmoore | 1 | 1 |
-| gesa_gesundheitseinrichtungen_staging_v1 | gesa_gesundheitseinrichtungen_staging_v1 | 1 | 1 |
+| gesa_gesundheitseinrichtungen_staging_v1 | gesa_gesundheitseinrichtungen_staging_v1 | 1 | 2 |
 | gesa_tigermueckenfundstellen_v1 | gesa_tigermueckenfundstellen_v1 | 1 | 1 |
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
@@ -5672,6 +5672,7 @@
 
 **Quell-Tabellen:**
 - gesa_gesundheitseinrichtungen_staging_v1.gesundheitseinrichtung
+- gesa_gesundheitseinrichtungen_staging_v1.gesundheitseinrichtung_typ
 
 **Ziel-Tabellen:**
 - gesa_gesundheitseinrichtungen_staging_v1.gesundheitseinrichtung
