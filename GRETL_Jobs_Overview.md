@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 12.08.2026 05:36
+**Automatisch generiert am:** 13.08.2026 05:39
 **Anzahl Jobs:** 227
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 67
+**Anzahl:** 68
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -50,6 +50,7 @@
 | agi_av_export_ai | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gb_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_av_gwr_abgleich_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
+| agi_av_meldewesen | Aktiv | `H H(3-4) * * *` | ~3-4h |
 | agi_av_mocheckso | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_dmav_fixpunkte2_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_dmav_fixpunktelv_import | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -112,7 +113,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 147
+**Anzahl:** 146
 
 | Job | Status |
 |-----|--------|
@@ -169,7 +170,6 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
-| agi_av_meldewesen | Aktiv |
 | agi_av_meldewesen_archiv | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
@@ -999,6 +999,28 @@
 **Ziel-Tabellen:**
 - agi_av_kaso_abgleich_v1.differenzen_staging
 - agi_av_kaso_abgleich_v1.uebersicht_des_vergleichs_staging
+
+---
+
+### agi_av_meldewesen
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/agi_av_meldewesen`
+**Schedule:** `H H(3-4) * * *` (~3-4h)
+
+**Quell-Tabellen:**
+- agi_av_meldewesen_import_v1.meldungen_meldung
+- agi_av_meldewesen_work_v1.meldungen_meldung
+- agi_dm01avso24.gemeindegrenzen_gemeinde
+- agi_dm01avso24.gemeindegrenzen_gemeindegrenze
+- agi_dm01avso24.liegenschaften_bergwerk
+- agi_dm01avso24.liegenschaften_grundstueck
+- agi_dm01avso24.liegenschaften_liegenschaft
+- agi_dm01avso24.liegenschaften_selbstrecht
+
+**Ziel-Tabellen:**
+- agi_av_meldewesen_work_v1.meldungen_meldung
 
 ---
 
@@ -3726,27 +3748,6 @@
 - afu_stoerfallverordnung_v1.erdgasroehrenspeicher
 - afu_stoerfallverordnung_v1.konsultationsbereich
 - afu_stoerfallverordnung_v1.nationalstrasse
-
----
-
-### agi_av_meldewesen
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/agi_av_meldewesen`
-
-**Quell-Tabellen:**
-- agi_av_meldewesen_import_v1.meldungen_meldung
-- agi_av_meldewesen_work_v1.meldungen_meldung
-- agi_dm01avso24.gemeindegrenzen_gemeinde
-- agi_dm01avso24.gemeindegrenzen_gemeindegrenze
-- agi_dm01avso24.liegenschaften_bergwerk
-- agi_dm01avso24.liegenschaften_grundstueck
-- agi_dm01avso24.liegenschaften_liegenschaft
-- agi_dm01avso24.liegenschaften_selbstrecht
-
-**Ziel-Tabellen:**
-- agi_av_meldewesen_work_v1.meldungen_meldung
 
 ---
 
