@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 13.08.2026 05:39
-**Anzahl Jobs:** 227
+**Automatisch generiert am:** 14.08.2026 05:37
+**Anzahl Jobs:** 228
 
 ## Inhaltsverzeichnis
 
@@ -113,7 +113,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 146
+**Anzahl:** 147
 
 | Job | Status |
 |-----|--------|
@@ -190,6 +190,7 @@
 | alw_futterbaulinien_pub | Aktiv |
 | alw_gewaesserraum_pub | Aktiv |
 | alw_strukturverbesserungen_suissemelio | Aktiv |
+| alw_tiergesundheit_eindaemmungsbarrieren_pub | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
 | arp_fruchtfolgeflaechen_kompensation_pub | Aktiv |
 | arp_isos_inventar_pub | Aktiv |
@@ -268,7 +269,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 257
+**Anzahl Schemas:** 258
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -398,6 +399,7 @@
 | alw_gewaesserraum_v1 | Amt für Landwirtschaft | 2 | 1 |
 | alw_landwirtschaft_tierhaltung_v1 | Amt für Landwirtschaft | 1 | 11 |
 | alw_strukturverbesserungen | Amt für Landwirtschaft | 2 | 51 |
+| alw_tiergesundheit_eindaemmungsbarrieren_v1 | Amt für Landwirtschaft | 1 | 1 |
 | alw_tiergesundheit_pflanzengesundheit_massnahmen_v1 | Amt für Landwirtschaft | 1 | 3 |
 | alw_uebersteuerung_fff_v2 | Amt für Landwirtschaft | 1 | 1 |
 | alw_zonengrenzen | Amt für Landwirtschaft | 2 | 6 |
@@ -1838,7 +1840,6 @@
 
 **Quell-Tabellen:**
 - ST_Read
-- bln_swisstopo
 - pubdb.ada_denkmalschutz_pub_v1.denkmal_polygon
 - pubdb.ada_denkmalschutz_pub_v1.denkmal_punkt
 - pubdb.agi_mopublic_pub.mopublic_bodenbedeckung
@@ -4124,6 +4125,17 @@
 - alw_strukturverbesserungen.raeumlicheelemnte_wege_bruecke_lehnenviadukt
 - alw_strukturverbesserungen.raeumlicheelemnte_wegebau_linie
 - alw_strukturverbesserungen.raeumlicheelemnte_wv_leitung_wasserversorgung
+
+---
+
+### alw_tiergesundheit_eindaemmungsbarrieren_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/alw_tiergesundheit_eindaemmungsbarrieren_pub`
+
+**Quell-Tabellen:**
+- alw_tiergesundheit_eindaemmungsbarrieren_v1.tiergesundheit_eindaemmungsbarrieren
 
 ---
 
