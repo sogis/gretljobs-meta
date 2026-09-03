@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 02.09.2026 08:27
+**Automatisch generiert am:** 03.09.2026 08:35
 **Anzahl Jobs:** 228
 
 ## Inhaltsverzeichnis
@@ -14,7 +14,7 @@
 
 ## Zeitgesteuerte Jobs (Cron)
 
-**Anzahl:** 68
+**Anzahl:** 69
 
 | Job | Status | Cron Schedule | Beschreibung |
 |-----|--------|---------------|--------------|
@@ -64,6 +64,7 @@
 | agi_kartenkatalog_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | agi_stac | Aktiv | `H H(5-6) * * *` | ~5-6h |
 | alw_landwirtschaft_tierhaltung_pub | Aktiv | `H H(2-4) * * *` | ~2-4h |
+| alw_tiergesundheit_eindaemmungsbarrieren_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | alw_tiergesundheit_pflanzengesundheit_massnahmen_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_agglomerationsprogramme_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
 | arp_arbeitszonenbewirtschaftung_inventar_pub | Aktiv | `H H(1-3) * * *` | ~1-3h |
@@ -113,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 147
+**Anzahl:** 146
 
 | Job | Status |
 |-----|--------|
@@ -190,7 +191,6 @@
 | alw_futterbaulinien_pub | Aktiv |
 | alw_gewaesserraum_pub | Aktiv |
 | alw_strukturverbesserungen_suissemelio | Aktiv |
-| alw_tiergesundheit_eindaemmungsbarrieren_pub | Aktiv |
 | alw_zonengrenzen_import | Aktiv |
 | arp_fruchtfolgeflaechen_kompensation_pub | Aktiv |
 | arp_isos_inventar_pub | Aktiv |
@@ -1376,6 +1376,18 @@
 - alw_strukturverbesserungen.wasserversorgung_punkte
 - alw_strukturverbesserungen.wege
 - alw_strukturverbesserungen.wiederherstellung_punkte
+
+---
+
+### alw_tiergesundheit_eindaemmungsbarrieren_pub
+
+**Status:** Aktiv
+**Trigger:** cron
+**Pfad:** `../gretljobs/alw_tiergesundheit_eindaemmungsbarrieren_pub`
+**Schedule:** `H H(1-3) * * *` (~1-3h)
+
+**Quell-Tabellen:**
+- alw_tiergesundheit_eindaemmungsbarrieren_v1.tiergesundheit_eindaemmungsbarrieren
 
 ---
 
@@ -4125,17 +4137,6 @@
 - alw_strukturverbesserungen.raeumlicheelemnte_wege_bruecke_lehnenviadukt
 - alw_strukturverbesserungen.raeumlicheelemnte_wegebau_linie
 - alw_strukturverbesserungen.raeumlicheelemnte_wv_leitung_wasserversorgung
-
----
-
-### alw_tiergesundheit_eindaemmungsbarrieren_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/alw_tiergesundheit_eindaemmungsbarrieren_pub`
-
-**Quell-Tabellen:**
-- alw_tiergesundheit_eindaemmungsbarrieren_v1.tiergesundheit_eindaemmungsbarrieren
 
 ---
 
