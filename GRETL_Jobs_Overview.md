@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 07.09.2026 08:59
+**Automatisch generiert am:** 08.09.2026 08:38
 **Anzahl Jobs:** 228
 
 ## Inhaltsverzeichnis
@@ -5780,6 +5780,7 @@
 **Quell-Tabellen:**
 - agi_dm01avso24.liegenschaften_grundstueck
 - agi_dm01avso24.liegenschaften_liegenschaft
+- agi_dm01avso24.liegenschaften_selbstrecht
 - hba_immobilienportfolio_grundstuecke_v2.csv_import_grundstuecke
 - hba_immobilienportfolio_pub_v2.prioritaetsstufe
 - hba_immobilienportfolio_pub_v2.vermoegensart
