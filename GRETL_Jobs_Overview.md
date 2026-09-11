@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 10.09.2026 08:41
+**Automatisch generiert am:** 11.09.2026 08:38
 **Anzahl Jobs:** 228
 
 ## Inhaltsverzeichnis
@@ -511,7 +511,7 @@
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hba_immobilienportfolio_gebaeude_v2 | hba_immobilienportfolio_gebaeude_v2 | 1 | 1 |
 | hba_immobilienportfolio_grundstuecke_v2 | hba_immobilienportfolio_grundstuecke_v2 | 1 | 1 |
-| hba_immobilienportfolio_pub_v2 | hba_immobilienportfolio_pub_v2 | 2 | 5 |
+| hba_immobilienportfolio_pub_v2 | hba_immobilienportfolio_pub_v2 | 2 | 6 |
 | hochmoore | hochmoore | 1 | 1 |
 | import | import | 1 | 9 |
 | importschema_xtf | importschema_xtf | 2 | 10 |
@@ -5786,7 +5786,8 @@
 - hba_immobilienportfolio_pub_v2.vermoegensart
 
 **Ziel-Tabellen:**
-- hba_immobilienportfolio_pub_v2.immobilienprtflio_grundsteucke
+- hba_immobilienportfolio_pub_v2.immobilienprtflio_baurecht
+- hba_immobilienportfolio_pub_v2.immobilienprtflio_grundstuecke
 
 ---
 
