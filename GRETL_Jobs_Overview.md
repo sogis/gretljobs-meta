@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 13.09.2026 09:04
+**Automatisch generiert am:** 14.09.2026 09:37
 **Anzahl Jobs:** 228
 
 ## Inhaltsverzeichnis
@@ -26,7 +26,7 @@
 | afu_neophyten_pub | Aktiv | `H 6 * * *` | ~6:xx |
 | agi_av_dm01_mopublic_pub | Aktiv | `00 21 * * *` | 21:00 |
 | arp_auswertung_nutzungsplanung_pub | Aktiv | `H H(1-3) 31 1,3,4,7,8,10,12 *\nH H(1-3) 30 4,6,9,11 *\nH H(1-3) 28,29 2 *` | ~1-3h |
-| afu_igel | Aktiv | `H H(3-4) * * 0` | So ~3-4h |
+| afu_igel | Aktiv | `H H(4-5) * * 0` | So ~4-5h |
 | avt_bodenfaktor_pub | Aktiv | `H H(2-5) * * 0` | So ~2-5h |
 | awjf_holznutzungsbewilligung_pub | Aktiv | `H H(1-3) * * 4` | Do ~1-3h |
 | alw_landwirtschaft_tierhaltung_import_bodenbedeckung | Aktiv | `H H(3-4) * * 5` | Fr ~3-4h |
@@ -651,7 +651,7 @@
 **Status:** Aktiv
 **Trigger:** cron
 **Pfad:** `../gretljobs/afu_igel`
-**Schedule:** `H H(3-4) * * 0` (So ~3-4h)
+**Schedule:** `H H(4-5) * * 0` (So ~4-5h)
 
 **Quell-Tabellen:**
 - LATERAL
