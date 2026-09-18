@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 17.09.2026 09:14
+**Automatisch generiert am:** 18.09.2026 08:48
 **Anzahl Jobs:** 228
 
 ## Inhaltsverzeichnis
@@ -269,7 +269,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 258
+**Anzahl Schemas:** 259
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -332,6 +332,7 @@
 | afu_klimaanalyse_v1 | Amt für Umwelt | 1 | 12 |
 | afu_klimaanalyse_windpfeile_v1 | Amt für Umwelt | 1 | 12 |
 | afu_naturereigniskataster_mgdm_v1 | Amt für Umwelt | 1 | 15 |
+| afu_naturgefahren_alte_dokumente_v2 | Amt für Umwelt | 1 | 1 |
 | afu_naturgefahren_beurteilungsgebiet_v1 | Amt für Umwelt | 1 | 10 |
 | afu_naturgefahren_beurteilungsgebiet_v2 | Amt für Umwelt | 1 | 7 |
 | afu_naturgefahren_mgdm_v1 | Amt für Umwelt | 1 | 3 |
@@ -3233,6 +3234,7 @@
 - afu_gefahrenkartierung.gefahrenkartirung_prozessquelle_wasser
 - afu_gefahrenkartierung.gefahrenkartirung_punktsignatur
 - afu_gefahrenkartierung.gefahrenkartirung_ueberflutungskarte
+- afu_naturgefahren_alte_dokumente_v2.alte_dokumente
 - afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_absenkung
 - afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_einsturz
 - afu_naturgefahren_beurteilungsgebiet_v1.erhebungsgebiet_fels_berg_sturz
@@ -3310,7 +3312,6 @@
 - afu_naturgefahren_v1.t_ili2db_dataset
 - afu_naturgefahren_v1.teilauftrag
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- auf
 - gk_poly
 - node_parent_root_map
 - poly_cleanup
