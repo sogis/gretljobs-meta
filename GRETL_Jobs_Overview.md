@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 05.10.2026 11:12
-**Anzahl Jobs:** 228
+**Automatisch generiert am:** 06.10.2026 11:02
+**Anzahl Jobs:** 229
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 146
+**Anzahl:** 147
 
 | Job | Status |
 |-----|--------|
@@ -232,6 +232,7 @@
 | avt_oev_gueteklassen_import | Aktiv |
 | avt_oevkov | Aktiv |
 | avt_strassenlaerm | Aktiv |
+| avt_strassenlaermflaechen_pub | Aktiv |
 | avt_strassenzustand_pub | Aktiv |
 | avt_verkehrszaehlstellen_pub | Aktiv |
 | awa_energieberater_pub | Aktiv |
@@ -5316,6 +5317,14 @@
 - avt_strassenlaerm_v1.codelisten_pointofdetermination_catalogue
 - avt_strassenlaerm_v1.immission_strasse_dispersion_calculation
 - avt_strassenlaerm_v1.immission_strasse_pointofdetermination
+
+---
+
+### avt_strassenlaermflaechen_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/avt_strassenlaermflaechen_pub`
 
 ---
 
