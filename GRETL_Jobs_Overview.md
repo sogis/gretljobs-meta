@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 08.10.2026 11:10
+**Automatisch generiert am:** 09.10.2026 11:09
 **Anzahl Jobs:** 229
 
 ## Inhaltsverzeichnis
@@ -270,7 +270,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 259
+**Anzahl Schemas:** 260
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -463,6 +463,7 @@
 | avt_oeffentlicher_verkehr | Amt für Verkehr und Tiefbau | 1 | 2 |
 | avt_oeffentlicher_verkehr_pub | Amt für Verkehr und Tiefbau | 1 | 1 |
 | avt_strassenlaerm_v1 | Amt für Verkehr und Tiefbau | 1 | 5 |
+| avt_strassenlaermflaechen_pub_v1 | Amt für Verkehr und Tiefbau | 1 | 2 |
 | avt_strassenzustand_staging_v1 | Amt für Verkehr und Tiefbau | 1 | 1 |
 | avt_verkehrszaehlstellen_v1 | Amt für Verkehr und Tiefbau | 1 | 6 |
 | awa_energieberater_v1 | awa_energieberater_v1 | 1 | 5 |
@@ -5325,6 +5326,10 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/avt_strassenlaermflaechen_pub`
+
+**Ziel-Tabellen:**
+- avt_strassenlaermflaechen_pub_v1.strassenlarmflche_strassenlaermflaeche_nacht
+- avt_strassenlaermflaechen_pub_v1.strassenlarmflche_strassenlaermflaeche_tag
 
 ---
 
