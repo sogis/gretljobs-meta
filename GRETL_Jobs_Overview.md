@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 13.10.2026 11:27
+**Automatisch generiert am:** 14.10.2026 09:19
 **Anzahl Jobs:** 229
 
 ## Inhaltsverzeichnis
@@ -270,7 +270,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 260
+**Anzahl Schemas:** 261
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -401,7 +401,8 @@
 | alw_gewaesserraum_v1 | Amt für Landwirtschaft | 2 | 1 |
 | alw_landwirtschaft_tierhaltung_v1 | Amt für Landwirtschaft | 1 | 11 |
 | alw_strukturverbesserungen | Amt für Landwirtschaft | 2 | 51 |
-| alw_tiergesundheit_eindaemmungsbarrieren_v1 | Amt für Landwirtschaft | 1 | 1 |
+| alw_tiergesundheit_eindaemmungsbarrieren_pub_v2 | Amt für Landwirtschaft | 1 | 2 |
+| alw_tiergesundheit_eindaemmungsbarrieren_v2 | Amt für Landwirtschaft | 1 | 2 |
 | alw_tiergesundheit_pflanzengesundheit_massnahmen_v1 | Amt für Landwirtschaft | 1 | 3 |
 | alw_uebersteuerung_fff_v2 | Amt für Landwirtschaft | 1 | 1 |
 | alw_zonengrenzen | Amt für Landwirtschaft | 2 | 6 |
@@ -1390,7 +1391,14 @@
 **Schedule:** `H H(1-3) * * *` (~1-3h)
 
 **Quell-Tabellen:**
-- alw_tiergesundheit_eindaemmungsbarrieren_v1.tiergesundheit_eindaemmungsbarrieren
+- alw_tiergesundheit_eindaemmungsbarrieren_pub_v2.modinfo
+- alw_tiergesundheit_eindaemmungsbarrieren_pub_v2.tiergesundheit_eindaemmungsbarrieren
+- alw_tiergesundheit_eindaemmungsbarrieren_v2.modinfo
+- alw_tiergesundheit_eindaemmungsbarrieren_v2.tiergesundheit_eindaemmungsbarrieren
+
+**Ziel-Tabellen:**
+- alw_tiergesundheit_eindaemmungsbarrieren_pub_v2.modinfo
+- alw_tiergesundheit_eindaemmungsbarrieren_v2.modinfo
 
 ---
 
