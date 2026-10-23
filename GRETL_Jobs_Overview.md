@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 22.10.2026 09:11
-**Anzahl Jobs:** 229
+**Automatisch generiert am:** 23.10.2026 09:08
+**Anzahl Jobs:** 230
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 147
+**Anzahl:** 148
 
 | Job | Status |
 |-----|--------|
@@ -252,6 +252,7 @@
 | awjf_waldplan_pub | Aktiv |
 | awjf_waldwanderwege_pub | Aktiv |
 | awjf_wildtiersensible_gebiete_pub | Aktiv |
+| dsbjd_ebauso_geschaefte | Aktiv |
 | gesa_gesundheitseinrichtungen_pub | Aktiv |
 | gesa_tigermueckenfundstellen_pub | Aktiv |
 | hba_gebaeude_pub | Aktiv |
@@ -270,7 +271,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 261
+**Anzahl Schemas:** 263
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -504,6 +505,8 @@
 | capi_p | capi_p | 1 | 1 |
 | dbo | dbo | 1 | 1 |
 | dsbjd_ausgleichsabgabe_v1 | dsbjd_ausgleichsabgabe_v1 | 1 | 1 |
+| dsbjd_ebauso_geschaefte_import_v1 | dsbjd_ebauso_geschaefte_import_v1 | 1 | 1 |
+| dsbjd_ebauso_geschaefte_v1 | dsbjd_ebauso_geschaefte_v1 | 1 | 1 |
 | dsbjd_ebauso_rahmenmodell_pub_v1 | dsbjd_ebauso_rahmenmodell_pub_v1 | 1 | 5 |
 | dsbjd_ebauso_rahmenmodell_stage_v1 | dsbjd_ebauso_rahmenmodell_stage_v1 | 1 | 3 |
 | editdb | editdb | 4 | 9 |
@@ -5698,6 +5701,22 @@
 **Quell-Tabellen:**
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_fokus_typ
 - awjf_wildtiersensible_gebiete_v1.wildtrsnsbl_gbete_gebiet
+
+---
+
+### dsbjd_ebauso_geschaefte
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/dsbjd_ebauso_geschaefte`
+
+**Quell-Tabellen:**
+- dsbjd_ebauso_geschaefte_import_v1.geschaefte_geschaeft
+- dsbjd_ebauso_geschaefte_v1.geschaefte_geschaeft
+
+**Ziel-Tabellen:**
+- SET
+- dsbjd_ebauso_geschaefte_v1.geschaefte_geschaeft
 
 ---
 
