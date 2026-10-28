@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 27.10.2026 09:38
-**Anzahl Jobs:** 230
+**Automatisch generiert am:** 28.10.2026 10:22
+**Anzahl Jobs:** 229
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 148
+**Anzahl:** 147
 
 | Job | Status |
 |-----|--------|
@@ -223,7 +223,6 @@
 | arp_wildruhezonen_export_ai | Aktiv |
 | avt_ausnahmetransportrouten_export_ai | Aktiv |
 | avt_erarbeitung_grundstueck_kanton | Aktiv |
-| avt_groblaermkataster_pub | Aktiv |
 | avt_gvm_import | Aktiv |
 | avt_kantonsstrassen_pub | Aktiv |
 | avt_kunstbauten_pub | Aktiv |
@@ -5212,14 +5211,6 @@
 - agi_mopublic_pub.mopublic_grundstueck
 - agi_mopublic_pub.mopublic_grundstueck_proj
 - avt_kantonsstrassen_pub_v1.achse
-
----
-
-### avt_groblaermkataster_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/avt_groblaermkataster_pub`
 
 ---
 
