@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 29.10.2026 10:43
+**Automatisch generiert am:** 30.10.2026 10:43
 **Anzahl Jobs:** 229
 
 ## Inhaltsverzeichnis
@@ -516,8 +516,8 @@
 | hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
 | hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hba_immobilienportfolio_gebaeude_v2 | hba_immobilienportfolio_gebaeude_v2 | 1 | 1 |
-| hba_immobilienportfolio_grundstuecke_v2 | hba_immobilienportfolio_grundstuecke_v2 | 1 | 1 |
 | hba_immobilienportfolio_pub_v2 | hba_immobilienportfolio_pub_v2 | 2 | 6 |
+| hba_immobilienportfolio_v2 | hba_immobilienportfolio_v2 | 2 | 4 |
 | hochmoore | hochmoore | 1 | 1 |
 | import | import | 1 | 9 |
 | importschema_xtf | importschema_xtf | 2 | 10 |
@@ -5794,13 +5794,16 @@
 **Quell-Tabellen:**
 - agi_dm01avso24.bodenbedeckung_boflaeche
 - agi_dm01avso24.bodenbedeckung_gebaeudenummer
-- hba_immobilienportfolio_gebaeude_v2.csv_import_gebaeude
+- hba_immobilienportfolio_gebaeude_v2.gebaeude_csv_import
 - hba_immobilienportfolio_pub_v2.nutzungsart
 - hba_immobilienportfolio_pub_v2.prioritaetsstufe
 - hba_immobilienportfolio_pub_v2.vermoegensart
+- hba_immobilienportfolio_v2.gebaeude_csv_import
+- hba_immobilienportfolio_v2.gebaeude_gebaeudemandatory
 
 **Ziel-Tabellen:**
 - hba_immobilienportfolio_pub_v2.immobilienprtflio_gebaeude
+- hba_immobilienportfolio_v2.gebaeude_gebaeudemandatory
 
 ---
 
@@ -5814,13 +5817,15 @@
 - agi_dm01avso24.liegenschaften_grundstueck
 - agi_dm01avso24.liegenschaften_liegenschaft
 - agi_dm01avso24.liegenschaften_selbstrecht
-- hba_immobilienportfolio_grundstuecke_v2.csv_import_grundstuecke
 - hba_immobilienportfolio_pub_v2.prioritaetsstufe
 - hba_immobilienportfolio_pub_v2.vermoegensart
+- hba_immobilienportfolio_v2.grundstuecke_csv_import
+- hba_immobilienportfolio_v2.grundstuecke_grundstueckemandatory
 
 **Ziel-Tabellen:**
 - hba_immobilienportfolio_pub_v2.immobilienprtflio_baurecht
 - hba_immobilienportfolio_pub_v2.immobilienprtflio_grundstuecke
+- hba_immobilienportfolio_v2.grundstuecke_grundstueckemandatory
 
 ---
 
