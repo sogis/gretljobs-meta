@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 02.11.2026 12:01
+**Automatisch generiert am:** 03.11.2026 11:39
 **Anzahl Jobs:** 229
 
 ## Inhaltsverzeichnis
@@ -5817,12 +5817,14 @@
 - agi_dm01avso24.liegenschaften_grundstueck
 - agi_dm01avso24.liegenschaften_liegenschaft
 - agi_dm01avso24.liegenschaften_selbstrecht
+- hba_immobilienportfolio_pub_v2.immobilienprtflio_baurecht
 - hba_immobilienportfolio_pub_v2.prioritaetsstufe
 - hba_immobilienportfolio_pub_v2.vermoegensart
 - hba_immobilienportfolio_v2.grundstuecke_csv_import
 - hba_immobilienportfolio_v2.grundstuecke_grundstueckemandatory
 
 **Ziel-Tabellen:**
+- Information
 - hba_immobilienportfolio_pub_v2.immobilienprtflio_baurecht
 - hba_immobilienportfolio_pub_v2.immobilienprtflio_grundstuecke
 - hba_immobilienportfolio_v2.grundstuecke_grundstueckemandatory
