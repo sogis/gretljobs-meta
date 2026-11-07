@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 06.11.2026 11:51
-**Anzahl Jobs:** 229
+**Automatisch generiert am:** 07.11.2026 10:53
+**Anzahl Jobs:** 227
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 147
+**Anzahl:** 145
 
 | Job | Status |
 |-----|--------|
@@ -145,8 +145,6 @@
 | afu_hydro_messstationen_pub | Aktiv |
 | afu_hydrologische_einzugsgebiete_pub | Aktiv |
 | afu_immissionskarten_luft_pub | Aktiv |
-| afu_isboden_csv_import | Aktiv |
-| afu_isboden_pub | Aktiv |
 | afu_karst_pub | Aktiv |
 | afu_klaeranlagen_import | Aktiv |
 | afu_klaeranlagen_pub | Aktiv |
@@ -270,7 +268,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 263
+**Anzahl Schemas:** 261
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -324,8 +322,6 @@
 | afu_hydrologische_einzugsgebiete_v2 | Amt für Umwelt | 1 | 3 |
 | afu_igel | Amt für Umwelt | 1 | 2 |
 | afu_immissionskarten_luft_v1 | Amt für Umwelt | 1 | 1 |
-| afu_isboden | Amt für Umwelt | 2 | 16 |
-| afu_isboden_csv_import_v1 | Amt für Umwelt | 1 | 1 |
 | afu_isboden_fff_pub | Amt für Umwelt | 1 | 1 |
 | afu_isboden_pub | Amt für Umwelt | 1 | 1 |
 | afu_karst_v1 | Amt für Umwelt | 1 | 6 |
@@ -3040,66 +3036,6 @@
 
 **Quell-Tabellen:**
 - afu_immissionskarten_luft_v1.luftbelastung_2010_2020
-
----
-
-### afu_isboden_csv_import
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/afu_isboden_csv_import`
-
-**Quell-Tabellen:**
-- afu_isboden.begelfor_t
-- afu_isboden.bodeneinheit_auspraegung_t
-- afu_isboden.bodeneinheit_t
-- afu_isboden.bodentyp_t
-- afu_isboden.gefuegeform_t
-- afu_isboden.gefueggr_t
-- afu_isboden.humusform_wa_t
-- afu_isboden.kalkgehalt_t
-- afu_isboden.kartiererin_v
-- afu_isboden.koernkl_t
-- afu_isboden.skelett_t
-- afu_isboden.untertyp_t
-- afu_isboden.wasserhhgr_t
-- afu_isboden.zw_bodeneinheit_untertyp
-- afu_isboden_csv_import_v1.csv_import_csv_import_t
-
-**Ziel-Tabellen:**
-- afu_isboden.bodeneinheit_auspraegung_t
-- afu_isboden.bodeneinheit_t
-- afu_isboden.zw_bodeneinheit_untertyp
-- afu_isboden_csv_import_v1.csv_import_csv_import_t
-- l
-- to
-
----
-
-### afu_isboden_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/afu_isboden_pub`
-
-**Quell-Tabellen:**
-- afu_erosion_gbf20_p
-- afu_erosion_gbf20_p_code
-- afu_isboden.begelfor_t
-- afu_isboden.bodeneinheit_auspraegung_t
-- afu_isboden.bodeneinheit_onlinedata_t
-- afu_isboden.bodeneinheit_t
-- afu_isboden.bodentyp_t
-- afu_isboden.gefuegeform_t
-- afu_isboden.gefueggr_t
-- afu_isboden.hinweiskarte_bodenverdichtung_qgis_server_client_t
-- afu_isboden.humusform_wa_t
-- afu_isboden.kalkgehalt_t
-- afu_isboden.koernkl_t
-- afu_isboden.skelett_t
-- afu_isboden.untertyp_t
-- afu_isboden.wasserhhgr_t
-- afu_isboden.zw_bodeneinheit_untertyp
 
 ---
 
