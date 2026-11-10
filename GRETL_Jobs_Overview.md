@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 09.11.2026 12:34
-**Anzahl Jobs:** 227
+**Automatisch generiert am:** 10.11.2026 12:10
+**Anzahl Jobs:** 223
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 145
+**Anzahl:** 141
 
 | Job | Status |
 |-----|--------|
@@ -252,10 +252,6 @@
 | dsbjd_ebauso_geschaefte | Aktiv |
 | gesa_gesundheitseinrichtungen_pub | Aktiv |
 | gesa_tigermueckenfundstellen_pub | Aktiv |
-| hba_gebaeude_pub | Aktiv |
-| hba_gebaeude_pub_v2 | Aktiv |
-| hba_grundstuecke_pub | Aktiv |
-| hba_grundstuecke_pub_v2 | Aktiv |
 | hba_immobilienportfolio_gebaeude_pub | Aktiv |
 | hba_immobilienportfolio_grundstuecke_pub | Aktiv |
 | ksta_landwert_pub | Aktiv |
@@ -268,7 +264,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 261
+**Anzahl Schemas:** 259
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -366,7 +362,7 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 21 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
@@ -509,8 +505,6 @@
 | flachmoore | flachmoore | 1 | 1 |
 | gesa_gesundheitseinrichtungen_staging_v1 | gesa_gesundheitseinrichtungen_staging_v1 | 1 | 2 |
 | gesa_tigermueckenfundstellen_v1 | gesa_tigermueckenfundstellen_v1 | 1 | 1 |
-| hba_gebaeude_v2 | hba_gebaeude_v2 | 1 | 1 |
-| hba_grundstuecke_v2 | hba_grundstuecke_v2 | 1 | 1 |
 | hba_immobilienportfolio_gebaeude_v2 | hba_immobilienportfolio_gebaeude_v2 | 1 | 1 |
 | hba_immobilienportfolio_pub_v2 | hba_immobilienportfolio_pub_v2 | 2 | 6 |
 | hba_immobilienportfolio_v2 | hba_immobilienportfolio_v2 | 2 | 4 |
@@ -5672,52 +5666,6 @@
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
 - agi_plz_ortschaften_pub.plzortschaften_postleitzahl
 - gesa_tigermueckenfundstellen_v1.csv_import
-
----
-
-### hba_gebaeude_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/hba_gebaeude_pub`
-
-**Quell-Tabellen:**
-- agi_dm01avso24.bodenbedeckung_boflaeche
-- agi_dm01avso24.bodenbedeckung_gebaeudenummer
-- agi_dm01avso24.einzelobjekte_einzelobjekt
-- agi_dm01avso24.einzelobjekte_flaechenelement
-- agi_dm01avso24.einzelobjekte_objektnummer
-- hba_gebaeude_v2.gebaeude_gebaeude
-
----
-
-### hba_gebaeude_pub_v2
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/hba_gebaeude_pub_v2`
-
----
-
-### hba_grundstuecke_pub
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/hba_grundstuecke_pub`
-
-**Quell-Tabellen:**
-- agi_dm01avso24.liegenschaften_grundstueck
-- agi_dm01avso24.liegenschaften_liegenschaft
-- agi_dm01avso24.liegenschaften_selbstrecht
-- hba_grundstuecke_v2.grundstuecke_grundstueck
-
----
-
-### hba_grundstuecke_pub_v2
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/hba_grundstuecke_pub_v2`
 
 ---
 
