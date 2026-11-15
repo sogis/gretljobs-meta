@@ -1,6 +1,6 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 14.11.2026 11:14
+**Automatisch generiert am:** 15.11.2026 11:46
 **Anzahl Jobs:** 223
 
 ## Inhaltsverzeichnis
