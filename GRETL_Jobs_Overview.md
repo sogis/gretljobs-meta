@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 15.11.2026 11:46
-**Anzahl Jobs:** 223
+**Automatisch generiert am:** 16.11.2026 12:28
+**Anzahl Jobs:** 218
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 141
+**Anzahl:** 136
 
 | Job | Status |
 |-----|--------|
@@ -193,14 +193,9 @@
 | arp_fruchtfolgeflaechen_kompensation_pub | Aktiv |
 | arp_isos_inventar_pub | Aktiv |
 | arp_kulturgueterschutzobjekte_pub | Aktiv |
-| arp_mjpnl_auszahlung | Aktiv |
-| arp_mjpnl_gelan_update | Aktiv |
-| arp_mjpnl_initialisierung | Aktiv |
-| arp_mjpnl_migration | Aktiv |
 | arp_mjpnl_v2_auszahlung | Aktiv |
 | arp_mjpnl_v2_initialisierung | Aktiv |
 | arp_mjpnl_v2_migration | Aktiv |
-| arp_mjpnl_zahlungslauf | Aktiv |
 | arp_naturreservate_pub | Aktiv |
 | arp_naturschutzobjekte_pub | Aktiv |
 | arp_nutzungsplanung_delete_dataset | Aktiv |
@@ -264,7 +259,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 259
+**Anzahl Schemas:** 256
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -362,14 +357,14 @@
 | agi_av_meldewesen_import_v1 | Amt für Geoinformation | 1 | 1 |
 | agi_av_meldewesen_work_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_av_mocheckso | Amt für Geoinformation | 1 | 1 |
-| agi_dm01avso24 | Amt für Geoinformation | 19 | 81 |
+| agi_dm01avso24 | Amt für Geoinformation | 18 | 81 |
 | agi_gb2av | Amt für Geoinformation | 1 | 3 |
 | agi_gb2av_controlling | Amt für Geoinformation | 1 | 2 |
 | agi_gebaeudeinformationen_pub_v1 | Amt für Geoinformation | 2 | 1 |
 | agi_grundbuchplan_pub | Amt für Geoinformation | 1 | 2 |
 | agi_gwr_pub_v1 | Amt für Geoinformation | 3 | 2 |
 | agi_gwr_v1 | Amt für Geoinformation | 1 | 3 |
-| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 38 | 12 |
+| agi_hoheitsgrenzen_pub | Amt für Geoinformation | 37 | 12 |
 | agi_hoheitsgrenzen_v1 | Amt für Geoinformation | 2 | 6 |
 | agi_kartenkatalog_v2 | Amt für Geoinformation | 1 | 2 |
 | agi_lk_netzgebiete_v1 | Amt für Geoinformation | 1 | 4 |
@@ -397,7 +392,7 @@
 | alw_tiergesundheit_eindaemmungsbarrieren_v2 | Amt für Landwirtschaft | 1 | 2 |
 | alw_tiergesundheit_pflanzengesundheit_massnahmen_v1 | Amt für Landwirtschaft | 1 | 3 |
 | alw_uebersteuerung_fff_v2 | Amt für Landwirtschaft | 1 | 1 |
-| alw_zonengrenzen | Amt für Landwirtschaft | 2 | 6 |
+| alw_zonengrenzen | Amt für Landwirtschaft | 1 | 6 |
 | amb_zivilschutz_adressen_staging_pub | amb_zivilschutz_adressen_staging_pub | 1 | 1 |
 | arp_agglomerationsprogramme | Amt für Raumplanung | 1 | 13 |
 | arp_arbeitszonenbewirtschaftung_pub_v2 | Amt für Raumplanung | 1 | 1 |
@@ -416,7 +411,6 @@
 | arp_mehrjahresprogramm | Amt für Raumplanung | 2 | 1 |
 | arp_mjpnatur_pub | Amt für Raumplanung | 1 | 1 |
 | arp_mjpnl_gelan_v1 | Amt für Raumplanung | 1 | 1 |
-| arp_mjpnl_v1 | Amt für Raumplanung | 1 | 15 |
 | arp_mjpnl_v2 | Amt für Raumplanung | 2 | 12 |
 | arp_naturreservate | Amt für Raumplanung | 3 | 10 |
 | arp_naturreservate_pub | Amt für Raumplanung | 2 | 1 |
@@ -513,10 +507,8 @@
 | importschema_xtf | importschema_xtf | 2 | 10 |
 | klimaeignung | klimaeignung | 1 | 2 |
 | ksta_landwerte | ksta_landwerte | 1 | 1 |
-| l | l | 1 | 2 |
 | live | live | 1 | 3 |
 | main | main | 2 | 3 |
-| mjpnatur | mjpnatur | 1 | 11 |
 | pubdb | pubdb | 4 | 31 |
 | public | public | 2 | 2 |
 | sein | sein | 2 | 8 |
@@ -4145,64 +4137,6 @@
 
 ---
 
-### arp_mjpnl_auszahlung
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_mjpnl_auszahlung`
-
----
-
-### arp_mjpnl_gelan_update
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_mjpnl_gelan_update`
-
----
-
-### arp_mjpnl_initialisierung
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_mjpnl_initialisierung`
-
----
-
-### arp_mjpnl_migration
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_mjpnl_migration`
-
-**Quell-Tabellen:**
-- agi_dm01avso24.liegenschaften_grundstueck
-- agi_dm01avso24.liegenschaften_liegenschaft
-- agi_dm01avso24.nomenklatur_flurname
-- agi_hoheitsgrenzen_pub.hoheitsgrenzen_bezirksgrenze
-- agi_hoheitsgrenzen_pub.hoheitsgrenzen_gemeindegrenze
-- alw_zonengrenzen.lz_kataloge_lz_katalog_typ
-- alw_zonengrenzen.zonengrenzen_lz_flaeche
-- l.datum_auszahlung
-- l.gueltigbis
-- mjpnatur.code
-- mjpnatur.flaechen
-- mjpnatur.flaechen_geom_t
-- mjpnatur.flaechenart
-- mjpnatur.leistung
-- mjpnatur.leistungsart
-- mjpnatur.personen
-- mjpnatur.rrbeschluss
-- mjpnatur.status
-- mjpnatur.vbart
-- mjpnatur.vereinbarung
-
-**Ziel-Tabellen:**
-- abrechnung_per_leistung
-- basierend
-
----
-
 ### arp_mjpnl_v2_auszahlung
 
 **Status:** Aktiv
@@ -4224,46 +4158,6 @@
 **Status:** Aktiv
 **Trigger:** manual
 **Pfad:** `../gretljobs/arp_mjpnl_v2_migration`
-
----
-
-### arp_mjpnl_zahlungslauf
-
-**Status:** Aktiv
-**Trigger:** manual
-**Pfad:** `../gretljobs/arp_mjpnl_zahlungslauf`
-
-**Quell-Tabellen:**
-- arp_mjpnl_v1.betrbsdttrktrdten_gelan_person
-- arp_mjpnl_v1.mjpnl_berater
-- arp_mjpnl_v1.mjpnl_beurteilung_alr_buntbrache
-- arp_mjpnl_v1.mjpnl_beurteilung_alr_saum
-- arp_mjpnl_v1.mjpnl_beurteilung_hecke
-- arp_mjpnl_v1.mjpnl_beurteilung_hostet
-- arp_mjpnl_v1.mjpnl_beurteilung_obl
-- arp_mjpnl_v1.mjpnl_beurteilung_wbl_weide
-- arp_mjpnl_v1.mjpnl_beurteilung_wbl_wiese
-- arp_mjpnl_v1.mjpnl_beurteilung_weide_ln
-- arp_mjpnl_v1.mjpnl_beurteilung_weide_soeg
-- arp_mjpnl_v1.mjpnl_beurteilung_wiese
-- arp_mjpnl_v1.mjpnl_vereinbarung
-- arp_mjpnl_v1.t_ili2db_basket
-- arp_mjpnl_v1.umweltziele_uzl_subregion
-
-**Ziel-Tabellen:**
-- abrechnung_per_leistung
-- arp_mjpnl_v1.mjpnl_beurteilung_alr_buntbrache
-- arp_mjpnl_v1.mjpnl_beurteilung_alr_saum
-- arp_mjpnl_v1.mjpnl_beurteilung_hecke
-- arp_mjpnl_v1.mjpnl_beurteilung_hostet
-- arp_mjpnl_v1.mjpnl_beurteilung_obl
-- arp_mjpnl_v1.mjpnl_beurteilung_wbl_weide
-- arp_mjpnl_v1.mjpnl_beurteilung_wbl_wiese
-- arp_mjpnl_v1.mjpnl_beurteilung_weide_ln
-- arp_mjpnl_v1.mjpnl_beurteilung_weide_soeg
-- arp_mjpnl_v1.mjpnl_beurteilung_wiese
-- arp_mjpnl_v1.mjpnl_vereinbarung
-- der
 
 ---
 
