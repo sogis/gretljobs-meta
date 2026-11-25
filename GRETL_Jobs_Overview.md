@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 24.11.2026 14:35
-**Anzahl Jobs:** 217
+**Automatisch generiert am:** 25.11.2026 13:55
+**Anzahl Jobs:** 218
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 135
+**Anzahl:** 136
 
 | Job | Status |
 |-----|--------|
@@ -169,6 +169,7 @@
 | afu_schutzbauten_import | Aktiv |
 | afu_schutzbauten_pub | Aktiv |
 | afu_stoerfallverordnung_pub | Aktiv |
+| afu_stoffe_feststoffe_pub | Aktiv |
 | agi_av_meldewesen_archiv | Aktiv |
 | agi_check_ili_export | Aktiv |
 | agi_dmav_dauerndebodenverschiebungen_export | Aktiv |
@@ -258,7 +259,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 255
+**Anzahl Schemas:** 256
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -334,7 +335,7 @@
 | afu_quellen_ungefasst_staging_v1 | Amt für Umwelt | 1 | 1 |
 | afu_schadendienst_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schadstoffbelastete_boeden_pub | Amt für Umwelt | 1 | 8 |
-| afu_schadstoffbelastete_boeden_pub_v1 | Amt für Umwelt | 1 | 34 |
+| afu_schadstoffbelastete_boeden_pub_v1 | Amt für Umwelt | 2 | 34 |
 | afu_schadstoffbelastete_boeden_v1 | Amt für Umwelt | 1 | 66 |
 | afu_schiesslaerm_pub_v1 | Amt für Umwelt | 1 | 2 |
 | afu_schiesslaerm_stage_v1 | Amt für Umwelt | 1 | 1 |
@@ -342,6 +343,7 @@
 | afu_schutzbauten_v1 | Amt für Umwelt | 1 | 40 |
 | afu_stehende_gewaesser_v1 | Amt für Umwelt | 2 | 1 |
 | afu_stoerfallverordnung_v1 | Amt für Umwelt | 1 | 8 |
+| afu_stoffe_feststoffe_v1 | Amt für Umwelt | 1 | 9 |
 | afu_wasserbewirtschaftung_pub_v2 | Amt für Umwelt | 1 | 2 |
 | afu_wasserversorg_obj_v1 | Amt für Umwelt | 1 | 15 |
 | agem_fila | agem_fila | 1 | 1 |
@@ -3697,6 +3699,25 @@
 
 ---
 
+### afu_stoffe_feststoffe_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/afu_stoffe_feststoffe_pub`
+
+**Quell-Tabellen:**
+- afu_stoffe_feststoffe_v1.analysegruppe
+- afu_stoffe_feststoffe_v1.analysewert
+- afu_stoffe_feststoffe_v1.aparameter
+- afu_stoffe_feststoffe_v1.einheit
+- afu_stoffe_feststoffe_v1.feldprobe
+- afu_stoffe_feststoffe_v1.grenzwert
+- afu_stoffe_feststoffe_v1.labor
+- afu_stoffe_feststoffe_v1.probenahmestelle
+- afu_stoffe_feststoffe_v1.wert_berechnet
+
+---
+
 ### agi_av_meldewesen_archiv
 
 **Status:** Aktiv
@@ -3925,6 +3946,14 @@
 - afu_schadstoffbelastete_boeden_pub.schdstfflstt_bden_stahlbruecke
 - afu_schadstoffbelastete_boeden_pub.schdstfflstt_bden_stahlkonstruktion
 - afu_schadstoffbelastete_boeden_pub.schdstfflstt_bden_stahlmast
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_bodenbelastungsgebiet
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_flugplatz
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_gaertnerei
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_rebbau
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_schrebergarten
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlbruecke
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlkonstruktion
+- afu_schadstoffbelastete_boeden_pub_v1.schdstfflstt_bden_stahlmast
 - agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
 - agi_mopublic_pub.mopublic_bodenbedeckung
 - agi_mopublic_pub.mopublic_gemeindegrenze
