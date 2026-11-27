@@ -1,7 +1,7 @@
 # GRETL Jobs Übersicht
 
-**Automatisch generiert am:** 26.11.2026 13:35
-**Anzahl Jobs:** 219
+**Automatisch generiert am:** 27.11.2026 13:30
+**Anzahl Jobs:** 220
 
 ## Inhaltsverzeichnis
 
@@ -114,7 +114,7 @@
 
 ## Manuelle Jobs
 
-**Anzahl:** 137
+**Anzahl:** 138
 
 | Job | Status |
 |-----|--------|
@@ -234,6 +234,7 @@
 | awjf_gesuchsteller | Aktiv |
 | awjf_gewaesser_fischerei_pub | Aktiv |
 | awjf_jagdreviere_jagdbanngebiete_pub | Aktiv |
+| awjf_nais_schutzwald_pub | Aktiv |
 | awjf_rodung_rodungsersatz_pub | Aktiv |
 | awjf_samenerntekataster_pub | Aktiv |
 | awjf_seltene_baeume_pub | Aktiv |
@@ -260,7 +261,7 @@
 
 ## Schema-Übersicht
 
-**Anzahl Schemas:** 257
+**Anzahl Schemas:** 259
 
 | Schema | Beschreibung | Anzahl Jobs | Anzahl Tabellen |
 |--------|--------------|-------------|-----------------|
@@ -467,12 +468,14 @@
 | awjf_holznutzungsbewilligung_pub_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
 | awjf_holznutzungsbewilligung_staging_v1 | Amt für Wald, Jagd und Fischerei | 1 | 10 |
 | awjf_jagdreviere_jagdbanngebiete_v1 | Amt für Wald, Jagd und Fischerei | 2 | 4 |
+| awjf_nais_schutzwald_pub_v1 | Amt für Wald, Jagd und Fischerei | 1 | 2 |
+| awjf_nais_schutzwald_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_programm_biodiversitaet_wald_v1 | Amt für Wald, Jagd und Fischerei | 2 | 7 |
 | awjf_rodung_rodungsersatz_mgdm_v1 | Amt für Wald, Jagd und Fischerei | 1 | 6 |
 | awjf_rodung_rodungsersatz_v1 | Amt für Wald, Jagd und Fischerei | 2 | 13 |
 | awjf_samenerntekataster_v1 | Amt für Wald, Jagd und Fischerei | 1 | 1 |
 | awjf_schutzwald_pub_v1 | Amt für Wald, Jagd und Fischerei | 1 | 11 |
-| awjf_schutzwald_v1 | Amt für Wald, Jagd und Fischerei | 1 | 4 |
+| awjf_schutzwald_v1 | Amt für Wald, Jagd und Fischerei | 2 | 4 |
 | awjf_seltene_baeume | Amt für Wald, Jagd und Fischerei | 1 | 4 |
 | awjf_silvaprotect_v1 | Amt für Wald, Jagd und Fischerei | 1 | 5 |
 | awjf_statische_waldgrenze | Amt für Wald, Jagd und Fischerei | 3 | 4 |
@@ -5234,6 +5237,23 @@
 - awjf_jagdreviere_jagdbanngebiete_v1.jagdbanngebiete_jagdbanngebiete_art
 - awjf_jagdreviere_jagdbanngebiete_v1.jagdreviere_hegering
 - awjf_jagdreviere_jagdbanngebiete_v1.jagdreviere_jagdreviere
+
+---
+
+### awjf_nais_schutzwald_pub
+
+**Status:** Aktiv
+**Trigger:** manual
+**Pfad:** `../gretljobs/awjf_nais_schutzwald_pub`
+
+**Quell-Tabellen:**
+- awjf_nais_schutzwald_pub_v1.nais_nais_code
+- awjf_nais_schutzwald_v1.nais_dokument
+- awjf_schutzwald_v1.dokument
+
+**Ziel-Tabellen:**
+- awjf_nais_schutzwald_pub_v1.nais_dokument
+- awjf_nais_schutzwald_v1.nais_dokument
 
 ---
 
